@@ -1,0 +1,40 @@
+:root {
+  --vp-c-brand-1: #226451;
+  --vp-c-brand-2: #31836b;
+  --vp-c-brand-3: #226451;
+  --vp-c-brand-soft: rgba(34, 100, 81, .10);
+  --vp-font-family-base: 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
+  --vp-font-family-mono: 'SFMono-Regular', Consolas, monospace;
+  --vp-sidebar-width: 284px;
+}
+.dark {
+  --vp-c-brand-1: #75c6a6;
+  --vp-c-brand-2: #98d6bd;
+  --vp-c-brand-3: #3d987a;
+  --vp-c-brand-soft: rgba(117, 198, 166, .12);
+}
+.vp-doc { font-size: 16px; }
+.vp-doc p, .vp-doc li { line-height: 1.9; }
+.vp-doc h1 { font-size: 30px; line-height: 1.4; letter-spacing: -.02em; }
+.vp-doc h2 { margin-top: 44px; padding-top: 24px; }
+.vp-doc h3 { line-height: 1.6; }
+.vp-doc table { font-size: 14px; }
+.vp-doc img { margin: 20px auto; border-radius: 4px; }
+.vp-doc mjx-container[display='true'] { overflow-x: auto; overflow-y: hidden; padding: 12px 0; max-width: 100%; }
+.vp-doc mjx-container:not([display='true']) {
+  font-size: 103% !important;
+  display: inline-block;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  vertical-align: middle;
+}
+.vp-doc a[id] { scroll-margin-top: 90px; }
+.vp-doc .contains-task-list { list-style: none; padding-left: 0; }
+.task-list-item-checkbox { margin-right: 8px; }
+.VPSidebarItem .text { line-height: 1.6; }
+@media (max-width: 640px) {
+  .vp-doc { font-size: 15px; }
+  .vp-doc h1 { font-size: 26px; }
+  .vp-doc table { font-size: 13px; }
+}

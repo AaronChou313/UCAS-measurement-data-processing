@@ -1,0 +1,21 @@
+export const pages = [
+  ['网站首页.md', 'index'],
+  ['00_学习大纲.md', 'guide'],
+  ['全课程知识点清单.md', 'checklist'],
+  ['01_逐课作业原题.md', 'homework/questions'],
+  ['02_逐课作业解答.md', 'homework/answers'],
+  ['03_图表与复现说明.md', 'homework/reproduce'],
+  ['04_作业原页图对照.md', 'homework/source-pages'],
+  ['资料来源.md', 'sources'],
+  ['维护与更新.md', 'maintenance'],
+  ['下载与代码.md', 'downloads'],
+  ['data/README.md', 'data'],
+  ['系统学习笔记/00_阅读指南与统一符号.md', 'notes/start'],
+  ['系统学习笔记/01_第一章_概述与线性变换.md', 'notes/chapter-1'],
+  ['系统学习笔记/02_第二章_参数估计与最小二乘.md', 'notes/chapter-2'],
+  ['系统学习笔记/03_第三章_回归相关与Fourier.md', 'notes/chapter-3'],
+  ['系统学习笔记/04_第四章_误差传播随机噪声与误差椭圆.md', 'notes/chapter-4'],
+  ['系统学习笔记/05_第五章_样本偏差过拟合与正则化.md', 'notes/chapter-5'],
+  ['系统学习笔记/06_第六章_时空分析状态估计与神经网络.md', 'notes/chapter-6'],
+  ['系统学习笔记/07_资料覆盖核对.md', 'notes/coverage']
+];

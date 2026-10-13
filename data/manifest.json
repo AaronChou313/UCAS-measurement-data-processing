@@ -1,0 +1,68 @@
+[
+  {
+    "file": "iris.dat",
+    "source": "3-datas/iris.dat",
+    "bytes": 16714,
+    "sha256": "ad325be774f4271410cd44ab9c66d2f90954c300cfec04f7a89290bc6cb22557"
+  },
+  {
+    "file": "Ithaca_precipitation1933-1982.dat",
+    "source": "3-datas/Ithaca_precipitation1933-1982.dat",
+    "bytes": 521,
+    "sha256": "d7e5797b32a156b0bfde48d0aace36c9434a6717daa5848980c3bc05491b0039"
+  },
+  {
+    "file": "darwin.slp-1000hPa.dat",
+    "source": "3-datas/darwin.slp-1000hPa.dat",
+    "bytes": 12402,
+    "sha256": "717c4ace16abe03f871750d00b1d4698cf9b86b12699edd5de53100daa03497d"
+  },
+  {
+    "file": "tahiti.slp-1000hpa.dat",
+    "source": "3-datas/tahiti.slp-1000hpa.dat",
+    "bytes": 12402,
+    "sha256": "b8eefd7baa4738ab198ae40e129436d1a590c4046662d127f2a74c0f32301dae"
+  },
+  {
+    "file": "bjfs.rm.leap.dat",
+    "source": "3-datas/bjfs.rm.leap.dat",
+    "bytes": 233930,
+    "sha256": "871c09e4b5c45ca95e03f8889fda108ed0433175346e3d6f248ec78040c500b6"
+  },
+  {
+    "file": "pacific_sst_test_data.txt",
+    "source": "3-datas/pacific_sst_test_data.txt",
+    "bytes": 8919801,
+    "sha256": "411fe35d87700097babc3ff8305a25bfbcb5faad8b17a13a4aa1032e3278f07f"
+  },
+  {
+    "file": "temperature.dat",
+    "source": "3-datas/temperature.dat",
+    "bytes": 104,
+    "sha256": "abb43548cd8285212eec242f4dc75617f1ac558530f4af66bebafc7d463ee766"
+  },
+  {
+    "file": "L02_normal20.txt",
+    "source": "5-notes/data/L02_normal20.txt",
+    "bytes": 197,
+    "sha256": "15c07b79dfa13801284a3f3c612939714529a9d821688db5dc7f3cbb08ea5239"
+  },
+  {
+    "file": "L02_uniform5.txt",
+    "source": "5-notes/data/L02_uniform5.txt",
+    "bytes": 82,
+    "sha256": "bd61e8c42523da71c3b17290d3e0f21dcc5166dc9f19bba294b791a44c4824e6"
+  },
+  {
+    "file": "L03_Ithaca_precipitation1933-1982.txt",
+    "source": "5-notes/data/L03_Ithaca_precipitation1933-1982.txt",
+    "bytes": 592,
+    "sha256": "d96c41826eee2c942c042b09280f4e829cd2bfdf119518ef45f11bb1c26aabc3"
+  },
+  {
+    "file": "L12_temperature10.txt",
+    "source": "5-notes/data/L12_temperature10.txt",
+    "bytes": 240,
+    "sha256": "98dc7d412003ab2e54a6bb1eae52b18332d315ad41efd91ea778364635a9b7e7"
+  }
+]

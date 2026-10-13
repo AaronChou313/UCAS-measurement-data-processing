@@ -1,0 +1,6 @@
+# Preserve supplied numerical inputs byte-for-byte, including original whitespace.
+data/** -text -diff
+data/*.md text diff
+data/*.json text diff
+*.csv text eol=lf
+*.tsv text eol=lf

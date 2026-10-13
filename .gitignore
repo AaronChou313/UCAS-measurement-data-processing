@@ -1,0 +1,16 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+node_modules/
+.site/
+.vitepress/.temp/
+.vitepress/cache/
+.vitepress/dist/
+mnist_data/
+*.pdf
+*.ppt
+*.pptx
+25PPT/
+26PPT/
