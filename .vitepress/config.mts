@@ -3,19 +3,35 @@ import taskLists from 'markdown-it-task-lists'
 
 // Mark Python and course data as downloads, rather than document routes.
 process.env.VITE_EXTRA_EXTENSIONS = 'py,dat'
+const base = '/UCAS-measurement-data-processing/'
 
 export default defineConfig({
   lang: 'zh-CN',
   title: '测量数据处理',
   description: '测量数据处理理论与方法：六章系统笔记、知识点清单和可复现作业',
-  base: '/UCAS-measurement-data-processing/',
+  base,
   srcDir: '.site',
   srcExclude: ['public/**'],
   vite: { define: { 'import.meta.env.VITE_EXTRA_EXTENSIONS': JSON.stringify('py,dat') } },
   cleanUrls: false,
   markdown: {
     math: true,
-    config(md) { md.use(taskLists) }
+    config(md) {
+      md.use(taskLists)
+      // Static HTML has no VitePress page module. A target makes the router
+      // leave navigation to the browser; include the base because the link
+      // renderer also skips rewriting links with an explicit target.
+      md.core.ruler.after('inline', 'standalone-page-links', (state) => {
+        for (const block of state.tokens) {
+          for (const token of block.children || []) {
+            if (token.type === 'link_open' && token.attrGet('href') === '/learning-map.html') {
+              token.attrSet('href', base + 'learning-map.html')
+              token.attrSet('target', '_self')
+            }
+          }
+        }
+      })
+    }
   },
   themeConfig: {
     siteTitle: '测量数据处理',

@@ -17,6 +17,14 @@ for (const file of htmlFiles) {
   const content = html(file).replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '');
   formulas += (content.match(/<mjx-container\b/g) || []).length;
   if (/<mjx-merror\b|data-mjx-error=/.test(content)) errors.push(`${path.relative(root, file)}: MathJax error`);
+  // A successful static-file request is insufficient: the VitePress router
+  // intercepts same-origin HTML links unless they have a target/download.
+  for (const match of content.matchAll(/<a\b[^>]*>/g)) {
+    const tag = match[0];
+    if (/href="[^"]*\/learning-map\.html(?:#[^"]*)?"/.test(tag) && !/\btarget="_self"/.test(tag)) {
+      errors.push(`${path.relative(root, file)}: learning map link must use normal browser navigation`);
+    }
+  }
   const current = new URL(base + path.relative(root, file), origin);
   for (const match of content.matchAll(/\b(?:href|src)="([^"]+)"/g)) {
     const href = unescape(match[1]);
