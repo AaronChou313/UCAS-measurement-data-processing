@@ -1,0 +1,799 @@
+锚点	原文SHA256	处理	原文摘要
+c1-s1	6961f96c6cad9eb5e5d32c1d42a494f57494ff3a4f54cb87c4745eff5dd37bb5	原文区块保留	"<a id=""c1-s1""></a> ## 1.1 测量、数据和模型"
+c1-s1	7791109510afb766f24fcb60874dd61f3c8871c2527c9a753645c36b02507bb8	原文区块保留	### 1.1.1 原始观测不是最终研究结论
+c1-s1	c2850a1113a718f8ca20f3b8841d90ea08b0618344075127d77adccf53735dc1	原文区块保留	测量是按规定过程获取对象的定量信息。观测值受被测对象、仪器、环境、采样时空尺度、处理规则共同影响。常用模型为
+c1-s1	0c7292c85db0d18317e02255984831619d533735781bad2cd0a86ec919a01af0	原文区块保留	$$ y_i=g(\mathbf x_i;\boldsymbol\beta)+b_i+\varepsilon_i. $$
+c1-s1	fea2f9f42de8f360e360c60cd0cb642f93f072942ee0c46083b0bd017a0a882a	原文区块保留	$g$ 是对研究过程的描述，$\boldsymbol\beta$ 是未知参数，$b_i$ 是系统偏离，$\varepsilon_i$ 是随机变化。模型不一定包含所有真实机制。
+c1-s1	bc7ca70f238b013b822b152067c21b4a2254cf8560fef142ba4c4d6bb1425327	原文区块保留	原始观测是仪器输出或记录，处理结果是校准、滤波、拟合等操作后的量，物理解释是对机制的判断，预测是对未观测对象的推断。这四步需要不同证据。某条曲线贴近数据，首先证明它在当前样本拟合得好，并不直接证明机制或预测可靠。
+c1-s1	b18767c38052511cdb864f483967163cda49c4ef0c6163e537f6582740bded8a	原文区块保留	### 1.1.2 误差、残差和模型误差
+c1-s1	6c79e7bc6c01d7634fa5f5e106570f16754b1b94208c8bab660381ddf144b82b	原文区块保留	若参照真值为 $y_i^{\rm true}$，测量误差为 $y_i-y_i^{\rm true}$。真值通常未知；可计算的残差为
+c1-s1	9dd7461d4d6c7d34cfe8f00d3894f93038d08314a06f4ed51bec16f5cb353b64	原文区块保留	$$ e_i=y_i-g(\mathbf x_i;\hat{\boldsymbol\beta}). $$
+c1-s1	0a15cde91ec035949677312d041eef50e3c3edf775e37b856931820040d60f36	原文区块保留	残差包含随机误差、模型遗漏、参数估计影响等，不能自动当作测量误差真值。系统误差表现为规律性偏离，随机误差体现重复观测的变化，粗差是记录、操作、设备等异常造成的明显偏离。粗差诊断必须结合物理与记录，不能把所有大残差都删除。
+c1-s1	58d6c66930d5b91963ba5b36ff8fd5aeed0fd43b9d200480fb87d15140965f81	原文区块保留	对地球物理时间序列，可以分解为趋势、周年／半周年、其他周期、瞬变和剩余噪声：
+c1-s1	2899313aecd0754cc161ded2ece360d47978812786b1647bba5ec01c644222d0	原文区块保留	$$ y(t)=a+bt+\sum_j\{c_j\cos(2\pi f_jt)+d_j\sin(2\pi f_jt)\}+u(t)+\varepsilon(t). $$
+c1-s1	b6ad031892824bd68385d652c769308ed9422605303c6a0ffe5591dddeee13de	原文区块保留	分解依赖所选频率、时间长度和模型；相邻成分可能混淆。课件的日长变化、海平面、南方涛动等图展示的是这种分离思想，不要求这些现象共用同一参数模型。
+c1-s1	6e45ca57c73bf11a81c5d723a87bdc187fae97737445ddcff0c30cfdc13018c5	原文区块保留	### 1.1.3 常见处理任务
+c1-s1	8d950bd9a40ed70e659ca5f489c5422de200c2ac74650ff1a5aa642e72ef4960	原文区块保留	| 任务 | 对应问题 | 需要防止的误解 | |---|---|---| | 校准与预处理 | 单位、时间、缺测、基准是否一致 | 处理后就没有误差 | | 参数估计 | 哪组参数与观测最相容 | 一次估计值等于真值 | | 信号分离 | 趋势、周期、噪声如何区分 | 所有低频都是信号 | | 线
+c1-s1	c04d7b24b01ce419dac64bc05ccfe564483daa66612012cb7cd4321716a9deea	原文区块保留	课件提及：AI 包含 ML，ML 的一部分是 DL。传统程序由规则和数据生成答案，机器学习由数据和目标学习规则。是否需要复杂学习方法，仍取决于研究目标、数据与可检验性。人的作用包括提出问题、确认数据来源、选择尺度、制定假设和解释结果。
+c1-s2	ed8cea800cc4fc7f66e18bf1a5f0e97d4d5939dd16c61fc5ff6ddc5c3e7390f0	原文区块保留	"<a id=""c1-s2""></a> ## 1.2 方法史与统计思想"
+c1-s2	2d53eec1d9946ceb60bf148982df34cc89f941c0d514cb24fce3afa69037872a	原文区块保留	### 1.2.1 重复观测为什么取平均
+c1-s2	0a2419c64ada61c5aa98323bd5cf24447ce9ad9a9f9a3d663f44777ecfb80f20	原文区块保留	测同一个固定量 $\mu$，设 $y_i=\mu+\varepsilon_i$，且 $E\varepsilon_i=0$。样本均值
+c1-s2	3326c2062ba013232aa0e24d3c645839f2028c661e5374bcee9d3d35df2d982d	原文区块保留	$$ \bar y=\frac1n\sum_i y_i,\qquad E\bar y=\mu. $$
+c1-s2	342413afd51a47732f1a475b95d9713af93431e3c7587f94f9b23ac003d078a6	原文区块保留	若误差独立同方差，$\operatorname{Var}(\bar y)=\sigma^2/n$；随机波动的标准差降低为 $\sigma/\sqrt n$。系统偏差并不会因重复平均消失。精度不同或存在相关时，需要加权与协方差模型。
+c1-s2	1d697f4970f5d70bc775be7096cea25f929a9253afb74d5d956eb958dac3a3e8	原文区块保留	从最小平方偏离也能得到平均。令
+c1-s2	4d023eae424b0545aba1aba374d63899ef5449be5190ea85abe147108e3a3b3d	原文区块保留	$$ Q(\mu)=\sum_i(y_i-\mu)^2,\quad Q'(\mu)=-2\sum_i(y_i-\mu)=0, $$
+c1-s2	20226bc1ca4b1f490effe880f8a72f2a3fcca9cab6a397e6ae16dd1af313e20c	原文区块保留	即 $\hat\mu=\bar y$；$Q''=2n>0$ 说明这是唯一最小值。若目标改为绝对偏离和，最优位置是样本中位数，说明“最好”必须先说明准则。
+c1-s2	0e0883a11143e2dc0ff97e38c219d590ee62dee93c95c735712b1102c67ad932	原文区块保留	### 1.2.2 超定方程与最小二乘
+c1-s2	ad7e800d7bb43678785ff957039e820357909a5177246ed21e62b91f51dc9b70	原文区块保留	多个观测组成 $\mathbf y=X\boldsymbol\beta+\boldsymbol\varepsilon$。当 $n>p$，含误差的观测通常不在 $X$ 的列空间中，难以找到使每条方程都精确成立的参数。LS 最小化
+c1-s2	35a29a54cbde7569ffd86681564c1d51f72b5ce6ebd808e609ce170130bed4ac	原文区块保留	$$ Q(\boldsymbol\beta)=\|\mathbf y-X\boldsymbol\beta\|_2^2. $$
+c1-s2	4803860a0d74fdb1d86374efa6cccfc65a71eeb7b00782bb7bb43c882afcb667	原文区块保留	平方惩罚使大残差影响迅速增大：残差从 $1$ 变成 $10$，对目标的贡献从 $1$ 变成 $100$。这解释了 LS 对粗差敏感及稳健方法的需求。
+c1-s2	d3e25e200fc00477dbfc92759e5ef94dc73c2a0eb95db8ae7cb248379320f72e	原文区块保留	Gauss、Legendre、Laplace 等人物体现测量、天文学、概率与计算相互促进的历史；课件优先权讨论属于背景，理解方法比背历史先后更重要。不同模型、误差分布和损失函数产生不同估计方法。
+c1-s2	70b87b3edf03d3a907b6304c88072123068c610b0397a7568e63b8a0e203769c	原文区块保留	### 1.2.3 正态误差为什么连接 LS
+c1-s2	302623d620f984eda67bf0092d5cfd9334dbec959cfe80b5179009c9b23e8cbe	原文区块保留	若 $\varepsilon_i$ 独立且服从 $N(0,\sigma^2)$，则
+c1-s2	5958008f8b9504ecc109aaa069d1f6378f932a0ab26923cdedbf3af03e9b7da3	原文区块保留	$$ L(\boldsymbol\beta,\sigma^2)=(2\pi\sigma^2)^{-n/2} \exp\!\left[-\frac{\|\mathbf y-X\boldsymbol\beta\|_2^2}{2\sigma^2}\right]. $$
+c1-s2	4a211dacd857b67b0c22d0a20e58fca6add2b3ac7b1537db239d5626165c21c3	原文区块保留	固定 $\sigma^2$ 最大化似然，相当于最小化平方和。因此 LS 在这个误差模型下有 MLE 解释。若方差不同，用加权平方和；若误差相关，用协方差逆构成二次型；若误差密度不同，损失也可能改变。
+c1-s2	d50358656aa8a703e1cb7caf6db214403fc1f995d8a4b7d9e439341d1b157e23	原文区块保留	高尔顿板帮助理解多个随机扰动的合成及近似正态形状。现实数据是否正态仍需诊断；画出钟形直方图不能替代分布假设检查。
+c1-s2	6631640fdd531ce1ffb9916f527528f62b453f2a39bb2ea6b1ff908b90349f4a	原文区块保留	### 1.2.4 回归、相关与方差比较
+c1-s2	16407642216060b6c150d821e884e549094d60affb4ca1b45289c6cf44748c10	原文区块保留	重复观测同一个量，与观测许多不同个体是两种问题。后者的变化可来自个体差异和测量误差。Galton 的甜豌豆和遗传数据引出“向均值回归”：极端父代对应的子代条件均值常较不极端，不等于每个子代都必定变普通。
+c1-s2	a58b496d35611b0486ba1baebcebb8ffe633927dfcb32c1a3853daff97353d5b	原文区块保留	二维正态变量的条件均值是
+c1-s2	f69b0e765cac8b29d4d0fcb972052a158a99e7c6d3a03ce67a593b37ae2fcfee	原文区块保留	$$ E(Y\mid X=x)=\mu_Y+\rho\frac{\sigma_Y}{\sigma_X}(x-\mu_X). $$
+c1-s2	22830507147192733233628ce33f86931b55e4787b6fd222ace683ff82743839	原文区块保留	回归描述给定输入时响应的平均关系；相关描述标准化共同变化。两者都不能仅凭观测建立因果。用组间差异与组内随机波动比较是方差分析的基本思想，第三章的 F 检验给出具体实现。
+c1-s3	3fa0ada6dcf246697f4d9d160906b951f624ac23e19e1d36241a096a4c64ef3a	原文区块保留	"<a id=""c1-s3""></a> ## 1.3 向量、基与矩阵"
+c1-s3	e31fc43aa94bf8db35a2e35e2ddb88be7f0c38a2052055ec518ed531f6e5619a	原文区块保留	### 1.3.1 对象和坐标
+c1-s3	831fc0801ff7a2d4ae568ef80e5413a4da4ffd98cd3bda3436f8e80cd4b66185	原文区块保留	一组线性无关且张成空间的向量构成基。令基矩阵 $B=[\mathbf b_1,\ldots,\mathbf b_d]$，同一个物理向量表示为
+c1-s3	c12343a74f2eb2517c89772de1f2e3dde4f46b69b21a2ddcc0afe817e4147f8f	原文区块保留	$$ \mathbf v=B\mathbf c. $$
+c1-s3	5211e5324b6773e5a03ba5d6629b04be597d6002663dc9584795329a89e3372e	原文区块保留	$\mathbf v$ 是对象在固定参考中的表示，$\mathbf c$ 是在基 $B$ 下的坐标。改变基，坐标改变，对象可以不变。正交单位基满足 $B^{\mathsf T}B=I$，此时 $\mathbf c=B^{\mathsf T}\mathbf v$。
+c1-s3	6fe39f17ceecb0ac0a97d85196a842a273027a881b2549c068a3279ee2229b62	原文区块保留	向量内积 $\mathbf u^{\mathsf T}\mathbf v$ 衡量方向与投影；长度 $\|\mathbf v\|_2=\sqrt{\mathbf v^{\mathsf T}\mathbf v}$。单位方向 $\mathbf q$ 上的投影为 $\mathbf q\mathbf q^{\
+c1-s3	2fa940d67e88c379edee596365f96828a4a6820eddd6a5ed712c7e04cfa74080	原文区块保留	### 1.3.2 线性与仿射
+c1-s3	1c719f18d1a526328bfcb5e2cbe69f265d1064f5da500c5079a9e20d36d027a0	原文区块保留	线性映射 $T$ 满足
+c1-s3	a965e1c97f513da9a7bc1843f6b2f4afe4ad0bdae58a8fe8b849bdb0efbc8e56	原文区块保留	$$ T(a\mathbf u+b\mathbf v)=aT(\mathbf u)+bT(\mathbf v),\qquad T(\mathbf0)=\mathbf0. $$
+c1-s3	610549512dfa0b24c407e47e5b815b8c7833a3636a1781105cc94079537ca7c1	原文区块保留	有限维映射可写为 $T(\mathbf x)=A\mathbf x$。$A$ 的第 $j$ 列就是第 $j$ 个标准基向量的像。带平移的 $A\mathbf x+\mathbf b$ 为仿射映射，$\mathbf b\ne0$ 时不是原空间线性映射。
+c1-s3	e8545341b333637a639b4d455cf5372b96f9b68144b57ef5ff2652064867abb4	原文区块保留	二维主动逆时针旋转、尺度变换和水平剪切分别为
+c1-s3	99a86a6217f4ccbae89860dff38b98292469db09c6e2f54bd5199a31cd9c3eee	原文区块保留	$$ R(\theta)=\begin{pmatrix}\cos\theta&-\sin\theta\\\sin\theta&\cos\theta\end{pmatrix},\quad S=\begin{pmatrix}s_x&0\\0&s_y\end{pmatrix},\quad A_h=\beg
+c1-s3	485f131bb990a03415ab9c20f1b20979f64a976bc5bae1178fe03c748f35e91e	原文区块保留	$SR$ 表示先旋转再沿固定坐标缩放，一般 $SR\ne RS$。正交矩阵保持内积和长度；投影通常压缩维数，不可逆。
+c1-s3	3c6f0673b06f008a600f38cde7314d3f543181dd2c6aa9882cee9fb252f180ae	原文区块保留	### 1.3.3 特征方向与矩阵类型
+c1-s3	31ed476378479176c0d94b164399f848458285c3b414b486bffcb983ff413d8f	原文区块保留	若 $A\mathbf v=\lambda\mathbf v$ 且 $\mathbf v\ne0$，$\mathbf v$ 为特征向量。实正特征值使方向同向伸缩，负特征值反向，零特征值把该方向压成零。一般实矩阵可有复特征值，也不保证拥有完整的特征向量基。
+c1-s3	fedd09b8083a36e19e8790f9ac4ed0b09704532167eb831ae3d7fe122ea0cbaf	原文区块保留	课件“Matrix World”图中的主要类别：对称矩阵 $A=A^{\mathsf T}$；正交矩阵 $A^{\mathsf T}A=I$；正定矩阵 $\mathbf x^{\mathsf T}A\mathbf x>0$（实对称情形）；半正定把 $>$ 改为 $\ge$；复矩阵的 Hermitia
+c1-s3	04959bbdd78551a56927d714fbb31f349f5924634fbf4d7ee9a63a5fea660e25	原文区块保留	SVD 对矩形和不可对角化矩阵仍成立；PCA 利用协方差的特征方向，第四、六章完整讲述。
+c1-s4	6f51fa78b0a0930af02a70a7bfad2eda91b46c53d1d680eef4d3b9f1fc0661e1	原文区块保留	"<a id=""c1-s4""></a> ## 1.4 从向量换基到函数展开"
+c1-s4	e9073c419b88ec6f15344e2992f65eced7a41555081124339b194653445362a3	原文区块保留	### 1.4.1 Taylor 展开是局部表达
+c1-s4	7ab975c34a5fb989904a5535bc496cba1e19c8af635c11fc760926ced31399ea	原文区块保留	在足够光滑的点 $t_0$ 附近，
+c1-s4	0074b31299cad74e75770eadbe23d96e803ebee08368c8dd181b0cbec5e8d12e	原文区块保留	$$ g(t)=\sum_{k=0}^{m}\frac{g^{(k)}(t_0)}{k!}(t-t_0)^k+R_m(t). $$
+c1-s4	92c70f99a1173d66300d53ee80abfb41c1d8aff7d79732468ed4a51d6ba0a48f	原文区块保留	这里的基函数是 $1,(t-t_0),(t-t_0)^2,\ldots$，系数来自局部导数。一阶近似 $g(t_0+\Delta t)\approx g(t_0)+g'(t_0)\Delta t$ 是误差传播和非线性 LS 的入口。局部光滑、扰动小及余项可忽略是使用条件，第四章给出余项形式。
+c1-s4	93f41d4d3082c957bed9c24a7d568d4c3fb4342aaa9316607745a127b95397aa	原文区块保留	### 1.4.2 Euler 公式和 Fourier 基
+c1-s4	2741a356249617cdd6b0bf4ab9a80cf0000a5127858243c45e3c9e4919e85624	原文区块保留	$$ e^{i\theta}=\cos\theta+i\sin\theta,\quad \cos\theta=\frac{e^{i\theta}+e^{-i\theta}}2,\quad \sin\theta=\frac{e^{i\theta}-e^{-i\theta}}{2i}. $$
+c1-s4	c183b288ae84c1953f9db8dad969def8516daade590ffaaaab7eb4b7ccce910e	原文区块保留	函数空间也可定义内积，例如 $\langle u,v\rangle=\int u(t)\overline{v(t)}\,dt$。周期上的正弦、余弦正交，可以像向量投影那样取出系数。Fourier 展开是全局频率表示，Taylor 展开是局部多项式表示；各自适用的函数条件不同。
+c1-s4	a4ce5c450990497b49aa912958cb572e018623b8d29a4925e64f2b803c9d0dcd	原文区块保留	复指数是微分算子的特征函数：$\frac{d}{dt}e^{i\omega t}=i\omega e^{i\omega t}$。因而常系数微分方程在频域可转为代数关系。第三章讲 Fourier，第四章讲算子与系统解耦，第六章讲 Hilbert 和解析信号。
+c1-s4	f7584000a15e81888c8e38153e95b1194b3f7280ea2d8163804109d42dee30e9	原文区块保留	### 1.4.3 球谐、积分变换与换元（课件提及）
+c1-s4	c9109a3cf98ca9145647de307d7019d5028b65a37239522bfe70fd2244a7da3f	原文区块保留	球谐函数 $Y_{\ell m}(\theta,\varphi)$ 是球面上的角向基函数，可用来展开重力势的角向结构。示意表达为
+c1-s4	65fc12b96a34fa1208e7237341b71932849d3b3835d01dba086ee077cadc045c	原文区块保留	$$ V(r,\theta,\varphi)=\sum_{\ell,m}a_{\ell m}(r)Y_{\ell m}(\theta,\varphi). $$
+c1-s4	f38c2ef2384d297b92f1e07847af978e14b1fc4ce6c8cce25acfa7c1eafa9345	原文区块保留	球谐系数可由球面内积投影获得：在正交归一约定下，$c_{\ell m}=\int_0^{2\pi}\int_0^\pi g(\theta,\varphi)\overline{Y_{\ell m}(\theta,\varphi)}\sin\theta\,d\theta\,d\varphi$。不同学科有
+c1-s4	71c50ec92312d23f9780dc8317e3a42ea262b834e1a6921ac93a8f1a03bb1cb0	原文区块保留	积分变换统一写为 $\mathcal T g(s)=\int K(s,t)g(t)\,dt$。Fourier 核是复指数；Laplace 核为 $e^{-st}$，单侧变换 $\int_0^\infty e^{-st}g(t)\,dt$ 需说明收敛区域；Hilbert 核为主值意义的 $1/[\pi
+c1-s4	e7932d7a60c06e5185b50ae67d9bb7c8001947ac33d945db7ae12d9ca3f1ae80	原文区块保留	变量替换 $\mathbf x=\Phi(\mathbf u)$ 将积分写为
+c1-s4	7f4a82e5462c238faa0323d7c171a3039226f2e379e39a504a6988d5c45eedd4	原文区块保留	$$ \int_\Omega g(\mathbf x)\,d\mathbf x =\int_{\Phi^{-1}(\Omega)}g(\Phi(\mathbf u))\,|\det J_\Phi(\mathbf u)|\,d\mathbf u. $$
+c1-s4	fb2ac18c47231d60ccdf4aee88afedf73a6303741521e2038da2daef027b8c69	原文区块保留	选好坐标可简化区域与函数，但面积／体积 Jacobian 不能省略。极坐标的面积元为 $r\,dr\,d\theta$，第二章用它计算高斯积分。
+c1-s5	8cb423bbbb19c5843dfc3599b76b9f35174fb654b85592d22d62c5b95eee7486	原文区块保留	"<a id=""c1-s5""></a> ## 1.5 小例题与复习出口"
+c1-s5	e71726781db9f0f3ad9b3dd11d565307cb60f8a30917784a68ff5632ecdff9b5	原文区块保留	**例：三次等精度观测 $9,10,11$。** LS 估计为 $10$，残差为 $(-1,0,1)$，平方和为 $2$。若认为它们独立同方差，估计方差 $s^2=2/(3-1)=1$，均值标准误为 $1/\sqrt3$。若仪器统一偏高 $2$，平均仍偏高 $2$，残差却完全不变。
+c1-s5	b62326ee36dd868df16708bab7e694a67e8a1d976081adb7a4aa0d8392c2122b	原文区块保留	**例：旋转与缩放。** 对 $\mathbf x=(1,0)^{\mathsf T}$，先旋转 $90^\circ$ 再令 $s_x=2,s_y=1$，得到 $(0,1)^{\mathsf T}$；先缩放再旋转得到 $(0,2)^{\mathsf T}$。通过顺序不同的结果确认矩阵乘法含义。
+c1-s5	6c974d25a640905913161b1cc2b94afe4165762403bd9930459e1829e6ade0b3	原文区块保留	复习时应能回答：误差与残差为什么不同；平均为什么降低随机误差而不消除偏差；LS 与高斯 MLE 的等价条件；对象、基和坐标的区别；线性、仿射、投影、旋转各有什么性质；Taylor 与 Fourier 各表示什么。课件结束前还强调注重细节、判断结果是否合理、分析物理含义，以及从资料与实践中形成自己的判
+c1-s5	ecddb73bdacdd008d00fe88f350f10ec4271c6e203cd8c8122940c00b1c27afe	原文区块保留	对应作业：第 01 次课的课程认识、科学素质、线性变换和创新问题，见[逐课原题](../01_逐课作业原题.md)。下一章从概率分布开始，把本章的统计思想变成可计算的估计理论。
+c2-s1	0e366c1bd14c98e39d45e5d74ba5ff495e62d62d654ad337488976424e21e0f1	原文区块保留	"<a id=""c2-s1""></a> ## 2.1 分布、期望与矩"
+c2-s1	0571d94b7f1cc0f27ee46abb86d2bafea618ca42ce997ef960b49093655588d4	原文区块保留	### 2.1.1 总体、样本、参数与统计量
+c2-s1	217e19ec3cb6bdacc0766769f73ad19d717022b40e41498ccb1c182eea0071f8	原文区块保留	总体是目标对象的概率规律或有限集合；样本是从总体取得的一组观测。参数如 $\mu,\sigma^2$ 描述总体；统计量只由样本和已知常数构成，例如 $\bar X$。抽样前 $X_i$ 是随机变量，观测后 $x_i$ 是数值。估计量 $\hat\theta=g(X_1,\ldots,X_n)$ 是规
+c2-s1	5f5ec9cde288f9d294ba67335e81e8a91f9b4f8d3bd168270804c66bc7a61790	原文区块保留	点估计输出一个值；区间估计输出按重复抽样准则构造的范围。独立同分布写作 $X_i\overset{\rm iid}{\sim}F$，独立与同分布是两个条件，不能由样本长度自动获得。
+c2-s1	b5bc8569a467f21753b69fcaee9ea4c68a9e4e88a421d8d454f37ef65275c5a1	原文区块保留	### 2.1.2 PDF、CDF、分位数
+c2-s1	88d460ee2e41d7d5479716b61cd6cb4d235e7e17cf61ac609c3f10f719f335f2	原文区块保留	离散概率质量 $p_j=P(X=x_j)$，满足 $p_j\ge0,\sum_jp_j=1$。连续密度 $f\ge0,\int f=1$，CDF 和区间概率为
+c2-s1	5fce24ee3c80c85b50d5651e3346163e21d9c5c428f2b8ba6bddd6084565a631	原文区块保留	$$ F(x)=P(X\le x)=\int_{-\infty}^xf(u)\,du,\qquad P(a<X\le b)=F(b)-F(a). $$
+c2-s1	2b3769cce539cbd43e6926677b0a728e23ca90ec743a4710f16e30388b804b34	原文区块保留	连续型 $P(X=x)=0$，密度值可以大于 $1$，因为其单位是变量单位的倒数。广义分位数 $F^{-1}(q)=\inf\{x:F(x)\ge q\}$，程序常称 PPF。
+c2-s1	108cf669e2bf9e8b8d4e9043d9304985a0da9eee519486b8d31309db26da23c8	原文区块保留	经验 CDF 为 $\hat F_n(x)=n^{-1}\sum_i\mathbf1_{x_i\le x}$，是台阶函数。课件提及 K–S 型诊断：$D_n=\sup_x|\hat F_n(x)-F_0(x)|$。若分布参数由同一数据估计，不能直接照用“完全已知 $F_0$”的检验临界值。
+c2-s1	4631b5c9a11e45548606ac0c3c1ff0c9a359804a530f4e15d89fdfbb61c4e69e	原文区块保留	### 2.1.3 期望、方差与联合矩
+c2-s1	fa152690ec759be75c7cbbb31d0b23a31c8ad9a6180e99638db0ebae692cb55b	原文区块保留	$$ E[g(X)]=\sum_jg(x_j)p_j\quad\text{或}\quad\int g(x)f(x)\,dx. $$
+c2-s1	d4eb8dac7f72e69f2546f786698f49f7e4504cc40ea8e2d1fc05dcc3e5c442db	原文区块保留	期望线性：$E(aX+bY+c)=aEX+bEY+c$，不需要独立；独立时 $E(XY)=EX\,EY$。矩必须存在才能使用。定义
+c2-s1	8d66e32387b4609bd3bc58e22aaf2d7a42ff02cb0645009142fd5fc669dbe579	原文区块保留	$$ m'_k=E(X^k),\quad \mu_k=E[(X-\mu)^k],\quad \operatorname{Var}(X)=\sigma^2=E(X^2)-\mu^2. $$
+c2-s1	c74bf9c30e94917b5beca9f947ef4b28afcffd26fff5d5901c484fca00d4592d	原文区块保留	标准差 $\sigma=\sqrt{\sigma^2}$；一阶中心矩为零。偏度 $\gamma_1=\mu_3/\sigma^3$；峰度 $\mu_4/\sigma^4$，本套使用超额峰度 $\gamma_2=\mu_4/\sigma^4-3$。正态超额峰度为零。峰度涉及尾部和极端值贡献，不能单凭名
+c2-s1	cbf8bb50fde8ce7137ab55991e24e48d706f0c2f204d3d287b5a1a64fe6da562	原文区块保留	联合原点矩为 $E(X^kY^\ell)$。协方差和协方差矩阵为
+c2-s1	017d8923d0625c80939cb0757fcbb3d3064ccb26c11454fcc79ea45b096f45a4	原文区块保留	$$ \operatorname{Cov}(X,Y)=E[(X-EX)(Y-EY)],\qquad C=E[(\mathbf x-\boldsymbol\mu)(\mathbf x-\boldsymbol\mu)^{\mathsf T}]. $$
+c2-s1	07b7ca57292e18e0208649ae9634fecf4d1272c88258edaeae4d26b210561ebb	原文区块保留	$C$ 对称半正定：$\mathbf a^{\mathsf T}C\mathbf a=\operatorname{Var}(\mathbf a^{\mathsf T}\mathbf x)\ge0$。
+c2-s1	90983cbf1ab62da016bd4abc63d635e0cb891359925b575b5e1983ea93bc4b67	原文区块保留	### 2.1.4 物理矩和图像矩（课件提及）
+c2-s1	8348e3e14446244eedc7462de8a0a6a3312e647bb36b9e6e06cbb61a96d1aecd	原文区块保留	期望可类比概率质量的质心。图像灰度／质量函数 $I(x,y)$ 的矩为 $M_{pq}=\sum_{x,y}x^py^qI(x,y)$；$M_{00}$ 为总量，质心 $(\bar x,\bar y)=(M_{10},M_{01})/M_{00}$。中心矩为 $\mu_{pq}=\sum(x-\ba
+c2-s2	9beeaac54715785718cd334612d93928d8bb814a08d1c9c54755d86d82405490	原文区块保留	"<a id=""c2-s2""></a> ## 2.2 矩估计、MLE 和数值求解"
+c2-s2	f56d30fce9f00f9c7b8636099b6c970e34ffc41f59aacb00c06e7f8a84dc7b31	原文区块保留	### 2.2.1 矩估计
+c2-s2	fbd3d4c9f688133b0958795768d1eac32462cf779d230aeb8e68e3da626ae444	原文区块保留	用样本原点矩 $\hat m'_k=n^{-1}\sum_i x_i^k$ 对应总体矩，建立与参数数目相同的独立方程，再解参数。
+c2-s2	f87da081f84c05a62507ba903043545803df7d254fb2c86db316dd03bfc20c01	原文区块保留	正态 $N(\mu,\sigma^2)$ 有 $EX=\mu,EX^2=\mu^2+\sigma^2$，故
+c2-s2	1aadf358c3a5b9c1779491759887cafd32296abf8842055edf4dc7adfa4b465f	原文区块保留	$$ \hat\mu=\bar x,\qquad\hat\sigma^2=m_2=\frac1n\sum_i(x_i-\bar x)^2. $$
+c2-s2	bae9d7aec52368cf284638b47eb55dc366cf78d8d5688e9e523d627132d5bd85	原文区块保留	均匀 $U(a,b)$ 有 $EX=(a+b)/2,\operatorname{Var}X=(b-a)^2/12$，矩解为
+c2-s2	61ca01b13be0213ce38f8121bf22b4a2e7b87078ca586717d310c47bff009b09	原文区块保留	$$ \hat a=\bar x-\sqrt{3m_2},\qquad \hat b=\bar x+\sqrt{3m_2}. $$
+c2-s2	9b8f7fd6763b6663a3d483cb9098d6ac60370ec3b140e9f6fcb85d1fc1fb063d	原文区块保留	它不是由极值样本构成的均匀分布 MLE；矩解也不保证总包住全部样本。$n-1$ 的无偏方差不是这里直接匹配样本原点矩所得的 $m_2$。
+c2-s2	cd11c6f986382ed07f34afd37215f323e2e626db3dc5959682bc9c1d3e558df6	原文区块保留	### 2.2.2 似然与正态 MLE
+c2-s2	6ac98f3ccac305b6005c49b32790c7e6840776be29e40c4f0b6d56ed29f0bcaf	原文区块保留	数据固定时，$L(\theta)=\prod_if(x_i;\theta)$ 是关于参数的函数；它通常不是参数空间上归一化的概率密度。对数似然 $\ell=\sum_i\log f(x_i;\theta)$ 把乘积变成和，避免数值下溢。
+c2-s2	ad053f136c1769b561449f874dba0c071a7408daf0d00a0cc03f575ba5496f0c	原文区块保留	正态的对数似然为
+c2-s2	10758065139024d28daac0325f07ccd3714b4e672ae95bb8b8bf5bd1573f33a2	原文区块保留	$$ \ell(\mu,\sigma^2)=-\frac n2\log(2\pi)-\frac n2\log\sigma^2 -\frac{1}{2\sigma^2}\sum_i(x_i-\mu)^2. $$
+c2-s2	cf8f4eb7f11b99b4789b4959197bd2464b98a9e32e15135d7a1a688705a8da7d	原文区块保留	分别求导并检查最大值，得到 $\hat\mu=\bar x$、$\hat\sigma^2=m_2$。MLE 追求最大似然，未要求无偏；因此方差分母为 $n$。边界、参数约束、多个驻点和全局最优性必须检查；“导数为零”只是候选条件。
+c2-s2	bed8e437a212c3b72524e90f6df866960cdc2431aadb0876634f1efaf2a100e6	原文区块保留	MLE 具有变换不变性：若 $\hat\theta$ 为 MLE，对合适映射 $h$，$h(\hat\theta)$ 可作为 $h(\theta)$ 的 MLE；非一一映射可从剖面似然理解。这个性质不表示无偏性也能保留。
+c2-s2	b9cf6fcc95d39448e2debdc5d6d326b6b8afd6b063775362904da5e4024c0bbf	原文区块保留	### 2.2.3 Gamma 分布的三种估计
+c2-s2	b84560ea0d3a48e4c466a2ff35eb393c0173ab3037b1e4ecc98989744b1ffda4	原文区块保留	采用**形状—尺度**参数 $k>0,\vartheta>0$：
+c2-s2	cb20c101eb8ab8a410a7e782a539f0ff1c6f6e25c20520aa1964f19868183c2b	原文区块保留	$$ f(x;k,\vartheta)=\frac{x^{k-1}e^{-x/\vartheta}}{\Gamma(k)\vartheta^k},\quad x>0, \qquad EX=k\vartheta,\quad\operatorname{Var}X=k\vartheta^2. $$
+c2-s2	3dfd0dc8d59af8d3a053490938df5493ffe7ea039ffd290cfe635d5533946c8e	原文区块保留	注意尺度 $\vartheta$ 与率参数 $1/\vartheta$ 不同。矩估计为 $\hat k=\bar x^2/m_2,\hat\vartheta=m_2/\bar x$。对数似然为
+c2-s2	4ecd7591029b9c9793063680d1a99b3dcd974e8aa8dc283adf0050b94494b6fd	原文区块保留	$$ \ell=(k-1)\sum_i\log x_i-\frac{\sum_ix_i}{\vartheta} -nk\log\vartheta-n\log\Gamma(k). $$
+c2-s2	bf2e88a7cb4d831b6d22d63dea52328e09135d8fed673051977a772e15668c4d	原文区块保留	由尺度得分方程得 $\hat\vartheta=\bar x/\hat k$。形状需解
+c2-s2	1cb9be5979b3e1e2481dfe6b5357cf8307097cc19bef54ced5010c748153ec9f	原文区块保留	$$ \log\hat k-\psi(\hat k)=A,\qquad A=\log\bar x-\frac1n\sum_i\log x_i, $$
+c2-s2	8445607603c109d16ef08effd493030b844e62cfe63127f08e16de63680a8121	原文区块保留	$\psi$ 为 $\log\Gamma$ 的导数。第 03 次课图中另给近似
+c2-s2	e79a2d7351221ac6f379dadb2817765e75d37491d4b75fa3176aeb17a23bf56c	原文区块保留	$$ \hat k\approx\frac{1+\sqrt{1+4A/3}}{4A},\qquad \hat\vartheta=\bar x/\hat k. $$
+c2-s2	687d10a303938f23ab494f77bf66980c7a5c65e4862ef84a2ad4090e9adbe5ad	原文区块保留	这是近似解，不应和矩估计或精确数值 MLE 混用。$A=0$ 对应样本无散布的退化极限，不能直接除以零。含零降雨值的样本若采用这种连续正 Gamma 模型，需说明零值处理或混合模型。
+c2-s2	2803fb71c56af436894a9eb78a81bd3451319c0ec7f57be75282245330dd0875	原文区块保留	### 2.2.4 Newton–Raphson
+c2-s2	c39579435fc455ee0fa526a035319e4f05b7f01b24373230ea1a07e593b0b81b	原文区块保留	求方程 $g(\theta)=0$，在当前点线性化后令近似为零：
+c2-s2	b92554d18ec12121592789f2bed74f5380d9535433decef62b842f790fd209ca	原文区块保留	$$ \theta_{r+1}=\theta_r-\frac{g(\theta_r)}{g'(\theta_r)}. $$
+c2-s2	792e06db1f71699425721fc717f63a00bc4db47d194aa68546bf67cf4aa098bb	原文区块保留	求似然驻点时令 $g=\ell'$，即 $\theta_{r+1}=\theta_r-\ell'/\ell''$；多维优化为 $\boldsymbol\theta_{r+1}=\boldsymbol\theta_r-H^{-1}\nabla\ell$。实际解线性方程而不显式求逆。导数接近零、差初值或
+c2-s4	7aa7109ded8c715dac0569a22e84ab2705d647b528a7caa3a276e46d134c6e6a	原文区块保留	"<a id=""c2-s4""></a> ## 2.4 抽样分布与置信区间"
+c2-s4	886c49275daa7cb483d4ad29afb653fbe89ae0723d5be2a76ae334f3ace39f8b	原文区块保留	### 2.4.1 抽样分布、标准误与 CLT
+c2-s4	f91825a4ad9c73dd1b1766d1f60be8de580e232bf109f4f2c4fb8bae72bc63fc	原文区块保留	随机变量的分布与统计量的抽样分布是不同对象。独立同分布、有限方差条件下，中心极限定理给出
+c2-s4	709956aab437cf8d6c28f6bcc935728aa28e45ae18d485ad885f84529478c945	原文区块保留	$$ \frac{\sqrt n(\bar X-\mu)}{\sigma}\xrightarrow{d}N(0,1). $$
+c2-s4	ed3a9eac489631a9c274bacfd6b41d830d55820db5bdc2ec7e96e670e6811b6f	原文区块保留	正态总体时，对任何 $n$ 都有 $\bar X\sim N(\mu,\sigma^2/n)$。标准误 $\operatorname{SE}(\bar X)=\sigma/\sqrt n$，以 $s/\sqrt n$ 估计。相关序列不能直接使用此式。
+c2-s4	c2dc769174495652aefbb81f503cc4e8d8982021ff42ee04dbf32a1e1a7c5955	原文区块保留	有限总体大小 $M$，简单随机不放回抽样，若总体方差用分母 $M$ 定义，则
+c2-s4	1fbf93702e3e9e67fc75d315094aa687c80370b4e763d35b311aee6fac459300	原文区块保留	$$ \operatorname{Var}(\bar X)=\frac{\sigma_{\rm pop}^2}{n}\frac{M-n}{M-1}. $$
+c2-s4	954e7cd31ae3f6ed22e5b9c4402fc4268d35239d115e0193a6b0b63c13619f80	原文区块保留	若总体方差定义分母 $M-1$，修正因子改为 $1-n/M$。两种约定不能混合。
+c2-s4	cbcb7ea89db6d2a05332508073df476db57486c17abb5eefc750a14838834532	原文区块保留	### 2.4.2 三大抽样分布
+c2-s4	9e78d68c59bd583885ff5dabe5abcde8c52cfc403b754b631f1449d16cbe528c	原文区块保留	若 $Z_j\overset{\rm iid}{\sim}N(0,1)$，则 $U=\sum_{j=1}^{\nu}Z_j^2\sim\chi^2_\nu$。若 $Z\sim N(0,1)$、$U\sim\chi^2_\nu$ 且独立，则 $T=Z/\sqrt{U/\nu}\sim t_\nu$。若
+c2-s4	183bdac9bf09b424a7bf663811bad37c93e4d94ec078e9f81734b723a6179b6d	原文区块保留	### 2.4.3 置信区间的解释
+c2-s4	1352a7aa5cc4a5e0eeb2e47f08c3ce0c49ff850a250628996dcfa69b388877d4	原文区块保留	构造随机区间 $[L(X),U(X)]$，使 $P_\theta(L\le\theta\le U)=1-\alpha$。频率派参数固定，区间随样本改变。取得当前区间后，不把它解释为“固定参数有 $95\%$ 的概率落在这个区间”；这种参数概率解释需采用 Bayes 后验。
+c2-s4	6c6e6661809d9092b40baaa74720288ca0504a933c9048b3e853160b3133ad43	原文区块保留	双侧区间通常分配左右各 $\alpha/2$；单侧区间使用 $1-\alpha$ 分位数。置信水平提高，区间通常变宽。
+c2-s4	f161045439f3f2935428af602945e6ff1a3897624e6812b24490a2c33ab7a697	原文区块保留	### 2.4.4 单总体区间
+c2-s4	351d3b4895c36effe8ab6d2f3351978267804db4ed619c3b69bfc11d3d603e4d	原文区块保留	正态总体、已知方差：$\bar x\pm z_{1-\alpha/2}\sigma/\sqrt n$。未知方差：
+c2-s4	7becbbcb50806d0106f5dbb672299d7c0b95a4f7e920167a0e9ccf3f82c9ec6c	原文区块保留	$$ \bar x\pm t_{1-\alpha/2,n-1}\frac{s}{\sqrt n}. $$
+c2-s4	8a936bb00c9a565b31b45548444f87cceec96893d9c41c0b4369bf640f4af42d	明确修正	正态方差满足 $(n-1)s^2/\sigma^2\sim\chi^2_{n-1}$，区间为
+c2-s4	4224ddc55980bb4dbd642d3e0bb5b1211bb8da5fcd6c0c3384325369aaaf9399	原文区块保留	$$ \left[\frac{(n-1)s^2}{\chi^2_{1-\alpha/2,n-1}}, \frac{(n-1)s^2}{\chi^2_{\alpha/2,n-1}}\right]. $$
+c2-s4	0c5cd2587c5e1a91781063e1a6828d7b533401cb843dd940eeb08ccc582c785f	原文区块保留	标准差区间对两端开平方。方差区间两端不对称，注意分位数与分母的上下界反转。
+c2-s4	10a9e7d8cbf9a91738ef75a8c9098f68bd9e78d399b1484151ea9f4ce884bfda	原文区块保留	### 2.4.5 两独立正态总体区间（课件表格内容）
+c2-s4	69302e0d39f2a379a5182ad6cb7dc0e658348abc74924a972ce5ea4c36c33973	原文区块保留	已知方差时，均值差区间为
+c2-s4	eaede5de310b9941b8bffc0878094578dad1a96c401ed4c4abfd0be86d482619	原文区块保留	$$ (\bar x_1-\bar x_2)\pm z_{1-\alpha/2} \sqrt{\frac{\sigma_1^2}{n_1}+\frac{\sigma_2^2}{n_2}}. $$
+c2-s4	440eeeea26cb22dfe064e53f0f43f311e71204016dfd40c43cf4bd2007e8d878	原文区块保留	未知但假定相等的总体方差，定义 $s_p^2=[(n_1-1)s_1^2+(n_2-1)s_2^2]/(n_1+n_2-2)$，区间为
+c2-s4	db35461988486b216f08e9dba66288d8f49ab387e6bbf30164d7b375854fc21c	原文区块保留	$$ (\bar x_1-\bar x_2)\pm t_{1-\alpha/2,n_1+n_2-2}s_p\sqrt{1/n_1+1/n_2}. $$
+c2-s4	3f0f9f47297237e885bbd95e2c0138ed0b70097b2f01ee3af20698f9a37774f8	原文区块保留	方差比区间是
+c2-s4	cc86e66ac9323c9fd5ce556725d4bb7fe41c50cdf9798b511c42a2309de3e69b	原文区块保留	$$ \left[\frac{s_1^2/s_2^2}{F_{1-\alpha/2,n_1-1,n_2-1}}, \frac{s_1^2/s_2^2}{F_{\alpha/2,n_1-1,n_2-1}}\right]. $$
+c2-s4	89968dc94c3aa66357c281619807b26da65ff301622c22fa7adecd1df5648fdd	原文区块保留	独立、正态、等方差等条件要逐条判断。配对观测应分析差值；不等方差均值差通常用 Welch 方法（解释补充），不能强行合并。
+c2-s5	cb974ccdd2c7ed4a513d8f463fe736a120b9c6784ad9d12de5e1a329534216d9	原文区块保留	"<a id=""c2-s5""></a> ## 2.5 正态密度的来源：独立性、方向对称和归一化"
+c2-s5	ee88a03ae2c01f55e5efcb79e76ae04840eebeec189c3efb88176d95ed170d03	原文区块保留	课件用二维投镖模型作详细推导。假设横纵误差独立、同分布且密度足够光滑，方向对称，则
+c2-s5	64de99865580a4b9d0f06ac827c43479d2dbda742bbf931666edcf347fab0732	原文区块保留	$$ f(x)f(y)=h(x^2+y^2). $$
+c2-s5	e2cec635882d66fe4407fbcce934fe71612824c7b9a6639c698d4cd881eb9862	原文区块保留	取对数，令 $g=\log f,q=\log h$，得 $g(x)+g(y)=q(x^2+y^2)$。分别求导，非零处有 $g'(x)/(2x)=g'(y)/(2y)=q'(x^2+y^2)$。由于 $x,y$ 可独立变化，该比值为常数；故 $g(x)=c_0-ax^2$，可积性要求 $a>0$。于
+c2-s5	cc48a391ef8b47549983d587851bf8929705ae7d6200e6944b51fdc784757158	原文区块保留	归一化使用高斯积分。设 $I=\int_{-\infty}^{\infty}e^{-u^2/2}\,du$，则
+c2-s5	67f4b7ef7d5a4fb83b2bb5668ddc98f89121cea3c5d03362fa8f52811b3311a9	原文区块保留	$$ I^2=\int_{\mathbb R^2}e^{-(x^2+y^2)/2}\,dx\,dy =\int_0^{2\pi}\!\int_0^\infty e^{-r^2/2}r\,dr\,d\theta=2\pi. $$
+c2-s5	efabc402479c25d22c13e17fad0a71464ae548b3d2cc48aef14f49725494123e	原文区块保留	所以标准正态密度为 $(2\pi)^{-1/2}e^{-x^2/2}$，平移缩放得到
+c2-s5	38cf6c13843369f79997308156dea799800b40c9ef7153df5f4e17ac2a6cdd30	原文区块保留	$$ f(x)=\frac1{\sqrt{2\pi}\sigma}\exp\!\left[-\frac{(x-\mu)^2}{2\sigma^2}\right]. $$
+c2-s5	3d033c9baa14f832ba75ae070c9be89287e19c87827f7ba853315d8ce4ad9ace	原文区块保留	这是在明确假设下推导密度形式，不证明所有误差都正态。方向对称单独不够，独立性单独也不够。Six Sigma 是课件的质量管理示例；正态尾概率与长期偏移约定必须分开，不把企业阈值推广为所有数据的标准。
+c2-s6	7737d3a0c8193e6c82279afbebe51d5a53a808e25f3c9cf3b5c120e22e3880cd	原文区块保留	"<a id=""c2-s6""></a> ## 2.6 描述统计与密度诊断"
+c2-s6	dc319870bb63b62f4b07f290f8b29e4b38ae8cdc056c55e81bbc282415db36b8	原文区块保留	### 2.6.1 位置、散布、形状和稳健性
+c2-s6	ab6aab38b77f6619f7b7b6a8d18e35426f42b864336cbdb441c9374f01a6d6c6	原文区块保留	均值是算术平均；中位数是 $50\%$ 分位；众数是最常见值或密度最大位置，连续样本的众数估计依赖分组／平滑。正数据的几何均值 $G=\exp(n^{-1}\sum_i\log x_i)$ 适用于乘法变化，不能无说明套用于负值。
+c2-s6	9d4e6f12896facea3d3143ef9797305dfcf5a2f15ab068bfb67d722b3bcd9f38	原文区块保留	排序 $x_{(1)}\le\cdots\le x_{(n)}$，分位数 $Q_1,Q_2,Q_3$ 对应 $25\%,50\%,75\%$。软件插值规则不同，小样本结果可不同。$\operatorname{IQR}=Q_3-Q_1$，箱线图常将小于 $Q_1-1.5\operatorname{IQ
+c2-s6	ab4c32a95842c1b95e3a170f674753de86602d56383ef61a79ca0b8ca62583d3	原文区块保留	截尾均值删除两端各 $k$ 个排序值后取均值，分母为 $n-2k$；截尾方差也必须声明留存样本与分母。中位绝对偏差
+c2-s6	446c681e32b0276c6b2a11000630bb4a09ac55d4fcd7b7765394a1f1781f6a78	原文区块保留	$$ \operatorname{MAD}=\operatorname{median}_i|x_i-\operatorname{median}(x)| $$
+c2-s6	20ae92769c18a8b8948ea6a0c05085f4b1a124b385c2b007cad1266c89200a1f	原文区块保留	较抗极端值；正态一致尺度估计常用 $1.4826\operatorname{MAD}$（解释补充）。抗差强调少量异常值影响受限；稳健还包括分布假设轻度偏离时性能稳定。
+c2-s6	3428335dbd16a20aea12818ceecc62556b398c206f9af8ad020bc08d664b488c	原文区块保留	样本偏度可按 $m_3/m_2^{3/2}$ 计算；有软件会作小样本修正，报告约定。偏度、MAD、IQR、标准差各测不同方面。
+c2-s6	3e186c681f9634226cac5451c05c3b86bed949131518e90dce59dec7d10436e2	原文区块保留	### 2.6.2 误差指标
+c2-s6	2bcf6f8adc28aac9a4ef49f579da4b71c645a60fde93842192c15c571be627a8	原文区块保留	给定误差或残差 $e_i$：
+c2-s6	daeb6705e3669d4ff0acb0eca80b2ccd202213f3ca8cb79ed9971e30a52c33df	原文区块保留	$$ \operatorname{MAE}=\frac1n\sum_i|e_i|,\qquad \operatorname{RMSE}=\sqrt{\frac1n\sum_i e_i^2}. $$
+c2-s6	7fe0425f01ec42f93d140f9ca3c22617ff90517406b32c71d5ad87f28ab6e3e5	原文区块保留	残差标准差围绕残差均值，而 RMSE 围绕零；分母也可能不同。以 $n$ 定义的误差方差满足 $\operatorname{RMSE}^2=m_{2,e}+\bar e^2$。训练 RMSE 与独立测试 RMSE 回答不同问题，不能互换。
+c2-s6	c641d37e23483c3c75d04d102b07f2342b3ee3fa592f721492bba48246099a3c	原文区块保留	### 2.6.3 直方图和 KDE
+c2-s6	d549d0cf93983c2d802c2c634c3bf0f9f84cdfc1f8722e6e6a61cfc537ca8fab	原文区块保留	第 $j$ 组计数 $n_j$、宽度 $h_j$：频数 $n_j$，频率 $n_j/n$，密度高度 $n_j/(nh_j)$。密度图面积为 $1$，叠加理论 PDF 要使用密度纵轴。组宽太小噪声多，太大细节被掩盖。Freedman–Diaconis 经验组宽 $h=2\operatorname{IQ
+c2-s6	1f7ba786efdd090f8d7c4dcb8d60bab95bbf0d10469acc3abaa5ebcdce4e0aea	原文区块保留	一维 KDE 为
+c2-s6	8be4573c789a12ba657bc7ae4e02bf17e308eab230a7eca1cc3dd72cd0d237dd	原文区块保留	$$ \hat f_h(x)=\frac1{nh}\sum_iK\!\left(\frac{x-x_i}{h}\right),\qquad \int K=1. $$
+c2-s6	e9e5cf58d8effcc93670f5d574a2589985cb18584e245509f615430f298340f0	原文区块保留	高斯核 $K(u)=(2\pi)^{-1/2}e^{-u^2/2}$。带宽控制偏差与波动；$h$ 不是坐标整体缩放。二维／$d$ 维高斯 KDE，用正定带宽协方差 $B$：
+c2-s6	0621445e29d09f44c8bef34aa28356e2741d2ce5165ec6f5672d3eac48f74562	原文区块保留	$$ \hat f_B(\mathbf x)=\frac1{n(2\pi)^{d/2}|B|^{1/2}} \sum_i\exp\!\left[-\frac12(\mathbf x-\mathbf x_i)^{\mathsf T}B^{-1}(\mathbf x-\mathbf x_i)\right
+c2-s6	9f3ae192bd6cc60b35f9746c8fa5760af02bb87aa9eeea01dd9436f120d0e309	原文区块保留	带宽矩阵有平方单位，不等同于平方根形式的带宽参数。等值图表示估计密度，核中心一般是每个样本点。参数拟合选择正态／Gamma 等族；KDE 不先指定该族。降雨案例展示这些路线，不能由拟合曲线漂亮证明模型正确。
+c2-s6	b928fe63875f7c4da520a091a4b6a88f634e762fad79cf0b6f61f33db9bfb80a	原文区块保留	### 2.6.4 Q–Q 图
+c2-s6	b821b4fa7a0bc07dbdfc66806c3fcd656c01a4aa8f44c37b09430983d312348f	原文区块保留	取绘图位置 $q_i=(i-a)/(n+1-2a)$，课件常用 $a=0.4$。理论横轴 $z_i=F_0^{-1}(q_i)$，纵轴为排序观测 $x_{(i)}$。标准正态比较可画 $(z_i,(x_{(i)}-\bar x)/s)$，参照直线 $y=x$；原单位比较画 $(z_i,x_{(i)}
+c2-s6	f387dc88619ad4ef6a65d6c43dcda2066fd460090c11cd0691fe743e992c329b	原文区块保留	不同的绘图位置是约定，不是将横轴强行等距放在 $[-3,3]$。Q–Q 图的系统弯曲说明形状偏离，尾部偏离提示尾部或异常点。它是诊断图，不是严格通过／不通过的正式检验；用任意拟合直线“证明正态”也不充分。
+c2-s7	9f2aa9fdf3ca5947eb8706ac2525c0d2ec6fa6f20ada27c389619d6d11bf24f5	原文区块保留	"<a id=""c2-s7""></a> ## 2.7 标准化、归一化和偏态变换"
+c2-s7	633845b37e897300e1066058f6ee13bcd93e043beacea7b50ef092cdc265cfeb	原文区块保留	### 2.7.1 位置尺度变换
+c2-s7	ac4be544197d3a8cf2947eb32da55d3507a6f6742fc0ad02ac38b78b9bd05eb6	原文区块保留	Min–max：$z_i=(x_i-x_{\min})/(x_{\max}-x_{\min})$；标准化：$z_i=(x_i-\bar x)/s$。常量特征分母为零，必须单独处理。仿射变换不改变分布的基本偏态形状，不把任意分布变成正态。
+c2-s7	31bf4caac288bbcc34c360fb52142a70ce30ed4d0b1812d485c63839e543a252	原文区块保留	SOI 示例：按指定基准月份计算 Tahiti 和 Darwin 气压异常，分别标准化后作差，再按该差的基准标准差缩放。基准期、季节分组、标准差分母和整体缩放必须记录；指数无量纲不表示没有不确定性。
+c2-s7	a2bd4b96b57380510515878d882730fdab65323c2f8d2eccd805c49cf07f8b2c	原文区块保留	预处理参数必须从训练数据估计，再用于验证／测试，不能让测试集参与均值、尺度或带宽选择。
+c2-s7	0f530984e992e4735e8207b7d6903573851c491cbe9d74521ee870154f67789c	原文区块保留	### 2.7.2 Hinkley 和 Box–Cox
+c2-s7	45e6d347469326ecbb354bd8e996470dc1fc93b0232b0fd30861613a69b41278	原文区块保留	Hinkley 位置偏态指标 $d_H=(\bar x-Q_2)/\operatorname{IQR}$；若目标是接近对称，应使 $|d_H|$ 小，不能把带符号最小值误作最对称。
+c2-s7	352048839323abe59def96537e2543af6f4b79e5b837d18f1e056a71a05ce0d8	原文区块保留	对正值，Box–Cox 为
+c2-s7	c64a6a1c72a6947b5a1adae1056787213acf28640c87b87fce9b50972295474b	原文区块保留	$$ g_\lambda(x)=\begin{cases}(x^\lambda-1)/\lambda,&\lambda\ne0,\\\log x,&\lambda=0.\end{cases} $$
+c2-s7	754dfbaa291bab3638f5c9bef52c2af4475d9f41c339432424a0ec04699a6ba9	原文区块保留	用变换后正态模型选择参数时，忽略与 $\lambda$ 无关常数的剖面对数似然为
+c2-s7	f3af6576a8c239f5508fa7b3c48df4427dc1d0d469e4615382d3fc765190e84c	原文区块保留	$$ \ell_p(\lambda)=-\frac n2\log\left[\frac1n\sum_i(g_\lambda(x_i)-\bar g_\lambda)^2\right] +(\lambda-1)\sum_i\log x_i. $$
+c2-s7	6deabba8849606a6e1ec2f34a57dbb6279a62d714d1a798cf027d02cd78bb1e9	原文区块保留	最后项来自 Jacobian，不应只最小化变换后方差。平移后再 Box–Cox 会改变问题，必须报告平移常数。
+c2-s7	22b297960e7db167f37c8cc00884e909f5fc3c7138592db028407ed05af61093	原文区块保留	### 2.7.3 Yeo–Johnson
+c2-s7	6569c261b3b80d698901cab4e52e9b3967dfcedc8fcabfc119a1359f9b47f081	原文区块保留	允许零和负值的分段变换为
+c2-s7	f47a358420df0726e91017c835a2e37114b7ccda59e84d211b7b1f6e856831f0	原文区块保留	$$ g_\lambda(x)=\begin{cases} ((x+1)^\lambda-1)/\lambda,&x\ge0,\lambda\ne0,\\ \log(x+1),&x\ge0,\lambda=0,\\ -((1-x)^{2-\lambda}-1)/(2-\lambda),&x<0,\l
+c2-s7	843d0ce8756a3dddffd67a45d3278ce15653028f591c2a06e327d8822b7c2a28	原文区块保留	偏态改善不保证误差独立或方差恒定。逆变换预测均值时，非线性导致 $E[g^{-1}(Z)]\ne g^{-1}(EZ)$，需要考虑回变换偏差。
+c2-s8	a1026d76671f483f0b2cbef35d985d2f9ed061c47d59bec254972578b65ee443	原文区块保留	"<a id=""c2-s8""></a> ## 2.8 最优化、二次型和多元正态"
+c2-s8	1f878276353b265ef6be3d558af54bd7a08d2b8a0046016eaa1e30e1f00498a1	原文区块保留	### 2.8.1 梯度、Hessian 与极值
+c2-s8	c11329bc8bd34feb1e3031a173787dbf25e0584ec490c55e9cfbcfa72a56aef0	原文区块保留	对标量目标 $Q(\boldsymbol\theta)$，梯度列向量 $\nabla Q$，全微分 $dQ=(\nabla Q)^{\mathsf T}d\boldsymbol\theta$。单位方向 $\mathbf u$ 的方向导数是 $\mathbf u^{\mathsf T}\nabla Q
+c2-s8	4b6272aaa693a5d58c05afda6a5534852a4e639b8796813b8850929c5bace881	原文区块保留	Hessian $H_{jk}=\partial^2Q/(\partial\theta_j\partial\theta_k)$。内点可微极值需 $\nabla Q=0$；驻点处 $H\succ0$ 则严格局部最小，$H\prec0$ 则局部最大，不定则鞍点；半正定不足以决定。凸目标的一阶驻点是全局最
+c2-s8	c9357dbbf68f82c21567b1fffecc206e7974ee8aafa67ae3f94f5625cef8aca2	原文区块保留	$$ Q(\boldsymbol\theta+\boldsymbol\delta)\approx Q(\boldsymbol\theta) +(\nabla Q)^{\mathsf T}\boldsymbol\delta+\frac12\boldsymbol\delta^{\mathsf T}H\b
+c2-s8	d8cde68d70c0054dfd0bb67cbc078620c32fa8acf7f71306cbe6944a06f7a4c2	原文区块保留	等式约束 $g_j(\boldsymbol\theta)=0$ 用 $\mathcal L=Q+\sum_j\eta_jg_j$，解梯度及约束；还需正则条件和最优性检查。不等式需边界或 KKT 条件（解释补充）。
+c2-s8	24f84973f04909837580dddabee8d6c05594f20b4ebd2e416d8fd5923def5e8c	原文区块保留	课件提及的算子不能混同：Laplacian $\Delta f=\sum_j\partial_j^2f=\operatorname{tr}H$；散度 $\nabla\cdot\mathbf v=\sum_j\partial_jv_j$，对象是向量场；平面函数图线曲率 $\kappa=|f''|/(1
+c2-s8	80e43b1203c653a745de4c726d4575a06b4bb191fa5368a14832e67fd53f8472	原文区块保留	### 2.8.2 多元正态
+c2-s8	cd20e660880a5304285d250ec34d42cdae9b1dfaf35fb93a0d158d276e2356a0	原文区块保留	若 $C\succ0$，$d$ 维正态密度为
+c2-s8	406ce72a217dab25d99ce3a1433af4c2f4c9ce11be1b38c4400c988695f1794c	原文区块保留	$$ f(\mathbf x)=\frac{\exp[-\frac12(\mathbf x-\boldsymbol\mu)^{\mathsf T}C^{-1}(\mathbf x-\boldsymbol\mu)]} {(2\pi)^{d/2}|C|^{1/2}}. $$
+c2-s8	4c41187d7376426c0821feb84c9f130add8434141e4cfdd25a85dc34e33d4220	原文区块保留	二次型是 Mahalanobis 平方距离。二维时
+c2-s8	c11db323562affe26917821d8363a261809c07bf98b02541c42a60d1940f88b5	原文区块保留	$$ C=\begin{pmatrix}\sigma_x^2&\rho\sigma_x\sigma_y\\\rho\sigma_x\sigma_y&\sigma_y^2\end{pmatrix},\quad d_M^2=\frac{u^2-2\rho uv+v^2}{1-\rho^2}, $$
+c2-s8	f9ab76a4dd87f40a0f846fdcba2bfbfdfb4e69e9f3a5dea4c9d1b5a8b3803560	原文区块保留	$u=(x-\mu_x)/\sigma_x,v=(y-\mu_y)/\sigma_y$。$|\rho|<1$ 保证非退化密度；$|\rho|=1$ 支持在直线上，不能照用二维密度。第四章从二次型得到误差椭圆。
+c2-s9	098d6f215874b556f09904ab046195c361a4680b2785d1e60d41494e199c38c8	原文区块保留	"<a id=""c2-s9""></a> ## 2.9 最小二乘、投影与非线性模型"
+c2-s9	4ecd7a95d9dc00c2639b730023a74b39ab5a32c808088292d606d577ee6caf83	原文区块保留	### 2.9.1 对参数线性
+c2-s9	ea0f42ef18f336bb3edcbd19ca846d77570c746cc71073335403e7a990535434	原文区块保留	模型 $g(x;\boldsymbol\beta)=\sum_j\beta_j\phi_j(x)$ 对参数线性，即使 $\phi_j=x^j,\sin\omega x,e^x$。二次多项式仍可线性 LS。若未知频率也出现在 $\sin(\omega x)$ 内，就非线性。
+c2-s9	a5e88e871a879202fe8ac195c4477544ee9dda5f370e233849e8fdce8a0dcc8a	原文区块保留	部分模型能换元：$y=ae^{bx}$ 可写 $\log y=\log a+bx$；$y=ax^b$ 可写 $\log y=\log a+b\log x$；$y=a+b\log x$ 已对参数线性。但把加性原尺度误差取对数，误差的均值、方差和分布都会变化。Gaussian 峰的中心、宽度等通常是非线
+c2-s9	ba0ca99777bc5ca8562d9975a3d65fc71ca0e583614efe25346bab022818c853	原文区块保留	### 2.9.2 正规方程与一元直线
+c2-s9	144ced1c46522ac659ceb128722f74860ff8fd701e48a192c7d37228d966dd38	原文区块保留	目标 $Q=\mathbf e^{\mathsf T}\mathbf e$、$\mathbf e=\mathbf y-X\boldsymbol\beta$。求导
+c2-s9	608c01ea632987aada1900284df28ef224a19fa38f9d8f6c1d2c16b5431dea4e	原文区块保留	$$ \nabla Q=-2X^{\mathsf T}(\mathbf y-X\boldsymbol\beta)=0, \qquad X^{\mathsf T}X\hat{\boldsymbol\beta}=X^{\mathsf T}\mathbf y. $$
+c2-s9	8c8a332de94da31f4c55f5c295bdc058ec53c620fe38e9486ec5a6825fe90e1b	原文区块保留	满列秩时 $\hat{\boldsymbol\beta}=(X^{\mathsf T}X)^{-1}X^{\mathsf T}\mathbf y$。正规方程表达理论；计算宜用 QR／SVD，因 $X^{\mathsf T}X$ 的条件数是 $X$ 的平方。
+c2-s9	c300a37a90a2b074b6be432e9b643ea0bdb5296ca5d7a87fd8a315e4e459bc4d	原文区块保留	直线 $y_i=\beta_0+\beta_1x_i+\varepsilon_i$，令 $S_{xx}=\sum_i(x_i-\bar x)^2,S_{xy}=\sum_i(x_i-\bar x)(y_i-\bar y)$，则
+c2-s9	900cf8afb89f3abab49db7a44c4932adff8b34d71181b9465a0c2b283efa9f3a	原文区块保留	$$ \hat\beta_1=S_{xy}/S_{xx},\qquad\hat\beta_0=\bar y-\hat\beta_1\bar x. $$
+c2-s9	460b3d4f153fda6b6cfe6b3141ffa1dfbbabb40b2dec8dc67e2f18a8cc6d30e5	原文区块保留	$S_{xx}=0$ 时无法识别斜率。导数得到的二元方程等价于上述中心化形式。
+c2-s9	51463d8df7aec979583cbcef836edc8c740a9ad9c4d9ffc6f1c767c224ebb68d	原文区块保留	### 2.9.3 四个基本空间与投影
+c2-s9	f970d43eb75e3a5a049193d30b4a503b8b723f913acd268b1f7e8f454cd028be	原文区块保留	若 $X\in\mathbb R^{n\times p}$ 秩为 $r$：列空间 $\mathcal C(X)$ 维数 $r$，左零空间 $\mathcal N(X^{\mathsf T})$ 维数 $n-r$，二者在观测空间正交互补；行空间 $\mathcal C(X^{\mathsf T})$
+c2-s9	e7c232f65a2c04631abfbdeea13e274a1cb6815ffe2807482ef2121b82d7ced6	原文区块保留	满列秩的帽子矩阵
+c2-s9	7e69a47d654d0739b9c8799a868a68df332f5e70776ef8e134413a30743950ea	原文区块保留	$$ H_X=X(X^{\mathsf T}X)^{-1}X^{\mathsf T},\quad \hat{\mathbf y}=H_X\mathbf y,\quad\mathbf e=(I-H_X)\mathbf y. $$
+c2-s9	43c7d5c48b0d427ff158f6b2cd89e1f95a7f3ad2392bee745ecaf92080fc6d16	原文区块保留	$H_X^{\mathsf T}=H_X,H_X^2=H_X$，且 $X^{\mathsf T}\mathbf e=0$。秩亏时 $H_X=XX^+$，拟合值仍唯一，参数解可能不唯一；$X^+\mathbf y$ 是最小范数解。SVD 的参数方差沿右奇异方向与 $1/\sigma_j^2$ 成正比，
+c2-s9	ff2f6eb1ebdd5775c5243757d90c8f4fbd15697096a04d8117804d53fb2d7000	原文区块保留	### 2.9.4 非线性 LS 与正弦三参数
+c2-s9	2efc0e76e6c523d893f95dae6c08b12f3f36e607b86929bdf313b770805315ca	原文区块保留	在当前参数 $\boldsymbol\theta_r$ 展开
+c2-s9	89cc6d2712c334a1897cdc3ff312e67120da7722019c78278eca4e4570e1c873	原文区块保留	$$ \mathbf g(\boldsymbol\theta_r+\boldsymbol\delta)\approx\mathbf g(\boldsymbol\theta_r)+J_r\boldsymbol\delta, \qquad J_r^{\mathsf T}WJ_r\boldsymbol\d
+c2-s9	ce12182236016a3f65a228eee233f7d6ff1c5fc0295ac506f09cf3b80105ba5e	原文区块保留	更新 $\boldsymbol\theta_{r+1}=\boldsymbol\theta_r+\boldsymbol\delta$，必要时缩短步长；可用参数相对变化、目标下降和梯度判断收敛。Gauss–Newton 忽略含残差的二阶项，大残差或差初值下效果可能差。
+c2-s9	73e3e353dc1f8b21289416416152c32e0dd584c625816905246310a5f39551f6	原文区块保留	对于 $g(t)=A\sin(2\pi t/T-\phi)$，令 $u=2\pi t/T-\phi$，Jacobian 三列为
+c2-s9	0ba7ee9aedb15dddad0ab8f743b172d99340c2b188d53130d1544f791bda7ffe	原文区块保留	$$ \partial_Ag=\sin u,\qquad \partial_Tg=-A\frac{2\pi t}{T^2}\cos u,\qquad \partial_\phi g=-A\cos u. $$
+c2-s9	d8378492af5503bf7b050eccdc2654a08ba09d714c88979f7215a12e5fa656be	原文区块保留	取 $T>0$、规定相位区间并给出多组初值；周期与相位等价造成多峰。若 $T$ 已知，写成 $c\sin\omega t+d\cos\omega t$，线性估计后 $A=\sqrt{c^2+d^2},\phi=\operatorname{atan2}(-d,c)$。$A$ 接近零时相位无法稳定定义。
+c2-s9	e72bccccfdf58aae58fbd36fe6a4333f896dd235ebe39971815e27c553ba2d51	原文区块保留	### 2.9.5 地理坐标、约束 LS 和 TLS
+c2-s9	a9a755fbf75252c271756e6ba7f733289c22c61ab3835a49965a6a7148c07fe5	原文区块保留	二维相似坐标变换可写为
+c2-s9	274b2a1bfc7d11271ad4a323255f7cccafbe2b1b1cdc07a8701433e301a9abd9	原文区块保留	$$ \begin{pmatrix}u_i\\v_i\end{pmatrix} =\begin{pmatrix}a&-b\\b&a\end{pmatrix}\begin{pmatrix}x_i\\y_i\end{pmatrix} +\begin{pmatrix}t_u\\t_v\end{pmatri
+c2-s9	c00ad81eca024fbb7d45d8a5a44322f9c2fd321dd568e22350ea6e8d9aadf3d7	原文区块保留	按点堆叠两行即可线性估计 $a,b,t_u,t_v$。一般仿射可允许四个独立线性系数；点级粗差可依据二维残差长度统一降权，避免把同一点横纵坐标任意分成两个对象。
+c2-s9	795f69c9eb76dee6f3de278e05b2e644a2564347b988f905333788c2a9c519e0	原文区块保留	约束 $B\boldsymbol\beta=\mathbf c$ 的 LS，令 $M=X^{\mathsf T}WX$，在逆存在且约束独立时
+c2-s9	782e9833e5784a07f390074ebef2478faea13538aa6cf6cd74eee8ec9340d4bb	原文区块保留	$$ \hat{\boldsymbol\beta}_c=\hat{\boldsymbol\beta} -M^{-1}B^{\mathsf T}(BM^{-1}B^{\mathsf T})^{-1}(B\hat{\boldsymbol\beta}-\mathbf c). $$
+c2-s9	2386cb9838a40236f4994d1e17305ded230ab421d9fa9e89a76904b850e11361	原文区块保留	TLS 同时允许设计矩阵和响应有误差，最小化 $\|[\Delta X,\Delta\mathbf y]\|_F$ 并满足 $(X+\Delta X)\boldsymbol\beta=\mathbf y+\Delta\mathbf y$。对增广矩阵 $[X,\mathbf y]$，若最小右奇异向量
+c2-s10	3d1e4ae9433d5af7830213df85bff261388a380237c34d0fb23c28e5a02aa1a2	原文区块保留	"<a id=""c2-s10""></a> ## 2.10 权重、粗差与结果评价"
+c2-s10	03cef3e184457d20eb9fcd525fab1d402912b4f9bdcbcd92b54257d0578c5012	原文区块保留	### 2.10.1 WLS 与 GLS
+c2-s10	2664160572434d2df721a479c4087e22d5e03122c5b2303b2ff594910d7db810	原文区块保留	若 $C_\varepsilon\succ0$ 已知，$W=C_\varepsilon^{-1}$，则
+c2-s10	2656782892c17cd2f4a35d2245a6d57d819d82d22e18d1ae50a58b5346366f09	原文区块保留	$$ \hat{\boldsymbol\beta}=(X^{\mathsf T}WX)^{-1}X^{\mathsf T}W\mathbf y,\qquad C_\beta=(X^{\mathsf T}WX)^{-1}. $$
+c2-s10	4e23026441f31d19c024f211662a5e6b9fab7be6668657ea16f6095340df0dca	原文区块保留	不相关但异方差时 $W=\operatorname{diag}(1/\sigma_i^2)$，称 WLS；存在非对角相关时称 GLS。标准差的倒数并非平方目标中的权值：若以行缩放 $1/\sigma_i$ 做白化，平方后才产生 $1/\sigma_i^2$。
+c2-s10	c6158fa8a130d1a58835cd0263d312645f35f19586baa4b689f80d85599011b5	原文区块保留	若只知 $C_\varepsilon=\sigma_0^2C_0$、$W=C_0^{-1}$，则估计公共尺度
+c2-s10	e77176628187314e04604d0b64a83ef3275e85acdaa38c095ca24f48a27a01d4	原文区块保留	$$ \hat\sigma_0^2=\frac{\mathbf e^{\mathsf T}W\mathbf e}{n-p},\qquad \hat C_\beta=\hat\sigma_0^2(X^{\mathsf T}WX)^{-1}. $$
+c2-s10	52e4cc00f1a6003c6e09563339df7dc69baab9e3f8da16c08c72eac61e508ed0	原文区块保留	绝对协方差已知时不应无条件再乘一次尺度。含相关时权重作用于整个二次型，不只是单点权。
+c2-s10	c86d09e7676afc9beebce8ac9590ee6eb7604b028017229da75a057df36dd45f	原文区块保留	### 2.10.2 粗差与迭代重定权
+c2-s10	2fa93ec36fa21d85a5ef4641af828661dbf563e72c3a6e1f6d8b827f8a4541c6	原文区块保留	流程：先查记录／物理范围 → 初拟合 → 诊断残差与杠杆 → 更新权重／模型 → 重拟合 → 检查稳定性。课件的 $3\sigma$ 筛查、残差平方阈值、分组权、局部点群等是具体策略，不是普适的异常真值判据。
+c2-s10	226afa8b37c35e570f15f0c22e15b68de8d4d3d7cc59cfa64ce102b1249747a0	原文区块保留	稳健 IRLS 可写 $w_i^{(r+1)}=\psi(u_i)/u_i$，$u_i=e_i/s_0$，然后求加权 LS；$u_i=0$ 按极限处理。Huber 例中小残差保持权，大残差权约与 $1/|u_i|$ 成正比（解释补充）。阈值、尺度和停止规则要报告。若每点基本方差不同，还需乘原精度权。
+c2-s10	bca5bf5c4d7ef10aabb714a48d857481c6895468430dea67f8ce4adae39a7dab	原文区块保留	分箱平均可降低随机波动，但独立箱内均值方差是 $\sigma^2/n_j$，对应权与箱内数目有关；存在相关时不能只按 $n_j$。插值／补点不是新增独立观测，不能借此增加有效自由度。
+c2-s10	52179b33d477b7ee99e4e9b99f3f4c11fce002cd7e4a267ce2517e5fc591a94d	原文区块保留	### 2.10.3 拟合优度与形式精度
+c2-s10	d7688dbfef46b462f2e96e46a058d280c7361d6017f0360e5de88f908ecbdbbe	原文区块保留	误差正态且协方差绝对已知、模型线性正确时，最小化后的 $\chi^2=\mathbf e^{\mathsf T}C_\varepsilon^{-1}\mathbf e$ 服从 $\chi^2_{n-p}$。约化值 $g_{\rm fit}=\chi^2/(n-p)$ 应在随机意义上接近 $1$；大值
+c2-s10	38e6197089e13596cb0b4d97fb2f0693bd954a9c66e8ce467836d7ac66581f13	原文区块保留	参数标准误是 $\sqrt{(C_\beta)_{jj}}$。它反映给定模型与随机假设下的形式不确定性；未建模偏差不自动进入。还应画残差随时间、自变量、拟合值的图，检查趋势、周期、方差变化、聚集和异常。信噪比必须说明使用振幅、标准差还是功率比；分贝约定相应为 $20\log_{10}$ 或 $10\
+c2-s11	310f05d2fc6e736066dcbe94a9c5c17510632ad9463b7386d183013381acf90a	原文区块保留	"<a id=""c2-s11""></a> ## 2.11 Bayes 定理、线性后验与预测"
+c2-s11	5120228d1a49e3d3322826f82df16f87b43187884aef49f9f4c78b2c514dff4a	原文区块保留	### 2.11.1 概率关系
+c2-s11	f61028ed8f39aefecb0990cb9a6647ddcd00e9857996339e33b67a0b80e453b3	原文区块保留	$$ P(A,B)=P(A\mid B)P(B),\qquad P(A)=\sum_jP(A\mid B_j)P(B_j), $$
+c2-s11	4021d4390e4d70f5c9f48cfc0d82addc1f35c032ac213b1369ff49e19d98d8ef	原文区块保留	其中 $B_j$ 构成互斥完备划分。连续情况将求和换积分。Bayes 定理为
+c2-s11	a1132fe244245a37f0b0522772bb4db93d0b5405f40b8d56d7aa2f8907b5fdeb	原文区块保留	$$ p(\boldsymbol\beta\mid\mathbf y)= \frac{p(\mathbf y\mid\boldsymbol\beta)p(\boldsymbol\beta)}{p(\mathbf y)},\qquad p(\mathbf y)=\int p(\mathbf y\mid
+c2-s11	340e3635ca6963e75dd9fc0c6d830b273124302101bc75f61ceb75ccd1ca1e9b	原文区块保留	先验描述观测前参数知识，似然描述给定参数如何产生观测，后验合并两者，证据用于归一化和模型比较。课件的拼写纠正例可写 $\hat c=\arg\max_c p(c)p(w\mid c)$：常见词先验与输入错误机制都影响候选。
+c2-s11	b74607979ace863239023edbb572489a92de89c2b0e18211f21889cff9efcb86	原文区块保留	### 2.11.2 高斯线性后验
+c2-s11	2be605e95d2a97bc21e3c4c1eadb62eea3fa76425f5c349e769a2b2c09409eb6	明确修正	令 $\boldsymbol\beta\sim N(\mathbf m_0,C_0)$，$\mathbf y\mid\boldsymbol\beta\sim N(X\boldsymbol\beta,C_\varepsilon)$，且协方差已知、独立。将负对数后验二次型配方得
+c2-s11	45333797fbd59db52dfbaeab13ea262c89ca98810227512f9eab77f3108294c9	原文区块保留	$$ C_n=(C_0^{-1}+X^{\mathsf T}C_\varepsilon^{-1}X)^{-1},\qquad \mathbf m_n=C_n(C_0^{-1}\mathbf m_0+X^{\mathsf T}C_\varepsilon^{-1}\mathbf y). $$
+c2-s11	9854f723888a4736c6d56adb5c8792423530fdc183d0aec120ef5908c5b65191	原文区块保留	后验为 $N(\mathbf m_n,C_n)$，均值与 MAP 相同。先验弱、数据约束足够时接近 GLS；强先验拉向 $\mathbf m_0$。零均值高斯先验连接 Ridge，Laplace 先验连接 Lasso，第五章推导。
+c2-s11	e09dfe20b69b23737c6763fb1d47f046b1abddfb4e5ba8a7a775b71cb72215f1	原文区块保留	### 2.11.3 后验预测
+c2-s11	672d7cbbec60e65ae5b7f4a0a153dc43706079b78a62dbd9dc52a48be64c0cf4	原文区块保留	在新输入向量 $\mathbf x_*\in\mathbb R^p$ 处，若新噪声独立、方差 $\sigma_*^2$，
+c2-s11	80c7f6a49ffeb16af75a1987987ce01a524982282ca65ebdda66425519f9d5af	原文区块保留	$$ y_*\mid\mathbf y\sim N(\mathbf x_*^{\mathsf T}\mathbf m_n, \mathbf x_*^{\mathsf T}C_n\mathbf x_*+\sigma_*^2). $$
+c2-s11	08e89de80411d0588779e775b61d056abecfb183536ed5d8a0da23e5f2d26214	原文区块保留	无新噪声的潜在平均响应只含第一项方差。未知噪声参数若也有后验，需要再积分，不能当作已知。可信区间是在指定模型下的参数后验概率区间，和频率派置信区间概念不同。
+c2-s11	2fa38f1ca1c77df0cb3e454d042d37312a7c55b16575ae351b49655e9221e183	原文区块保留	实践顺序：确认时间单位与基函数 → 生成／读入数据 → LS 与 Bayes 计算 → 画拟合及不同预测区间 → 比较先验与样本量变化。真实时序中的周年项频率按时间单位转换，例如时间为年时 $\cos2\pi t$。
+c2-s12	6bdefc74b9b6820de739122f02538abb234d1bcc535364496b29cf9977fed090	原文区块保留	"<a id=""c2-s12""></a> ## 2.12 例题与复习出口"
+c2-s12	c668443af2b7bef02c3af4d6a5c01a5255bdde1a51e5c2875ed4d7fe68e02c22	原文区块保留	**加权例。** 两个独立无偏结果为 $10$、$12$，方差为 $1$、$4$。权为 $0.8$、$0.2$，融合为 $10.4$，方差 $0.8$，标准差 $\sqrt{0.8}$。若它们共享校准误差，独立公式低估方差。
+c2-s12	ef96ab487e2d057f859b74fdaab3ff7b36c8d179b5ad4011aa0cdca02352c9fb	原文区块保留	**LS 例。** 输入 $x=(0,1,2)$、$y=(1,2,2)$，有 $\bar x=1,\bar y=5/3,S_{xx}=2,S_{xy}=1$，所以 $\hat\beta_1=1/2,\hat\beta_0=7/6$。拟合值 $(7/6,5/3,13/6)$、残差 $(-1/6,1/3
+c2-s12	8740be5328eaa245e0e74dc250de416026a3f9387486f7b911f95646644c7ba5	原文区块保留	**本章必须会重做的推导：** 方差恒等式；正态矩估计与 MLE；样本方差无偏；逆方差融合；三大分布构造与区间反演；正态密度归一化；正规方程及投影；非线性 Jacobian；绝对与相对权下参数协方差；高斯后验配方。
+c2-s12	30036b3941b9f231dbedf56b65485ecacb61aa5851441459b99d8f15e95df414	原文区块保留	**必须能识别的误用：** 密度高度等于概率；MLE 必无偏；正态化等于标准化；Q–Q 图横轴等距；置信区间等于参数概率；精度权为标准差倒数；删除大残差等于证明粗差；低残差证明模型正确。
+c2-s12	b472203b9e9eb8fb780f5e9fbf32f84db3fab2305fae9d257e84dd08120c8100	原文区块保留	对应第 02—04 次课作业，见[原题](../01_逐课作业原题.md)与[答案](../02_逐课作业解答.md)。下一章把 LS 结果扩展成回归推断，并学习相关与频率分析。
+c3-s1	818da5dd528050ef19bab6b8cd956c50c5dbe7dac3e95d916e185b4492124702	原文区块保留	"<a id=""c3-s1""></a> ## 3.1 一元回归与 Gauss–Markov 定理"
+c3-s1	fe25d71f9aff438869a24c626c0e2c589cdf71c8a4c1fe31518e939c7454ed40	原文区块保留	### 3.1.1 模型假设各负责什么
+c3-s1	4256dcaa342720a968e3241514df64068aed0c1a1a675b855661414089963ed9	原文区块保留	回归模型 $y_i=\beta_0+\beta_1x_i+\varepsilon_i$，解释变量 $x$ 给定，响应 $y$ 随误差变化。假定 $E(\boldsymbol\varepsilon\mid X)=0$ 可保证 OLS 无偏；$C_\varepsilon=\sigma^2I$ 给出同方差
+c3-s1	8d3978f98f2cbfc3ed6a89cbfec882a7fd9699cc429cefbe5fdabb104e8c93ef	原文区块保留	OLS 不要求自变量本身服从正态。若 $x$ 的测量误差不可忽略，固定设计假设可能不合理；若时间误差相关，需要 GLS 或适合相关结构的推断。
+c3-s1	917e72476055326100f1066e7258dc86cdb156fb4ff42a26d2f90105262ce748	原文区块保留	### 3.1.2 系数性质
+c3-s1	815f31441cc1a8504fb7860c6cabc6032081a6e3938af487a905a6c0a6f20048	原文区块保留	由第二章 $\hat\beta_1=S_{xy}/S_{xx}$、$\hat\beta_0=\bar y-\hat\beta_1\bar x$。在上述零均值同方差条件下，
+c3-s1	6104ac05b7318dce28dcd652bfb37b9062e6fbf4b7b77c625590da0ebbdd941d	原文区块保留	$$ E\hat\beta_0=\beta_0,\quad E\hat\beta_1=\beta_1, $$
+c3-s1	5a461dca8882714298588f98f11a7fc000c588078cc5e5c1915e82f10a079d0c	原文区块保留	$$ \operatorname{Var}(\hat\beta_1)=\frac{\sigma^2}{S_{xx}},\quad \operatorname{Var}(\hat\beta_0)=\sigma^2\left(\frac1n+\frac{\bar x^2}{S_{xx}}\right),
+c3-s1	62cdfa5f7386591b20cd13047158a93784bafe7d3c69070297785950cb1ec5d8	原文区块保留	斜率可写成 $\sum_i(x_i-\bar x)y_i/S_{xx}$，其权平方和为 $1/S_{xx}$，直接得到方差。自变量分布越宽，通常斜率越精确；截距是在 $x=0$ 的响应，零点远离数据中心时精度可能很差。将自变量中心化可减少截距与斜率的协方差。
+c3-s1	31f1e2391bcc9455102259686978f1699cb50a92ea1decd8629d463689db85b5	原文区块保留	含截距的 OLS 直线经过 $(\bar x,\bar y)$，残差和为零，残差与自变量正交。拟合值与残差不等于独立同分布原误差，残差协方差为 $\sigma^2(I-H_X)$。
+c3-s1	2320ca12b059ea845c672f0e9f9028b70bd9ac26afe566ba516eddc86f8d1a3c	原文区块保留	### 3.1.3 BLUE 的简明证明
+c3-s1	d62752d8854d7891fbf705b2e1b4c48a2a5d2d825e606728c9a327e16ae0aec5	原文区块保留	设 $X$ 满列秩、误差零均值且协方差 $\sigma^2I$。任一线性无偏估计可写为 $A\mathbf y$，要求 $AX=I$。令 $A=A_0+D$，$A_0=(X^{\mathsf T}X)^{-1}X^{\mathsf T}$，则 $DX=0$。因此
+c3-s1	9d3f72d3bfde99512d59e5507621dd9ebc792965775105cde615282089561105	原文区块保留	$$ \operatorname{Cov}(A\mathbf y)=\sigma^2A_0A_0^{\mathsf T}+\sigma^2DD^{\mathsf T}, $$
+c3-s1	eef372ef9530a44379cb7a0807e8b47a1fa6d07579059d86f29461d79636eb9a	原文区块保留	交叉项为零，第二项半正定。OLS 在所有**线性无偏**估计中方差最小，称 BLUE；证明不要求正态。它不表示在所有有偏估计或所有损失下最优，也不覆盖错误的误差模型。
+c3-s2	1c884c27fa1d216751fb0dce3be78e0603de4184e26ad8b0c84865e48c083faa	原文区块保留	"<a id=""c3-s2""></a> ## 3.2 平方和、统计检验与三种区间"
+c3-s2	e8d932a1adc8c14a8d1b706100a53b0e5488ff7d76581f903f51dad942861dce	原文区块保留	### 3.2.1 SST、SSR、SSE 与 $R^2$
+c3-s2	5be5424401d5e0c242d7cbd799d59047589ddd9e3a4e51a4265cde76d94baa89	原文区块保留	含截距 OLS 定义
+c3-s2	ca3de980b97d95dd41fffb307645a71321ecdd040e05a0601620ca10a8137a3c	原文区块保留	$$ \operatorname{SST}=\sum_i(y_i-\bar y)^2,\quad \operatorname{SSR}=\sum_i(\hat y_i-\bar y)^2,\quad \operatorname{SSE}=\sum_ie_i^2. $$
+c3-s2	391f28c784c7142e008940be488848b835f7b064ec4f6591cc55eb3322c3f3cf	原文区块保留	由于拟合的中心化部分与残差正交，$\operatorname{SST}=\operatorname{SSR}+\operatorname{SSE}$。$R^2=1-\operatorname{SSE}/\operatorname{SST}$，$\operatorname{SST}>0$ 时有效。含截
+c3-s2	c777a993ecb1edb3c9a7968cf69f30963068e80bd8543eb69ba3572ec1d874fe	原文区块保留	残差方差 $s_e^2=\operatorname{SSE}/(n-p)$；一元含截距 $p=2$。参数数目增加通常降低训练 SSE，不能据此判断泛化更好。
+c3-s2	7052eba231b94b63000d1cc372c0d8e2eb88c9a9fd7578a864091a6ddb3fe86c	原文区块保留	### 3.2.2 t 检验、F 检验与 p 值
+c3-s2	4673d4cc44caf95f7353c70d83d9d67fa904d2f4f3538123432468f31443b4c7	原文区块保留	检验 $H_0:\beta_j=b_j$：
+c3-s2	73654a42dc9fafafc4b2a8c120565bcff7f8f337225331690c81a0e234d9708a	原文区块保留	$$ t_j=\frac{\hat\beta_j-b_j}{s_e\sqrt{[(X^{\mathsf T}X)^{-1}]_{jj}}}\sim t_{n-p}\quad(H_0\text{ 下}). $$
+c3-s2	a636b954b031c11c72a61f287b54b5ae4a46ba0e101414581c3c5157749f5ad6	原文区块保留	双侧 p 值为 $2P(T\ge|t_j|)$。p 值是在零假设及模型条件下，得到至少如此极端统计量的概率，不是零假设为真的概率。拒绝零斜率不等于效应大，更不等于因果。
+c3-s2	39e330d2ae9e150f22c6e9c6d6c5f369121964fe78e433239675435725f1fb34	原文区块保留	整体检验一元斜率为零时
+c3-s2	592308e352b84f10a15dd241cd50b6e21a644b0405b16eea7d63a99b33323e01	原文区块保留	$$ F=\frac{\operatorname{SSR}/1}{\operatorname{SSE}/(n-2)}\sim F_{1,n-2},\qquad F=t_1^2. $$
+c3-s2	35d720215e5ffcc4591286a850dbe619b3fe17d5ea4967213a02d2d4906f6053	原文区块保留	多元含截距的整体 $H_0:\beta_1=\cdots=\beta_{p-1}=0$ 用 $F=[\operatorname{SSR}/(p-1)]/[\operatorname{SSE}/(n-p)]$。结论依赖模型和残差条件。
+c3-s2	929adb40251402bbccb9305c56e5fafbcffc1f852545992fef6a515c678d19df	原文区块保留	### 3.2.3 参数区间、均值区间、预测区间
+c3-s2	2af70aeb6b03fdf4e96e0c4292fc0ee7e737ced7a0b9fce9f9f98115506c7ebd	原文区块保留	参数置信区间：$\hat\beta_j\pm t_{1-\alpha/2,n-p}\operatorname{SE}(\hat\beta_j)$。给定新输入列向量 $\mathbf x_*$（含截距），定义 $h_*=\mathbf x_*^{\mathsf T}(X^{\mathsf T}X)^{
+c3-s2	cd41991e515e0d236df0f6567d5cf108122feac12fb4ec56ebe39529160628ed	原文区块保留	平均响应置信区间与新观测预测区间分别为
+c3-s2	f92873c686a4333254f01e15f60fd2ecc33cdba09019e6efc2264ca514cfabc3	原文区块保留	$$ \hat y_*\pm t_{1-\alpha/2,n-p}s_e\sqrt{h_*},\qquad \hat y_*\pm t_{1-\alpha/2,n-p}s_e\sqrt{1+h_*}. $$
+c3-s2	93f1f58706a741f0ea486fbf27060e76705b065e9070f0e77a8c9ae002a95696	原文区块保留	一元 $h_*=1/n+(x_*-\bar x)^2/S_{xx}$。预测区间额外加入新观测自身的噪声。远离数据中心的区间变宽，外推还可能出现模型误差，公式不自动包括它。逐点区间不等于整条曲线同时覆盖区间。
+c3-s2	47762b960342dc18dad803564a3d6e452966add20c4d79799051af27c38e99df	原文区块保留	课件的非参数预测带以残差分位数 $q_{\alpha/2},q_{1-\alpha/2}$ 构造 $[\hat y_*+q_{\alpha/2},\hat y_*+q_{1-\alpha/2}]$，允许不对称。但训练残差比未来误差受拟合约束，异方差、相关和参数不确定性会影响覆盖；它不是无条件精确的预
+c3-s2	663990962c403b7777b256d7ccc4ca21d54dd77538f9fdd92c9d530a2bcb1031	原文区块保留	### 3.2.4 残差与杠杆
+c3-s2	a38a9ed0bdb4a8a32b9c13050462aeb98e562bfd2f38e52edbd3ce91f1119d8e	原文区块保留	看残差对拟合值、自变量、时间的图。弯曲可能提示非线性遗漏，扇形提示异方差，持续同号或周期提示时间结构。帽子矩阵对角元 $h_{ii}$ 为杠杆，反映自变量位置特殊程度；高杠杆不必有大残差，大残差也不必高杠杆。检查标准化残差可使用 $e_i/[s_e\sqrt{1-h_{ii}}]$，并结合原始观测判
+c3-s3	2d467f0e9a4ca5417e5be043c548304edb89e255f58418a786646a47846bf4dc	原文区块保留	"<a id=""c3-s3""></a> ## 3.3 不同拟合目标、多元回归和变量选择"
+c3-s3	cc53301b040a0b42f10f92a859f0381b91a44ddf03d6f4d4340d13369ae9d4e5	原文区块保留	### 3.3.1 OLS、反向 OLS、LOC 与 LNS
+c3-s3	cf8e4c1e1cb6e799858a85e363810d8679337586e2c0d958a6b274f7f211a776	原文区块保留	$$ b_{Y\mid X}=r\frac{s_y}{s_x},\quad b_{X\mid Y}=r\frac{s_x}{s_y},\quad b_{\rm reverse\ in\ Y}=\frac{s_y}{rs_x}\quad(r\ne0). $$
+c3-s3	32314ce72ad94d441e9d2ac069fdb725309c884c8a6044577598f49bdd690af2	原文区块保留	两个 OLS 方向通常不同，因为一个惩罚竖直距离，另一个惩罚水平距离。LOC（organic correlation，亦与 reduced major axis 思想联系）取相应斜率几何均值：
+c3-s3	caaa30a8769fffaed285291dec59fb95295dca4e7e7c442290e4c193a5d86187	原文区块保留	$$ b_{\rm LOC}=\operatorname{sign}(r)\frac{s_y}{s_x},\qquad a_{\rm LOC}=\bar y-b_{\rm LOC}\bar x. $$
+c3-s3	3d67cec5c5fe7415229c3efef8030265863ec2b7678994e62b977a118a7d0693	原文区块保留	用 OLS 从长记录补短记录，预测散布约为 $|r|s_y$；LOC 目标之一是保留尺度变化，不能因此称它对条件均值预测更优。$r=0$ 时方向不能由符号确定。
+c3-s3	851e8f136139b3bef9e81dee712a8f2a4b8f3364d40f7878c6fe488219b7ec38	原文区块保留	LNS 为课件使用的正交距离直线。对同单位、同误差计量的中心化二维数据，令
+c3-s3	ac4f254489776f7507d818de77f17b48f556bbd6611412a8b8f2e059f970ff00	原文区块保留	$$ C=\begin{pmatrix}s_x^2&s_{xy}\\s_{xy}&s_y^2\end{pmatrix}. $$
+c3-s3	0ec2dd5a6a191b4e72fd183533bd7cb92de971bb3614ad935f99e7a2180cf7f6	原文区块保留	最大特征值的单位特征向量给直线方向，最小特征值给法向。斜率可由方向分量比获得；若 $s_{xy}\ne0$，
+c3-s3	dc07bbc879afbe2867efaa9dd5aba1c165c75cd554962ea98086157a99fc646a	原文区块保留	$$ b_{\rm LNS}=\frac{s_y^2-s_x^2+\sqrt{(s_y^2-s_x^2)^2+4s_{xy}^2}}{2s_{xy}}. $$
+c3-s3	1e6162147f7bd3e91ab869b20dcd9d8fe1950eb4e892ebf4b8b7d91be601b221	原文区块保留	等量纲的正交距离对旋转自然一致，但各轴任意改变单位会改变目标；LOC 对各轴尺度有不同性质。选择依据应是误差在哪些变量、目的和单位，不是哪个图更好看。
+c3-s3	73109c5994e6b47ce185aec9f92094c08590bdab59f4e667c55697be954f2fda	原文区块保留	### 3.3.2 多元回归、共线性与嵌套比较
+c3-s3	5c843a1843e4d5a3bb7d976947e14d817d087e5f29d5d8b7d2aea7db19030db4	原文区块保留	模型 $\mathbf y=X\boldsymbol\beta+\boldsymbol\varepsilon$，行是观测，列为截距与特征。满秩和误差条件下，系数无偏、$C_\beta=\sigma^2(X^{\mathsf T}X)^{-1}$，新输入区间用上一节的 $h_*$。系数表示控制其他列后
+c3-s3	b8cd5526e4537bdc98138bd7e407d5d8f710295b555354cea5771b1f85d5ed5b	原文区块保留	高度共线性造成小奇异值、系数不稳定、标准误较大，即使训练拟合良好。调整 $R^2$ 为 $1-[\operatorname{SSE}/(n-p)]/[\operatorname{SST}/(n-1)]$。
+c3-s3	8ab5bb649bf7b559b1bf37b33f679d05ffec170ff95bc003cf6f11b1ab0ef09c	原文区块保留	比较嵌套约简与完整模型，参数个数 $p_R<p_F$：
+c3-s3	97a67dda0e0391ec8eb465ff0cd3de409ae23db8467736c6f6ec36414c55c0d3	原文区块保留	$$ F_{\rm partial}=\frac{(\operatorname{SSE}_R-\operatorname{SSE}_F)/(p_F-p_R)} {\operatorname{SSE}_F/(n-p_F)}. $$
+c3-s3	028eba82c64a9baad55a156e9e463951ed2fa8892cb59794974c4309dd4b6d52	原文区块保留	它需要同一数据和正确模型假设，不能对非嵌套模型直接套用。逐步回归按加入／删除变量的准则反复搜索；选择不稳定，选择后普通 p 值未计搜索影响。替代路线包括 Ridge、Lasso、信息准则和交叉验证。AIC $=2p-2\ell_{\max}$、BIC $=p\log n-2\ell_{\max}$（
+c3-s3	ad9527f9d010a828c0406a1dd0258a4d2514c1d578dcb543b71682445d42002b	原文区块保留	### 3.3.3 Matlab 实践接口（课件实践）
+c3-s3	701a66bb9d54f9f14495a67476820ac979dcf8b8e4a58f97ef375fc04358f426	原文区块保留	`regress` 用设计矩阵估系数及区间；`polyfit` 为多项式系数；`rstool` 展示响应面；`nlinfit` 需非线性模型和初值；`nlparci` 与 `nlpredci` 分别连接参数与预测区间；`nlintool` 提供交互非线性拟合。理解输入、模型、输出统计含义，比记界面更
+c3-s4	4d4280fa7c0b7e30013d7f7245a84434cf45901db70ead92c910b2a905470251	原文区块保留	"<a id=""c3-s4""></a> ## 3.4 Pearson、滞后相关和秩相关"
+c3-s4	c1e0e5aab477301ee8b40199bcb6c5b809a5b6bc0e5d7ca012130fa787720de1	原文区块保留	### 3.4.1 中心化夹角与散点图
+c3-s4	7ab569f71f9fda386e6e1ca5cd3dea0ce8bdae3e9724cd4cd9b6c88f38c189d3	原文区块保留	$$ r=\frac{\sum_i(x_i-\bar x)(y_i-\bar y)} {\sqrt{\sum_i(x_i-\bar x)^2\sum_i(y_i-\bar y)^2}} =\frac{\mathbf u^{\mathsf T}\mathbf v}{\|\mathbf u\|\|\ma
+c3-s4	20e48329b9c5d0decd28d419c8da4605563c05363d8f3cecc1e15a87442db23e	原文区块保留	$\mathbf u,\mathbf v$ 为中心化数据。若任一变量无变化，相关未定义。$r\in[-1,1]$；零相关只表示无这种线性关联，非线性依赖仍可存在。未经中心化的余弦相似度不是一般 Pearson 相关。
+c3-s4	c710674661af04c7bad1dcc9c1ac0be5a940cc19a79e48e71c8369a26c52eb3e	原文区块保留	Anscombe 四重奏展示相同摘要统计对应不同曲线、异常点或杠杆结构。每次相关分析都看散点、原序列和数据来源。
+c3-s4	fd431f9cf22369aaa07e2df97a50e3e7d7c6f4394dd02fbef4b8b3b39bdc6d39	原文区块保留	### 3.4.2 滞后约定
+c3-s4	a599477cbc1e781e0f6b1451a6761e4ac9f8fd6d7fafb2e2803910a07ff5faa9	原文区块保留	本笔记定义 $R_{xy}(\tau)=E[\overline{x(t)}y(t+\tau)]$；协方差版本先去均值。离散估计在重叠样本上求和／平均，边界分母和全局或局部标准化需说明。若 $y(t)=x(t-d)$，按此约定峰值在 $\tau=d>0$，表示 $y$ 滞后 $x$。
+c3-s4	e5715ae3c1e25bcb9ce3cec30bd32e0dacf12e4f531ce0daf42e5f24ffa5a3b5	原文区块保留	自相关取 $y=x$。交换输入得到共轭和滞后反号。软件 `xcorr` 的约定可能相反，先用已知延迟的模拟检查，滞后样本数乘 $\Delta t$ 才是时间。去趋势可以避免共趋势主导相关，但改变了研究对象。
+c3-s4	80e7f26735ef5b1c220a834c3bed5fb683c69862b3d5dbdbf50622efbc96f55e	原文区块保留	### 3.4.3 Pearson 零相关检验
+c3-s4	aa9f97e050876e43c8922b80667d87d76553796cc3f3d50ed7884645e240ad1f	原文区块保留	独立二元正态样本在 $H_0:\rho=0$ 下，
+c3-s4	5c18a9cbb40631ac954f161760df32e5e060bccb25fe09e76a514d01c634f31f	原文区块保留	$$ t=r\sqrt{\frac{n-2}{1-r^2}}\sim t_{n-2}. $$
+c3-s4	3fdbf42450c709b95cbb966840b614f91e58e71d7f7755df5b00b6d5151f3dc9	原文区块保留	双侧拒绝域 $|t|>t_{1-\alpha/2,n-2}$，相应 $|r|$ 临界值为 $t_c/\sqrt{t_c^2+n-2}$。有时间相关或不符合参考模型时不能只代总长度。检验未拒绝不等于证明 $\rho=0$。
+c3-s4	935977baa3a66d818a48423285e2a950fe9b2378a621f4c3bb17fa30c46016f1	原文区块保留	### 3.4.4 Kendall 与 Spearman
+c3-s4	5be64041bc3794076326a4376dd137e63c088b1b38b211d1fb995389e4b55fcb	原文区块保留	Kendall 比较所有 $i<j$：$(x_i-x_j)(y_i-y_j)>0$ 为协调对，$<0$ 为不协调对。无并列时，
+c3-s4	bc41606cd21a61fdd030c5be7b5457651be3cc29e5777c6475a1ee565c640bd3	原文区块保留	$$ \tau_a=\frac{N_c-N_d}{n(n-1)/2},\quad \operatorname{Var}_0(\tau_a)=\frac{2(2n+5)}{9n(n-1)}. $$
+c3-s4	2789d3dbae96825229a8c89d0ca08e4afec238f45a8759fef2ed7b3ad4ce3211	原文区块保留	独立连续样本零关联下，大样本 $\tau_a/\sqrt{\operatorname{Var}_0}\approx N(0,1)$。并列时常用 $\tau_b=(N_c-N_d)/\sqrt{(N_0-T_x)(N_0-T_y)}$，$N_0=n(n-1)/2$，$T_x,T_y$ 分别为对应轴并列
+c3-s4	e470aff03bbf86facb9fc99362ccb63a3bc17dfdff686e03763cd74531b22636	原文区块保留	Spearman 为两组秩的 Pearson 相关；无并列时 $r_s=1-6\sum_i d_i^2/[n(n^2-1)]$。并列取平均秩后直接计算秩相关。秩相关描述单调关系，减弱数值极端值影响，但不涵盖所有非单调依赖。
+c3-s5	f00ebe8b7bf2a20a38e7c3e7c3339f0d7a1c41609282f0b3df83863fc5c32be1	原文区块保留	"<a id=""c3-s5""></a> ## 3.5 自由度、有效信息和 Monte Carlo"
+c3-s5	75b79ca554f26e1041b1d42348817fa712fa40300f4598e0c7ea0cf850d588be	原文区块保留	平均固定约束减少一个方向，含截距直线估计两个参数，回归残差自由度为 $n-p$。平滑后输出共享输入，点数即使不变，独立信息仍减少。有效自由度依赖统计目标与处理过程，不能通用地取“数组长度减一”。
+c3-s5	afc292c54ac480616e136db3486e4a7f23f1344772e5271dae90cc26d8958f09	原文区块保留	对于相关时间序列，一种近似独立信息量（解释补充）为
+c3-s5	a6718bf4cd79514b1f9f06d6c641b8d165308eeb240e9e2d3302c7c61f7578f6	原文区块保留	$$ n_{\rm eff}\approx\frac n{1+2\sum_{k\ge1}\rho_x(k)\rho_y(k)}, $$
+c3-s5	c2f379ad7e2b4e4014bc7afd0af4688dfb24a39b3d718a479bca398fda37e503	原文区块保留	但截断、自相关估计和适用条件会影响结果，不能机械把它代入所有检验。
+c3-s5	8153cd2e9abaead6a8b093942c4e9ae7d4574c8cbd7346a765cf1e55f0bd7d74	原文区块保留	课程采用 Monte Carlo 标定：在零关联假设下生成两条独立序列 → 施加与真实分析一致的去趋势、窗、滤波与裁边 → 算统计量 → 重复 $B$ 次 → 双侧用 $|r|$ 的 $1-\alpha$ 分位数。再外层重复整个标定过程，可估临界值本身的随机波动。区分数据长度 $n$、内层模拟数 $
+c3-s5	d2b156af9c02f7cf729e12a7007d46997a67a3bc05edfa8793bdbb2ec6baeafe	原文区块保留	假设只模拟白噪声而实际为有色噪声，得到的阈值不能代表实际零假设。做完平滑再照用 $n-2$ 很容易高估显著性。
+c3-s6	a569262ef1f82d555f1639d4246cfd255b8849ca769b02d7cd37a1a3def5f08a	原文区块保留	"<a id=""c3-s6""></a> ## 3.6 Fourier 级数与连续变换"
+c3-s6	ab32376c8a2aecf49b2298131c70452288107cd329d6d2740b5c19246bcee191	原文区块保留	### 3.6.1 正交投影求周期系数
+c3-s6	ec6dd741235ce18ad27a53a2f8587718d3887415ba71f41181dda51ba6139d6f	原文区块保留	周期 $T_0$、基频 $f_0=1/T_0$，实 Fourier 级数写为
+c3-s6	480c190321269b98b540618f43c0e0aa4651044a2f4cc2dac09e04f0e3f2c0b4	原文区块保留	$$ x(t)=\frac{a_0}2+\sum_{k\ge1}[a_k\cos(2\pi kf_0t)+b_k\sin(2\pi kf_0t)]. $$
+c3-s6	47055b9dcc0a5974b38ad5163e57843a771bee8c36cfcbfcd333115892b3db6c	原文区块保留	在任一完整周期上
+c3-s6	60c35d9104b3866778f15b6e0327f5c867448f19a02335e8bb5fe7af6ec83ea8	原文区块保留	$$ a_k=\frac2{T_0}\int_{T_0}x(t)\cos(2\pi kf_0t)\,dt,\qquad b_k=\frac2{T_0}\int_{T_0}x(t)\sin(2\pi kf_0t)\,dt. $$
+c3-s6	e0207cbaaac03fa39bbc2538c0b67fc916eb3f7352cd5a5112bc4b46a0ce287d	原文区块保留	因为不同基函数内积为零、同一非零谐波平方积分为 $T_0/2$，投影能单独取出一个系数。偶函数只有余弦，奇函数只有正弦。方波 $\operatorname{sign}(\sin\omega_0t)$ 为 $\frac4\pi\sum_{j\ge0}\sin[(2j+1)\omega_0t]/(2j+
+c3-s6	d9b0dbf948854a2d6d2e78a529f6d4ebed2f5722fb31c5668faaaa3a187c32fe	原文区块保留	分段光滑条件下，跳点收敛到左右极限平均；截断产生 Gibbs 过冲，随项数增加变窄但过冲比例不趋零。它不是随机噪声。
+c3-s6	789a8c8e8ba96bff533bf7ee468f2cf97bb7dbe2d29bd92947fb3c99a1a1a64a	原文区块保留	### 3.6.2 复系数、幅相和热方程
+c3-s6	134909dd833c630246937d59eddab9cdd70658d9d33cb00ba718da1e408d78ae	原文区块保留	复形式 $x=\sum_{k\in\mathbb Z}c_ke^{i2\pi kf_0t}$，$c_k=T_0^{-1}\int x e^{-i2\pi kf_0t}dt$。实信号 $c_{-k}=\overline{c_k}$，$c_k=(a_k-ib_k)/2$。
+c3-s6	fb2788bc26ac35916f075326b9c1b7168c77065966398d9fa5034d8b2afb7ec8	原文区块保留	统一余弦幅相约定：
+c3-s6	4fe4e1f4d371d5b7bf91cdddf97b36d0fbe3ebbd9c4c7ec75a657aca5f5599a8	原文区块保留	$$ a\cos\omega t+b\sin\omega t=A\cos(\omega t-\phi),\quad A=\sqrt{a^2+b^2},\quad\phi=\operatorname{atan2}(b,a). $$
+c3-s6	0c16de193f9764f67e2cba510c80be272a31b3ee45a94019db445245e35b62c0	原文区块保留	对应正频复系数辐角为 $-\phi$。直流是 $a_0/2$，不再作双侧合并。振幅近零时相位不稳定。
+c3-s6	d2e39e920f2b9b92235625b8e8244f37f4e3811b0395522e89c738d94c46aa9c	原文区块保留	课件历史线索中热方程 $\partial_tu=\kappa\partial_x^2u$，空间基 $e^{ikx}$ 将二阶微分变成 $-k^2$；各模态随时间 $e^{-\kappa k^2t}$ 衰减。边界条件决定选用正弦、余弦或其他特征函数。
+c3-s6	ba2ecec0c4f9efdae0ef37de3f58baf885c881df8d8a280a14c98696c523ffa7	原文区块保留	### 3.6.3 变换约定和 box
+c3-s6	f832296c2d1d528f61dd84d1d7e2efd2bbb87fe6a60dc165dc978441ed048cd8	原文区块保留	$$ X(f)=\int_{-\infty}^{\infty}x(t)e^{-i2\pi ft}\,dt,\qquad x(t)=\int_{-\infty}^{\infty}X(f)e^{i2\pi ft}\,df. $$
+c3-s6	1cf90cd91df6a4a067cc1ad07d9780e609786809413fc7e161e18dddff6a28ea	原文区块保留	若改用角频率，正向 $\int x e^{-i\omega t}dt$、逆向需 $1/(2\pi)$。不能混合归一化。
+c3-s6	a6d6d6749f13576fbd5776d81ad509dc01f5b93094634811543bfd9e930f67a8	原文区块保留	定义 $\operatorname{sinc}(u)=\sin(\pi u)/(\pi u)$、$\operatorname{sinc}(0)=1$。居中单位高度 box，$|t|\le T_b/2$ 内为 $1$，其变换为
+c3-s6	c2c243e98c3881e8defc1bf503f0936e74ef109d813f7584b65f0b19126cf09f	原文区块保留	$$ X(f)=\int_{-T_b/2}^{T_b/2}e^{-i2\pi ft}\,dt=T_b\operatorname{sinc}(T_bf). $$
+c3-s6	1a4077d35e4dbe86374d5e94c5446e2098e1ac74d1c3ceaf9030a90f42bfb585	原文区块保留	零点 $f=m/T_b$，$m\ne0$；时域越宽，主瓣越窄。平移 $t_0$ 乘 $e^{-i2\pi ft_0}$；幅度乘常数则整个谱乘同样常数。周期矩形脉冲占空比 $d$ 的复级数系数为 $c_k=d\operatorname{sinc}(kd)$（居中单位脉冲约定）。
+c3-s6	9bbd2e356038ab1179d4dcb7929026db2cb6fea33ada252cd51625be5e3f51c4	原文区块保留	### 3.6.4 Dirac 脉冲与脉冲列
+c3-s6	e5df2d8add4cebd500ce4edb9a7a1272f2cba7beb9ea06e0318a774dc9d00ff5	原文区块保留	Dirac 为广义函数，满足 $\int x(t)\delta(t-t_0)dt=x(t_0)$。其 Fourier 关系为
+c3-s6	acd97e75d8637d5ba17b5012dd57d7ade7673018aa2b24184a858e93de4870b7	原文区块保留	$$ \delta(t)\leftrightarrow1,\quad 1\leftrightarrow\delta(f),\quad \delta(t-t_0)\leftrightarrow e^{-i2\pi ft_0}. $$
+c3-s6	1bf11ff84c3edeba1e45b066fe8042b48844c361bf0c17fcfa34f49afeb018bd	原文区块保留	采样梳 $\sum_{m\in\mathbb Z}\delta(t-mT_s)$ 的变换是 $T_s^{-1}\sum_k\delta(f-k/T_s)$。时域乘梳导致频谱复制，频率间隔为 $f_s=1/T_s$，由此理解混叠。
+c3-s6	047524781724912e925a05b5dbb8e83bd544ffa163031b6a639d07ad8cad8665	原文区块保留	### 3.6.5 Parseval
+c3-s6	ee1fc049ff8432cea68b8fc6c769da602191cce6d88ede575e1d60b134adbfb2	原文区块保留	能量有限时 $\int|x(t)|^2dt=\int|X(f)|^2df$；角频率形式右侧为 $(2\pi)^{-1}\int|X(\omega)|^2d\omega$。周期平均功率为 $T_0^{-1}\int_{T_0}|x|^2dt=\sum_k|c_k|^2$。有限能量信号与无限时长平稳过程
+c3-s7	054f591dac7ce4e36469462c125ecbdcf0471af93d252ccbb998643bb68d5a94	原文区块保留	"<a id=""c3-s7""></a> ## 3.7 DFT、FFT、采样和窗函数"
+c3-s7	8deffb123044e3430c5ec3b150d318061d83f6e998fedda77ba29c620f616c9a	原文区块保留	### 3.7.1 离散频率与归一化
+c3-s7	5fd8b449f4440f3987d40e6614efaf1306780baad84246a2a18eeb2322912562	原文区块保留	长度 $N$，索引 $j=0,\ldots,N-1$，DFT 及逆变换为
+c3-s7	bdad31244e118303461d94901f01b7e2f3f8db739f1f319101c4f14cdd32520c	原文区块保留	$$ \tilde x_k=\sum_{j=0}^{N-1}x_je^{-i2\pi jk/N},\qquad x_j=\frac1N\sum_{k=0}^{N-1}\tilde x_ke^{i2\pi jk/N}. $$
+c3-s7	f0dff5fe67ea9a838b6781a7edbbb81b94733a77ed2f4cdbc95df1890c738905	原文区块保留	离散 Parseval：$\sum_j|x_j|^2=N^{-1}\sum_k|\tilde x_k|^2$。直接计算成本 $O(N^2)$，FFT 是同一 DFT 的快速算法，通常 $O(N\log N)$，不是新物理变换。
+c3-s7	e83e310aaf41b97737c981e740d2955ea968f9f30b45b01282a2afb1fd748304	原文区块保留	$$ f_s=1/\Delta t,\quad f_N=f_s/2,\quad T_{\rm rec}=N\Delta t,\quad\Delta f=f_s/N. $$
+c3-s7	624e20ecf050eb4e4ef7379b1183cca05ed76aae07f2995b85403450b9337c82	原文区块保留	样本首尾跨度是 $(N-1)\Delta t$，DFT 基周期按 $N\Delta t$。正频格点为 $k\Delta f$，后半段按负频解释；偶数 $N$ 的 Nyquist 点单独处理。最短采样可表示周期约为 $2\Delta t$，最长非零格点周期 $N\Delta t$；这不保证都能可靠辨识
+c3-s7	e0accebdd58d02ee43437fc1a0b39a7712f17751d655a1c6ae3649500cb75bdd	原文区块保留	实信号单双侧振幅：非 DC／非 Nyquist 正频取 $2|\tilde x_k|/N$；DC 与偶数 Nyquist 取 $|\tilde x_k|/N$。正确相位与幅度恢复要求频率落格点、记录和窗约定适合；不落点能量会分散。恰在格点的模型 $a\cos\omega_kt+b\sin\omega
+c3-s7	ab2e223b71e69f77d8a4aafa920426a04648068ae0f942a5fbd66d24b46c5284	原文区块保留	### 3.7.2 PSD 与能量谱
+c3-s7	c8510e0bccfadc8c140bf18c5064fc50812ef4dfeeb87dfbb7fd0095d16f2abc	原文区块保留	未加窗双侧周期图 PSD 可写为
+c3-s7	9e79de0bec0b9698df7ac0f4718c9613eeb02665e7a898e2f28cb461823330e2	原文区块保留	$$ \hat S_{xx}(f_k)=\frac{\Delta t}{N}|\tilde x_k|^2. $$
+c3-s7	443206d34cc8be310979757f835160d076ca5ca179ce6467bea9e26aae61c037	原文区块保留	单位为数据单位平方／频率单位。实信号合成单侧时，只对非 DC、非 Nyquist 部分乘 $2$；积分近似 $\sum_kS_{xx}(f_k)\Delta f=n^{-1}\sum_jx_j^2$。振幅乘 $2$ 与功率乘 $2$ 是不同规则，不能先把幅度乘 $2$ 后平方还称它为单侧 PSD。
+c3-s7	12ed9a5daa9298418ad2c80d90645491c7c9746901af06e6506f743002ba5ef3	原文区块保留	### 3.7.3 混叠、泄漏和栅栏
+c3-s7	4d32884163a045bc2babd4d245fc0b5d4ade5312e255095b09a852fe1d53c36a	原文区块保留	采样使频率相差整数倍 $f_s$ 的信号无法区分。理想带限条件下需 $f_s>2f_{\max}$ 以避免边界问题；刚好等于两倍的某些相位会退化，实际还需抗混叠滤波与余量。
+c3-s7	3fef6fb96cbb16b7e4f2ff93c930210c7f1084434fb39ffbedf5cbc512755818	原文区块保留	有限记录相当于乘窗，频域与窗谱卷积；非整周期信号产生泄漏。栅栏效应表示只在频率格点观察连续形状，峰可能在格点之间。零填充得到更密的显示格点，改善峰形读取，但不增加原记录的独立信息或真正分辨两邻近频率的能力。
+c3-s7	0234b25cf56eed89a7283d68a42e5915d84e1716d1a5003e0b8fe12ec506b641	原文区块保留	### 3.7.4 常见窗和校正
+c3-s7	019d1026f07307edd9b1a84a4a91ff8a7a94972bdaabb9e350f556ba94bd4102	原文区块保留	矩形窗 $w_j=1$；对称 Hann $w_j=\frac12[1-\cos(2\pi j/(N-1))]$；正弦／余弦钟形窗可写 $\sin(\pi j/(N-1))$；三角窗线性升降。周期式与对称式端点约定略有不同，报告所用定义。
+c3-s7	f91515509c09f0b9a6725a213b41714473e3205f42c9c8a46a486b1f47fe2570	原文区块保留	窗降低旁瓣，常使主瓣变宽。单频幅值校正可用相干增益 $G_c=N^{-1}\sum_jw_j$；窗 PSD 归一化可用 $\hat S=\Delta t|\operatorname{DFT}(wx)|^2/\sum_jw_j^2$。等效噪声带宽 $f_s\sum_jw_j^2/(\sum_jw_j)
+c3-s7	a42e2d7475baf369f0f41b2ff831d58182389180b16bab103ea9e17b68ef18f7	原文区块保留	逆 FFT 恢复的是送入 FFT 的数组，加窗后逆变换恢复加窗序列，不会自动恢复原始边界或自动去噪。
+c3-s8	41de6f5cf8a875565358391408489e6b7cd16bcb86155a7ae86132146511ec2a	原文区块保留	"<a id=""c3-s8""></a> ## 3.8 卷积、互谱、相位与相干"
+c3-s8	da801dbb55a6cd9ca1f4144406083bf163d88b219dbfa14663e659a824060296	原文区块保留	### 3.8.1 LTI 系统和卷积
+c3-s8	ce220110856ee2ae4c2cbc079db0584636664d4ebb81fa4b27b0bbcc5d96336f	原文区块保留	线性系统满足叠加，时不变系统对延迟输入产生同样延迟输出。脉冲响应 $h$ 决定
+c3-s8	9c008f672934479c4ec8ef3755207955011cac04be5a58418592555c3e985e1f	原文区块保留	$$ y(t)=(x*h)(t)=\int x(\tau)h(t-\tau)d\tau,\qquad y_j=\sum_mx_mh_{j-m}. $$
+c3-s8	2c4bea5331aa77866f2bf83a33bc634db028019af5e4d478b6f6559bc0e0620c	原文区块保留	卷积是反转、移位、乘积、累积；满足交换律。移动平均核 $h_m=1/M$（指定 $M$ 个点内）为低通滤波。秋千例中输出是各时刻激励的响应叠加，不是对输入直接取某个单值比例。
+c3-s8	11546e97bb84d9e644dfbf4ceafc10c23725889db02eb66812bbbbecc05ebdc0	原文区块保留	卷积定理 $Y(f)=X(f)H(f)$。长度 $N,M$ 的数组线性卷积长 $N+M-1$；FFT 乘积实现需补零到至少这个长度，否则得到循环卷积。
+c3-s8	ca4d3bc87408386b921144ed10ca6126dd77a3fcfd3cb0d8d46489e7e5e5b2f4	原文区块保留	二维可分离核 $h(u,v)=h_1(u)h_2(v)$，可先沿一轴再沿另一轴卷积；$K\times K$ 核的每像素成本从约 $K^2$ 降到 $2K$。不是所有二维核都可分离，可用低秩近似扩展。
+c3-s8	324bd71aa60e4279d409aab600a3bfefcbe4a2ad52662489cc1eb9fc7c3ec1b4	原文区块保留	### 3.8.2 互相关和互谱的共轭
+c3-s8	7e8108350bf625173217346f560e601e9e4b3de0e5f79f750387666c732395d4	原文区块保留	按本章约定 $R_{xy}(\tau)=\int\overline{x(t)}y(t+\tau)dt$，Fourier 变换为 $\overline{X(f)}Y(f)$。这是与卷积的关键区别，核共轭反转；实信号可省共轭，但反号约定仍需检查。
+c3-s8	41f7df34385a474f893b513305001245d047e018b0958ec9ac5cd353af41da0a	原文区块保留	相应 $S_{xy}$ 估计用分段／频率平滑平均的 $\overline{X}Y$。若 $y$ 延迟 $d$，相位约为 $-2\pi fd$，展开相位斜率可估时延；相位包装、低相干频段与周期歧义会影响解释。
+c3-s8	4303e010ac2fd8054a15745afbbb126a009212fdf35f383f0531223bb4c67543	原文区块保留	### 3.8.3 幅值平方相干
+c3-s8	2c388629600147790eaef9187eab411b188268f5a743bf78d8d3f7ab4f4d8892	原文区块保留	$$ \gamma^2(f)=\frac{|S_{xy}(f)|^2}{S_{xx}(f)S_{yy}(f)}\in[0,1]. $$
+c3-s8	3d70628e11467b495c8273c1b52a008c0727493c3fa98b3d1000fc8636fff243	原文区块保留	它衡量特定频率上的线性共同成分。不做任何平均时，单个频点直接由 $X,Y$ 得到的比值通常恒为 $1$，因此必须对自谱和互谱先作恰当平均。不要随意把“平滑谱后求比值”换成“平滑已得到的相干”。
+c3-s8	fcf84bd0d165e7edba392086334bd474e8b02d5c1ec815b201fb38b55701e787	原文区块保留	若有 $M$ 个有效独立谱平均，在零相干假设下近似临界值
+c3-s8	8cadbdbb93387048bee6363bf492cdd9be40f26c178a3d3aa325d32b076728e9	原文区块保留	$$ \gamma_c^2=1-\alpha^{1/(M-1)},\qquad M>1. $$
+c3-s8	ef722ed7a4e1a916dcc3ec92d08be28707248f4e08e409e84d484db76fb640eb	原文区块保留	这里 $\alpha$ 是显著水平；若课件使用置信水平 $c$，等价为 $1-(1-c)^{1/(M-1)}$。重叠窗或相邻频率不独立时，平均点数未必等于有效 $M$；作业要求以完整处理流程 Monte Carlo 核对。
+c3-s9	a3034db3bd93845082dc600b6973d2cf1881c99378f8e5c6c80b35af0890cb34	原文区块保留	"<a id=""c3-s9""></a> ## 3.9 小例题、实践与复习"
+c3-s9	42540d260f37459a7faa7054ebfedccbac19915019675d67189f27ee3ab2eb77	原文区块保留	**频率例。** $N=1000,\Delta t=0.01\,\mathrm s$，$f_s=100\,\mathrm{Hz}$、Nyquist $50\,\mathrm{Hz}$、记录时长 $10\,\mathrm s$、格点间隔 $0.1\,\mathrm{Hz}$。$5\,\mathrm{H
+c3-s9	0509ad8748483cdae1102df53e4571d169b63ed82e2143ea14f67fa7fafff0cc	原文区块保留	**区间例。** 在 $x_*=\bar x$，一元平均响应标准误为 $s_e/\sqrt n$，新个体预测标准差为 $s_e\sqrt{1+1/n}$。增加样本使前者趋零，后者仍保留观测噪声尺度。
+c3-s9	c19133798f26ab94fa6a799d3c2568661101b639c22431170e0ad0a227cecb91	原文区块保留	复习时应能：推导系数协方差和 BLUE；分解平方和；区分三种区间；说明 LOC 和正交拟合的目的；按已知延迟验证滞后符号；计算无并列 Kendall；设计相关临界值模拟；推导 Fourier 投影与 box 变换；检查 Parseval、单双侧谱、窗校正、卷积长度及相干平均。
+c3-s9	62d9970ad35dce97046ae29f8b6339376257e1a2032adff5b8556fa6e09730f5	原文区块保留	对应第 05—06 次课与第 07 次课前两题；第 06 次课今年包含 box 新题，FFT 题相位按当前原题。详见[作业原题](../01_逐课作业原题.md)与[答案](../02_逐课作业解答.md)。
+c4-s1	7cfe2d1fb72b7be5e82c20735214c49348f36db4dd5f296406d29674b7e83e21	原文区块保留	"<a id=""c4-s1""></a> ## 4.1 误差与不确定性"
+c4-s1	446e167c9113175d932a7d6c9d98a0893824126b2c2f281162de48f873a1e345	原文区块保留	**误差**是测得值与参照值的偏离；参照真值通常未知。**不确定性**描述对被测量值的知识不足及可能散布。标准差是随机模型里的散布尺度，不能代表所有未建模系统偏离。
+c4-s1	7ad2f9f4a10ae931aba3ed89843bfebbd695657111eb20f72bfd26f8c77c4403	原文区块保留	精密度描述重复结果互相接近程度；准确度描述与真值／参照接近程度。课件有时把 precision 简称“精度”，笔记明确对象。重复性好但整体偏离，可能精密而不准确。RMSE 同时受偏差与随机散布影响，第二章给出分解。
+c4-s1	f4c5961eba6d4819789c52fe8e4d63a2dbf7f9674b7b2fb336238d095b50496e	原文区块保留	系统误差、随机误差、粗差的分类依赖实验和参照。课件“误差新哲学”讨论：同一仪器上固定的校准偏离，在一批不同仪器中可能表现为随机分布；这提示固定条件与重复总体必须明确，不能据此断言所有系统误差已经消失。零均值也不排除自相关或随环境变化的结构。
+c4-s1	3e13ec71ad61eca64346ee522b4e19219fca7aeb966594e71d3fbbf55a3bec98	原文区块保留	评估顺序：先建立测量与校准模型，识别偏差和异常来源，再给可量化的随机项方差／协方差，最后传播到结果。观测误差与拟合残差的区别仍成立。
+c4-s2	05ac58a52d1645ee424af60b67f29688867db82c5a9233861b9807e453d90eb3	原文区块保留	"<a id=""c4-s2""></a> ## 4.2 Taylor 近似与协方差传播"
+c4-s2	76733d9abd8b4e199c3546721cc15894cc79774f77747a0581b15cf4b621bb63	原文区块保留	### 4.2.1 余项、近似阶数与线性化
+c4-s2	df909c4f6dc068fe8c310ffa0705810d832bd9f88f6995ec7bbd88308e180d74	原文区块保留	一元 Taylor 展开有两种常见余项：
+c4-s2	a58fa1484cec0af5028e504465f3ad21a236a934696c200a025504771a62582f	原文区块保留	$$ f(x_0+h)=\sum_{j=0}^m\frac{f^{(j)}(x_0)}{j!}h^j+o(h^m) $$
+c4-s2	c5c1fb0721ae3a356851cfbfa1c3dc0fa1d306d17e0c809fab3d2c358e35b091	原文区块保留	是满足局部可微条件的 Peano 形式；若更高阶导数存在，Lagrange 余项为 $R_m=f^{(m+1)}(\xi)h^{m+1}/(m+1)!$，$\xi$ 在展开点与目标点之间。后者可给误差界，但要求更强。
+c4-s2	c26688d4fb2e344c1137c001b1a69a72a2256af32be48bd41c3789b1a4395e07	原文区块保留	例如 $\sin h=h-h^3/6+\cdots$，只留线性项误差为 $O(h^3)$；二阶项为零不表示没有余项。课件的逐次逼近、二分思想和 Zeno 例用于理解有限近似及极限，不是所有算法的收敛保证。
+c4-s2	741141088ced0da052b1e9fe549a46787b333764bff27d066087f854bf0b55d8	原文区块保留	课件提及变分法：泛函 $J[y]=\int L(t,y,y')dt$ 的内点极值在合适边界条件下满足 Euler–Lagrange 方程 $\partial L/\partial y-d(\partial L/\partial y')/dt=0$。它优化整个函数，和有限维 Lagrange 乘子法对
+c4-s2	ee78fc443bfbe7015c5e4275d57bbcfc7dbdc64aff3a520ed2632bbbf1d69469	原文区块保留	### 4.2.2 标量和向量传播
+c4-s2	a6d4e94c6f871afdfb1fcd1ec0dd11be1015e6a2ece4787e593d7b98dba0cd4d	原文区块保留	输入均值 $\boldsymbol\mu$、协方差 $C_x$，标量 $y=f(\mathbf x)$，在均值附近
+c4-s2	bacf3c833b8be9cacb737fb6d2a72dc0e795c0114a4f30c70261ae3b008c8d2b	原文区块保留	$$ y\approx f(\boldsymbol\mu)+\nabla f(\boldsymbol\mu)^{\mathsf T}(\mathbf x-\boldsymbol\mu),\qquad \sigma_y^2\approx\nabla f^{\mathsf T}C_x\nabla f.
+c4-s2	590db42e2331b2ed164e1e3b518e3dd4a80f3dcf6ad27d5698c29de94755d570	原文区块保留	展开为 $\sum_jf_j^2\sigma_j^2+2\sum_{j<k}f_jf_k\operatorname{Cov}(x_j,x_k)$。只在不相关条件下去掉交叉项，正负相关可能放大也可能减小结果。
+c4-s2	d15524a901e3a5a4d3092fc5831e22e2ca2de0a57914fbb671a69a3e1e503933	原文区块保留	向量 $\mathbf y=f(\mathbf x)$ 的 Jacobian 为 $J_{ij}=\partial f_i/\partial x_j$，则
+c4-s2	53238eb125783c4f1dc820a4fb3d18895e0bcd15dc014a42c4453e8d775535e0	原文区块保留	$$ C_y\approx JC_xJ^{\mathsf T}. $$
+c4-s2	ebac2297466045263c6a8d855aa1ac0705cdca5972fe86a3784d2864e192c2d0	原文区块保留	线性／仿射 $\mathbf y=A\mathbf x+\mathbf b$ 时这条公式**精确**，不需要输入正态。非线性时均值也一般只近似为 $f(\boldsymbol\mu)$；二阶均值修正约为 $\frac12\operatorname{tr}(H_fC_x)$（解释补充）。多步变换 Ja
+c4-s2	7285cde77b93429c1e2395ee237baa4f48fd80155c48aafaa4b261b340778b17	原文区块保留	### 4.2.3 和差、乘除与平均
+c4-s2	e0a4cb11b094db93de0fc4583c168e17017edb38aa372773e7b8753ff1a36031	原文区块保留	$$ \operatorname{Var}(aX+bY)=a^2\sigma_X^2+b^2\sigma_Y^2+2ab\operatorname{Cov}(X,Y). $$
+c4-s2	46952a7ddad75b0ab48685df823d25b9a95100b1f2e659164620deded232c4eb	原文区块保留	对非零均值附近的乘积和商，一阶相对方差分别为
+c4-s2	ccefa75150683378ad60eeffb6952141bf951afe2c1a3651e1f9e60167a50689	原文区块保留	$$ \frac{\operatorname{Var}(XY)}{(\mu_X\mu_Y)^2}\approx \frac{\sigma_X^2}{\mu_X^2}+\frac{\sigma_Y^2}{\mu_Y^2} +\frac{2\operatorname{Cov}(X,Y)}{\mu_X\m
+c4-s2	291f40634c34d9104f4c4a333791f6f1e55cdf71cd679c823933f70cbca37ded	原文区块保留	$$ \frac{\operatorname{Var}(X/Y)}{(\mu_X/\mu_Y)^2}\approx \frac{\sigma_X^2}{\mu_X^2}+\frac{\sigma_Y^2}{\mu_Y^2} -\frac{2\operatorname{Cov}(X,Y)}{\mu_X
+c4-s2	c97cf97621886556a5b7e7b4eac3aa10d268db304405b91c6d664771931b86a6	原文区块保留	分母接近零或误差很大时线性化可能严重失败。算术平均的精确方差为 $\operatorname{Var}(\bar X)=\mathbf1^{\mathsf T}C\mathbf1/n^2$；独立同方差才降为 $\sigma^2/n$。完全共同误差不能通过增加次数消除。
+c4-s2	c07c509ef3b833e7ce248d1592268934cdb2a04fa1a1226a253bfdd4e54a37a8	原文区块保留	### 4.2.4 坐标、方向、振幅和相位
+c4-s2	0c9c8165834c6c234a12d8e6c09ae5026b5300b628b9a704cc9a5efb16756267	原文区块保留	由 $a,b$ 转振幅 $A=\sqrt{a^2+b^2}$ 与相位 $\phi=\operatorname{atan2}(b,a)$，Jacobian 为
+c4-s2	2b477b9c47c29aeda6010bc74fe51be445bc30d1a54ef55245543d8b5f6d49c6	原文区块保留	$$ J=\begin{pmatrix}a/A&b/A\\-b/A^2&a/A^2\end{pmatrix}. $$
+c4-s2	8d656d9c0d8837570e2b671439987de5984d6a6e456e5c9efddba544c86633c5	原文区块保留	将系数协方差代入 $JCJ^{\mathsf T}$，不能只分别传播而漏掉系数相关。$A\to0$ 时相位导数发散，说明相位不可识别，而非程序偶然失灵。
+c4-s2	1f536f96874fa45d30941c53bc89538be99680005b930144ba3e7b10553fb633	原文区块保留	两坐标都有误差的直线可写 $x\cos\theta+y\sin\theta-r_0=0$。该观测方程中残差的输入方差为
+c4-s2	719324d2e304535885829bc7a4d0cdef05362a1f717f055b9744a096975db260	原文区块保留	$$ \sigma_e^2=\sigma_x^2\cos^2\theta+\sigma_y^2\sin^2\theta +2\sigma_{xy}\sin\theta\cos\theta. $$
+c4-s2	0b903758bdb839d3a4aaec75642970a22a42ec0bbac7067490fe4f834bcac304	原文区块保留	权值依赖方向时需迭代，不应无条件用竖直残差和单轴方差。
+c4-s3	c57cd57a1f1f6d684442705e4529484852b8416c90a9c66e5f634d89c170a243	原文区块保留	"<a id=""c4-s3""></a> ## 4.3 范数、条件数和 Monte Carlo 对照"
+c4-s3	5454987695608c399c3d06924a132dd4e0a642ea9a5e4cdb0299d91908663cf5	原文区块保留	### 4.3.1 数值敏感性
+c4-s3	24575a5d87b737984a3dbe3a9d6a55563f7be7d4bae29df52b32f8f1632a3e4d	原文区块保留	范数满足非负、仅零对象范数为零、齐次性和三角不等式；用于算子分析的相容矩阵范数还满足 $\|AB\|\le\|A\|\|B\|$。向量 $\|\mathbf x\|_2$ 为欧氏长度；矩阵 Frobenius 范数 $\|A\|_F=\sqrt{\sum_{ij}a_{ij}^2}$；诱导二范数 $
+c4-s3	66edf855e75e1722661c92c6e04d2b4d23c4577c7c728f2dd8c611f4ec6a3949	原文区块保留	可逆方阵的条件数
+c4-s3	deb6c3cef5008e879edfa56da915093e1f55f84b259ff0b76e234267b107664c	原文区块保留	$$ \kappa_2(A)=\|A\|_2\|A^{-1}\|_2=\sigma_{\max}/\sigma_{\min}. $$
+c4-s3	54898815e6bbdc003cc0b6482b51e4a06efc9d74e3e7fe6c7b76b091cbb6b7fa	原文区块保留	求 $A\mathbf x=\mathbf b$、矩阵固定时，$\|\delta\mathbf x\|/\|\mathbf x\|\le\kappa_2(A)\|\delta\mathbf b\|/\|\mathbf b\|$。条件数大表示某些方向敏感，不表示每次误差必被放大到上界。奇异矩阵对完整逆
+c4-s3	d72ce3d33a833a7feacda685a8c9416daf70c616406fc373664b803c35b21082	原文区块保留	### 4.3.2 模拟传播与重力场示例
+c4-s3	63f0fa8b251d602e265e1ac344d7bc34d1a646b241e5eca0078e45f0c0a4f78c	原文区块保留	若 $C_x=LL^{\mathsf T}$ 为 Cholesky，生成 $\mathbf x^{(b)}=\boldsymbol\mu+L\mathbf z^{(b)}$，$\mathbf z\sim N(0,I)$，再计算 $f(\mathbf x^{(b)})$ 的经验均值、协方差、分位数。输
+c4-s3	5bc0cbed0c08bb4008e191e961e3180fa6d91905f67719d6dd9d280f1152a341	原文区块保留	重力场球谐系数向量 $\mathbf c$ 的协方差，传播到格点重力／势 $\mathbf g=F(\mathbf c)$，解析为 $JC_cJ^{\mathsf T}$，模拟为对整个相关系数向量联合抽样。若对系数逐个独立抽样，会丢掉交叉协方差。比较不同扰动幅度可以检查一阶近似范围。半正定但非正定协
+c4-s4	63ba03e797722e3012ccb641102d619dc9cd334bf50d1f842cf9160bb9b8065f	原文区块保留	"<a id=""c4-s4""></a> ## 4.4 随机过程、PSD 与噪声模型"
+c4-s4	509d3dbd1c766631242bb131e4ea8de20db4f522e8af43e419475875fe747e89	原文区块保留	### 4.4.1 平稳性、白噪声与谱
+c4-s4	55d813bdbe935381b6be0d5d92fd20065b8969c98cb8e9886e0f81ee594915a1	原文区块保留	随机过程 $x(t)$ 是随时间索引的一组随机变量。弱平稳要求均值不随时间变、有限方差、自协方差只依赖滞后。平稳过程的 PSD 与自协方差互为 Fourier 对：
+c4-s4	90b03edff9ac4f3266de81a6d0e6db56893a70b59ffa8b1e1de3d26348d84da4	原文区块保留	$$ S_{xx}(f)=\int C_{xx}(\tau)e^{-i2\pi f\tau}d\tau. $$
+c4-s4	75a841a2a3b7791e2906822bbaa4bfb31a58a65178a7927f46c2cca81ed7f35d	原文区块保留	离散白噪声 $Ew_j=0,\operatorname{Cov}(w_j,w_k)=\sigma_w^2\mathbf1_{j=k}$，谱为常数（数值常数随频率与单位约定变化）。白噪声不必正态；Gaussian 白噪声的不相关同时给独立。有限实现的周期图起伏明显，不能要求每个频点相等。
+c4-s4	fe130a640a28f20231c574e2262b881dc4a237688fda0a78d4cc721971e123c6	原文区块保留	### 4.4.2 幂律、闪烁和随机游走
+c4-s4	fa0fd0cfe286e05b1a575bffb1e5e2b3cd07af7262e94518ee0a722ff4f3ccbd	原文区块保留	课程谱指数约定 $S(f)\propto f^\kappa$；另有 $\beta=-\kappa$ 的 $1/f^\beta$ 记法。白噪声 $\kappa=0$；闪烁／粉红 $-1$；随机游走／红噪声低频 $-2$。双对数谱斜率是**功率**指数，生成振幅整形应使用 $f^{\kappa/2}$。
+c4-s4	067248f608a41b416b989009f5a6657b8dcf05aff732ad10326ce08b7d7c53d6	原文区块保留	低频积分 $\int_0S(f)df$ 在 $\kappa\le-1$ 时发散，说明无限时长、无截断的平稳有限方差模型不能直接成立。有限记录、初始状态和低频截止必须明确。随机游走
+c4-s4	182f3475f5811802bde0c93447825f2b2ecd1c62de4e92a83edb9796836f014d	原文区块保留	$$ x_j=x_{j-1}+w_j,\quad x_0=0,\qquad \operatorname{Cov}(x_j,x_k)=\sigma_w^2\min(j,k) $$
+c4-s4	f32b4eedfd5962771d0a99a4118ac7edc9f8ae448e69cdc52b36e2301696d76d	原文区块保留	方差随时间增大，是非平稳过程。Brownian 运动是连续对应。课件醉汉／Pólya 例提及：对标准无偏最近邻格点随机游走，一、二维几乎必然返回起点，三维及以上返回概率小于一；这是特定空间游走结论，不是所有噪声序列性质。
+c4-s4	3f339b5030ea24bbb8e9b4a96eb8c4768e98662536f9b3811f14a9b0625992b9	原文区块保留	### 4.4.3 课程滤波器与协方差构造
+c4-s4	3198878441ef27066b9d1d1fa95ac04f689c8d1a0e8ca4d341377e97ef70fc38	原文区块保留	从白噪声 $v_j$ 生成 $x_j=\sigma\sum_{m=0}^jh_mv_{j-m}$，系数递推
+c4-s4	6d430b36e096895eb01dae2b7d5f2a7cd975d53c330f2b1c2dfb7dd8318ad338	原文区块保留	$$ h_0=1,\qquad h_j=\frac{j-\kappa/2-1}{j}h_{j-1}. $$
+c4-s4	1e3c9ad4bfd6c85b4da51e057fd37eb254703fcc31a6c81e83dbfcf3455fc6fa	原文区块保留	$\kappa=0$ 时除首项外为零；$\kappa=-2$ 时所有系数为 $1$，得到累加随机游走。令下三角卷积矩阵 $B_{jm}=h_{j-m}$（$j\ge m$），则 $C=\sigma^2BB^{\mathsf T}$；这保留起始边界和有限样本相关。
+c4-s4	6e6146f47bf6ed92c693e108f6cdc2333e09c086bdeb06f89dbe263f1e160a9a	原文区块保留	频域生成则造实信号所需共轭对称复系数，按 $\sqrt{S(f)}$ 缩放并逆 FFT；DC、Nyquist、低频截止和最终尺度都要定义。仅把白噪声 FFT 乘幂律后直接称其标准差为某给定值，可能与课程尺度不同。
+c4-s4	23170dc69e336f8ed1d08431913ba093b29d2766784db3d51cfde510f069ff00	原文区块保留	### 4.4.4 FOGM、GGM 与模型名称
+c4-s4	1eb68d5224a1177ad3ee5d5a756558b5e08bb1ff4518d909c96d7e0b9e59dc1f	原文区块保留	FOGM 可写离散 AR(1)：$x_j=\phi x_{j-1}+v_j$，$|\phi|<1$，$v_j$ 独立方差 $q$。平稳初始化时
+c4-s4	684a5d8d6e80784bcdf90ad934f2da61e8982b68ee708f5254fd3919b7d4b93a	原文区块保留	$$ C(k)=\frac q{1-\phi^2}\phi^{|k|},\qquad S(\omega)=\frac q{|1-\phi e^{-i\omega}|^2}. $$
+c4-s4	c94cd1ba3d957f3200f44bbd58ed9604e340bdc8bb5c52a7bffb95d4cbeaab5b	原文区块保留	若连续衰减时间为 $\tau_c$，$\phi=e^{-\Delta t/\tau_c}$；低频滚平、较高频出现衰减。若起始设为零，初期方差不是平稳方差。
+c4-s4	bfce93171e847f1e346edf85543ccdac6e819b3bc2c1b774cee979247ddad820	原文区块保留	GGM 的课程系数在上一递推乘 $\phi$：$h_j=\phi(j-\kappa/2-1)h_{j-1}/j$，$0\le\phi<1$ 缩短记忆，$\phi=1$ 回到幂律。谱形可表达为 $S(\omega)\propto|1-\phi e^{-i\omega}|^\kappa$；具体单位与幅度
+c4-s4	e93f7d1ea174e4436d5df5e4b7a1a4089aa9174dfc508d2a9f0ca35dd27b7a05	原文区块保留	图表提及的模型家族：ARMA 为 $x_j-\sum_{a=1}^p\varphi_ax_{j-a}=v_j+\sum_{b=1}^q\theta_bv_{j-b}$；ARFIMA／FARIMA 加分数差分 $(1-L)^d$，$L$ 为滞后算子；FN 为 flicker noise，PL 为 po
+c4-s4	7835be4b30ba23d89c700d75f8611ad0843e16f28c6fa7fd8a966721c9b5f320	原文区块保留	### 4.4.5 混合噪声和趋势精度
+c4-s4	8e412038f5ce61f793d349ea02c0f13cb3bf5abec5dcecb16bdcd5b3a38b325c	原文区块保留	独立噪声成分相加时 $C=\sigma_{\rm wn}^2I+\sigma_{\rm pl}^2J(\kappa)+\cdots$。若相关，还需交叉协方差项。不同频带呈不同颜色的图不等于各频带可随意独立拼接；需要给出生成模型。
+c4-s4	af1147fb07610ea99c24fa7dfd7c55ec2cd1f7b94670a7b02468810153f4d286	原文区块保留	相关低频噪声会模仿长期趋势，按白噪声 LS 估计趋势标准误可能偏小。第六章用 GLS 与完整 Gaussian 似然估噪声参数。2025 的课末周期图补充保留在第三章 PSD 公式中：一侧谱积分匹配均方值，不能遗漏单双侧倍数和采样间隔。
+c4-s5	d686af8ef224125d6fffd20a586b28642e2716fb425fe5dae4c42a5dccd8eb86	原文区块保留	"<a id=""c4-s5""></a> ## 4.5 坐标变换、特征分解、SVD 与广义逆"
+c4-s5	665d8911a9107191d7d87ad705da72baf5decb72c1ce618671dd64565c861b91	原文区块保留	### 4.5.1 主动、被动和齐次坐标
+c4-s5	46b2623d88f5abeb358d216561d676f403400781c5877006220227cf5d8b345d	原文区块保留	主动变换 $\mathbf y=A\mathbf x$ 改变向量；被动换基若新基为 $B'=BM$，同一向量坐标满足 $\mathbf c'=M^{-1}\mathbf c$。它们不能在固定旋转正负号时随意互换。可逆矩阵能表示双向换基；奇异映射不能作为整个空间的基变换。
+c4-s5	04b8f8fa3ae1063fd434f131528bbf1958180db57cbf34081d118a54b730423c	原文区块保留	平移用二维齐次坐标表达：
+c4-s5	c3f99d66978ab969ad516723d6810dbfdcfcb3f0675ab78cd04b03ef20b322ec	原文区块保留	$$ \begin{pmatrix}x'\\y'\\1\end{pmatrix} =\begin{pmatrix}a&b&t_x\\c&d&t_y\\0&0&1\end{pmatrix} \begin{pmatrix}x\\y\\1\end{pmatrix}. $$
+c4-s5	e71276ab698e8dbd1c467dd7819a7b46df4b4ccfde496481588a09c8bc2d6c0c	原文区块保留	旋转、缩放、剪切与平移可统一复合。图像配准、对称性与不变性是课件应用线索；几何变换还涉及插值和像素采样，矩阵式本身不解决所有实现问题。
+c4-s5	19455e513a34daed4fc655d6b2dc7777c4e4e625d245974e926a505ebcfdb481	原文区块保留	### 4.5.2 对角化和系统解耦
+c4-s5	111d6a432e679bc97524d7d13355e03cd610d955a9c760d6200601927238779c	原文区块保留	若有完整特征向量基 $V$，$A=V\Lambda V^{-1}$；对称矩阵为 $A=Q\Lambda Q^{\mathsf T}$。一般矩阵不保证可对角化；不能把“任何矩阵都是旋转和对角缩放”作为特征分解定理。
+c4-s5	36fa38e80eec10aca0783a24ebaa4a1395e29ff2264e4d86fc06b303b76fe2af	原文区块保留	差分系统 $\mathbf x_{k+1}=A\mathbf x_k$ 在可对角化时 $\mathbf z=V^{-1}\mathbf x$ 得 $z_{j,k+1}=\lambda_jz_{j,k}$。微分系统 $\dot{\mathbf x}=A\mathbf x$ 得 $z_j(t)=e^{\
+c4-s5	f88fe65215dbbad5e997bb3a33028093be6a95c5245aab1a76e7302d74080b63	原文区块保留	### 4.5.3 SVD 与 Moore–Penrose
+c4-s5	2167a66be471b1b00088ddb24ce1ccd57d05499232cfe3d70e891c6c9f2a2e4b	原文区块保留	任意实 $A\in\mathbb R^{m\times d}$ 有 $A=U\Sigma V^{\mathsf T}$。$A^{\mathsf T}A=V\Sigma^{\mathsf T}\Sigma V^{\mathsf T}$，$AA^{\mathsf T}=U\Sigma\Sigma^{\m
+c4-s5	e44ea5ed23d807e1066b29f7ddc3e9e706685a36c9fa718010a1c56c30116325	原文区块保留	将每个非零奇异值倒数、零保持为零，得到 $A^+=V\Sigma^+U^{\mathsf T}$，满足四条 Penrose 条件：
+c4-s5	5a6a77037b4dfd08e37768f94bf587202066425cfb580df32aedf2cdf0cb0dca	原文区块保留	$$ AA^+A=A,\quad A^+AA^+=A^+,\quad (AA^+)^{\mathsf T}=AA^+,\quad (A^+A)^{\mathsf T}=A^+A. $$
+c4-s5	62908642baa35f611c661cf387855f1fc61ca21a590214bee74b423145be7f81	原文区块保留	因此 $AA^+$ 与 $A^+A$ 为列／行空间正交投影。还可验证 $(A^+)^+=A$、$(A^{\mathsf T})^+=(A^+)^{\mathsf T}$；满列秩 $A^+=(A^{\mathsf T}A)^{-1}A^{\mathsf T}$，滿行秩 $A^+=A^{\mathsf
+c4-s5	ff7e3e137a8e919a312b79db8a36a2aaeb47d5de574b0c0ad410e753fde51285	原文区块保留	解 $A\mathbf x=\mathbf b$：$A^+\mathbf b$ 最小化残差且在所有最小残差解中范数最小；全部 LS 解可写 $A^+\mathbf b+(I-A^+A)\mathbf z$。SVD 的存在性、紧分解和低秩最优性在第六章详细推导。
+c4-s6	13930cd2e9a29700b5a60e140470f3f933853bad4c13fb684cf9e7a6cbed894b	原文区块保留	"<a id=""c4-s6""></a> ## 4.6 椭圆、协方差与概率尺度"
+c4-s6	4ab590d099dc26cf982628374770615e76784e9430084721aa0781b2ab0bff28	原文区块保留	### 4.6.1 几何表达
+c4-s6	1530c59b6b9ee7e55129613648eea4f65c6054c8d9ae1d283b998c6f3df31bfc	原文区块保留	轴对齐椭圆 $x'^2/a^2+y'^2/b^2=1$，中心 $\boldsymbol\mu$，旋转 $R$，令 $E=R\operatorname{diag}(a^2,b^2)R^{\mathsf T}$。则
+c4-s6	13a296919a723673d1eb853958a22cf4b28ff8dabf1846b01c414893c1ac4ce1	原文区块保留	$$ (\mathbf x-\boldsymbol\mu)^{\mathsf T}E^{-1}(\mathbf x-\boldsymbol\mu)=1, $$
+c4-s6	dc35e1963a9f7af0304dc16e5798ac2864faaf78f6f45c115fbda8a5552cadd2	原文区块保留	$$ \mathbf x(\theta)=\boldsymbol\mu+R\begin{pmatrix}a\cos\theta\\b\sin\theta\end{pmatrix}. $$
+c4-s6	f1adaa13764841bd787710272b61eab3bd73a55a837e96a35c3f40c32fbc51e9	原文区块保留	$a,b$ 为半轴，平方进入 $E$；参数角 $\theta$ 不等于点相对中心的普通极角。平移不改变中心协方差，线性变换使协方差变为 $ACA^{\mathsf T}$。
+c4-s6	63a4dad5f77d96ffb0a286b3309bcb144a188976d82768fde3d19dbe204f88c9	原文区块保留	### 4.6.2 特征主轴与方向方差
+c4-s6	6bd1474795d6a227b8f53f1d72d13ca3ad61fc799d7c0fc4a723abdf81ff7146	原文区块保留	令 $C=Q\operatorname{diag}(\lambda_1,\lambda_2)Q^{\mathsf T}$，$\lambda_1\ge\lambda_2>0$。沿单位方向 $\mathbf u$ 的投影方差为 $\mathbf u^{\mathsf T}C\mathbf u$，最大／最
+c4-s6	f77f8e698b56fe6b146cb15578d4797f5243d7009d735f3f1869007ac41aed8c	原文区块保留	对 $C=\begin{pmatrix}c_{xx}&c_{xy}\\c_{xy}&c_{yy}\end{pmatrix}$，
+c4-s6	4c3b0fd8296b78a8f2d612ccfe1daa542e86925c2e78c5ee2b5bab3ce6d50a28	原文区块保留	$$ \lambda_{1,2}=\frac{c_{xx}+c_{yy}\pm\sqrt{(c_{xx}-c_{yy})^2+4c_{xy}^2}}2, \quad\psi=\frac12\operatorname{atan2}(2c_{xy},c_{xx}-c_{yy}). $$
+c4-s6	0de84c567db0e15afeea91dcde2369391ad4e1d7c84e60467e29e83a7b990a99	原文区块保留	圆形 $\lambda_1=\lambda_2$ 时方向不唯一。坐标方向标准差 $\sqrt{c_{xx}},\sqrt{c_{yy}}$ 通常不同于主轴标准差 $\sqrt{\lambda_1},\sqrt{\lambda_2}$；它们分别给标准协方差椭圆的轴向外切矩形半宽，而非旋转主轴长度。对称
+c4-s6	ffd2cf21bb038646ffc368814dd79d38728a398e8a394d3c310b650fbf1191ea	原文区块保留	### 4.6.3 Gaussian 概率椭圆
+c4-s6	2e56858876922447ddce5f60586ff9ad34128ef6900f3af6e3b0a75bac090bcd	原文区块保留	若 $\mathbf x\sim N(\boldsymbol\mu,C)$ 且 $C\succ0$，平方距离 $d_M^2=(\mathbf x-\boldsymbol\mu)^{\mathsf T}C^{-1}(\mathbf x-\boldsymbol\mu)\sim\chi^2_2$。指定概率
+c4-s6	38bb41a4006da7615587dd25eff7cf56d283d73ef846a87c984ab25932322ca2	原文区块保留	$$ s=\chi^2_{q,2}=-2\log(1-q),\qquad a=\sqrt{s\lambda_1},\quad b=\sqrt{s\lambda_2}. $$
+c4-s6	99a5f9024999568edacef1a19d5caab473ab81278440be7bfce663b8beb17d66	原文区块保留	这里 $s$ 是**平方距离阈值**，不是半轴倍数。$s=1$ 仅覆盖约 $39.35\%$，$s=4$ 覆盖约 $86.47\%$，$s=5.991$ 约 $95\%$。一维 $\pm1\sigma$ 的 $68.27\%$ 不能直接搬到二维 $d_M\le1$。
+c4-s6	981bff1606b29a39423e948d284fa0c128063c524e18e0c574fc869d4712a28b	原文区块保留	一般 $d$ 维 Gaussian 同理有 $d_M^2\sim\chi^2_d$，椭球主半轴为 $\sqrt{\chi^2_{q,d}\lambda_j}$；三维取自由度 $3$，一维取 $1$。等密度轮廓等价于等 $d_M^2$，但轮廓密度值和内部累计概率不同。非正态点云用相同协方差椭圆不保证同
+c4-s6	af87bee5597a0d9d33fa069aa6ba2cec309f925aba9ed271a74a26fa0cfe8fa2	原文区块保留	### 4.6.4 边缘、条件与回归
+c4-s6	be6d8e34b676f82919396cdd7c4d4de475cc1c4fdf38d49c2a1fb43d20cddee4	原文区块保留	二维正态边缘为 $X\sim N(\mu_x,\sigma_x^2)$、$Y\sim N(\mu_y,\sigma_y^2)$。条件分布为
+c4-s6	3a6ef5898079e7f12395e1d4b6e44b3ef72075057ed3be9a0edd7e91287e4659	原文区块保留	$$ Y\mid X=x\sim N\!\left(\mu_y+\rho\frac{\sigma_y}{\sigma_x}(x-\mu_x), \sigma_y^2(1-\rho^2)\right). $$
+c4-s6	5fb8d651f729d55ae889f86626ac9688593bd5f1087702a8a4471bbaa281db0d	原文区块保留	两方向条件均值回归一般不同，LOC 和协方差主轴也一般不与它们重合。这解释了同一 Gaussian 点云里为什么可画几条各有含义的线。
+c4-s6	2a8c2d2c54032817fda9cafd3fae0d2d85a8ad8e5ffbd9b5311584a7245eb545	原文区块保留	异常识别可按 $d_M^2$ 判断联合偏离，优于分别用两轴阈值；但应检查协方差是否受异常污染和分布是否适合，不把每个阈值外点都称为粗差。
+c4-s7	ced113d9cc3b1d0bc55f79bd6ff49e0b2d49f863ce64c36d7f3b3ab78d6946ed	原文区块保留	"<a id=""c4-s7""></a> ## 4.7 点云形状与边界椭圆拟合"
+c4-s7	715e50618e7f78f7ceca60f85e3da8a8252cf3bf4892e14860d28df6ad1f21c4	原文区块保留	### 4.7.1 点云二阶矩不是任意边界半轴
+c4-s7	c4a6d2b6e2e2a5e247df1e953fad0073495758267c3ffea2de4723fb9bc9e523	原文区块保留	对中心化点云 $\mathbf u_i$，二阶形状矩阵 $M=n^{-1}\sum_i\mathbf u_i\mathbf u_i^{\mathsf T}$。均匀填满椭圆内部时 $M=E/4$；按参数角均匀采样边界时 $M=E/2$；Gaussian 点云由概率阈值决定边界尺度。于是不能对任何点云都
+c4-s7	d9a1065fe76686c70baec7a476a79246b3e16cbf66c7ec56959a5f56d05eb80e	原文区块保留	二维惯性矩阵与形状矩阵的关系为 $J=\operatorname{tr}(M)I-M$（质量已归一化），所以它们共享方向，但对应的特征值交换。课件惯性例旨在说明方向信息，不能把惯性矩阵数值直接当协方差。
+c4-s7	458fd35d0b07fa2188ef755807b350f8d17e077cae17488b1a7bc1feb3033a67	原文区块保留	### 4.7.2 一般二次曲线的中心与轴
+c4-s7	b6577e2d1864d14f675cee20bc80190b6b591110344168e8dd3899cc9dd99219	原文区块保留	边界方程 $ax^2+bxy+cy^2+dx+ey+f=0$，令
+c4-s7	fc49a5fc3474689810a72ffae61a5602997bc779b6d3f44784a37502c3f97e55	原文区块保留	$$ Q=\begin{pmatrix}a&b/2\\b/2&c\end{pmatrix},\quad \mathbf l=\begin{pmatrix}d\\e\end{pmatrix},\quad \boldsymbol\mu=-\tfrac12Q^{-1}\mathbf l. $$
+c4-s7	9a1b2191fe43cce9a1256e54ae7cb86c62267f36d7b124e655f0d81cc9e979a0	原文区块保留	配方得 $(\mathbf x-\boldsymbol\mu)^{\mathsf T}Q(\mathbf x-\boldsymbol\mu)=k_0$，$k_0=\boldsymbol\mu^{\mathsf T}Q\boldsymbol\mu-f$。若整体符号选成 $Q\succ0,k_0>0$，
+c4-s7	74795218de41bd190c81402f25ef8b0ae9adc341f0b8a6f11fcdeaa79138ab77	原文区块保留	### 4.7.3 Fitzgibbon 与 Halír 代数拟合
+c4-s7	4318cf54e48b293867985718bc2a3e33e4a053a9860c7c780302e44d90a5cc6a	原文区块保留	构建设计行 $[x_i^2,x_iy_i,y_i^2,x_i,y_i,1]$、系数 $\boldsymbol\theta=(a,b,c,d,e,f)^{\mathsf T}$，最小化 $\|D\boldsymbol\theta\|^2$。必须加归一化约束，否则零向量是平凡解。
+c4-s7	99b6a292aa1ac8b9b08aa7fac7e905f2d2e84364a1174f49d33bf979d5407915	原文区块保留	Fitzgibbon 方法用 $4ac-b^2=1$，写为 $\boldsymbol\theta^{\mathsf T}C_q\boldsymbol\theta=1$，其中左上 $3\times3$ 块为
+c4-s7	ecee14fcf9d9ebb7c6637764fabd34be9f2d2b946029d9f853b2b42006c5ec7c	原文区块保留	$$ C_1=\begin{pmatrix}0&0&2\\0&-1&0\\2&0&0\end{pmatrix}, $$
+c4-s7	56ab49ade439f8fe818776396a5c89a197f33a437a84fc578b49a542d8805b91	原文区块保留	其余为零。驻点满足 $D^{\mathsf T}D\boldsymbol\theta=\eta C_q\boldsymbol\theta$，从广义特征解中选椭圆约束及真实几何成立的候选。
+c4-s7	69adf8d7e53720b002dead26740592cb37fae74790f9f34867d72fce2fcff728	原文区块保留	Halír 稳定化把 $D=[D_1,D_2]$，$D_1=[x^2,xy,y^2]$、$D_2=[x,y,1]$。令 $S_1=D_1^{\mathsf T}D_1,S_2=D_1^{\mathsf T}D_2,S_3=D_2^{\mathsf T}D_2$，用
+c4-s7	22d1d1d692f81977e9c5149f321d1e22394974103c9145fbb05d7a7f5d29694f	原文区块保留	$$ T=-S_3^{-1}S_2^{\mathsf T},\qquad (S_1+S_2T)\mathbf a=\eta C_1\mathbf a,\qquad \begin{pmatrix}d\\e\\f\end{pmatrix}=T\mathbf a. $$
+c4-s7	298c60bd13a26f9b79034c4b03082048b3cd3baf06d74598e13ced087b0d6a9a	原文区块保留	这里 $\mathbf a=(a,b,c)^{\mathsf T}$，数值实现通过线性求解而非显式求逆，先中心化和缩放可改善条件。秩亏或短弧数据仍不稳定。代数距离不是点到曲线的真正几何距离，系数误差也未直接代表半轴误差；必要时再做几何优化与重采样。
+c4-s7	d92f123ffe39f46f9b81f21f9424e189535bd98fd3a9dc9f0097c3ffbe41486b	原文区块保留	### 4.7.4 绘制和模拟检查
+c4-s7	bb7d761bfe8919b1472f2543175dae276603577801e52db8c5a7fec186de8bd0	原文区块保留	从给定协方差画椭圆：对称化检查 → 特征值排序 → 选概率 $q$ → 算半轴 → 参数式绘图 → 使用等比例坐标。生成相关 Gaussian 点云可用 $\boldsymbol\mu+L\mathbf z$；旋转再缩放按 $A=SR$，检查样本协方差趋近 $ACA^{\mathsf T}$。有限样
+c4-s7	c719082a52e3c9240f21f43e2c9ac72a64aa044507deb3c4725b7f8be6e8fb7b	原文区块保留	边界拟合则先确认数据是否真是边界点；只覆盖短弧会导致中心和轴长不确定。把 Gaussian 内部点全部当椭圆边界拟合，和求其概率椭圆是不同任务。
+c4-s8	b5e8fee4335ad0f2dc59b58c18be17f690471c5e0bb7a28be10429af2fd4f761	原文区块保留	"<a id=""c4-s8""></a> ## 4.8 小例题与复习出口"
+c4-s8	f1e55bd9959a5f421506d095960c52f2e0ad2be2d9281de5105b135f0b1636cb	原文区块保留	**传播例。** $Z=X-Y$，两个标准差均为 $1$。独立时 $\sigma_Z^2=2$；相关系数 $0.9$ 时为 $0.2$；相关系数 $-0.9$ 时为 $3.8$。误差项相同并不表示交叉项可忽略。
+c4-s8	46e66426611713b66b53db517938e2461081f848557f3b5ea28c6197cdfce1d6	原文区块保留	**椭圆例。** $C=\begin{pmatrix}4&1\\1&1\end{pmatrix}$，特征值 $(5\pm\sqrt{13})/2$，方向 $\psi=\frac12\operatorname{atan2}(2,3)\approx16.85^\circ$。$95\%$ Gaussian
+c4-s8	42189069ffa4dc17986a383dc218c07eaf459d625a3ffe0a6abd034096737095	原文区块保留	今年宇宙尘埃题：$V=4\pi r^3/3$，一阶 $\Delta r\approx\Delta V/(4\pi r^2)$；精确 $\Delta r=(r^3+3\Delta V/(4\pi))^{1/3}-r$。这比较的是确定增量与近似，不要无说明把 $\Delta V$ 当标准差。
+c4-s8	a0cc424537bbafa0d609ac7e684f39cb608c050171ac20635a28b55c3ecd6d33	原文区块保留	必须能：写出 Jacobian 并保留协方差；判断线性传播何时精确；解释条件数上界；生成相关抽样；区别白、闪烁、RW、FOGM、GGM；证明广义逆投影关系；从协方差画指定概率椭圆；从一般二次式还原中心与轴；说明点云矩、惯性矩与代数边界拟合的区别。
+c4-s8	d1d74ab70c1f4737263360366273afc7dd0919bf571eeb8b7e1e269f9e7bab58	原文区块保留	对应第 07 次课后半作业与第 08 次课，见[原题](../01_逐课作业原题.md)、[答案](../02_逐课作业解答.md)。
+c5-s2	2e9b2a1a12dda5b1efc58d1904e3627ba3918ceeea18ee6a4d05ab4fd6521edb	原文区块保留	"<a id=""c5-s2""></a> ## 5.2 奥卡姆剃刀、样本偏差与数据窥探"
+c5-s2	aa8adfcababfd0ad0556dc690dd2489e295eb1910d7f92494fa3f1eb8ad2728c	原文区块保留	### 5.2.1 简单性必须配合解释与验证
+c5-s2	918d1e3fbe4ecef4356aef1056001c4a6f83f269595ae3aefbf4b1e09cc8920e	原文区块保留	奥卡姆剃刀是在解释观察能力接近时偏好较简单假设。简单性可对应参数较少、结构约束强、解释清晰或描述长度短，必须说明。它不是“永远用直线”，也不保证最简单模型为真。科学可证伪性、实际测量约束和独立预测仍是检验基础。
+c5-s2	448b70378d788e26bbc8c0c66840d2210b565bbbf416c5b2b97b3c8620d2c4e2	原文区块保留	### 5.2.2 目标总体、入样与幸存者
+c5-s2	7ed958c49fd7bc05cf812540017b35b02e602fd0db05ad881a779a067bdbd053	原文区块保留	样本偏差指入样机制使样本分布与目标总体系统不同。若 $S=1$ 表示入样，通常
+c5-s2	d27aa6ac8bd325bebdca30659ffe574ceacb2dbd4a2917ca0e4c87821eb74c28	原文区块保留	$$ p(\mathbf x\mid S=1)\ne p_{\rm target}(\mathbf x). $$
+c5-s2	4e1ca343793659d09fd7f65ae3b6ba14327bfeceb10ad135c34189a018658288	原文区块保留	增大同机制样本只能更精确地描述偏的样本分布，不会自动代表目标总体。幸存者偏差忽略筛选后消失的对象：只看返航飞机、成功企业或进入大学的学生，会遗漏目标问题所需的信息。电话调查等历史案例体现覆盖框与目标总体不一致。
+c5-s2	1705cd5b61e688f418b25d2e14010b5bb7eb61452fe169373c28f1e0fb5fee57	原文区块保留	| 抽样方式 | 核心机制 | 需要检查 | |---|---|---| | 简单随机 | 总体个体有规定的等机会 | 抽样框完整性 | | 分层 | 各层内抽样，再按目标权汇总 | 层比例与权值 | | 整群 | 抽选群，再观察群内个体 | 群内相关与代表性 | | 系统 | 随机起点后固定间隔选
+c5-s2	9584edb545218dd5d2ea7a241f2c74e94e6aa16e303bc63783d222e6ab8a1d86	原文区块保留	课件的电阻率实验表明实验温度范围和取点机制会影响结论；几组样本的外观差异可能源于数据获取。观察到共同图形也不能跳过共同原因与筛选机制。
+c5-s2	7f8d35b7950b221d469b63e735e881fe06c9a646ec3e7fe3a765ac156111ec28	原文区块保留	地心／日心讨论提示：选择坐标原点不等于抽样偏差。同一轨迹可在不同参考系表示为圆或摆线；模型是否方便、物理是否正确、样本是否偏，是不同问题。
+c5-s2	7e170d70a2ee740fdee32334f6f487dc56a83c26e9dc550b26d095d6ee5c7c86	原文区块保留	### 5.2.3 数据窥探与泄漏
+c5-s2	8f08888382093489b58eadc39724b99bb3df46cdbcc4a6487b96dedfd0f0a949	原文区块保留	若反复试模型、调参数、选特征或更改预处理，只保留同一测试集最好的结果，该测试集已参与选择。即使每轮训练没有直接读测试标签，最终性能仍乐观。
+c5-s2	ba5d0e32468e62f0229c12fee8b115855e9043db4592526cb052e661a324c109	原文区块保留	纪律：训练数据估参数，验证数据调模型与超参数，锁定测试集作最终评价；标准化、特征筛选、插补也在训练折内拟合。时间序列用时间先后划分，空间问题按地域或相关块划分，避免邻近相似样本跨边界泄漏。
+c5-s4	3e49eddc7bfa81b8a89cca85b3d7d2de1999f254cc7743c83243dba7379db780	原文区块保留	"<a id=""c5-s4""></a> ## 5.4 损失、经验风险、结构风险和 MAP"
+c5-s4	d50cdc17d131d6c39f2b57c6dc3ba0db1a884d47c28ee6d99f7c5abd692b4b77	原文区块保留	给定损失 $L(y,f(x))$，总体风险 $R(f)=E_{(X,Y)}L(Y,f(X))$；经验风险 $\hat R_n(f)=n^{-1}\sum_iL(y_i,f(x_i))$；正则化目标 $\hat R_n(f)+\lambda\Omega(f)$。
+c5-s4	38ae92124165577f90fc2f9bff83d96f4b7eda121015100ba64dbb65008381b7	原文区块保留	| 损失 | 公式 | 对应对象 | |---|---|---| | 零一 | $\mathbf1_{y\ne\hat y}$ | 分类是否错误 | | 平方 | $(y-\hat y)^2$ | 对大误差惩罚强 | | 绝对 | $\lvert y-\hat y\rvert$ | 对极端误差较不敏
+c5-s4	a9aa878ee2cebe3f48debc7d4aaba5d567c37491ff3ee682de250b210c4120a0	原文区块保留	经验风险最小化与 MLE 在对数损失下对应；结构风险思想在经验拟合外惩罚复杂度。总体风险本身通常未知。
+c5-s4	38bb8ae4a11a6b39e424b43880ea75ab9a926df0c32b2cb3103ca57a8abe54dd	原文区块保留	MAP 最大化 $p(\boldsymbol\beta\mid\mathbf y)$，等价最小化
+c5-s4	22eae6a6f5abedc54ce58b0aa6fd178cf68a967bab4473954d8ca02d1013c6a9	原文区块保留	$$ -\log p(\mathbf y\mid\boldsymbol\beta)-\log p(\boldsymbol\beta). $$
+c5-s4	047dbd5ee16a5bface5165f8567663ae9d2c25a8e76de4c8e68821512791dc05	原文区块保留	Gaussian 加性误差给平方残差；高斯先验给 L2 惩罚；Laplace 先验给 L1 惩罚。MLE 不等价于所有 LS；MAP、MLE、后验均值也不是同一个概念。正则强度取决于损失是否除以 $n$、噪声尺度和先验尺度，不能从不同软件直接比较相同数值。
+c5-s5	cacd1cf8a9bae3e9ca2c750b65f02b9bec951748f76c30f652d1e2d9d006353d	原文区块保留	"<a id=""c5-s5""></a> ## 5.5 Ridge、Lasso、稀疏与平滑"
+c5-s5	1b0efe5ab3d63386e5c1a0a461d19c560c1d9048b2684db9aabb650d620a212e	原文区块保留	### 5.5.1 范数与约束几何
+c5-s5	09ffee606a8c3da6ac0b0d75f80634d1f83a88122ed4a3a3adbeb39c71fed4bb	原文区块保留	$\|\boldsymbol\beta\|_1=\sum_j|\beta_j|$，$\|\boldsymbol\beta\|_2=(\sum_j\beta_j^2)^{1/2}$，L0 记法 $\|\boldsymbol\beta\|_0=\#\{j:\beta_j\ne0\}$ 是计数，不是严格范
+c5-s5	04d5c70800b2bf3e2647f1450b2cc4a976b80c8ab0865ee9d0ab803f252e9fc1	原文区块保留	约束型 $\min\|\mathbf y-X\boldsymbol\beta\|^2$、$\Omega(\boldsymbol\beta)\le t$ 与惩罚型在适当凸性和约束条件下联系，但给定 $t$ 到 $\lambda$ 的关系依赖数据。
+c5-s5	b07298db579dcc8b6c6a2af4ab7f730dd8e1b0c09ef89d704bf07fb7288d4919	原文区块保留	### 5.5.2 Ridge 的谱收缩
+c5-s5	def552a964d5b533e18a3af804d44afcc0a18b09b2f0c7a865caa9cc1f6536e5	原文区块保留	为简洁采用未除以 $n$ 的平方目标：
+c5-s5	e348470065e3d743bd6b23aea6aaa78d2478d904075eb1c87814749e40b9939c	原文区块保留	$$ \hat{\boldsymbol\beta}_{\rm ridge} =\arg\min_{\boldsymbol\beta}\{\|\mathbf y-X\boldsymbol\beta\|_2^2+\lambda\|\boldsymbol\beta\|_2^2\} =(X^{\mathsf
+c5-s5	e1a8f4b090bfa83d542c1e85477db3ef9b668a20bab25641f7a0a878d7aa0717	原文区块保留	若 $X=U\Sigma V^{\mathsf T}$，沿每个非零奇异方向系数乘 $\sigma_j^2/(\sigma_j^2+\lambda)$，较小奇异值收缩更强。PPT “全局缩放”只在特殊标准正交设计成立，一般不是所有系数乘同一常数。
+c5-s5	5836de977276067c4dc4254efb54dab06890a69bc5015891eed22f7db806e142	原文区块保留	Ridge 引入偏差以降低方差，缓解共线性和病态，不必产生精确零。通常先中心化、标准化特征，截距不惩罚；不惩罚的矩阵可用 $L^{\mathsf T}L$ 代替 $I$，对截距列置零。
+c5-s5	f0350a7e2ec75da07865261c15856b280da8de688f2680f4416ad4416d1e8298	原文区块保留	### 5.5.3 Lasso 与软阈值
+c5-s5	43611ec2af9f74d1c4cd788e7d55d2df47f3d96ba437e188cd85e157aea9603d	原文区块保留	$$ \hat{\boldsymbol\beta}_{\rm lasso}=\arg\min\left\{\frac12\|\mathbf y-X\boldsymbol\beta\|_2^2+\lambda\|\boldsymbol\beta\|_1\right\}. $$
+c5-s5	3b56159c31efae26a7e479e2cb5ceb31be0888090c0398f8355fb30e9e73d06b	原文区块保留	若 $X^{\mathsf T}X=I$，令 $z=X^{\mathsf T}\mathbf y$，逐系数解为
+c5-s5	982c2fc1783226d524591ee00fbf2cbe8db9c4ca6e618defb8a579e416a8cea6	原文区块保留	$$ \hat\beta_j=\operatorname{sign}(z_j)\max(|z_j|-\lambda,0). $$
+c5-s5	061b1de2619c9e888d5307973d0a8ec92270649faad96b660bc1b568e993deac	原文区块保留	一般相关设计需坐标下降等算法，不能直接给 OLS 系数软阈值就当作 Lasso 解。L1 的不可微可用次梯度，零点次梯度区间为 $[-1,1]$；稀疏取决于数据、约束与 $\lambda$，不保证每次都零很多。高度相关特征可能替代或不稳定选择；唯一性也需条件。稀疏有利于变量选择和解释，但不自动证明物
+c5-s5	ac6eb07bc9b9cb94ad1d7af226ab6cf3fa7f946bf3ed68088fe282d71f6f0f33	原文区块保留	### 5.5.4 零阶、一阶、二阶平滑约束
+c5-s5	2950d61d78a83fb986397f09cea133b318e805b4e9dbc22e6bf6f9bab06855a8	原文区块保留	反演可用 $\|X\boldsymbol\beta-\mathbf y\|^2+\lambda\|L\boldsymbol\beta\|^2$，解 $(X^{\mathsf T}X+\lambda L^{\mathsf T}L)\hat\beta=X^{\mathsf T}\mathbf y$。$L
+c5-s5	3cc3548cd9c59ddcb71191d2c108e14f1e06bd84ee4279c25da6e99c2a5dec28	原文区块保留	惩罚 $\|D_1\beta\|_1$ 倾向分段常值，$\|D_2\beta\|_1$ 倾向分段线性（解释补充）。L1／L2 是惩罚形式，零／一／二阶是作用算子，两组分类不要混为一组。重力反演图展示不同约束结构的结果，不能断言某一范数对所有数据更好。
+c5-s6	2d2f225572b9e0800d330e87a6cdcd62fe3dd95a440748b389b0ca7eac1f3dda	原文区块保留	"<a id=""c5-s6""></a> ## 5.6 小例题与复习出口"
+c5-s6	9b02400a50b6f8e5ae55c9646bab87bd525a13104a9e37063ac213b3d6220c36	原文区块保留	**Markov 例。** 城市到乡村 $5\%$、乡村到城市 $3\%$，列随机矩阵 $P=\begin{pmatrix}0.95&0.03\\0.05&0.97\end{pmatrix}$，稳态满足 $0.05\pi_1=0.03\pi_2$，故 $\pi_1=3/8,\pi_2=5/8$。必须
+c5-s6	efabe52abe8f6ba578bcec8d630b5586ac228d33dda0edfa420551626a7717b6	原文区块保留	**软阈值例。** 正交设计 $z=(3,0.4,-2)$，$\lambda=1$，Lasso 得 $(2,0,-1)$。若列高度相关，这个独立阈值例不再适用。
+c5-s6	8b838825ccd2a3872135fea7cecd9d6b40db9f01734c2f0b5196b50d7b68eb6a	原文区块保留	复习时应能：检查转移矩阵方向与稳态条件；解释为何更多偏样本不能补救抽样机制；设计无泄漏的验证流程；推导高维球体体积并检查低维；区分总体／经验／结构风险；将先验变成惩罚；推导 Ridge 收缩与正交 Lasso；分清稀疏、平滑、变量尺度和截距。
+c5-s6	69e6f3c0f264e5ea2a733e30f30ad5f1facf00666519b59d97548a877dbb897f	原文区块保留	对应第 09 次课作业，见[原题](../01_逐课作业原题.md)与[答案](../02_逐课作业解答.md)。下一章将前五章用于时空分解、动态状态估计和神经网络。
+c6-s1	80847f0abc0dd49ef1ea8ac647b486c4c26ad650cd5bbb6b8a9817c4e9907246	原文区块保留	"<a id=""c6-s1""></a> ## 6.1 SVD：存在性、紧分解与最佳低秩"
+c6-s1	c4afd4171bbfbdacec8778d36ffc33ffcef7d349956c5e1659eb4973c450ec54	原文区块保留	### 6.1.1 构造性证明
+c6-s1	52ee58d57644f702a9ec4488cc3a751b24dc228f1212441c1fb5d061a05aaf28	原文区块保留	任意实矩阵 $A\in\mathbb R^{m\times d}$、秩 $r$。$A^{\mathsf T}A$ 对称半正定，因为 $\mathbf v^{\mathsf T}A^{\mathsf T}A\mathbf v=\|A\mathbf v\|^2\ge0$，故存在正交特征基 $V$，特征值
+c6-s1	176486d1c50bfbeb1dfcdfad6bcbdf624300fb47ddb2073a3a419d54a02f8f2e	原文区块保留	将正特征值降序写为 $\sigma_j^2$。令 $\mathbf u_j=A\mathbf v_j/\sigma_j$，则
+c6-s1	c2247ad54f77ed01aaddda8ed50220f89527492b26f4fab76460072a1f11df4f	原文区块保留	$$ \mathbf u_i^{\mathsf T}\mathbf u_j =\frac{\mathbf v_i^{\mathsf T}A^{\mathsf T}A\mathbf v_j}{\sigma_i\sigma_j}=\mathbf1_{i=j}. $$
+c6-s1	476c092aff0426ffe010833ee7454f7fcbda777881091b9bb71c2b9a644782bb	原文区块保留	这些向量张成列空间。再补充 $\mathcal N(A^{\mathsf T})$ 的正交基形成 $U$。零特征向量位于 $\mathcal N(A)$，因为 $A^{\mathsf T}A\mathbf v=0$ 等价于 $\|A\mathbf v\|^2=0$。所以
+c6-s1	a18a12c753af4f853c9303cb80b26f56bfe62809bde653a14c0355d330edfe46	原文区块保留	$$ A=U\Sigma V^{\mathsf T},\qquad A\mathbf v_j=\sigma_j\mathbf u_j, \qquad A^{\mathsf T}\mathbf u_j=\sigma_j\mathbf v_j. $$
+c6-s1	db24ab2a2a926a09b397b3b915cbacec4a324256a1f52f1b4361adf2b1b2ba80	原文区块保留	这证明所有矩阵都有 SVD，和一般矩阵能否特征对角化是不同问题。奇异值确定；对应左右向量同时反号不改变 $A$，重奇异值内可旋转正交基。
+c6-s1	dd374bb381f2d488fa810cf298c1a12ef8474644542c045b8a4f77393fe7b032	原文区块保留	### 6.1.2 三种尺寸与几何
+c6-s1	5303764f581e8deb64832c1b605c4bb10600cf7568d6623f35e0772604db4dc4	原文区块保留	| 形式 | $U$ | $\Sigma$ | $V$ | 表达内容 | |---|---|---|---|---| | 完整 | $m\times m$ | $m\times d$ | $d\times d$ | 包含两侧零空间 | | 紧 | $m\times r$ | $r\times r$
+c6-s1	feac4229ca1d8b233755539e6a82060fa73b2690cc120c7170d1f862752b1379	原文区块保留	软件的 economy／thin 可能保留 $\min(m,d)$ 列含零奇异值，不总与严格秩 $r$ 的紧分解一致。
+c6-s1	e656da93c8777431dea39e4b72dd5741f2c1b02a56db8a5d9dbc8e3db15a63b9	原文区块保留	几何顺序：$V^{\mathsf T}$ 将输入换到右奇异方向，$\Sigma$ 缩放并压掉零方向，$U$ 换到输出方向。正交映射可能旋转或反射；矩形映射可改变空间维度。
+c6-s1	024361739af50208e671aef7242fc723b7c5b3cee68c859ddf9d7f96f547142b	原文区块保留	### 6.1.3 最佳低秩与误差
+c6-s1	255b0bdf2910f1f09003ebfead55f8d03d147817080baa7591699d30aaad3ec4	原文区块保留	$$ A_k=\sum_{j=1}^k\sigma_j\mathbf u_j\mathbf v_j^{\mathsf T},\quad \|A\|_F^2=\sum_{j=1}^r\sigma_j^2,\quad\|A\|_2=\sigma_1. $$
+c6-s1	5086bace2eb5d263c2c6dcbbb0f5cfaa4ea728d2e1a476ff78b01c20897c54c7	原文区块保留	秩不超过 $k$ 的矩阵中，截断 SVD 是 Frobenius 与谱范数意义下的最佳近似，误差为
+c6-s1	fca689e353222c8303845c9fa2acb63b45c01ecc2ad4a921b4e925e7f4b768d5	原文区块保留	$$ \|A-A_k\|_F^2=\sum_{j>k}\sigma_j^2,\qquad \|A-A_k\|_2=\sigma_{k+1}. $$
+c6-s1	89ae50b5794caa8a489978041bda295d6140db0aed487d699e21019e55b7ecfd	原文区块保留	证明思路：正交变换保持 Frobenius 范数，任何秩 $k$ 表示只能保留 $k$ 维方向，选择最大奇异能量使舍弃平方和最小；谱范数由最大剩余方向控制。近重奇异值时最优子空间可能稳定而单个向量不稳定。
+c6-s1	d00984b5476b36eb4854457599b2a7d3972bf1c8764436218e913c0f570c5060	原文区块保留	例 $A=\begin{pmatrix}3&0\\0&1\\0&0\end{pmatrix}$，紧 SVD 的 $U$ 为前两个标准基、$\Sigma=\operatorname{diag}(3,1),V=I$。秩一近似只保留第一列，Frobenius 误差和谱误差都为 $1$。使用软件时检查 $A
+c6-s2	7750ea79cfbbc29887d2a3a3b10674eccc0b7391bab6e3bfb24983795fa65b7a	原文区块保留	"<a id=""c6-s2""></a> ## 6.2 EOF／PCA：预处理、求解与检验"
+c6-s2	27b81cea23c6726433836fb41596c130aaaac8843aa2b43dafabda6f8e7bf615	原文区块保留	### 6.2.1 统一行列方向
+c6-s2	55a37e418dc027cbd956b9ba000f449a0544095ddd131e15d2148500bef618cc	原文区块保留	固定 $D\in\mathbb R^{n\times d}$：行是时间／样本，列是空间点／特征。每列减去时间均值，得到 $D_c$。课程也使用空间×时间矩阵 $Z=D_c^{\mathsf T}$；转置后左右奇异向量角色交换，不能只记“U 永远是空间型”。
+c6-s2	3db2f27bc033e55a64a42d646ce13b4e7e5924e9cc8d1f4ffcad4a05514be100	原文区块保留	EOF 是时空场中数据驱动的正交空间模态，与 PCA 的数学核心相同。它不预设正弦等固定空间函数，模态由选定数据与内积决定。
+c6-s2	ac1d8f7f9221af9753600b57d9593398c175aa83e21c2b4e59a81aafb77ae99b	原文区块保留	### 6.2.2 预处理决定分析问题
+c6-s2	be723944242f84da34bbbe4d6c800b38652a1da63965ef66dfa9194eb440331c	原文区块保留	| 操作 | 作用 | 需要说明 | |---|---|---| | 去均值 | 分析异常场 | 按每空间点沿时间去均值 | | 去趋势／周期 | 分析剩余变化 | 模型、基准期和信号是否本来要研究 | | 标准化 | 各变量按相对变化比较 | 协方差 PCA 变成相关结构分析 | | 时间滤波 |
+c6-s2	da4f8b1ea69508679ad1bafe14be4c98eabdd35c656abeafbc6a5ddfcf036c34	原文区块保留	面积权平方进入方差，故数据列乘平方根权，不是直接乘面积后还按相同内积解释。重建物理场时要除回权值。数据单位不同且未标准化，方差大的单位可能主导模态。处理应该服务目标；不是所有分析都必须先删长期趋势。
+c6-s2	2fe5dda746fedc33ccb5d8f525a106c0ff8a0c5b6142727fdd45962b8d3680f0	原文区块保留	### 6.2.3 协方差法与 SVD 法
+c6-s2	c401e649c7b501eee49cad65e72be62a694f6aa929ed1ebc885a2984cd1690ef	原文区块保留	$$ C=\frac{D_c^{\mathsf T}D_c}{n-1},\qquad D_c=U\Sigma V^{\mathsf T},\qquad C=V\frac{\Sigma^2}{n-1}V^{\mathsf T}. $$
+c6-s2	337edad804022b0f28f1338120703c6c3f13bdfcedd5484f9f8155aacae383ff	原文区块保留	空间 EOF 是 $V$ 的列，时间 PC／得分为 $T=D_cV=U\Sigma$；特征值 $\lambda_j=\sigma_j^2/(n-1)$，解释方差比例 $\eta_j=\lambda_j/\sum_\ell\lambda_\ell$。第 $j$ 模态重建为 $T_{:j}V_{:j}^
+c6-s2	cea45ee6adab0ff5978520c4ef6ddf7802c784c6014820005834d454535e19a1	原文区块保留	分母 $n$ 或 $n-1$ 改变特征值尺度，不改变特征向量和解释比例。空间型乘常数、时间系数除同常数也可重建，所以读软件输出先确认归一化，不能把“载荷”“因子”名称当固定尺度。
+c6-s2	6d8df4011545ddfd0a0364153b1d8061cf17c753ee587bc08bbb52867e8bd42e	原文区块保留	### 6.2.4 最大方差与最小投影损失
+c6-s2	942254cbeb95961866f884e6f701c74690da36855aeb3ba64545489d9cfb2cb5	原文区块保留	单位方向 $\mathbf v$ 的得分方差为 $\mathbf v^{\mathsf T}C\mathbf v$。用约束 $\mathbf v^{\mathsf T}\mathbf v=1$ 的乘子法得 $C\mathbf v=\lambda\mathbf v$，最大特征值方向给第一 PC；后续加
+c6-s2	790556f500415caef70da622874bb5a335a427ba99d46d44e0d2a59667f4e912	原文区块保留	投影到 $V_k$ 的重建 $D_cV_kV_k^{\mathsf T}$，残差 Frobenius 范数最小也给相同方向。这连接第四章正交拟合。PCA 得分在样本协方差上不相关；一般不独立，只有额外分布条件如联合正态才由不相关推出独立。
+c6-s2	bfa2105f658184ff8e0177a5f0419dfab8af0ce7e53e6a849e990738472677e1	原文区块保留	### 6.2.5 模态稳定性和时间系数分析
+c6-s2	781117730e4de85e89bf66684217f40d9a98076c07948c7d48cebac41ffcb294	原文区块保留	North 经验误差尺度 $\delta\lambda_j\approx\lambda_j\sqrt{2/n_{\rm eff}}$。相邻特征值间隔与误差同量级时，单个 EOF 方向可能混合；规则是经验分离判断，需有效样本数与近似条件，不能当所有资料的精确置信区间。
+c6-s2	510012e1aa9455e0b5c118c6fce16054e122848b12e8d3269d57505e1ae88175	原文区块保留	课程还用 Monte Carlo／合成数据检查模态：保留目标相关结构，重采样或生成零假设数据，比较特征值与方向／子空间的分布。自相关资料不可简单逐时刻独立重采样。
+c6-s2	34f2e2aeabb155e9e935addc420ea960e35a46b65ed80c3b99d5d4e4f2536646	原文区块保留	PC 可继续做敏感性、突变、趋势、周期和相关因子分析。敏感性包括改变选域、预处理和样本期；突变检验需注意搜索多重性；关联物理因子不自动证明因果。
+c6-s2	63441a887325dcd8579676734f411c026ece023b5c2fd1ebceca13cf2e537467	原文区块保留	课件应用：海温、大气场、GNSS 垂直位移反演陆地水储量、南极冰质量传播。先对观测场降维再反演少数时间／空间分量可节约计算，但遗漏模态也会遗漏信息。Pearson、Lorenz 与蝴蝶效应是历史背景；不把 EOF 模态天然命名为确定机制。
+c6-s3	78e7979309ac47689804e13a41acc309fbad1d0006a2605c50b8ad4d858d0919	原文区块保留	"<a id=""c6-s3""></a> ## 6.3 Hilbert 变换、解析信号与 CEOF"
+c6-s3	924716eaf31e52c2fa31e0fcd76409a821b4c29e2744aa796f2f63891d9dd768	原文区块保留	### 6.3.1 主值定义和相位规则
+c6-s3	63eb9af684308a1591ac5f6b47ddd7668a4a8856a4ff958200528bd1b0004e30	原文区块保留	$$ \mathcal Hx(t)=\frac1\pi\operatorname{PV}\int_{-\infty}^{\infty}\frac{x(\tau)}{t-\tau}\,d\tau, \qquad \mathcal F\{\mathcal Hx\}(f)=-i\operatorname{
+c6-s3	cc5347276f0f8ef67f3c98328c497efee77def3b54a72318036870207d624a50	原文区块保留	PV 表示在奇点两侧对称避开后取极限，不是把奇点值直接设零。正频相位减 $90^\circ$、负频加 $90^\circ$，幅度不变；DC 需单独约定。适当函数空间中 $\mathcal H^2x=-x$，常数分量不适用这个简单恒等式。
+c6-s3	bedc68c247ae0ad7d3b52d616c106cf7247affa03ae69663e448ae7eb8d30007	原文区块保留	| 原函数（正 $\omega$） | Hilbert 变换 | |---|---| | $\cos\omega t$ | $\sin\omega t$ | | $\sin\omega t$ | $-\cos\omega t$ | | $e^{i\omega t}$ | $-ie^{i\omega
+c6-s3	75c40b17f5d0e47bca20cbd572c4d184ef457dd1a28748ae0d6e94c1dac2ab0b	原文区块保留	课件还列 Gaussian $e^{-t^2}$ 的变换 $2F_D(t)/\sqrt\pi$，其中 Dawson 函数 $F_D(t)=e^{-t^2}\int_0^te^{u^2}du$。这些例子体现核的非局部性；脉冲变换仍有奇性，不应理解为万能平滑器。
+c6-s3	53d1296b1bb9e3c7e8b9a39731c617220fd577fa10149ceb2b0ca0ca355fdcfd	原文区块保留	### 6.3.2 解析信号、幅相和传播
+c6-s3	20c37aeefd28d5f715f14cd03a7fb41e2993b7c48f9156368a9270690bcb2fc3	原文区块保留	实信号的解析形式 $z(t)=x(t)+i\mathcal Hx(t)$，频域去掉负频、正频加倍（DC 与 Nyquist 特殊处理）。瞬时振幅 $A(t)=|z(t)|$，相位 $\phi(t)=\arg z(t)$，可在相位展开后算瞬时频率 $f_{\rm inst}=\phi'(t)/(2\p
+c6-s3	ff008544629c56b600efb237bd4646dd608661b695b89a58c9df388a14bcb78f	原文区块保留	对 $x(t,s)=A\cos(\omega t-ks)$，解析场约为 $Ae^{i\omega t}e^{-iks}$，空间相位斜率给波数，传播速度为 $\omega/k$（需 $k\ne0$）。实 EOF 常需要正交的正弦／余弦两个模态表达传播，CEOF 可用一个复模态同时表示幅度和相位。
+c6-s3	21cf5066f0b35b685461b159a897a4028f5eb8f96925f78e143d2a06217edf3c	原文区块保留	### 6.3.3 CEOF 求解
+c6-s3	8098a1f868971659cf68e906e2b0663e887d813ca685a930ea76a6b1aa8a81d4	原文区块保留	对每空间列沿时间作 Hilbert，构造复矩阵 $D_a=D_c+i\mathcal H_tD_c$。用 Hermitian 协方差 $C_a=D_a^*D_a/(n-1)$ 或复 SVD；特征向量为空间复型，得分 $T_a=D_aV_a$，重建 $T_aV_a^*$ 后取实部。
+c6-s3	fe068d382d8d46bb62f98c57f74c1c1da0564c64a37c6603032150bc9d5aa1c3	原文区块保留	空间型模值描述相对幅度，辐角描述空间相位；时间系数也有幅相。统一整体相位可转移到时间系数，不改变重建，所以绝对相位原点不唯一。解释比例的总复能量约定和实 EOF 不可不加说明直接比较。
+c6-s3	644a3a3f21ef3b651284bbf2b894d1d44aca7d476c7b0287b2f352a7b8fcd6ad	原文区块保留	六组课件模拟展示单一波、驻波／传播波、实 EOF 两模态、混合过程与不同复模态贡献；作用是读懂分解结果，不是说 CEOF 必定只需一模态。实 EOF 与 CEOF 是互补分析，选择取决于是否要分析相位和传播。
+c6-s4	26b69f4be141d89c87c57b09b9ed9b98b5f9b173bbaad34239bfa9e35235b01d	原文区块保留	"<a id=""c6-s4""></a> ## 6.4 ICA、信息熵与盲源分离"
+c6-s4	f38ea0383ab686827e57ecd0541719d2545947dd254d4a50e43d1d05a8c2c54e	原文区块保留	### 6.4.1 混合模型与可辨识性
+c6-s4	94a443da937b5d62f3f1b22ab989e59e812c167963b265c45dc09f23ce3ba42e	原文区块保留	采用列向量瞬时模型 $\mathbf x=A\mathbf s$，$\mathbf s$ 为潜在独立源，$A$ 未知。ICA 寻找解混矩阵 $W$，使 $\hat{\mathbf s}=W\mathbf x$ 的分量尽可能独立。麦克风混合声音是直观例，图像恢复和时空源分解是应用；含时间卷积的真实声学
+c6-s4	61d0d7a6f94fe657e3c223f3ac4e5a868f3aa443dd2fa2162fc0f9f5631cfe1d	原文区块保留	常见可识别假设：来源独立、混合满秩、来源数不超过可用观测维数、至多一个来源为 Gaussian。多个 Gaussian 来源白化后旋转仍 Gaussian，独立性不能区分方向。源顺序、尺度和符号不确定，因为可相应修改混合矩阵。噪声、样本不足、相关源或过多来源需要额外模型。
+c6-s4	6940d0f79ad9910d8f24d37ac8989eb8e73842ad432c12f730dac8f986518982	原文区块保留	### 6.4.2 中心化、白化与剩余旋转
+c6-s4	fbe21500cac3327eccc5d358d858688d8563b232fb67972322be13531787d56d	原文区块保留	中心化 $\mathbf x_c=\mathbf x-E\mathbf x$；协方差 $C_x=E_x\Lambda E_x^{\mathsf T}$，保留正特征值，令 $\mathbf z=\Lambda^{-1/2}E_x^{\mathsf T}\mathbf x_c$，则 $\operator
+c6-s4	fa0ddf9929d4538e06a040444bd6a84dd1bc58172b75a49ed9eb57f1d219ee70	原文区块保留	PCA 选择最大方差正交方向，ICA 用独立性选方向，两者目的不同。ICA 可先用 PCA 降维白化，但丢失的低方差来源不能由后续旋转恢复。
+c6-s4	8fc083c62bff61dc72e7e2f902c0dd5cfacce5f3b1288ad115a6d7d6f269e921	原文区块保留	### 6.4.3 熵、互信息、KL 和非高斯性
+c6-s4	cf6e0e7acd23d06b88a1b038c2a36d34f0bad07f4ae2169f7b000d0b1d126965	原文区块保留	离散信息量 $I(x)=-\log p(x)$，熵 $H(X)=-\sum_xp(x)\log p(x)$。等概率 $M$ 种事件熵为 $\log M$；确定事件熵为零。以 $\log_2$ 为 bit，以自然对数为 nat。
+c6-s4	d004a5134d375f733c6cb1c3a77716d9289bf55b76cbe4e696c4278bb1de9e3f	原文区块保留	连续微分熵 $h(X)=-\int f(x)\log f(x)dx$ 可为负，且 $h(aX)=h(X)+\log|a|$，所以依赖单位。正态熵 $h(N(\mu,\sigma^2))=\frac12\log(2\pi e\sigma^2)$。
+c6-s4	6dd1ffbce48b084e55ec500f0012523f4014380bc728fa22a5e80b39046cdb16	原文区块保留	$$ D_{\rm KL}(p\|q)=\int p\log(p/q)\ge0,\quad I(X;Y)=D_{\rm KL}(p_{XY}\|p_Xp_Y). $$
+c6-s4	2d097c69e3f26058a840bae22fdcdc491cc22b5fad8926c8826780da761d8f8d	原文区块保留	互信息为零等价独立（合适分布条件下）；一般不对称的 KL 不是距离。多信息 $I(s_1,\ldots,s_d)=\sum_jh(s_j)-h(\mathbf s)$。线性变换 $h(W\mathbf x)=h(\mathbf x)+\log|\det W|$；白化后的正交旋转绝对行列式为 $1$，
+c6-s4	a0af9a0ab82833e8b8ffdbc605b6f5c1ee43865d255c88b4802369799b410c04	原文区块保留	固定均值和方差时 Gaussian 熵最大，负熵 $J(s)=h(s_{\rm Gaussian})-h(s)$ 衡量非高斯性。只最小化未约束尺度的熵可能把变量压缩到零，必须白化／规定方差。
+c6-s4	67628152e9a44e7f531c606deca1656a7eba43685afaabc27ca34e14c117e4e0	原文区块保留	### 6.4.4 FOBI、FastICA 与估熵实践
+c6-s4	b2c9539cd1ee7860f9f4f1fc24fac089b8adb64e5b16ed89dd0f0fa5b044d364	原文区块保留	FOBI：对白化列样本 $\mathbf z_i$ 构造四阶矩阵 $B=n^{-1}\sum_i\|\mathbf z_i\|^2\mathbf z_i\mathbf z_i^{\mathsf T}$，特征向量矩阵 $R$ 给候选方向，源估计为 $R^{\mathsf T}\mathbf z$；要检
+c6-s4	0e9372150d8c690db9494276c3d103dd78172779b94a7c835e5d787498439f2e	原文区块保留	FastICA 常用固定点更新（解释算法细节）：
+c6-s4	f349ab02c1af39ff159588c73dd3bca83ba1025243ecc746ae04d6717c6b8f2a	原文区块保留	$$ \mathbf w_{\rm new}=E[\mathbf z\,g(\mathbf w^{\mathsf T}\mathbf z)] -E[g'(\mathbf w^{\mathsf T}\mathbf z)]\mathbf w, $$
+c6-s4	e36761c08c0018386929ff6cca8ba01358e46db5fa4ce5dbb32c07f242ebd363	原文区块保留	再与已有方向正交化并单位化，直到方向稳定；$g$ 可取 $\tanh$ 或立方函数。多分量可对称白化／正交化。判断收敛需容许 $\mathbf w$ 和 $-\mathbf w$ 等价。FOBI 与 FastICA 目标、统计量和求解过程不同。
+c6-s4	59a97cb1956d2288a78c47dc5a17c41cf579b1d98f06f806781c2d43da8f9a53	原文区块保留	课件 binless 熵程序用每点最近邻欧氏距离 $r_i$。按其 $d$ 维、bit 约定，
+c6-s4	1cda9a500f14e1c8979904b80bd4a6b7303d8f5b2db629f86ac5b8b05d337ca5	原文区块保留	$$ \hat h=d\,\frac1n\sum_i\log_2r_i+ \log_2[(n-1)V_d(1)]+\frac{\gamma_E}{\log2}, $$
+c6-s4	81234743c2713607195edc64341893816c375e4986ffbb07516f95e3b00e2da7	原文区块保留	$V_d(1)=\pi^{d/2}/\Gamma(1+d/2)$，$\gamma_E\approx0.5772$。重复点距离零需处理；此估计仍受有限样本、尺度、维数、边界和相关样本影响。SST 的 PCA／ICA 地图需先处理缺测，并将 ICA 源顺序与符号对齐才能比较，不凭漂亮地图命名物理机制。
+c6-s5	d6e6a770e9aa3cb640bcf03f373a8f03a0f8774de396cbc26e8c6f84bdbbb7d2	原文区块保留	"<a id=""c6-s5""></a> ## 6.5 有色噪声 MLE、白化与矩阵计算"
+c6-s5	670c2e483f129a15c3db079b569a31f5c9655c17cf737f7d887840cd1ec8ac53	原文区块保留	### 6.5.1 趋势与协方差参数
+c6-s5	cf3f4b4963f3e7000f7e5602b4c73d91e645db27a7694ff7573946e6bfdb52eb	原文区块保留	模型 $\mathbf y=X\boldsymbol\beta+\mathbf w$，$X=[\mathbf1,\mathbf t]$，$\boldsymbol\beta=(a,b)^{\mathsf T}$；时间单位决定斜率单位。设 $\mathbf w\sim N(0,C(\boldsymbol
+c6-s5	0efec4cf5fb8e031312a1ff06fd2517ce71c3e4caadc92f53fb297f3e44a1d56	原文区块保留	完整对数似然为
+c6-s5	187da3531b951adbad19c1f5304eda4b41620a666bac2303a87c554622579138	原文区块保留	$$ \ell(\boldsymbol\beta,\boldsymbol\eta)=-\frac12\left[n\log(2\pi)+\log|C| +(\mathbf y-X\boldsymbol\beta)^{\mathsf T}C^{-1}(\mathbf y-X\boldsymbol\be
+c6-s5	cf571318e09a814ca332bf1cbb0ea7b600c7f881265838407d345f44c7f4c2db	原文区块保留	固定噪声参数求 GLS；再把 $\hat{\boldsymbol\beta}(\boldsymbol\eta)$ 代入似然，搜索 $\boldsymbol\eta$，称剖面求解。忽略 $\log|C|$、只压低二次型会鼓励任意增大噪声，不能正确估噪声尺度。
+c6-s5	ef17f4c291755ef94e8b554b6d514a5a6cf69e57ae29854dd44c12982c43e9ad	原文区块保留	课程实践先已知闪烁噪声协方差对比 OLS 与 GLS，再用网格展示不同谱指数和幅度的似然曲面。白噪声混合应加入 $\sigma_w^2I$；有限起点、低频与尺度约定见第四章。估出的形式标准误还受噪声参数估计和模型选择影响。
+c6-s5	fdf9ab8220485ec0fb2f6d781ec915a0aa9dd12d0aae55be49442792f388f9cb	原文区块保留	### 6.5.2 Cholesky 白化与计算成本
+c6-s5	49d02239f5ca75b05881435b4814743c421ce3d78ab2158d13258f7c41c957e9	原文区块保留	若 $C=LL^{\mathsf T}$，求 $L\mathbf y_w=\mathbf y$、$LX_w=X$，再最小化 $\|\mathbf y_w-X_w\boldsymbol\beta\|^2$。$\log|C|=2\sum_i\log L_{ii}$；二次型用白化残差平方和。上三角分解 $
+c6-s5	aeeed5e1afb827ce5494f4eb3cf26810c7d4f00dfb63ca7c1c86bbde4d10d077	原文区块保留	稠密分解约 $O(n^3)$、存储 $O(n^2)$，每个噪声候选重新分解很耗时；课程从 $500$ 到数千点的例子强调成本。利用 Toeplitz、稀疏、状态空间等结构是进一步方法线索，不能把任一结构假设强加给实际 $C$。
+c6-s5	c08708b039c66fb8a74776eaea7c14071c491689fa45942e64d349ed27f4c5dd	原文区块保留	### 6.5.3 矩阵分解作为计算平台
+c6-s5	498497470a134c32298139f6c567b61c51fdefb736e192e4ed123a47a75e09e5	原文区块保留	| 分解 | 形式与条件 | 本课程用途 | |---|---|---| | 带主元 LU | $PA=LU$，可处理一般方阵 | 解方程，避免小主元 | | QR | $A=QR$，$Q$ 正交列、$R$ 上三角 | 满列秩 LS 解 $R\beta=Q^{\mathsf T}y$ | | Cho
+c6-s5	d3ff0a9cdb6da51fe4a052ece7c7147cbbaebad7c23e8135705c21b88565e38a	原文区块保留	块 Cholesky：首块 $l_{11}=\sqrt{a_{11}}$、$L_{21}=A_{21}/l_{11}$，剩余块满足 $L_{22}L_{22}^{\mathsf T}=A_{22}-L_{21}L_{21}^{\mathsf T}$，递归求解。这是课件图示的 Schur 补结构。分解
+c6-s6	3bbdc6168899ffece533c153e0939d981fb48ae68bec6ab51fa353501b207137	原文区块保留	"<a id=""c6-s6""></a> ## 6.6 递推平均、固定增益和状态空间"
+c6-s6	cca510b8b48556e09a1fb61b6f13ff7ddd4cb8265be77984075d36798d5e5c33	原文区块保留	### 6.6.1 静态估计：称金重
+c6-s6	2fcea232656bc5549552fc3ea9f84cb0bd81683f891dde8d6d4ae3dd70deb8e7	原文区块保留	前 $k$ 次观测均值满足
+c6-s6	6ca4b32da6dd38c71c9d26dce2a980938fe2bec04a9985b56f602065c6b4fed6	原文区块保留	$$ \bar z_k=\bar z_{k-1}+\frac1k(z_k-\bar z_{k-1}). $$
+c6-s6	1fdf72ddbcd99260871acad3ffda01ac942c0332541ab88b063c2e7aa67b7930	原文区块保留	这将历史压缩为一个均值与计数。“旧估计＋增益×新残差”是滤波入口。固定 $\alpha$ 则 $\hat x_k=\hat x_{k-1}+\alpha(z_k-\hat x_{k-1})$，为指数加权，记忆按 $(1-\alpha)^j$ 衰减，不等于普通算术均值。
+c6-s6	420a79687734ac402aea6ac0408501e506325a343a0ba56fbd4f0ec3b53f9b02	原文区块保留	### 6.6.2 $\alpha$–$\beta$ 与 $\alpha$–$\beta$–$\gamma$
+c6-s6	5b2b9f9ac4309a8bae129763fd8522510061253307cbd0d565f33f9379105ce6	原文区块保留	匀速状态 $(p,v)$，预测 $\hat p^-_k=\hat p_{k-1}+\Delta t\hat v_{k-1}$、$\hat v^-_k=\hat v_{k-1}$，位置创新 $r_k=z_k-\hat p^-_k$，更新
+c6-s6	68013258000978affe77c6de12c0a9c52ea06c389dcd4cdd8fe73c355e222067	原文区块保留	$$ \hat p_k=\hat p^-_k+\alpha r_k,\qquad \hat v_k=\hat v^-_k+\frac\beta{\Delta t}r_k. $$
+c6-s6	80dfff04e05a31bf82e8e8e1dff385328d9dcdb1b60e10e091c97fdfefb82a61	原文区块保留	加速度状态时预测再加 $\frac12\Delta t^2\hat a$、速度加 $\Delta t\hat a$，加速度保持。课程采用 $\hat a_k=\hat a^-_k+2\gamma r_k/\Delta t^2$，因而其 $\gamma$ 比部分教材的定义差因子 $2$。
+c6-s6	235f69046f2449ce485a4350da402860cc1465d44de037e0b061be0653602dac	原文区块保留	增益大响应快但噪声敏感，增益小更平滑但实际机动易产生滞后。匀速模型跟踪加速运动的系统滞后是模型失配，不仅是绘图平滑程度。Kalman 根据不确定性计算增益，而非永远固定 $1/k$ 或固定 $\alpha,\beta$。
+c6-s6	79fbddcca468fe73b48a132cf13e78fbfce576e9555c8243482abb95f4801c12	原文区块保留	### 6.6.3 连续与离散状态模型
+c6-s6	02cef98ce1af180e67c5097fa2961e9c7e4c1686328272e23dfc66a0f1f72277	原文区块保留	状态是待知内部量，观测是传感器给出的量。连续线性模型为 $\dot{\mathbf x}=A\mathbf x+B\mathbf u$、$\mathbf z=H\mathbf x+\mathbf v$。高阶 ODE 可令状态包含函数及其低阶导数，变成一阶向量系统。
+c6-s6	794a2488dadc387be00bdde0fc2eee00810a7e899e56a628e4c5fd67d3fdf800	原文区块保留	步长 $\Delta t$ 的精确无噪离散化
+c6-s6	4a9cbb1f0a2292045b10073d82c4930d7d8e349ddfc1f2c27a479ac9d5a7695d	原文区块保留	$$ \mathbf x_k=F\mathbf x_{k-1}+G\mathbf u_{k-1},\quad F=e^{A\Delta t},\quad G=\int_0^{\Delta t}e^{A\tau}B\,d\tau $$
+c6-s6	0eebff287b95a1a16a9c3b713dd5b3c963416134809b03d909ee3f1db6d2db12	原文区块保留	要求步内输入为常数；一般输入需保留积分。矩阵指数 $e^{At}=\sum_j(At)^j/j!$，不能把矩阵元素逐个指数化。
+c6-s6	22df7f8a67f117e4ca21b7fbc1677812c8a087f0abb8d8c4f6ad465a78b1888f	原文区块保留	匀加速度状态 $(p,v,a)$ 的转移为
+c6-s6	0b73e510d660c4a89a91a8379e8bdef7f3a5128f10c46367deaff8412f855770	原文区块保留	$$ F=\begin{pmatrix}1&\Delta t&\Delta t^2/2\\0&1&\Delta t\\0&0&1\end{pmatrix}; $$
+c6-s6	f3e56fc200472c672593f093040929d77ca37a69843acbd3ed6ff2d507b2da56	原文区块保留	若只有位置观测，$H=(1,0,0)$。位置、速度等单位不同，协方差各块单位也不同，但矩阵维度仍必须一致。
+c6-s7	725357f861ada0a6391adf65b07b6572a415358d2efe0a2c2c19854fc923646c	原文区块保留	"<a id=""c6-s7""></a> ## 6.7 Kalman：方程、增益与过程噪声"
+c6-s7	0b9d8672daa9da4132f53e77e813036bf8479adb1e866be7eec748949fcb7df4	原文区块保留	### 6.7.1 模型与核心循环
+c6-s7	14a2199e3bdb9bbd7f2d8ee2633a3d683586b526aa27818092cd52074319108d	原文区块保留	$$ \mathbf x_k=F_k\mathbf x_{k-1}+G_k\mathbf u_k+\mathbf w_k, \qquad\mathbf z_k=H_k\mathbf x_k+\mathbf v_k. $$
+c6-s7	322e5dc5d3ba6b2f18f2170dcdc0df6aff474bcdfbb4e644928c5905cf899f3b	原文区块保留	$\mathbf w,\mathbf v$ 零均值、协方差 $Q_k,R_k$，标准线性 Kalman 假定跨时及相互不相关，且与初始误差不相关。线性 Gaussian 条件下是后验均值的最优估计；仅二阶条件下具有相应线性最优意义。
+c6-s7	6ff83065b6cf919a6b097f17ea451df37866be11cd9778057cc8cc8720dc1b43	原文区块保留	初始化 $\hat{\mathbf x}_{0\mid0},P_{0\mid0}$。每一步：
+c6-s7	f5f0dcb65d9f1c08431cbe70f512e4a5e3314e2858378e8261e7c1769bf2da5f	原文区块保留	$$ \hat{\mathbf x}_{k\mid k-1}=F_k\hat{\mathbf x}_{k-1\mid k-1}+G_k\mathbf u_k, $$
+c6-s7	aff1d70bb782b85e1dfb232263d56b246b5df2f8a1d2874550d53a476579e7d2	原文区块保留	$$ P_{k\mid k-1}=F_kP_{k-1\mid k-1}F_k^{\mathsf T}+Q_k, $$
+c6-s7	c8b0a4299b37e6ec013c3cd3be0e3cef617e2f0c916acb85d3e7809b7cbe8210	原文区块保留	$$ \boldsymbol\nu_k=\mathbf z_k-H_k\hat{\mathbf x}_{k\mid k-1},\quad S_k=H_kP_{k\mid k-1}H_k^{\mathsf T}+R_k, $$
+c6-s7	d806049f47f3e335aa963300c5861900bf1add8e3093ef88172dde010795ba31	原文区块保留	$$ K_k=P_{k\mid k-1}H_k^{\mathsf T}S_k^{-1},\qquad \hat{\mathbf x}_{k\mid k}=\hat{\mathbf x}_{k\mid k-1}+K_k\boldsymbol\nu_k, $$
+c6-s7	f366b1b7e442e5a7ad00adf46d192d98df307f994eb21394a9c85f3e2a675deb	原文区块保留	$$ P_{k\mid k}=(I-K_kH_k)P_{k\mid k-1}(I-K_kH_k)^{\mathsf T}+K_kR_kK_k^{\mathsf T}. $$
+c6-s7	fca071716236a7aadcef1dab091d2dcf4352682b543b457b23acfeb6395320a4	原文区块保留	最后为 Joseph 形式，更便于保留对称与半正定；精确运算、最优增益条件下简化为 $(I-KH)P^-$。实现中解 $S$ 的线性系统，不显式求逆；可对称化 $P$ 检查舍入误差，不能借此掩盖错误模型。
+c6-s7	40ab0aa50e08b275942b097d1a92b7cf4b5a7b035024e26ffc0dd67877525b60	原文区块保留	### 6.7.2 一维增益的推导
+c6-s7	a29d710d06144c5e7e4a55ba1450fc164906aed09e9ed27d5e169fa882f62f6a	原文区块保留	设预测方差 $P^-$，观测方差 $R$，更新 $\hat x=(1-K)\hat x^-+Kz$。独立误差下 $P=(1-K)^2P^-+K^2R$，求导得
+c6-s7	6f9075764db9957731c91e8763b8df5c20fe82ca6b3970f3ce8f1cbe2bbbcef1	原文区块保留	$$ K=\frac{P^-}{P^-+R},\qquad P=\frac{P^-R}{P^-+R}. $$
+c6-s7	3d269d9cfc736b4bd6b2ce93237e767b40e266540c3b79f08d68a545985295bd	原文区块保留	预测越不可靠，越信观测；观测越噪，越信预测。多维通过最小化误差协方差迹或完成后验配方得到矩阵增益，不必每个元素都在 $[0,1]$。
+c6-s7	fc7f818fd2eee2c73ff7bf0dca6b24f59624444720924f27e084b35b1750096b	原文区块保留	静态、无过程噪声时连续独立观测使方差减小、增益逐渐小。加入 $Q>0$ 后预测不确定性增加，增益可达非零稳态；不能说 Kalman 增益永远单调趋零。初始估计与方差决定早期响应。
+c6-s7	77623f0759b4133b3034711a80a9badf583ef80c1c8765aaaaeaacc2ce23478a	原文区块保留	### 6.7.3 过程噪声在哪里进入
+c6-s7	66094746a242ae279b4d375a6a34e272ab28f53d7af60b82025e95f25c31c74d	原文区块保留	确定控制输入 $G\mathbf u$ 不增加协方差，因为它只是确定平移。若输入随机、协方差 $C_u$ 且独立，需加 $GC_uG^{\mathsf T}$；若相关还要交叉项。若驱动噪声先经 $B$ 进入系统，离散 $Q$ 应由它传播到状态，不能总强行乘状态转移矩阵 $F$。
+c6-s7	cd0f9f03889f1ed92d0ea0e72a8fd4015b26afe536cf65bf0a5d1e4f61b3f6b6	原文区块保留	对匀速 $(p,v)$ 模型，步内常量随机加速度 $a_k$、方差 $\sigma_a^2$，$\mathbf g=(\Delta t^2/2,\Delta t)^{\mathsf T}$，有
+c6-s7	66e0b0f18911822358554cebb8a0d61dd8f54ba5a6517719cadb92b583e7c9c9	原文区块保留	$$ Q_{\rm discrete}=\sigma_a^2\mathbf g\mathbf g^{\mathsf T} =\sigma_a^2\begin{pmatrix}\Delta t^4/4&\Delta t^3/2\\\Delta t^3/2&\Delta t^2\end{pmatrix}
+c6-s7	8fc6ee2d9edb125f418c59566cf411b1a95a4a1b1d0ed97907aa1727309370b0	原文区块保留	连续白加速度谱强度 $q$ 则
+c6-s7	44355aa5abd711bbb9338bbb2044e1f2abfe5a7b774dc02a81718f30fbe2a807	原文区块保留	$$ Q_{\rm continuous}=q\begin{pmatrix}\Delta t^3/3&\Delta t^2/2\\\Delta t^2/2&\Delta t\end{pmatrix} =\int_0^{\Delta t}e^{A\tau}BqB^{\mathsf T}e^{A^{\m
+c6-s7	512c883abae1aedf6ba0e2d8474ffbb4ab57b5808a1e14ea5a134ee16174954b	原文区块保留	两者驱动假设与强度单位不同，不能只把 $\sigma_a^2$ 政名 $q$ 当同一公式。课件“外部噪声总用 $F$ 投影”的概括不足以涵盖一般模型，笔记采用驱动矩阵与积分说明。
+c6-s7	7c0c23f963fa9298c5538b60ab550f51fa30b240888711f0755724ea4e8a5972	原文区块保留	### 6.7.4 调参、检查与类型（课件提及）
+c6-s7	868bbd8f995295034912491cde53ead272b404f7b6df8a3505a6e23602aa3a7b	原文区块保留	$R$ 来自观测噪声方差，$Q$ 来自模型偏离，不只是平滑按钮。题中给 $1\sigma$ 标准差要平方后代入。看创新的均值、方差和时间相关，与 $S_k$ 比较；缺测时仅预测，恢复观测后再更新。
+c6-s7	bb2a26045d02b5aabf34317d9067ac772e11a7e039a5ba8e39095ee4f739ad6e	原文区块保留	建筑物高度、液体温度例分别说明静态与缓慢变化模型；模拟真值、观测、预测、更新和增益曲线分开画。真实应用通常无法直接画真实估计误差。
+c6-s7	08d80139cdf0de7a976d83bebe817503b603a5c33a1a7a6a680f17205710d64f	原文区块保留	历史线索为 LS、Wiener 与 Kalman／Bucy／Schmidt 的发展。课件还提及扩展、集合、非线性、无迹滤波：EKF 对非线性状态／观测局部用 Jacobian；UKF 用确定采样点传播均值协方差；EnKF 用样本集合近似协方差。这些是识别概念的说明，原课完整推导范围主要为线性 Kal
+c6-s8	450a230e1425f321099a635b18aad3bd67e5b55f41c1f5d639cc6d2947fe8bd2	原文区块保留	"<a id=""c6-s8""></a> ## 6.8 神经网络：前向模型、激活和损失"
+c6-s8	691c722d007958f2c7853ec58383c8c0b87ef8f8b755934d6302ef26edc8a9cb	原文区块保留	### 6.8.1 感知机与逻辑门
+c6-s8	86762d65ef9c19cf1e30b9bbde9982489b94b22e8388d4a382e52de154044dde	原文区块保留	感知机 $y=\mathbf1_{\mathbf w^{\mathsf T}\mathbf x+b>0}$。对二值 $x_1,x_2$，AND 可取 $\mathbf w=(1,1),b=-1.5$；OR 取 $b=-0.5$；NAND 取 $\mathbf w=(-1,-1),b=1.5$。XOR
+c6-s8	60b60ac16a3abce4c6dd1c21b46da2d15be5367e04d1cafc059b27c430e234ac	原文区块保留	多层网络采用列向量：$\mathbf a^{(\ell)}=W^{(\ell)}\mathbf h^{(\ell-1)}+\mathbf b^{(\ell)}$，$\mathbf h^{(\ell)}=\phi(\mathbf a^{(\ell)})$，$W^{(\ell)}$ 为输出维×输入维。若
+c6-s8	e89eab9360a7b0a18f5c2d215773897c776defba778f2652df8dd45ecd497d2e	原文区块保留	通用逼近思想表示足够宽、适当非线性网络可逼近规定域内的某类连续函数；它不保证给定有限网络、训练算法和数据一定找到好解，也不保证泛化。
+c6-s8	f28b13e6bcd77c7a205d3ee32efc835e2f52c4ca8ea80c6407a6f75d6becc408	原文区块保留	### 6.8.2 激活、Softmax 和图像输入
+c6-s8	19938a8714fc9d38cde61685c27ffb2cc70624ee230dd450d5ae3d1abd8bf499	原文区块保留	Sigmoid $\sigma(a)=1/(1+e^{-a})$，导数 $\sigma(1-\sigma)$；ReLU $\max(0,a)$，正区间导数 $1$、负区间 $0$，零点实现约定常取 $0$；阶跃用于感知机，梯度几乎处处零不适合普通梯度训练。
+c6-s8	33ef17afbdf4fb976a8f0b2db104fc43500617a025db2fe66cf8147a0d2454de	原文区块保留	分类 logits $a_j$ 的 Softmax
+c6-s8	e00c2b069c3d8882e5bc3f9fbb8366c5b22b4a79877dc5dbfdbd98eaeb657e8d	原文区块保留	$$ p_j=\frac{e^{a_j-m}}{\sum_ke^{a_k-m}},\qquad m=\max_ka_k. $$
+c6-s8	a43649dcf5e72350953532cfb5e8fc8962cdbdab65a1506778724173ead55b00	原文区块保留	减最大值不改变概率且避免溢出。MNIST 灰度图 $28\times28$，全连接可展开为 $784$ 维，十类输出为十个概率。预测类别取 $\arg\max p_j$；输出概率不自动经过概率校准。
+c6-s8	8d5924fb9f727baab8bfa6841a61dec4918d5ef317b331e4de50ec2e253eb2bd	原文区块保留	### 6.8.3 损失、批量和训练循环
+c6-s8	cd15039a4c3cfe5a6433c6422d34029fbac9eb0fdfd1c17ccbc83d066ca36585	原文区块保留	回归 MSE 可取 $L=(2B)^{-1}\sum_i\|\hat{\mathbf y}_i-\mathbf y_i\|^2$；分类交叉熵 $L=-B^{-1}\sum_i\sum_jy_{ij}\log p_{ij}$，$y$ 为 one-hot，也可用类别索引取 $-\log p_{i,c_i
+c6-s8	78e7dc2e9cc248e84701ab886506eee9869530d3e6338076972c203e576e71f1	原文区块保留	mini-batch 用部分样本估梯度；iteration 是一次参数更新，epoch 是遍历训练集一轮。训练循环：读批 → 前向 → 损失 → 反向 → 优化器更新 → 独立验证；推断仅前向。学习率、批大小、层宽、正则强度等为超参数，不是从同一步梯度直接估的模型参数。
+c6-s8	69ce31d547ada1167e307eb5166c7b76c6ae0647642fd4b77fa7f3e16cc18889	原文区块保留	Turing、Dartmouth 以及 AI／ML／DL 的历史与应用为课件背景；视觉、语言、导航、行为预测等任务不共用同一模型保证。课程提及神经网络行为模型的预测灵活性与解释性矛盾，以及小型循环网络研究，不能由预测准确直接识别真实认知机制。
+c6-s9	66422edd4206542088d5851383379acbaf0647a73cf1164e89938cb2be4631f4	原文区块保留	"<a id=""c6-s9""></a> ## 6.9 计算图、反向传播和优化器"
+c6-s9	5d59b25282114b0eb7a019f66f8654338a4c7be34b989809be4ea50d21087583	原文区块保留	### 6.9.1 局部导数与梯度检查
+c6-s9	34200e07d34d6090a5016578d9ed616e691920d457e7edce58925540108c3fc4	原文区块保留	计算图把复合函数拆成局部节点，反向传播从输出损失用链式法则累积梯度。加法 $z=x+y$ 两分支导数为 $1$；乘法 $z=xy$ 对两输入导数分别 $y,x$；同一变量流入多分支时各贡献相加。
+c6-s9	a0d0c0fdaa28a8f204a81f2624d3adda19d79cb0caf30d53f7b9385e8f2f4062	原文区块保留	中心有限差分
+c6-s9	df39bba7c2b5ea4bc5d7a2fb6be4f36d2c38f3c3c1c3580baf1aa97d30a92c31	原文区块保留	$$ \frac{\partial L}{\partial\theta_j}\approx \frac{L(\boldsymbol\theta+h\mathbf e_j)-L(\boldsymbol\theta-h\mathbf e_j)}{2h} $$
+c6-s9	8d679cccffb0e0136a8caa6fef0263f9043248768c2649ea55f39c105794e250	原文区块保留	用于小模型梯度检查，过小 $h$ 有舍入误差、过大有截断误差；ReLU 拐点需避免或单独说明。反向传播高效复用中间量，有限差分每参数需额外前向，不宜用于大模型训练。
+c6-s9	fe46f30fc196bb1e13c86919dc0852fc6437e80297c30887b63bbee826a07e02	原文区块保留	### 6.9.2 Affine、激活和交叉熵反向
+c6-s9	b52fb8a92c0a94f03a4032213d1b10a1c1814a0bc89cb92b3f6d733a0be84e4d	原文区块保留	单样本 $\mathbf a=W\mathbf h+\mathbf b$，上游梯度 $\boldsymbol\delta=\partial L/\partial\mathbf a$：
+c6-s9	543171a7925b0f758b53d50d6af041dd36caff0ee9371eff4055edf8f62fc82e	原文区块保留	$$ \frac{\partial L}{\partial W}=\boldsymbol\delta\mathbf h^{\mathsf T},\quad \frac{\partial L}{\partial\mathbf b}=\boldsymbol\delta,\quad \frac{\part
+c6-s9	2c0e44310abf94300cf035a0e02e5595df165c24f62f0f1b136fa7f421267294	原文区块保留	批量对样本贡献求和，若损失已含 $1/B$ 不要再除两次。广播偏置的反向需沿被广播轴求和；矩阵转置的反向对应逆转置顺序。
+c6-s9	5fd396e64fe0b7296322f4f2656754e15bd433f0f1299353f91118322ddff783	原文区块保留	Sigmoid 反向乘 $\sigma(1-\sigma)$；ReLU 按前向保存的正值掩码。Softmax 单独 Jacobian $\partial p_i/\partial a_j=p_i(\mathbf1_{i=j}-p_j)$；与交叉熵合并后 logits 梯度为 $(\mathbf p-
+c6-s9	aead93042898e401fbec135c687ec36eea82912ef3d9ddadabb64302bc6d5188	原文区块保留	课程的购物算价图说明局部乘加节点如何把损失敏感性传回输入。每个反向张量的形状必须与对应前向输入相同。
+c6-s9	c6500f299b51f7a65e5edb834755d856b8780e0b749cd957a22a33b4a92af508	原文区块保留	### 6.9.3 五种常见更新
+c6-s9	9f40ff91ad1d00058031ad5fb7a67ebb47d2f6c8fd7eac556908d8d5b0b9e387	原文区块保留	令当前梯度 $g_t=\nabla L(\theta_t)$，以下逐元素运算，$\epsilon>0$ 防止除零。
+c6-s9	c5dff16be45d860313fc44d836b5f7fd16a62989610a5557290a2c73ed89093e	原文区块保留	**SGD：** $\theta_{t+1}=\theta_t-\eta g_t$。梯度是最陡上升方向，最小化使用负号；课件关于正梯度下降的个别描述需纠正。
+c6-s9	014cf3d8aa855b0e5cc0e19c7183456974f2cb5d8b553e284d8f9ab124fcc2ea	原文区块保留	**Momentum：** $v_t=\mu v_{t-1}-\eta g_t$，$\theta_{t+1}=\theta_t+v_t$。速度累积使方向连续；不同资料速度定义可有等价尺度差。
+c6-s9	3d54c8561edff890c5a1eceaa6a8d446443e4161aa0083ff5b41d22f67a7e3f3	原文区块保留	**AdaGrad：** $s_t=s_{t-1}+g_t^2$，$\theta_{t+1}=\theta_t-\eta g_t/(\sqrt{s_t}+\epsilon)$。长期累积可能使学习率过小。
+c6-s9	45d7ee392beb0d605e28173fc2c15815e5aeebd66ec1dcd5111569e43377e6ab	原文区块保留	**RMSProp：** $s_t=\rho s_{t-1}+(1-\rho)g_t^2$，再用同样分母，淡化早期平方梯度；原课提及其思想。
+c6-s9	dd7a4681b97f48a83b235bbd4a20037e1e9bdac7bf4809aa9d70c7d3fde526b8	原文区块保留	**Adam：**
+c6-s9	a703402c4a90094b66b4638eb033b95b72f0812bc742ee9dd8c3faf5f787f754	原文区块保留	$$ m_t=\beta_1m_{t-1}+(1-\beta_1)g_t,\quad v_t=\beta_2v_{t-1}+(1-\beta_2)g_t^2, $$
+c6-s9	ff102d7c3a8144a36e0245461b1e6505b9bf5c7ea1921c460b4704c88181f0cf	原文区块保留	$$ \hat m_t=m_t/(1-\beta_1^t),\quad\hat v_t=v_t/(1-\beta_2^t),\qquad \theta_{t+1}=\theta_t-\eta\hat m_t/(\sqrt{\hat v_t}+\epsilon). $$
+c6-s9	05aa257cf745124b7ad21f5053aa09e9fa1b84f3d250730de6dcb3279c7ccc1f	原文区块保留	这里时间步从 $1$ 开始，状态初值零。四种优化器作业为 SGD、Momentum、AdaGrad、Adam；RMSProp 在笔记收纳但不改原题范围。比较目标 $f(x,y)=x^2/15+y^2/5$，梯度 $(2x/15,2y/5)$，各轴曲率不同；在相同初值和明确超参数下画轨迹，不能凭一图认
+c6-s10	cce58e1c96c5a41cc1e2e6ad119e8d6708d4beff909a57b63a9dd664d89580c2	原文区块保留	"<a id=""c6-s10""></a> ## 6.10 CNN、深度结构和泛化"
+c6-s10	a5c5be89e1a95591cdea61c1569bb2baf497ba9392e4504eb0c5cc15997bd523	原文区块保留	### 6.10.1 卷积层和输出尺寸
+c6-s10	068098c86462862dc6fa522aa8124622eac02e975ce89462ecba971d993f9919	原文区块保留	课程代码使用 $N,C,H,W$：批量、通道、高、宽。深度学习中常用的是不反转核的互相关运算，通常仍称卷积：
+c6-s10	c7d42b2d87826cfcd273bb9be23b9718f0393e4ba894435021930e61351a58aa	原文区块保留	$$ y_{n,o,i,j}=b_o+\sum_{c,u,v}W_{o,c,u,v} x_{n,c,si+u-p,sj+v-p}. $$
+c6-s10	55b1b737d0b0e0622c24fc9a70dbbe6267c47985149d7c52777f97defd546fe7	原文区块保留	边界外由 padding 定义，$s$ 为 stride、$p$ 为 padding。无 dilation 时输出高为 $\lfloor(H+2p-K_h)/s\rfloor+1$，宽类似。核形状为输出通道×输入通道×核高×核宽；参数数目 $C_{\rm out}(C_{\rm in}K_hK_w+
+c6-s10	44a998fc7d8d51fba3fd01d42a9f173d89e9393b8f24f9e9bd7450ae605d9f70	原文区块保留	局部连接减少连接范围，权重共享使同核在不同位置使用，感受野是某输出依赖的输入区域；叠层使有效感受野扩大。卷积不是自动对任意旋转、尺度变化不变，边界和池化也影响平移行为。
+c6-s10	634d312a212c893cb7398407517b9eab1a4275e9ad4712e203877ab984276c66	原文区块保留	### 6.10.2 池化、im2col 和反向
+c6-s10	cb1c3ae38bbbbac8cf33d0494de9127b5bea6cade93cc8c59467e2348e868a80	原文区块保留	最大池化取局部最大，平均池化取局部均值，通常不含可学习权重；有助降采样但损失位置信息。最大池化反向把梯度送回前向 argmax，其他为零；平均池化按窗口元素平均分配；重叠窗口需累加。
+c6-s10	e72e3b6df53d4c338407706076c3d22088be6a1c277af5bf1d752062e2b14fe7	原文区块保留	im2col 将每个输入窗口展开为行，再和展开核矩阵相乘；col2im 将窗口梯度放回原位置，重叠处**相加**，不是简单 reshape。通道重排如 NHWC→NCHW 用 `transpose(0,3,1,2)`，而不是只改形状。
+c6-s10	2354e080e9d97dea7bc0f10112290a7dd44cac9adc8b8804c6674d59ce31b43c	原文区块保留	卷积参数梯度是输入窗口与上游梯度的乘积累加，输入梯度由每个相关窗口贡献相加，偏置梯度沿批与空间轴求和。正确性可用小张量有限差分检查。
+c6-s10	be6d5f63797a4dc1169b97621efaba4879c9f6f60530467a66659568803825ee	原文区块保留	### 6.10.3 特征可视化和历史架构（课件提及）
+c6-s10	15a991dc779801737d64ade3bb228006a93d2e733ea5fd04514a5520f61b988d	原文区块保留	早层常学习边缘／纹理，深层组合更复杂特征；可视化是理解线索，不保证每个通道有唯一语义。AlexNet 展示卷积与大规模图像学习，VGG 使用多层小核，GoogLeNet 用 Inception 多分支，ResNet 用快捷连接 $\mathbf y=\mathbf x+F(\mathbf x)$；若
+c6-s10	01fecb7b586bec77a9580dcd57bd6916685423337becdb793aaa39a9571825a1	原文区块保留	深度给组合表达能力，同时有梯度、初始化、计算与过拟合困难。ResNet 的恒等路径帮助梯度传播；课件将其描述为“VGG 加快捷连接”是入门类比，不是所有 ResNet 的精确架构定义。
+c6-s10	1fa65d19fbf5ea85ff600afc95d1f8962f5e4126a4507e5001ab17feaa9263ba	原文区块保留	### 6.10.4 提高泛化与运行速度
+c6-s10	165ae440f5e7610003436a7712756b42ca5ce67e07521b83c1f14557af7c8d1f	原文区块保留	数据增强可旋转、平移、裁剪、翻转、亮度变化、缩放，但必须保留任务标签语义，例如某些数字翻转会改变类别。迁移学习将已学习权重作初值，再对新任务 fine-tune；小数据时可减少可训练部分，但领域差异可能带来负迁移。
+c6-s10	66ad05681ab7ca548cdca367d3c88aa8560d586e92996fc8e7dcf016a038a9c9	原文区块保留	集成合并多个模型的输出，学习率衰减改变训练阶段步幅，GPU 和批量矩阵运算提升并行计算效率；它们不保证单独改善准确率。报告模型参数量、运行时间、随机种子和独立测试结果，不能把不同条件的历史识别率当当前公平基准。
+c6-s10	5a093ac8666ca164d40acb0831c4c5b4c1d62747ba96f5bfc3682f27642d6cb2	原文区块保留	训练损失降而验证变差提示过拟合；深度增加不保证更准确。MNIST 选做实验比较层数、NN／CNN，控制数据划分、优化器及训练预算，再讨论结果。
+c6-s11	ceec68017381ee3729067c3f18c750bf7542b41ecfa686350a5006756ba6343c	原文区块保留	"<a id=""c6-s11""></a> ## 6.11 Python 综合实践：从数组到可复用程序"
+c6-s11	1b887b62e51379137efc2c725b58e0310f5c6e2d135ab77be804606e2e3c144c	原文区块保留	### 6.11.1 模块、类、数组轴和源码
+c6-s11	73ad5677ecb5943204c13f9479bc1597d83ace76acc7e18502ff0bda9866964f	原文区块保留	模块是一个包含函数／类的 `.py` 文件，包可组织多个模块；课件用 `__init__.py` 与 `setup.py` 示例说明组织与调用。类保存参数和前向中间状态，如 ReLU 掩码、卷积窗口；`forward` 计算输出，`backward` 使用保存状态算梯度。不要因复制示例中省略号而把未
+c6-s11	2455ff76e9f421cae74ad24ba82f83892ef91aa94a5967ece08c2477672b9b2d	原文区块保留	Jupyter 的 `?`／`??` 可查看帮助／源码，普通 Python 可用 `help`、`inspect.getsource`（可取到源码时）。先看输入输出形状、中心化、标准化、分母和默认参数，再对应数学式。
+c6-s11	88d51e8ff0cd141ff38710d7d92072bd3dd7be5fe244574a8d19a622053ca4dc	原文区块保留	对 $D(n,d)$，`sum(axis=0)` 消去样本轴、剩 $d$ 维，`sum(axis=1)` 消去特征轴、剩 $n$ 维。`reshape` 保持元素数，`-1` 只允许一个待推维度；`transpose` 改轴顺序。形状相容并不保证语义正确。
+c6-s11	8119cf1d7b54aa76a02b0251052f0ceae9a108abf87072533c1a9e7f4b4ac533	原文区块保留	### 6.11.2 PCA 接口与可运行核心
+c6-s11	1347727f092f66e47b03c5908851316870618cdb0b8ff27aff6e06e3469c5571	原文区块保留	以下 NumPy 核心明确行是样本、列是特征，使用协方差 PCA、分母 $n-1$，返回重建到原单位的数据：
+c6-s11	54515790cf596fa1caad62134b8a22e8724670bcd86f86dbf230df0767d42709	原文区块保留	```python import numpy as np
+c6-s11	93f0969b64aff665ee0a0f1f411dfa4a001abfde3cd6b086dd75c10529814568	原文区块保留	def pca(data, n_components=None, n_reconstruct=None):     data = np.asarray(data, dtype=float)     if data.ndim != 2 or data.shape[0] < 2 or not np.is
+c6-s11	e6ce2e170909afec34f18d2733445ad4f39f62eec57e9513d5abdaba92adfb68	原文区块保留	输入全常量时解释比例设零，说明无异常方差。保留成分数与重建成分数分开；若先标准化，需把新数据用训练均值／标准差变换，重建后乘回尺度加均值。
+c6-s11	2f572c8e594fd56769609bfaa51a4efa1ec90b9df75fe5bad49b2152537d5ef1	原文区块保留	scikit-learn 课件接口 `fit` 学均值和方向，`transform` 投影，`inverse_transform` 重建；`components_` 每行一个方向，数学 $V$ 按列时需转置。statsmodels 课件输出有 eigenvals、loadings、factors、p
+c6-s11	4b25af2425e0ab6cb489f01b35825e22213b45b444e0ebdd470a96adc3b80b7e	原文区块保留	### 6.11.3 SST 长表和空间重建
+c6-s11	bbecb74e1a54bb750a2c2cee1680ca2b463b6c4a3c4e4612280b32f299da5647	原文区块保留	输入经度、纬度、MJD、温度的长表，应先列出唯一空间点与时刻、排序并确认重复，然后填入空间×时间矩阵，缺测明确为缺测而不是零。课件示例时间数有限，若使用时间为行的 $D$，它的最大中心化秩不超过 $n-1$；若反向把空间点当样本，将分析不同问题。
+c6-s11	f17014896e909a1781a0f739266986ca53e6db7b8c24cdeb0b8a072ddc6af987	原文区块保留	地图重建必须沿相同空间顺序与掩码还原。PCA／ICA 输入与输出的转置、标准化和符号约定需记录。Mahalanobis 距离可由白化得分平方和计算；若截断 PCA，得到的是保留子空间的距离，不是全空间距离。
+c6-s11	f4712a9872a29e940bd62ed34269a3b646d93fbe10c551ca9be1cc0dee9620c7	原文区块保留	### 6.11.4 回归输出、网格和 Bootstrap
+c6-s11	e71dc2df0ddbc20bdff9521cea678e3fe5b0109bee1111ca08363d5730c612f4	原文区块保留	statsmodels OLS 课件展示系数、标准误、t、p、$R^2$、残差；设计矩阵是否自动带截距需检查。新输入网格通过 `meshgrid` 创建、按同一顺序展平构造设计，再预测并恢复原网格，不能随意 reshape 不同次序的数据。多项式增加 $x,x^2,\ldots$ 等列仍对系数线性；
+c6-s11	1db0c5da57ec78031cd9ba1c318e04a91836a8a659465998ae284d8014b2a435	原文区块保留	Bootstrap：从 $n$ 个抽样单位放回抽取 $n$ 个，重复 $B$ 次并重新计算估计量。相关系数应**成对**抽 $(x_i,y_i)$，不可分别打乱；百分位区间用模拟估计的两端分位数。若样本时间／空间相关，改用块抽样或合适模型。均值 bootstrap 标准差与 $s/\sqrt n$
+c6-s11	20f706407a8b8ec903e26849ee99cb86f10c75877ce260bbf48e492549b9a0a9	原文区块保留	非参数 pairs Bootstrap、残差 Bootstrap 和参数 Monte Carlo 是不同机制：前者抽观测对，第二种在固定设计上重抽残差，第三种按假定噪声分布生成。异方差与相关会影响哪种机制合适，必须报告。
+c6-s11	adc2bee0f4cf73fa1e1fb0c868eceac523079138b220cf37802609c0be72a04e	原文区块保留	### 6.11.5 梯度下降、正则化和参数精度接口
+c6-s11	8b9bab482845886457524bc052480a145ac653b77fb464699226878551bba1d3	原文区块保留	线性平方损失 $L=\|X\beta-y\|^2/(2n)$，梯度 $X^{\mathsf T}(X\beta-y)/n$。加入 Ridge $\lambda\|\beta\|^2/2$ 后梯度加 $\lambda\beta$（截距不惩罚时置对应项零）。Lasso 在零点不可用普通光滑导数，可用近端
+c6-s11	55bf295d69f2fb4f892f62f24f0282f49882581e14d53ee2de2271e1ae228da6	原文区块保留	选做接口：函数接受数据、阈值、初值／学习率、最大迭代等，并返回参数、残差、收敛状态；不要无限循环。停止应同时看梯度、相对参数变化和目标变化，多参数不能只看第一个分量。若标准化输入，回原单位参数例如 $y=\tilde\beta_0+\tilde\beta_1(x-\bar x)/s_x$，有 $\b
+c6-s11	519fd0677bb90cd3c6906dbe94757929d97dd1fb7a0521e0f901656bbab31d14	原文区块保留	Monte Carlo 参数精度：固定模型和参数／拟合值，生成噪声，多次重新拟合，报告参数样本标准差或 $95\%$ 分位区间，并说明这是指定模型下的精度。不能将随机样本散布、参数置信区间和未来观测区间当同一个返回值。
+c6-s11	7e0577b18014000f72951e0875d4d0e785de9adbbed08e96b17c763f8092f731	原文区块保留	完整课程作业实现见[图表与复现说明](../03_图表与复现说明.md)与[答案](../02_逐课作业解答.md)。第 14 单元题页为选做；代码接口的 Python 默认值应使用 `None` 等合法表达，不抄数学符号当语法。
+c6-s12	5e8e638ec7b89eb82da058ac2f0faf973848b6171d27ce5a5d3156041c06ca2f	原文区块保留	"<a id=""c6-s12""></a> ## 6.12 分段练习与复习出口"
+c6-s12	f25febb53ff89b89653fb633374aac0563190bd5fdf3fae1934103dca8a64f27	原文区块保留	1. **SVD／EOF：** 手算一个小矩阵，检查重建、秩、最佳低秩误差；对模拟“空间型×时间系数”场恢复 EOF 和 PC，改变尺度／标准化观察模态变化。 2. **CEOF：** 模拟 $\cos(\omega t-ks)$，比较实 EOF 与复 EOF，检查整体相位不唯一但重建不变。 3.
+c6-s12	e3c94a85e447ec28664285f7e5e03fd85c429f1795a81779aa55373b5d5c1341	原文区块保留	对应第 10 次课无独立作业页，第 11—13 次课有常规作业，第 13 另有选做实验、第 14 为选做。具体次数与题目版本见[作业原题](../01_逐课作业原题.md)，不依据笔记段落数推断提交次数。
