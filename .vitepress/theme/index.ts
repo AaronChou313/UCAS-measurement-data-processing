@@ -1,3 +1,5 @@
+import KalmanSteps from './visualizations/KalmanSteps.vue'
+import ScienceFigure from './visualizations/ScienceFigure.vue'
 import DefaultTheme from 'vitepress/theme'
 import './custom.css'
 import './visualizations/visualizations.css'
@@ -13,6 +15,8 @@ export default {
   enhanceApp({ app }) {
     app.component('CoordinateFigures', CoordinateFigures)
     app.component('MarkovSteps', MarkovSteps)
+    app.component('KalmanSteps', KalmanSteps)
+    app.component('ScienceFigure', ScienceFigure)
     app.component('MarkovSources', MarkovSources)
     app.component('MarkovPeriod', MarkovPeriod)
     app.component('CovarianceStatic', CovarianceStatic)

@@ -1,0 +1,222 @@
+[
+  {
+    "id": "v03-probability",
+    "chapter": 2,
+    "section": "2.1.2"
+  },
+  {
+    "id": "v07-newton",
+    "chapter": 2,
+    "section": "2.2.4"
+  },
+  {
+    "id": "v04-sampling",
+    "chapter": 2,
+    "section": "2.4.1"
+  },
+  {
+    "id": "v04-coverage",
+    "chapter": 2,
+    "section": "2.4.3"
+  },
+  {
+    "id": "v06-box",
+    "chapter": 2,
+    "section": "2.6.1"
+  },
+  {
+    "id": "v06-kde",
+    "chapter": 2,
+    "section": "2.6.3"
+  },
+  {
+    "id": "v06-qq",
+    "chapter": 2,
+    "section": "2.6.4"
+  },
+  {
+    "id": "v08-bayes",
+    "chapter": 2,
+    "section": "2.11.2"
+  },
+  {
+    "id": "v09-bands",
+    "chapter": 3,
+    "section": "3.2.3"
+  },
+  {
+    "id": "v10-fits",
+    "chapter": 3,
+    "section": "3.3.1"
+  },
+  {
+    "id": "v11-structure",
+    "chapter": 3,
+    "section": "3.4.1"
+  },
+  {
+    "id": "v12-square",
+    "chapter": 3,
+    "section": "3.6.1"
+  },
+  {
+    "id": "v12-phase",
+    "chapter": 3,
+    "section": "3.6.2"
+  },
+  {
+    "id": "v12-box",
+    "chapter": 3,
+    "section": "3.6.3"
+  },
+  {
+    "id": "v13-alias",
+    "chapter": 3,
+    "section": "3.7.3"
+  },
+  {
+    "id": "v13-length",
+    "chapter": 3,
+    "section": "3.7.3"
+  },
+  {
+    "id": "v13-window",
+    "chapter": 3,
+    "section": "3.7.4"
+  },
+  {
+    "id": "v15-affine",
+    "chapter": 4,
+    "section": "4.2.2"
+  },
+  {
+    "id": "v15-local",
+    "chapter": 4,
+    "section": "4.3.2"
+  },
+  {
+    "id": "v16-realizations",
+    "chapter": 4,
+    "section": "4.4.1"
+  },
+  {
+    "id": "v16-rw",
+    "chapter": 4,
+    "section": "4.4.2"
+  },
+  {
+    "id": "v16-models",
+    "chapter": 4,
+    "section": "4.4.4"
+  },
+  {
+    "id": "v17-mechanisms",
+    "chapter": 4,
+    "section": "4.7.1"
+  },
+  {
+    "id": "v20-folds",
+    "chapter": 5,
+    "section": "5.3.3"
+  },
+  {
+    "id": "v22-geometry",
+    "chapter": 5,
+    "section": "5.5.1"
+  },
+  {
+    "id": "v22-shrink",
+    "chapter": 5,
+    "section": "5.5.2"
+  },
+  {
+    "id": "v22-threshold",
+    "chapter": 5,
+    "section": "5.5.3"
+  },
+  {
+    "id": "v23-svd",
+    "chapter": 6,
+    "section": "6.1.2"
+  },
+  {
+    "id": "v24-pca",
+    "chapter": 6,
+    "section": "6.2.4"
+  },
+  {
+    "id": "v25-wave",
+    "chapter": 6,
+    "section": "6.3.2"
+  },
+  {
+    "id": "v27-dependence",
+    "chapter": 6,
+    "section": "6.4.2"
+  },
+  {
+    "id": "v31-likelihood",
+    "chapter": 6,
+    "section": "6.5.1"
+  },
+  {
+    "id": "v28-branches",
+    "chapter": 6,
+    "section": "6.9.2"
+  },
+  {
+    "id": "v29-windows",
+    "chapter": 6,
+    "section": "6.10.1"
+  },
+  {
+    "id": "v29-gradients",
+    "chapter": 6,
+    "section": "6.10.2"
+  },
+  {
+    "id": "v30-axis",
+    "chapter": 6,
+    "section": "6.11.1"
+  },
+  {
+    "id": "v30-index",
+    "chapter": 6,
+    "section": "6.11.3"
+  },
+  {
+    "id": "v02-rank",
+    "chapter": 4,
+    "section": "4.5.3"
+  },
+  {
+    "id": "v19-grid",
+    "chapter": 5,
+    "section": "5.3.1"
+  },
+  {
+    "id": "v19-ball",
+    "chapter": 5,
+    "section": "5.3.1"
+  },
+  {
+    "id": "v19-shell",
+    "chapter": 5,
+    "section": "5.3.1"
+  },
+  {
+    "id": "v19-distance",
+    "chapter": 5,
+    "section": "5.3.1"
+  },
+  {
+    "id": "v02-spaces",
+    "chapter": 2,
+    "section": "2.9.3"
+  },
+  {
+    "id": "v23-rank",
+    "chapter": 6,
+    "section": "6.1.3"
+  }
+]

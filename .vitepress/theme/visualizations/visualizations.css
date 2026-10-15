@@ -106,3 +106,13 @@
 .edu-visual .edu-distribution-scale { display: flex; justify-content: space-between; margin-left: calc(2em + 10px); margin-right: calc(5em + 10px); color: var(--edu-muted); font-size: 13px; }
 .edu-visual .edu-evolution-controls { justify-content: center; }
 @media (max-width: 380px) { .edu-visual .edu-evolution-controls { gap: 6px; } .edu-visual .edu-evolution-controls button { font-size: 14px; padding-inline: 8px; } }
+
+.edu-visual .edu-panel-title { display:block; margin:8px 0; font-size:15px; }
+.edu-visual .edu-science-svg { max-width:440px; margin-inline:auto; }
+.edu-visual .edu-kalman-stage { display:block; margin:12px 0; }
+
+.edu-kalman > svg { max-width:480px; margin-inline:auto; }
+.edu-kalman .edu-observe { min-height:3.4em; }
+@media (max-width: 600px) { .edu-kalman .edu-observe { min-height:6.8em; } }
+/* On the narrowest reading columns, use a little of the page gutter for plot labels. */
+@media (max-width: 380px) { .edu-science { margin-inline: -8px; } }
