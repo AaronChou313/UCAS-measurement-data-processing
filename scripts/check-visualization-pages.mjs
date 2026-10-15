@@ -101,3 +101,21 @@ for(const html of [v01,covStatic+covInteractive,sources+markov+periodic]){
   const ids=[...html.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]);assert.equal(new Set(ids).size,ids.length,'Duplicate visualization ids');
 }
 console.log('Verified focused SSR figures: source/conditional/joint probabilities, time bars, stationary references, periodic bars, covariance scale and static fallbacks.');
+
+// The actual source placements must survive SSR, including every raw SVG (no JavaScript needed).
+const courseCatalog=JSON.parse(fs.readFileSync(new URL('../.vitepress/theme/visualizations/figures/full/catalog.json',import.meta.url),'utf8'));
+const placements=JSON.parse(fs.readFileSync(new URL('../planning/visualization-v1/placements.json',import.meta.url),'utf8'));
+assert.deepEqual(new Set(placements.map(p=>p.id)),new Set(Object.keys(courseCatalog)),'Every generated aid needs a real reading position');
+for(const n of [1,2,3,4,5,6]){
+  const html=load(n),ids=[...html.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]);assert.equal(ids.length,new Set(ids).size,'Duplicate ID on chapter '+n);
+  for(const place of placements.filter(p=>p.chapter===n)){
+    const aid=elements(html,'figure',tag=>tag.includes(`id="${place.id}"`))[0],definition=courseCatalog[place.id];assert.ok(aid,'Missing SSR '+place.id);
+    assert.ok(aid.includes(definition.title));assert.ok(aid.includes('<figcaption>')&&!aid.includes('<button'),'Static scientific aid is fully readable without JS');
+    for(const panel of definition.panels){const svg=fs.readFileSync(new URL(`../.vitepress/theme/visualizations/figures/full/${panel.file}.svg`,import.meta.url),'utf8').trim();assert.ok(aid.includes(svg),'Actual raw SVG absent or changed: '+panel.file);}
+  }
+}
+const kalman=elements(load(6),'figure',tag=>tag.includes('id="v26-kalman"'))[0];assert.ok(kalman);
+assert.ok(kalman.includes('data-stage="0"')&&kalman.includes('data-estimate="9"')&&kalman.includes('data-variance="4"'));
+assert.ok(kalman.includes('11.6 m')&&kalman.includes('1.4 m/s')&&kalman.includes('1.8 m²/s²'),'All no-JS stages have a numerical comparison');
+assert.ok(!kalman.includes('<button'),'No inactive stage controls without JS');
+console.log(`Verified ${placements.length} course aids / ${Object.values(courseCatalog).reduce((s,f)=>s+f.panels.length,0)} raw SVGs and V26 static fallback in production HTML.`);

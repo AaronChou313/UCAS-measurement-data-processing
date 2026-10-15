@@ -79,3 +79,18 @@ npm run docs:preview
 ## 材料说明
 
 本仓库是依据课程材料整理的学习辅助资料，包含解释补充和代码参考解，均不代表教师正式答案。课程原页与数据保留用于学习及来源核对；未擅自为课程原材料声明开源许可证。
+
+## 可视化教材 V1.0
+
+六章保留原知识体系；静态图展示概率、投影、频谱、误差传播、高维与梯度关系，交互只保留相关系数、Markov时间和Kalman固定阶段。全部32候选的实施/替代/不新增理由与来源核查见 [建设记录](planning/visualization-v1.md)，后续按 [设计规范](planning/visualization-design-guidelines.md)维护。
+
+```bash
+npm run figures:generate          # 从模型重建静态SVG
+npm run test:visualizations       # 数学、真实SVG、Python模型约定
+npm run check:course-integrity    # 原文/标题/公式/清单保留
+npm run figures:check             # 不写文件的一致性检查
+npm run docs:build               # 只构建一次并检查链接/公式
+npm run check:visualization-pages # 实际SSR与无JS回退
+```
+
+`test:visualizations`还需要Python 3（不需安装科学计算依赖）；完整作业/旧PNG再生成才使用requirements。修改科学图须改生成脚本，不直接改SVG、`.site/`或构建输出。Pages在所有门禁成功后发布main；PR仅验证。`release.json`提供实际构建提交用于线上核验。

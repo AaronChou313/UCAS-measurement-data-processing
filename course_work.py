@@ -18,6 +18,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from scipy import stats
 from sklearn.decomposition import FastICA
+from source_models import cross_spectrum, isotropic_kde_at
 
 ROOT = Path(__file__).resolve().parent
 OUT = Path(__file__).resolve().parent / "results"
@@ -88,6 +89,29 @@ def read_iris() -> np.ndarray:
     return np.asarray(rows)
 
 
+def plot_iris_kde() -> None:
+    iris=read_iris()
+    labels=["Sepal length","Sepal width","Petal length","Petal width"]
+    fig,axs=plt.subplots(2,2,figsize=(9,7))
+    for row,(i,j) in enumerate([(0,1),(2,3)]):
+        pair=iris[:,[i,j]].T
+        xg=np.linspace(pair[0].min()-.5,pair[0].max()+.5,90)
+        yg=np.linspace(pair[1].min()-.5,pair[1].max()+.5,90)
+        xx,yy=np.meshgrid(xg,yg)
+        pts=np.vstack([xx.ravel(),yy.ravel()])
+        for col,scale in enumerate([None,1.0]):
+            density = (stats.gaussian_kde(pair)(pts).reshape(xx.shape) if scale is None else
+                       np.array([isotropic_kde_at(a,b,pair.T,scale) for a,b in pts.T]).reshape(xx.shape))
+            ax=axs[row,col]
+            contour=ax.contourf(xx,yy,density,levels=12)
+            plt.colorbar(contour,ax=ax,label=r"Density / cm$^{-2}$")
+            ax.set_xlabel(labels[i]+" / cm"); ax.set_ylabel(labels[j]+" / cm")
+            ax.set_aspect("equal",adjustable="box")
+            ax.scatter(*pair,s=2,c="white",alpha=.4)
+            ax.set_title("Scott bandwidth" if scale is None else "s=1 cm; H=I cm^2")
+    save("iris_2d_kde.png")
+
+
 def lesson03() -> None:
     iris=read_iris()
     labels=["Sepal length","Sepal width","Petal length","Petal width"]
@@ -103,19 +127,7 @@ def lesson03() -> None:
         for q in np.quantile(v,[.25,.5,.75]):ax.axvline(q,ls="--")
         ax.set_title(labels[j])
     save("iris_histograms.png")
-    fig,axs=plt.subplots(2,2,figsize=(9,7))
-    for row,(i,j) in enumerate([(0,1),(2,3)]):
-        pair=iris[:,[i,j]].T
-        xg=np.linspace(pair[0].min()-.5,pair[0].max()+.5,90)
-        yg=np.linspace(pair[1].min()-.5,pair[1].max()+.5,90)
-        xx,yy=np.meshgrid(xg,yg)
-        pts=np.vstack([xx.ravel(),yy.ravel()])
-        for col,scale in enumerate([None,1.0]):
-            kde=stats.gaussian_kde(pair,bw_method=(None if scale is None else lambda obj: obj.scotts_factor()*scale))
-            ax=axs[row,col];ax.contourf(xx,yy,kde(pts).reshape(xx.shape),levels=12)
-            ax.scatter(*pair,s=2,c="white",alpha=.4)
-            ax.set_title(f"{labels[i]} / {labels[j]}, s={scale or 'default'}")
-    save("iris_2d_kde.png")
+    plot_iris_kde()
     rain=np.loadtxt(ROOT/"data/Ithaca_precipitation1933-1982.dat",skiprows=1)[:,1]
     mu,v=float(rain.mean()),float(rain.var()); shape=mu*mu/v;scale=v/mu
     xg=np.linspace(0,max(rain)*1.1,500)
@@ -140,6 +152,7 @@ def lesson03() -> None:
     assert np.array_equal(dar[:,0],tah[:,0])
     # Follow the course's Fortran snippet (25PPT L03 p58): global station
     # standardization over all monthly values, then standardize the difference.
+    # 26PPT p59 / 25PPT p58. ddof=1 is declared here; the Fortran std body is absent.
     darwin=dar[:,1:].ravel();tahiti=tah[:,1:].ravel()
     dz=(darwin-darwin.mean())/darwin.std(ddof=1)
     tz=(tahiti-tahiti.mean())/tahiti.std(ddof=1)
@@ -174,7 +187,17 @@ def lesson04() -> None:
             contaminated=yy.copy();contaminated[-1]+=80;contaminated[-2]+=70
             bad,_,_,_=ols(D,contaminated)
             line_results["2.0_with_outliers"]={"beta":bad.tolist()}
-    plt.plot(x,D@truth,c="black",label="truth");plt.legend();save("L04_noise_outliers.png")
+            # Show the actually contaminated observations and fit, not only the clean cloud.
+            plt.scatter(x[-2:],contaminated[-2:],s=35,marker="x",c="brown",label="added errors +70,+80")
+            plt.plot(x,D@bad,c="brown",ls="--",label="OLS after added errors")
+    plt.plot(x,D@truth,c="black",label="truth")
+    plt.xlabel("x (constructed units)");plt.ylabel("response (constructed units)")
+    plt.legend(loc="upper left")
+    zoom=plt.gca().inset_axes([.12,.42,.58,.35])
+    zoom.scatter(x[::16],yy[::16],s=4,alpha=.4)
+    zoom.plot(x,D@truth,c="black");zoom.plot(x,D@bad,c="brown",ls="--")
+    zoom.set_ylim(-5,10);zoom.set_title("Main cloud and fit: enlarged y scale",fontsize=9)
+    save("L04_noise_outliers.png")
     raw=np.loadtxt(ROOT/"data/bjfs.rm.leap.dat",skiprows=1,usecols=(0,4),encoding="latin1")
     raw=raw[np.isfinite(raw).all(axis=1)]
     tt,obs=raw[:,0],raw[:,1];t0=float(tt.mean());tau=tt-t0
@@ -344,7 +367,7 @@ def lesson07() -> None:
     for M in [3,5,7,9,11]:
         saa=uniform_filter1d(np.abs(A)**2,size=M,mode="nearest")
         sbb=uniform_filter1d(np.abs(B)**2,size=M,mode="nearest")
-        sab=uniform_filter1d(A*np.conj(B),size=M,mode="nearest")
+        sab=uniform_filter1d(cross_spectrum(A,B),size=M,mode="nearest")
         coh=np.abs(sab)**2/(saa*sbb)
         thresholds[str(M)]=1-.05**(1/(M-1))
         if M==3:
@@ -360,7 +383,7 @@ def lesson07() -> None:
         for m in [3,5,7,9,11]:
             pa=uniform_filter1d(np.abs(fa)**2,size=m,mode="nearest")
             pb=uniform_filter1d(np.abs(fb)**2,size=m,mode="nearest")
-            cross=uniform_filter1d(fa*np.conj(fb),size=m,mode="nearest")
+            cross=uniform_filter1d(cross_spectrum(fa,fb),size=m,mode="nearest")
             co=np.abs(cross)**2/(pa*pb)
             empirical[str(m)].extend(co[m:-m:10].tolist())
     empirical={m:float(np.quantile(v,.95)) for m,v in empirical.items()}
@@ -375,11 +398,11 @@ def lesson07() -> None:
     fogm=np.zeros(n)
     for i in range(1,n):fogm[i]=.97*fogm[i-1]+RNG.normal()
     fogm=(fogm-fogm.mean())/fogm.std()
-    # GGM here uses a 1/f low-frequency roll-off, flattened below f=1/256.
+    # Qualitative low-frequency-cutoff approximation, NOT the exact course GGM recurrence.
     ggm_p=1/np.maximum(freqs,1/256)
     ggm=np.fft.irfft(np.fft.rfft(RNG.normal(size=n))*np.sqrt(ggm_p),n)
     ggm=(ggm-ggm.mean())/ggm.std()
-    series={"white":white,"flicker":colored(-1),"random walk":walk,"FOGM":fogm,"GGM example":ggm}
+    series={"white":white,"flicker":colored(-1),"random walk":walk,"FOGM":fogm,"cutoff 1/f approximation":ggm}
     fig,axs=plt.subplots(2,1,figsize=(10,7))
     for name,z in series.items():
         axs[0].plot(z[:300],label=name,alpha=.65)
@@ -614,6 +637,41 @@ def lesson14() -> None:
                     "pca_explained_first2":frac.tolist(),"pca_rank1_mse":float(np.mean((read_iris()-restored)**2))}
 
 
+def refresh_source_figures() -> None:
+    """Only repair the audited figures; retain archived simulation tables and summary."""
+    import tempfile
+    import shutil
+    global OUT, RNG
+    original_out, original_rng = OUT, RNG
+    with tempfile.TemporaryDirectory() as directory:
+        OUT = Path(directory)
+        # Replay the original RNG order through lesson04, preserving its numeric example.
+        RNG = np.random.default_rng(20260924)
+        original_summary = SUMMARY.copy()
+        lesson02(); lesson03(); lesson04()
+        for name in ["iris_2d_kde.png", "L04_noise_outliers.png"]:
+            shutil.copyfile(OUT/name, original_out/name)
+        SUMMARY.clear(); SUMMARY.update(original_summary)
+    OUT, RNG = original_out, original_rng
+    # This display uses an explicit independent seed, not the historical MC stream.
+    rng = np.random.default_rng(20261015)
+    a,b = rng.normal(size=(2,500))
+    A,B = np.fft.rfft(a),np.fft.rfft(b)
+    from scipy.ndimage import uniform_filter1d
+    saa=uniform_filter1d(abs(A)**2,size=3,mode="nearest")
+    sbb=uniform_filter1d(abs(B)**2,size=3,mode="nearest")
+    sab=uniform_filter1d(cross_spectrum(A,B),size=3,mode="nearest")
+    fig,axs=plt.subplots(2,1,figsize=(9,6))
+    f=np.fft.rfftfreq(500)
+    axs[0].plot(f,abs(sab)**2/(saa*sbb))
+    axs[0].axhline(1-.05**.5,ls="--",c="red",label="course reference threshold")
+    axs[0].legend();axs[0].set_ylabel("magnitude-squared coherence")
+    axs[1].plot(f,np.angle(sab));axs[1].set_ylabel("arg(conj(X)Y) / rad")
+    axs[1].set_xlabel("frequency / cycles per sample")
+    axs[0].set_title("Independent Gaussian series, n=500, seed=20261015; 3-bin smoothing")
+    save("L07_coherence.png")
+
+
 def json_default(x):
     if isinstance(x,(np.integer,)):return int(x)
     if isinstance(x,(np.floating,)):return float(x)
@@ -624,7 +682,11 @@ def main() -> None:
     parser=argparse.ArgumentParser()
     parser.add_argument("--full-mc",action="store_true",help="200 outer Monte Carlo repeats for every n=2..500")
     parser.add_argument("--refresh-2026",action="store_true",help="refresh only 2026 lesson 6-7 additions, preserving existing results")
+    parser.add_argument("--refresh-source-figures",action="store_true",help="repair audited KDE, outlier and cross-spectrum figures only")
     args=parser.parse_args()
+    if args.refresh_source_figures:
+        refresh_source_figures()
+        return
     if args.refresh_2026:
         path=OUT/"summary.json"
         if path.exists():

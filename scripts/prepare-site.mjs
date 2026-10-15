@@ -1,4 +1,5 @@
 import fs from 'node:fs';
+import { execFileSync } from 'node:child_process';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -29,9 +30,11 @@ for (const [source, route] of pages) {
   fs.writeFileSync(dest, markdown);
 }
 for (const dir of ['results', 'source_pages']) fs.cpSync(path.join(root, dir), path.join(output, 'public', dir), { recursive: true, filter: file => !file.endsWith('.DS_Store') });
-for (const file of ['data', 'course_work.py', 'mnist_optional.py', 'requirements.txt', 'requirements-optional.txt', '系统学习笔记']) {
+for (const file of ['data', 'course_work.py', 'source_models.py', 'mnist_optional.py', 'requirements.txt', 'requirements-optional.txt', '系统学习笔记']) {
   fs.cpSync(path.join(root, file), path.join(output, 'public/downloads', file), { recursive: true, filter: file => !file.endsWith('.DS_Store') });
 }
+const releaseCommit = process.env.GITHUB_SHA || execFileSync('git', ['rev-parse', 'HEAD'], {cwd:root, encoding:'utf8'}).trim();
+fs.writeFileSync(path.join(output, 'public/release.json'), JSON.stringify({version:'1.0.0', commit:releaseCommit})+'\n');
 let tree = fs.readFileSync(path.join(root, '05_学习脉络树.html'), 'utf8');
 for (const [source, route] of pages) tree = tree.replaceAll(source, route + '.html');
 // The tree is a static document at the project root, so its relative links retain the Pages base.
