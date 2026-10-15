@@ -185,3 +185,5 @@ git diff --check
 仍需人工验收：① V01 斜基构造能否独立读懂；② V18 三阶段节奏是否合适，能否解释唯一平稳不保证收敛；③ V14 能否在操作前预测变号/增大 |ρ| 的影响，并准确区分各类尺度。手机实际长文阅读舒适度、真实初学者试学、屏幕阅读器人工听读及 Safari/Firefox 尚未验证。打印分页未专门验收；构建的大块提示仍在。这些边界不影响当前数学测试与已检浏览器结果，但不能将它们宣称为全面教学效果证据。
 
 统一后续规范见 [visualization-design-guidelines.md](visualization-design-guidelines.md)，涵盖形式选择、符号/颜色/坐标、动态同步、回退、移动端及发布门禁；可用于后续 V02/V26，但本轮没有提前实现它们。
+
+远端核验：代码提交 `098a343` 的 [PR 验证运行](https://github.com/AaronChou313/UCAS-measurement-data-processing/actions/runs/38668649253) 已成功，四个门禁实际执行；Pages 制品上传与 deploy 明确为 skipped。截图复核时剔除了两幅处于视口布局切换瞬间的画面，重新等待可访问性快照稳定后保存，未修改数学或交互代码。审阅入口为 [草稿 PR #1](https://github.com/AaronChou313/UCAS-measurement-data-processing/pull/1)。
