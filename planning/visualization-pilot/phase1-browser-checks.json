@@ -1,0 +1,455 @@
+{
+  "date": "2026-10-15",
+  "browser": "Codex In-app Browser (Chromium)",
+  "method": "Read-only DOM geometry and actual screenshots; interactive controls exercised with browser actions.",
+  "scenes": [
+    {
+      "name": "v14-static-desktop-light",
+      "metrics": {
+        "background": "rgb(246, 246, 247)",
+        "colors": [
+          {
+            "color": "rgb(103, 103, 108)",
+            "fill": "rgb(0, 0, 0)",
+            "selector": ".edu-note"
+          },
+          {
+            "color": "rgb(60, 60, 67)",
+            "fill": "rgb(133, 82, 36)",
+            "selector": ".basis-label"
+          },
+          {
+            "color": "rgb(60, 60, 67)",
+            "fill": "rgb(59, 101, 160)",
+            "selector": ".part-label"
+          }
+        ],
+        "dark": false,
+        "minimumSvgFont": 24,
+        "outside": [],
+        "pageWidth": 1425,
+        "ratios": [
+          [
+            1.3333333333333333,
+            1.3333147321428571
+          ]
+        ],
+        "scrollWidth": 688,
+        "viewport": [
+          1440,
+          1100
+        ],
+        "width": 688
+      }
+    },
+    {
+      "name": "v14-desktop-light",
+      "metrics": {
+        "background": "rgb(246, 246, 247)",
+        "colors": [
+          {
+            "color": "rgb(103, 103, 108)",
+            "fill": "rgb(0, 0, 0)",
+            "selector": ".edu-note"
+          },
+          {
+            "color": "rgb(60, 60, 67)",
+            "fill": "rgb(133, 82, 36)",
+            "selector": ".basis-label"
+          },
+          {
+            "color": "rgb(60, 60, 67)",
+            "fill": "rgb(59, 101, 160)",
+            "selector": ".part-label"
+          }
+        ],
+        "dark": false,
+        "minimumSvgFont": 24,
+        "outside": [],
+        "pageWidth": 1425,
+        "ratios": [
+          [
+            1.3333333333333333,
+            1.3333147321428571
+          ]
+        ],
+        "scrollWidth": 688,
+        "viewport": [
+          1440,
+          1100
+        ],
+        "width": 688
+      }
+    },
+    {
+      "name": "v01-desktop-light",
+      "metrics": {
+        "background": "rgb(246, 246, 247)",
+        "colors": [
+          {
+            "color": "rgb(60, 60, 67)",
+            "fill": "rgb(34, 100, 81)",
+            "selector": ".object-label"
+          },
+          {
+            "color": "rgb(60, 60, 67)",
+            "fill": "rgb(133, 82, 36)",
+            "selector": ".basis-label"
+          },
+          {
+            "color": "rgb(60, 60, 67)",
+            "fill": "rgb(59, 101, 160)",
+            "selector": ".part-label"
+          }
+        ],
+        "dark": false,
+        "minimumSvgFont": 16.8,
+        "outside": [],
+        "pageWidth": 1425,
+        "ratios": [
+          [
+            0.9333333333333332,
+            0.9333333333333332
+          ],
+          [
+            0.9333333333333332,
+            0.9333333333333332
+          ]
+        ],
+        "scrollWidth": 688,
+        "viewport": [
+          1440,
+          1100
+        ],
+        "width": 688
+      }
+    },
+    {
+      "name": "v18-desktop-light",
+      "metrics": {
+        "background": "#f6f6f7",
+        "colors": [
+          {
+            "color": "rgb(103, 103, 108)",
+            "fill": "rgb(0, 0, 0)",
+            "selector": ".edu-note"
+          },
+          {
+            "color": "rgb(34, 100, 81)",
+            "fill": "rgb(0, 0, 0)",
+            "selector": ".edu-source-city"
+          },
+          {
+            "color": "rgb(59, 101, 160)",
+            "fill": "rgb(0, 0, 0)",
+            "selector": ".edu-source-rural"
+          }
+        ],
+        "dark": false,
+        "minimumSvgFont": 24,
+        "outside": [],
+        "pageWidth": 1425,
+        "ratios": [
+          [
+            1.3333333333333333,
+            1.3333079268292682
+          ]
+        ],
+        "scrollWidth": 688,
+        "viewport": [
+          1440,
+          1100
+        ],
+        "width": 688
+      }
+    },
+    {
+      "name": "v18-desktop-dark",
+      "metrics": {
+        "background": "#202127",
+        "colors": [
+          {
+            "color": "rgb(152, 152, 159)",
+            "fill": "rgb(0, 0, 0)",
+            "selector": ".edu-note"
+          },
+          {
+            "color": "rgb(134, 212, 183)",
+            "fill": "rgb(0, 0, 0)",
+            "selector": ".edu-source-city"
+          },
+          {
+            "color": "rgb(163, 196, 245)",
+            "fill": "rgb(0, 0, 0)",
+            "selector": ".edu-source-rural"
+          }
+        ],
+        "dark": true,
+        "minimumSvgFont": 24,
+        "outside": [],
+        "pageWidth": 1425,
+        "ratios": [
+          [
+            1.3333333333333333,
+            1.3333079268292682
+          ]
+        ],
+        "scrollWidth": 688,
+        "viewport": [
+          1440,
+          1100
+        ],
+        "width": 688
+      }
+    },
+    {
+      "name": "v14-desktop-dark",
+      "metrics": {
+        "background": "rgb(32, 33, 39)",
+        "colors": [
+          {
+            "color": "rgb(152, 152, 159)",
+            "fill": "rgb(0, 0, 0)",
+            "selector": ".edu-note"
+          },
+          {
+            "color": "rgb(223, 223, 214)",
+            "fill": "rgb(237, 189, 132)",
+            "selector": ".basis-label"
+          },
+          {
+            "color": "rgb(223, 223, 214)",
+            "fill": "rgb(163, 196, 245)",
+            "selector": ".part-label"
+          }
+        ],
+        "dark": true,
+        "minimumSvgFont": 24,
+        "outside": [],
+        "pageWidth": 1425,
+        "ratios": [
+          [
+            1.3333333333333333,
+            1.3333147321428571
+          ]
+        ],
+        "scrollWidth": 688,
+        "viewport": [
+          1440,
+          1100
+        ],
+        "width": 688
+      }
+    },
+    {
+      "name": "v14-static-mobile-dark",
+      "metrics": {
+        "background": "rgb(32, 33, 39)",
+        "colors": [
+          {
+            "color": "rgb(152, 152, 159)",
+            "fill": "rgb(0, 0, 0)",
+            "selector": ".edu-note"
+          },
+          {
+            "color": "rgb(223, 223, 214)",
+            "fill": "rgb(237, 189, 132)",
+            "selector": ".basis-label"
+          },
+          {
+            "color": "rgb(223, 223, 214)",
+            "fill": "rgb(163, 196, 245)",
+            "selector": ".part-label"
+          }
+        ],
+        "dark": true,
+        "minimumSvgFont": 16.35,
+        "outside": [],
+        "pageWidth": 375,
+        "ratios": [
+          [
+            0.9083333333333332,
+            0.9083147321428572
+          ]
+        ],
+        "scrollWidth": 327,
+        "viewport": [
+          390,
+          844
+        ],
+        "width": 327
+      }
+    },
+    {
+      "name": "v01-desktop-dark",
+      "metrics": {
+        "viewport": [
+          1440,
+          1100
+        ],
+        "width": 688,
+        "scrollWidth": 688,
+        "dark": true,
+        "minimumSvgFont": 16.8,
+        "outside": []
+      },
+      "measurement": "Recorded from browser recordScene output; additional color/geometry fields not exported for this capture."
+    },
+    {
+      "name": "v14-mobile-dark",
+      "metrics": {
+        "viewport": [
+          390,
+          844
+        ],
+        "width": 327,
+        "scrollWidth": 327,
+        "dark": true,
+        "minimumSvgFont": 16.35,
+        "outside": []
+      },
+      "measurement": "Recorded from browser recordScene output; additional color/geometry fields not exported for this capture."
+    },
+    {
+      "name": "v14-table-mobile-dark",
+      "metrics": {
+        "viewport": [
+          390,
+          844
+        ],
+        "width": 327,
+        "scrollWidth": 327,
+        "dark": true,
+        "minimumSvgFont": 16.35,
+        "outside": []
+      },
+      "measurement": "Recorded from browser recordScene output; additional color/geometry fields not exported for this capture."
+    },
+    {
+      "name": "v01-mobile-light",
+      "metrics": {
+        "viewport": [
+          390,
+          844
+        ],
+        "width": 327,
+        "scrollWidth": 327,
+        "dark": false,
+        "minimumSvgFont": 16.35,
+        "outside": []
+      },
+      "measurement": "Recorded from browser recordScene output; additional color/geometry fields not exported for this capture."
+    },
+    {
+      "name": "v18-mobile-light",
+      "metrics": {
+        "viewport": [
+          390,
+          844
+        ],
+        "width": 327,
+        "scrollWidth": 327,
+        "dark": false,
+        "minimumSvgFont": 16.35,
+        "outside": []
+      },
+      "measurement": "Recorded from browser recordScene output; additional color/geometry fields not exported for this capture."
+    },
+    {
+      "name": "v18-mobile-dark",
+      "metrics": {
+        "viewport": [
+          390,
+          844
+        ],
+        "width": 327,
+        "scrollWidth": 327,
+        "dark": true,
+        "minimumSvgFont": 16.35,
+        "outside": []
+      },
+      "measurement": "Recorded from browser recordScene output; additional color/geometry fields not exported for this capture."
+    },
+    {
+      "name": "v18-narrow-320",
+      "metrics": {
+        "viewport": [
+          320,
+          740
+        ],
+        "width": 272,
+        "scrollWidth": 272,
+        "dark": true,
+        "minimumSvgFont": 13.6,
+        "outside": []
+      },
+      "measurement": "Recorded from browser recordScene output; additional color/geometry fields not exported for this capture."
+    },
+    {
+      "name": "v01-mobile-dark",
+      "metrics": {
+        "viewport": [
+          320,
+          740
+        ],
+        "width": 272,
+        "scrollWidth": 272,
+        "dark": true,
+        "minimumSvgFont": 13.6,
+        "outside": []
+      },
+      "measurement": "Recorded from browser recordScene output; additional color/geometry fields not exported for this capture."
+    },
+    {
+      "name": "v14-narrow-320",
+      "metrics": {
+        "viewport": [
+          320,
+          740
+        ],
+        "width": 272,
+        "scrollWidth": 272,
+        "dark": true,
+        "minimumSvgFont": 13.6,
+        "outside": []
+      },
+      "measurement": "Recorded from browser recordScene output; additional color/geometry fields not exported for this capture."
+    },
+    {
+      "name": "v14-mobile-light",
+      "metrics": {
+        "viewport": [
+          390,
+          844
+        ],
+        "width": 327,
+        "scrollWidth": 327,
+        "dark": false,
+        "minimumSvgFont": 16.35,
+        "outside": []
+      },
+      "measurement": "Recorded from browser recordScene output; additional color/geometry fields not exported for this capture."
+    },
+    {
+      "name": "v01-tablet-light",
+      "metrics": {
+        "viewport": [
+          1024,
+          900
+        ],
+        "width": 597,
+        "scrollWidth": 597,
+        "dark": false,
+        "minimumSvgFont": 14.525,
+        "outside": []
+      },
+      "measurement": "Recorded from browser recordScene output; additional color/geometry fields not exported for this capture."
+    }
+  ],
+  "limitations": [
+    "Browser viewport emulation, not physical phones or Safari/Firefox.",
+    "No screen-reader listening session.",
+    "No-JavaScript fallback verified against built SSR HTML, not an in-browser JavaScript-disable setting.",
+    "Early desktop screenshots and final mobile screenshots have the same mathematics; final small conditional history caption correction is checked in SSR/build and subsequent browser spot-check."
+  ]
+}

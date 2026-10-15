@@ -1,83 +1,82 @@
 <script setup>
 import { computed, onMounted, ref } from 'vue'
-import { markovModels, markovDistribution, markovStep } from './math.mjs'
-const ready=ref(false), model=ref('city'), initial=ref(.8), k=ref(0), phase=ref(0)
-onMounted(()=>{ready.value=true})
-const chosen=computed(()=>markovModels[model.value])
-const current=computed(()=>markovDistribution(model.value,initial.value,k.value))
-const calculation=computed(()=>markovStep(chosen.value.matrix,current.value))
-const stages=['读当前分布','计算每个来源的贡献','按行求和，得到下一分布']
-const format=x=>x.toFixed(5).replace(/0+$/,'').replace(/\.$/,'')
-function reset(){k.value=0;phase.value=0}
-function changeModel(){initial.value=model.value==='city'?.8:1;reset()}
-function next(){if(k.value>=60)return;if(phase.value<2)phase.value++;else if(k.value<60){k.value++;phase.value=0}}
-function previous(){if(phase.value>0)phase.value--;else if(k.value>0){k.value--;phase.value=2}}
-const shownStep=computed(()=>k.value+(phase.value===2?1:0))
-const history=computed(()=>Array.from({length:shownStep.value+1},(_,j)=>({k:j,p:markovDistribution(model.value,initial.value,j)[0]})))
-const horizon=computed(()=>Math.max(6,shownStep.value))
-const hx=j=>42+j/horizon.value*440
-const hy=p=>165-p*130
-const comparison=computed(()=>[0,1,20,60].map(j=>({k:j,p:markovDistribution(model.value,initial.value,j)})))
-const conclusion=computed(()=>model.value==='city'
-  ? '城市模型：初值不同，分布都趋近 (0.375, 0.625)。趋近是分布的性质，居民仍可迁移；有限步图像不是极限定理的证明。'
+import MathMatrix from './MathMatrix.vue'
+import MarkovCalculation from './MarkovCalculation.vue'
+import { markovModels, markovDistribution, markovStep, navigateMarkov, formatNumber } from './math.mjs'
+const ready = ref(false)
+const model = ref('city')
+const initial = ref(.8)
+const state = ref({ k: 0, phase: 0 })
+onMounted(() => { ready.value = true })
+const k = computed(() => state.value.k)
+const phase = computed(() => state.value.phase)
+const chosen = computed(() => markovModels[model.value])
+const current = computed(() => markovDistribution(model.value,initial.value,k.value))
+const f = x => formatNumber(x,5)
+const matrixRows = computed(() => chosen.value.matrix.map(row => row.map(f)))
+const nextDistribution = computed(() => markovStep(chosen.value.matrix,current.value).next)
+const currentRows = computed(() => current.value.map(v => [f(v)]))
+const stages = ['读矩阵与当前分布','计算来源贡献','合计下一分布']
+const actions = ['显示来源贡献','合计下一分布','进入下一时刻']
+const labels = { city: '城市迁移（收敛）', alternating: '交替链（周期2）', identity: '单位矩阵（保持初值）' }
+function move(action) { state.value = navigateMarkov(state.value,action) }
+function restart() { move('reset') }
+function reset() { model.value = 'city'; initial.value = .8; restart() }
+function changeModel() { initial.value = model.value==='city' ? .8 : 1; restart() }
+const shownStep = computed(() => k.value+(phase.value===2 ? 1 : 0))
+const history = computed(() => Array.from({length:shownStep.value+1},(_,j) => ({k:j,p:markovDistribution(model.value,initial.value,j)[0]})))
+const horizon = computed(() => Math.max(6,shownStep.value))
+const hx = j => 36+j/horizon.value*300
+const hy = p => 155-p*120
+const times = [0,1,2,3,20,60]
+const conclusion = computed(() => model.value==='city'
+  ? '城市模型：任意初分布都趋向城市概率 0.375、乡村概率 0.625。居民仍可迁移；分布趋近不表示随机状态停止改变。'
   : model.value==='alternating'
-    ? initial.value===.5 ? '交替链：恰从平稳分布 (0.5, 0.5) 出发，分布保持不变；这不能推出其他初值也收敛。' : '交替链：当前分布来回交替，不收敛；但唯一平稳分布仍为 (0.5, 0.5)。'
-    : '单位矩阵：当前分布一直等于初始分布。每个概率向量都是平稳分布，没有所有初值共同趋向的唯一平稳分布。')
+    ? initial.value===.5 ? '交替链：恰从平稳分布出发，分布不变；其他初值不一定收敛。唯一平稳分布的城市概率为 0.5。' : '交替链：当前分布不断交替，不收敛；它仍有唯一平稳分布，城市与乡村概率各为 0.5。'
+    : '单位矩阵：每步都等于初值；每个分布都平稳，没有所有初值共同趋向的唯一平稳分布。')
 </script>
 
 <template>
   <section id="v18-markov" class="edu-visual edu-markov" aria-label="Markov 链分步教学" data-visualization="V18">
-    <header class="edu-intro">
-      <strong class="edu-title">从两个来源，算出下一步分布</strong>
-      <p>先预测默认城市模型：城市已有 80%，即使乡村有人迁入，下一年城市比例也一定上升吗？先算乘积，再按到达状态相加。</p>
-    </header>
+    <strong class="edu-title">从两个来源，算出下一步分布</strong>
+    <p>默认例中城市占 80%。乡村有人迁入，城市总比例就一定上升吗？先预测，再检查四个来源乘积。</p>
     <div v-if="ready" class="edu-controls">
-      <label>转移模型<select v-model="model" @change="changeModel"><option v-for="(item,id) in markovModels" :key="id" :value="id">{{ item.label }}</option></select></label>
-      <label>初始城市概率<select v-model.number="initial" @change="reset"><option v-for="n in [0,.375,.5,.8,1]" :key="n" :value="n">{{ n }}（乡村 {{ format(1-n) }}）</option></select></label>
+      <label>转移模型<select v-model="model" @change="changeModel"><option v-for="(item,id) in labels" :key="id" :value="id">{{ item }}</option></select></label>
+      <label>初始城市概率<select v-model.number="initial" @change="restart"><option v-for="n in [0,.375,.5,.8,1]" :key="n" :value="n">{{ n }}（乡村 {{ f(1-n) }}）</option></select></label>
     </div>
-    <p v-else class="edu-note">静态阅读：下面给出默认模型的初始分布与完整手算表。启用 JavaScript 后可回退、推进和切换反例。</p>
-    <div class="edu-matrix-row">
-      <div>
-        <strong>列 = 出发，行 = 到达</strong>
-        <table tabindex="0" class="edu-matrix"><caption>转移矩阵 P（各列概率和为 1）</caption><thead><tr><th scope="col">到达 ＼ 出发</th><th scope="col">城市</th><th scope="col">乡村</th></tr></thead><tbody><tr v-for="(row,i) in chosen.matrix" :key="i"><th scope="row">{{ ['城市','乡村'][i] }}</th><td v-for="(v,j) in row" :key="j">{{ format(v) }}</td></tr></tbody></table>
-      </div>
-      <div class="edu-current"><strong>当前：时刻 k = {{ k }}</strong><p>p<sub>k</sub> = ({{ format(current[0]) }}, {{ format(current[1]) }})ᵀ</p>
-        <div v-for="(v,i) in current" :key="i" class="edu-bar-row"><span>{{ ['城市','乡村'][i] }}</span><div class="edu-bar-track"><span :style="{width:(v*100)+'%'}" :class="i===0?'edu-bar-city':'edu-bar-rural'" /></div><span>{{ (v*100).toFixed(2) }}%</span></div>
-        <p class="edu-note">这里是状态概率，不是某个居民的实际位置。</p>
-      </div>
+    <p v-else class="edu-note">静态阅读：下方展开的手算包含默认模型的完整贡献、结果和反例对照。</p>
+    <div class="edu-markov-input">
+      <div><strong>规则：P</strong><div class="edu-math-line edu-math">P = <MathMatrix :rows="matrixRows" label="转移矩阵，列为出发，行为到达" /></div></div>
+      <div class="edu-current"><strong>输入：时刻 {{ k }}</strong><div class="edu-math-line edu-math"><span><b>p</b><sub>{{ k }}</sub> {{ k===0 ? '=' : '≈' }}</span> <MathMatrix :rows="currentRows" label="当前时刻的概率列向量" /></div></div>
     </div>
-    <div v-if="ready" class="edu-controls edu-step-controls"><button :disabled="k===0 && phase===0" @click="previous">上一步</button><button :disabled="k===60" @click="next">{{ phase===2?'进入下一时刻':'下一步' }}</button><button @click="reset">重置</button><span>{{ k===60 ? '已到演示上限：时刻 60，可回退或重置' : `时刻 ${k} → ${k+1} · 阶段 ${phase+1}/3` }}</span></div>
-    <div class="edu-stage" aria-live="polite" aria-atomic="true">
-      <strong>{{ phase+1 }}. {{ stages[phase] }}（k = {{ k }}）</strong>
-      <p v-if="phase===0">固定本页矩阵 P，输入当前 p<sub>{{ k }}</sub> = ({{ format(current[0]) }}, {{ format(current[1]) }})ᵀ。下一步的城市概率必须合并“原在城市”和“原在乡村”两条互斥路径。<template v-if="ready && k<60">点击下一步查看各乘积。</template><template v-else-if="k===60">已到演示上限，可回退检查计算或重置初值。</template><template v-else>下方静态回退表列出默认模型的完整乘积与求和。</template></p>
-      <template v-else>
-        <div v-for="(row,i) in calculation.contributions" :key="i" class="edu-equation">
-          <strong>到达{{ ['城市','乡村'][i] }}：</strong>
-          <span class="edu-source-city">{{ format(chosen.matrix[i][0]) }} × {{ format(current[0]) }} = {{ format(row[0]) }}（来自城市）</span>
-          <span class="edu-source-rural">{{ format(chosen.matrix[i][1]) }} × {{ format(current[1]) }} = {{ format(row[1]) }}（来自乡村）</span>
-          <span v-if="phase===2" class="edu-sum">相加：{{ format(row[0]) }} + {{ format(row[1]) }} = <b>{{ format(calculation.next[i]) }}</b></span>
-        </div>
-        <p v-if="phase===1">每个乘积都是 P<sub>ij</sub>p<sub>k,j</sub>：先到达当前出发状态，再走对应的转移路径。两条来源现在还没有相加。</p>
-        <template v-else>
-          <p><strong>p<sub>{{ k+1 }}</sub> = Pp<sub>{{ k }}</sub> = ({{ format(calculation.next[0]) }}, {{ format(calculation.next[1]) }})ᵀ</strong>；两项和为 {{ format(calculation.next[0]+calculation.next[1]) }}。</p>
-          <div v-for="(row,i) in calculation.contributions" :key="i" class="edu-bar-row"><span>{{ ['城市','乡村'][i] }}</span><div class="edu-bar-track edu-stacked"><span class="edu-bar-city" :style="{width:row[0]*100+'%'}"/><span class="edu-bar-rural" :style="{width:row[1]*100+'%'}"/></div><span>{{ (calculation.next[i]*100).toFixed(2) }}%</span></div>
-          <p class="edu-note">堆叠段按来源区分：绿色段来自城市，蓝色段来自乡村；段长是总概率的贡献，不是转移概率本身。</p>
-        </template>
-      </template>
+    <p class="edu-note">行、列均按“城市、乡村”排序。P 的列是出发、行是到达，每列和为 1；<b class="edu-math">p</b><sub>{{ k }}</sub> 是状态概率，不是某个居民的位置。</p>
+    <div v-if="ready" class="edu-controls edu-step-controls">
+      <button :disabled="k===0 && phase===0" @click="move('previous')">上一步</button>
+      <button :disabled="k===60" @click="move('next')">{{ k===60 ? '已到时刻60' : actions[phase] }}</button>
+      <button @click="reset">恢复默认</button>
+      <span class="edu-step-label">{{ k===60 ? '可回退检查或恢复默认' : `时刻 ${k} → ${k+1} · ${phase+1}/3` }}</span>
     </div>
-    <figure class="edu-history"><svg viewBox="0 0 510 216" role="img" aria-label="城市概率随离散时刻变化；横轴是已展示的时刻，纵轴是概率">
-      <line x1="42" y1="165" x2="482" y2="165" class="axis"/><line x1="42" y1="35" x2="42" y2="165" class="axis"/>
-      <text x="42" y="22">城市概率</text><text x="430" y="211">时刻 k</text><text x="27" y="169">0</text><text x="27" y="39">1</text>
-      <template v-if="chosen.stationary"><line x1="42" :y1="hy(chosen.stationary[0])" x2="482" :y2="hy(chosen.stationary[0])" class="part"/><text x="190" :y="hy(chosen.stationary[0])-12">平稳分布：城市概率 {{ chosen.stationary[0] }}</text></template>
+    <div class="edu-stage" :data-step="k" :data-phase="phase">
+      <strong>{{ k===60 ? '已到演示终点' : `${phase+1}. ${stages[phase]}` }}</strong>
+      <p v-if="phase===0">{{ k===60 ? '当前分布仍可从上方读取。有限步图像不能证明极限，可回退检查已有计算。' : ready ? '先读当前列向量。求下一步的城市概率时，要合并“原在城市”和“原在乡村”两条互斥路径。' : '当前分布与矩阵已给出；下方“静态手算与长期对比”展开完整计算。' }}</p>
+      <MarkovCalculation v-else :matrix="chosen.matrix" :distribution="current" :k="k" :phase="phase" />
+    </div>
+    <span class="edu-sr-only" role="status">时刻 {{ k }}，{{ k===60 ? '到达演示上限' : `阶段${phase+1}：${stages[phase]}` }}。当前城市概率 {{ f(current[0]) }}，乡村概率 {{ f(current[1]) }}。<template v-if="phase===2">下一步城市概率 {{ f(nextDistribution[0]) }}，乡村概率 {{ f(nextDistribution[1]) }}。</template></span>
+    <figure class="edu-history"><svg viewBox="0 0 360 205" role="img" aria-label="城市概率的离散递推历史；固定概率纵轴，点不作连续连线">
+      <line x1="36" y1="155" x2="336" y2="155" class="axis"/><line x1="36" y1="35" x2="36" y2="155" class="axis"/>
+      <text x="36" y="22">城市概率</text><text x="336" y="198" text-anchor="end">时刻 k</text><text x="22" y="160" text-anchor="end">0</text><text x="22" y="40" text-anchor="end">1</text>
+      <template v-if="chosen.stationary"><line x1="36" :y1="hy(chosen.stationary[0])" x2="336" :y2="hy(chosen.stationary[0])" class="part"/><text x="200" :y="hy(chosen.stationary[0])-10">π₁ = {{ chosen.stationary[0] }}</text></template>
       <circle v-for="item in history" :key="item.k" :cx="hx(item.k)" :cy="hy(item.p)" r="3.5" class="fill-object"/>
-      <text x="42" y="187">0</text><text x="470" y="187">{{ horizon }}</text>
-    </svg><figcaption>仅显示已经完成的离散递推点；横轴随已展示步数扩展，纵轴始终为 0—1。虚线是平稳分布参照，不代表当前分布一定收敛。</figcaption></figure>
+      <text x="36" y="177">0</text><text x="328" y="177">{{ horizon }}</text>
+    </svg><figcaption>只画已完成的递推点；横轴随步数扩展，纵轴固定为 0—1。<template v-if="chosen.stationary">虚线标平稳分布的城市概率 π₁，不保证当前分布一定趋向它。</template><template v-else>此模型的每个初分布都平稳，因此不画一条共同的平稳参照线。</template></figcaption></figure>
     <p class="edu-observe">{{ conclusion }}</p>
-    <details class="edu-fallback" :open="!ready"><summary>静态回退：默认前两步与三个模型的长期对比</summary>
-      <p>城市模型从 (0.8, 0.2)ᵀ 出发：第一步城市 0.95×0.8 + 0.03×0.2 = 0.766，乡村 0.05×0.8 + 0.97×0.2 = 0.234；第二步为 (0.73472, 0.26528)ᵀ。这是完整确定的概率递推，不是居民抽样模拟。</p>
-      <table tabindex="0"><caption>固定初值下的精确递推（小数经舍入）</caption><thead><tr><th>模型与初值</th><th>k=0</th><th>k=1</th><th>k=20</th><th>k=60</th></tr></thead><tbody><tr v-for="id in ['city','alternating','identity']" :key="id"><th scope="row">{{ id==='city'?'城市，u₀=0.8':id==='alternating'?'交替，u₀=1':'单位矩阵，u₀=1' }}</th><td v-for="j in [0,1,20,60]" :key="j">{{ format(markovDistribution(id,id==='city'?.8:1,j)[0]) }}</td></tr></tbody></table>
-      <p>城市模型满足 u<sub>k</sub> = 0.375 + 0.92<sup>k</sup>(u<sub>0</sub>−0.375)。交替模型从 u₀=1 出发，奇数步为 0、偶数步为 1，故偶数步表相同不表示收敛。单位矩阵则每步都等于初值。</p>
+    <details class="edu-fallback" :open="!ready"><summary>静态手算与长期对比</summary>
+      <p>默认城市模型第一步：按来源计算，再按到达状态求和。</p>
+      <MarkovCalculation :matrix="markovModels.city.matrix" :distribution="[.8,.2]" :k="0" :phase="2" />
+      <div class="edu-math-line edu-math"><span>第二步：<b>p</b><sub>2</sub> =</span> <MathMatrix :rows="[[.73472],[.26528]]" label="默认城市模型第二步的概率列向量" /></div>
+      <p class="edu-note">下面表格较宽，可横向滚动；聚焦表格后可用方向键查看。</p>
+      <table tabindex="0" class="edu-long-table"><caption>城市概率 u<sub>k</sub> = p<sub>k,1</sub>（小数经舍入）</caption><thead><tr><th scope="col">模型与初值</th><th v-for="j in times" :key="j" scope="col">k={{ j }}</th></tr></thead><tbody><tr v-for="id in ['city','alternating','identity']" :key="id"><th scope="row">{{ id==='city' ? '城市，u₀=0.8' : id==='alternating' ? '交替，u₀=1' : '单位矩阵，u₀=1' }}</th><td v-for="j in times" :key="j">{{ f(markovDistribution(id,id==='city' ? .8 : 1,j)[0]) }}</td></tr><tr v-if="ready"><th scope="row">当前设置，u₀={{ initial }}</th><td v-for="j in times" :key="j">{{ f(markovDistribution(model,initial,j)[0]) }}</td></tr></tbody></table>
+      <p>城市模型有 <span class="edu-math">u<sub>k</sub> = 0.375 + 0.92<sup>k</sup>(u<sub>0</sub> − 0.375)</span>。交替模型从 u₀=1 出发，奇数步为 0、偶数步为 1；单位矩阵始终等于初值。有限数值表不代替正文的收敛条件。</p>
     </details>
-    <details v-if="ready"><summary>当前设置：查看较长时刻的城市概率</summary><ul><li v-for="item in comparison" :key="item.k">k={{ item.k }}：{{ format(item.p[0]) }}</li></ul><p>这是所选矩阵和初值的递推结果；有限个时刻的表不能替代收敛条件。</p></details>
   </section>
 </template>

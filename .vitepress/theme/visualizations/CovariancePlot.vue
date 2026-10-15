@@ -1,43 +1,30 @@
 <script setup>
 import { computed } from 'vue'
-import { covarianceEllipse, ellipsePoint } from './math.mjs'
-const props=defineProps({rho:{type:Number,default:.5},probability:{type:Boolean,default:false}})
-const m=computed(()=>covarianceEllipse(props.rho))
-const scale=computed(()=>props.probability?34:66)
-const threshold=computed(()=>props.probability?m.value.s:1)
-const px=x=>240+scale.value*x, py=y=>170-scale.value*y
-const pathFor=s=>Array.from({length:181},(_,i)=>{const p=ellipsePoint(m.value,i*Math.PI/90,s);return `${i?'L':'M'}${px(p[0]).toFixed(3)},${py(p[1]).toFixed(3)}`}).join(' ')+' Z'
-const axes=computed(()=>[0,1].map(j=>{
-  const length=Math.sqrt(threshold.value*[m.value.lambda1,m.value.lambda2][j]);
-  const angle=m.value.angle+j*Math.PI/2;
-  return [length*Math.cos(angle),length*Math.sin(angle)]
-}))
-const halfWidth=computed(()=>2*Math.sqrt(threshold.value))
-const halfHeight=computed(()=>Math.sqrt(threshold.value))
-const extent=computed(()=>props.probability?[6,3.5]:[3.1,2.1])
-const uid=computed(()=>props.probability?'cov-probability':'cov-shape')
+import { covariancePlot } from './math.mjs'
+const props = defineProps({ model: { type: Object, required: true }, probability: Boolean, idPrefix: { type: String, required: true } })
+const g = computed(() => covariancePlot(props.model,props.probability))
+const uid = computed(() => props.idPrefix)
+const ux = computed(() => (props.probability ? 2.7 : 1.7)/Math.SQRT2)
 </script>
 
 <template>
-  <svg class="edu-cov-plot" viewBox="0 0 480 330" role="img" :aria-labelledby="uid+'-title '+uid+'-desc'">
-    <title :id="uid+'-title'">{{ probability?'已知二维正态的 95% 概率椭圆':'标准协方差椭圆、坐标投影与主轴' }}</title>
-    <desc :id="uid+'-desc'">均值为零，坐标标准差为 2 米和 1 米，相关系数 {{ rho }}。{{ probability?'外侧实线是平方 Mahalanobis 距离等于 5.991 的边界；内侧虚线是距离平方等于 1。':'实线的平方 Mahalanobis 距离等于 1，外切矩形半宽为坐标标准差。' }}蓝色两根线沿主轴，棕色箭头只标 45 度投影方向，不表示标准差的长度。</desc>
+  <svg class="edu-cov-plot" viewBox="0 0 360 280" role="img" :aria-labelledby="uid+'-title '+uid+'-desc'">
+    <title :id="uid+'-title'">{{ probability ? '已知二维正态的95%概率椭圆' : '标准协方差椭圆、坐标投影与主轴' }}</title>
+    <desc :id="uid+'-desc'">坐标标准差为2米和1米，相关系数 {{ model.rho }}。{{ probability ? '外侧实线内部概率为95%，内虚线距离平方为1。' : '实线的Mahalanobis距离平方为1。' }}蓝线是两条主半轴，灰色点线矩形标坐标投影半宽。棕箭头只指示45度方向，绘制长度任意，不表示方差或一米。</desc>
     <defs><marker :id="uid+'-arrow'" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10z" class="fill-basis"/></marker></defs>
-    <rect width="480" height="330" class="plot-bg" rx="4"/>
-    <text x="18" y="29" class="plot-heading">{{ probability?'固定 q = 95%，只改变 ρ':'固定 C：先分清形状与方向' }}</text>
-    <rect :x="px(-halfWidth)" :y="py(halfHeight)" :width="2*halfWidth*scale" :height="2*halfHeight*scale" class="ghost" fill="none"/>
-    <line :x1="px(-extent[0])" y1="170" :x2="px(extent[0])" y2="170" class="axis"/>
-    <line x1="240" :y1="py(-extent[1])" x2="240" :y2="py(extent[1])" class="axis"/>
-    <template v-for="x in probability?[-4,-2,2,4]:[-2,-1,1,2]" :key="'x'+x"><line :x1="px(x)" y1="166" :x2="px(x)" y2="174" class="tick"/><text :x="px(x)" y="192" text-anchor="middle" class="tick-text">{{ x }}</text></template>
-    <template v-for="y in [-1,1]" :key="'y'+y"><line x1="236" :y1="py(y)" x2="244" :y2="py(y)" class="tick"/><text x="228" :y="py(y)+5" text-anchor="end" class="tick-text">{{ y }}</text></template>
-    <text x="444" y="159">x / m</text><text x="250" y="53">y / m</text><text x="221" y="191">0</text>
-    <path v-if="probability" :d="pathFor(1)" class="part" fill="none"/>
-    <path :d="pathFor(threshold)" class="object" fill="none"/>
-    <line v-for="(p,j) in axes" :key="j" x1="240" y1="170" :x2="px(p[0])" :y2="py(p[1])" class="part"/>
-    <text v-for="(p,j) in axes" :key="'label'+j" :x="px(p[0])+10" :y="py(p[1])-10" class="part-label">{{ probability?['a','b'][j]:['√λ₁','√λ₂'][j] }}</text>
-    <line x1="240" y1="170" :x2="px((probability?2.7:1.7)/Math.SQRT2)" :y2="py((probability?2.7:1.7)/Math.SQRT2)" class="basis" :marker-end="'url(#'+uid+'-arrow)'"/>
-    <text :x="px((probability?2.7:1.7)/Math.SQRT2)+8" :y="py((probability?2.7:1.7)/Math.SQRT2)-3" class="basis-label">u（45°）</text>
-    <circle cx="240" cy="170" r="3" class="fill-object"/>
-    <text x="18" y="304" class="muted-label">实线：d<tspan baseline-shift="sub" font-size="13">M</tspan>² = {{ probability?'s':'1' }}；{{ probability?'内虚线：':'蓝虚线：主轴标准差' }}<template v-if="probability">d<tspan baseline-shift="sub" font-size="13">M</tspan>² = 1</template></text>
+    <rect width="360" height="280" class="plot-bg" rx="4"/>
+    <rect :x="g.px(-g.halfWidth)" :y="g.py(g.halfHeight)" :width="2*g.halfWidth*g.scale" :height="2*g.halfHeight*g.scale" class="ghost" fill="none"/>
+    <line x1="36" y1="230" x2="342" y2="230" class="axis"/><line x1="36" y1="32" x2="36" y2="230" class="axis"/>
+    <line x1="36" y1="125" x2="342" y2="125" class="edu-zero-axis"/><line x1="180" y1="32" x2="180" y2="230" class="edu-zero-axis"/>
+    <template v-for="x in probability ? [-4,-2,2,4] : [-2,-1,1,2]" :key="'x'+x"><line :x1="g.px(x)" y1="227" :x2="g.px(x)" y2="233" class="tick"/><text :x="g.px(x)" y="252" text-anchor="middle" class="tick-text">{{ x }}</text></template>
+    <template v-for="y in [-1,1]" :key="'y'+y"><line x1="33" :y1="g.py(y)" x2="39" :y2="g.py(y)" class="tick"/><text x="28" :y="g.py(y)+6" text-anchor="end" class="tick-text">{{ y }}</text></template>
+    <text x="344" y="274" text-anchor="end">x / m</text><text x="36" y="22">y / m</text><text x="180" y="252" text-anchor="middle">0</text><text x="28" y="131" text-anchor="end">0</text>
+    <path v-if="probability" :d="g.innerPath" class="edu-unit-contour" fill="none" data-curve="unit"/>
+    <path :d="g.path" class="object" fill="none" data-curve="boundary"/>
+    <line v-for="(p,j) in g.axes" :key="j" x1="180" y1="125" :x2="g.px(p[0])" :y2="g.py(p[1])" class="edu-principal-axis"/>
+    <text v-for="(p,j) in g.axes" :key="'label'+j" :x="g.px(p[0])+8" :y="g.py(p[1])-12" class="part-label edu-svg-math">{{ probability ? ['a','b'][j] : ['√λ₁','√λ₂'][j] }}</text>
+    <line x1="180" y1="125" :x2="g.px(ux)" :y2="g.py(ux)" class="basis" :marker-end="'url(#'+uid+'-arrow)'"/>
+    <text :x="probability ? g.px(ux)+8 : g.px(ux*.65)+12" :y="probability ? g.py(ux)+20 : g.py(ux*.65)+10" class="basis-label edu-svg-vector">u</text>
+    <circle cx="180" cy="125" r="3" class="fill-object"/>
   </svg>
 </template>

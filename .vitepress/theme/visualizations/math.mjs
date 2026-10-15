@@ -25,6 +25,11 @@ export const markovModels = Object.freeze({
 });
 
 export function markovStep(matrix, distribution) {
+  if (!Array.isArray(matrix) || matrix.length !== 2 || matrix.some(row => !Array.isArray(row) || row.length !== 2 || row.some(v => !Number.isFinite(v) || v < 0 || v > 1)) ||
+      [0,1].some(j => Math.abs(matrix[0][j]+matrix[1][j]-1) > 1e-12))
+    throw new RangeError('需要非负、每列和为1的2×2转移矩阵');
+  if (!Array.isArray(distribution) || distribution.length !== 2 || distribution.some(v => !Number.isFinite(v) || v < 0 || v > 1) || Math.abs(distribution[0]+distribution[1]-1) > 1e-12)
+    throw new RangeError('需要两个分量非负、和为1的概率列向量');
   return {
     contributions: matrix.map(row => row.map((value,j) => value * distribution[j])),
     next: matVec(matrix,distribution),
@@ -32,7 +37,7 @@ export function markovStep(matrix, distribution) {
 }
 
 export function markovDistribution(model, initialCity, step) {
-  if (!(model in markovModels) || !Number.isFinite(initialCity) || initialCity < 0 || initialCity > 1 ||
+  if (typeof model !== 'string' || !Object.hasOwn(markovModels, model) || !Number.isFinite(initialCity) || initialCity < 0 || initialCity > 1 ||
       !Number.isInteger(step) || step < 0 || step > 60) throw new RangeError('请选择有效模型、初始概率与0—60的整数时刻');
   let p=[initialCity,1-initialCity];
   for (let k=0;k<step;k++) p=markovStep(markovModels[model].matrix,p).next;
@@ -62,4 +67,42 @@ export function ellipsePoint(model, t, threshold = 1) {
     throw new RangeError('需要有限参数角和正平方距离阈值');
   const z = [Math.sqrt(threshold*model.lambda1)*Math.cos(t), Math.sqrt(threshold*model.lambda2)*Math.sin(t)];
   return matVec(rotation(model.angle),z);
+}
+
+// No clipping or renormalization: rounding belongs only to presentation.
+export function formatNumber(value, digits = 3, fixed = false) {
+  if (!Number.isFinite(value) || !Number.isInteger(digits) || digits < 0 || digits > 10)
+    throw new RangeError('需要有限数值与0—10的整数小数位数');
+  const rounded = Number(value.toFixed(digits));
+  return fixed ? (Object.is(rounded,-0) ? 0 : rounded).toFixed(digits) : String(Object.is(rounded,-0) ? 0 : rounded);
+}
+
+export function navigateMarkov(state, action) {
+  if (!state || typeof state !== 'object') throw new RangeError('无效的Markov演示状态');
+  const { k, phase } = state;
+  if (!Number.isInteger(k) || k < 0 || k > 60 || !Number.isInteger(phase) || phase < 0 || phase > 2 || (k === 60 && phase !== 0))
+    throw new RangeError('无效的Markov演示阶段');
+  if (action === 'reset') return { k: 0, phase: 0 };
+  if (action === 'next') return k === 60 ? { k, phase } : phase < 2 ? { k, phase: phase+1 } : { k: k+1, phase: 0 };
+  if (action === 'previous') return phase > 0 ? { k, phase: phase-1 } : k > 0 ? { k: k-1, phase: 2 } : { k, phase };
+  throw new RangeError('未知的演示动作');
+}
+
+// Same geometry feeds the SVG path and its numerical checks. Screen y points down.
+export function covariancePlot(model, probability = false) {
+  if (probability && model.q !== .95) throw new RangeError('概率面板的固定坐标范围只适用于q=0.95');
+  const threshold = probability ? model.s : 1;
+  const scale = probability ? 28 : 50;
+  const px = x => 180+scale*x, py = y => 125-scale*y;
+  const pathFor = s => Array.from({length:181}, (_,i) => {
+    const p = ellipsePoint(model,i*Math.PI/90,s);
+    return `${i ? 'L' : 'M'}${px(p[0]).toFixed(3)},${py(p[1]).toFixed(3)}`;
+  }).join(' ')+' Z';
+  const axes = [0,1].map(j => {
+    const angle = model.angle+j*Math.PI/2;
+    const length = Math.sqrt(threshold*[model.lambda1,model.lambda2][j]);
+    return [length*Math.cos(angle),length*Math.sin(angle)];
+  });
+  return { threshold, scale, px, py, path: pathFor(threshold), innerPath: pathFor(1), axes,
+    halfWidth: 2*Math.sqrt(threshold), halfHeight: Math.sqrt(threshold) };
 }
