@@ -77,15 +77,13 @@ export function formatNumber(value, digits = 3, fixed = false) {
   return fixed ? (Object.is(rounded,-0) ? 0 : rounded).toFixed(digits) : String(Object.is(rounded,-0) ? 0 : rounded);
 }
 
-export function navigateMarkov(state, action) {
-  if (!state || typeof state !== 'object') throw new RangeError('无效的Markov演示状态');
-  const { k, phase } = state;
-  if (!Number.isInteger(k) || k < 0 || k > 60 || !Number.isInteger(phase) || phase < 0 || phase > 2 || (k === 60 && phase !== 0))
-    throw new RangeError('无效的Markov演示阶段');
-  if (action === 'reset') return { k: 0, phase: 0 };
-  if (action === 'next') return k === 60 ? { k, phase } : phase < 2 ? { k, phase: phase+1 } : { k: k+1, phase: 0 };
-  if (action === 'previous') return phase > 0 ? { k, phase: phase-1 } : k > 0 ? { k: k-1, phase: 2 } : { k, phase };
-  throw new RangeError('未知的演示动作');
+// City-only time controls. Every displayed value still comes from matrix recursion.
+export function advanceMarkov(k, action) {
+  if (!Number.isInteger(k) || k < 0 || k > 60) throw new RangeError('需要0—60的整数时刻');
+  if (action === 'reset') return 0;
+  if (action === 'next') return Math.min(k+1,60);
+  if (action === 'jump') return Math.min(k+10,60);
+  throw new RangeError('未知的时间操作');
 }
 
 // Same geometry feeds the SVG path and its numerical checks. Screen y points down.

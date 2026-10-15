@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { basisExample, matVec, rotation, solve2, markovModels, markovDistribution, markovStep, covarianceEllipse, ellipsePoint, covariancePlot, navigateMarkov, formatNumber } from '../.vitepress/theme/visualizations/math.mjs';
+import { basisExample, matVec, rotation, solve2, markovModels, markovDistribution, markovStep, covarianceEllipse, ellipsePoint, covariancePlot, advanceMarkov, formatNumber } from '../.vitepress/theme/visualizations/math.mjs';
 const close = (a, b, tolerance = 1e-11) => assert.ok(Math.abs(a-b) < tolerance, `${a} != ${b}`);
 const vectorClose = (a, b) => a.forEach((x, i) => close(x, b[i]));
 
@@ -139,19 +139,17 @@ test('V18: 非法矩阵/分布及原型名称拒绝计算，不能混用行随�
   for(const model of ['toString','constructor','__proto__',null,undefined,['city']])assert.throws(()=>markovDistribution(model,.5,0),RangeError);
 });
 
-test('V18: 真正供组件使用的导航可走到60、逐阶段回退、重置和守住边界', () => {
-  let state={k:0,phase:0};
-  assert.deepEqual(navigateMarkov(state,'previous'),state);
-  for(let step=0;step<180;step++){
-    const next=navigateMarkov(state,'next');
-    assert.deepEqual(navigateMarkov(next,'previous'),state);
-    state=next;
-  }
-  assert.deepEqual(state,{k:60,phase:0});
-  assert.deepEqual(navigateMarkov(state,'next'),state);
-  assert.deepEqual(navigateMarkov(state,'reset'),{k:0,phase:0});
-  for(const bad of [{k:61,phase:0},{k:60,phase:1},{k:0,phase:3},{k:.5,phase:0}])assert.throws(()=>navigateMarkov(bad,'next'),RangeError);
-  assert.throws(()=>navigateMarkov({k:0,phase:0},'play'),RangeError);
+test('V18: 时间控件逐步、跳步、重置与上限使用同一合法离散时刻', () => {
+  let k=0;
+  for(let i=0;i<60;i++){k=advanceMarkov(k,'next');assert.equal(k,i+1);}
+  assert.equal(advanceMarkov(60,'next'),60);
+  assert.equal(advanceMarkov(55,'jump'),60);
+  assert.equal(advanceMarkov(10,'jump'),20);
+  assert.equal(advanceMarkov(60,'reset'),0);
+  for(const k of [-1,61,.5,NaN,Infinity,null])assert.throws(()=>advanceMarkov(k,'next'),RangeError);
+  assert.throws(()=>advanceMarkov(0,'play'),RangeError);
+  // Jumping changes only the queried time, not the transition law.
+  vectorClose(markovDistribution('city',.8,advanceMarkov(10,'jump')),markovDistribution('city',.8,20));
 });
 
 test('V14: SVG实际路径、主轴与外切框均使用同一模型且等比例', () => {
@@ -178,6 +176,6 @@ test('显示舍入不修改原值；不出现负零，拒绝非有限格式参�
 });
 
 test('状态/绘图接口拒绝不匹配的上下文，不静默画错概率尺度', () => {
-  assert.throws(()=>navigateMarkov(null,'next'),RangeError);
+  assert.throws(()=>advanceMarkov(null,'next'),RangeError);
   assert.throws(()=>covariancePlot(covarianceEllipse(.5,.9),true),RangeError);
 });

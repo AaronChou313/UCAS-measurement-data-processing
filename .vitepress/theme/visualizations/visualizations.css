@@ -44,38 +44,12 @@
 .edu-visual button:disabled { cursor: default; color: var(--edu-muted); opacity: .65; }
 .edu-visual :is(button,select,input,summary,table):focus-visible { outline: 3px solid var(--edu-part); outline-offset: 3px; }
 .edu-visual input[type='range'] { margin: 0; width: 100%; min-height: 44px; accent-color: var(--edu-object); cursor: pointer; }
-.edu-visual .edu-step-controls { align-items: center; }
-.edu-visual .edu-step-label { font-size: 14px; }
 .edu-visual .edu-rho-controls label { flex-basis: 220px; }
-.edu-visual table { display: block; max-width: 100%; overflow-x: auto; margin: 12px 0; font-size: 14px; }
-.edu-visual caption { text-align: left; margin-bottom: 6px; color: var(--edu-muted); }
-.edu-visual th, .edu-visual td { padding: 7px 8px; white-space: nowrap; }
-.edu-visual .edu-readings { display: table; width: 100%; table-layout: fixed; }
-.edu-visual .edu-readings th, .edu-visual .edu-readings td { white-space: normal; text-align: left; vertical-align: middle; overflow-wrap: break-word; }
-.edu-visual .edu-readings th:first-child { width: 60%; }
-.edu-visual .edu-readings small { display: block; font-weight: normal; font-size: 14px; margin-top: 3px; color: var(--edu-muted); }
-.edu-visual .edu-readings td > span { display: block; white-space: nowrap; }
 .edu-visual .edu-cov-summary { display: flex; flex-wrap: wrap; gap: 12px 16px; align-items: center; margin: 12px 0; }
-.edu-visual .edu-eigenvalues { display: flex; flex-wrap: wrap; gap: 4px 16px; flex: 1 1 210px; }
-.edu-visual .edu-scale { padding-block: 6px; }
-.edu-visual .edu-markov-input { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; }
-.edu-visual .edu-stage { padding: 12px; background: var(--vp-c-bg-soft); margin: 16px 0; }
-.edu-visual .edu-contributions { display: table; width: 100%; table-layout: fixed; }
-.edu-visual .edu-contributions th, .edu-visual .edu-contributions td { text-align: center; padding: 8px 4px; white-space: normal; vertical-align: middle; }
-.edu-visual .edu-contributions th:first-child { width: 17%; }
-.edu-visual .edu-contributions td > * { display: block; }
-.edu-visual .edu-product { font-family: 'Cambria Math', 'Times New Roman', serif; font-size: 16px; overflow-wrap: anywhere; }
 .edu-visual .edu-source-city { color: var(--edu-object); }
 .edu-visual .edu-source-rural { color: var(--edu-part); }
-.edu-visual .edu-bar-row { display: grid; grid-template-columns: 2em minmax(0,1fr) 4.5em; gap: 8px; align-items: center; margin: 8px 0; }
-.edu-visual .edu-bar-track { height: 14px; background: var(--vp-c-divider); }
-.edu-visual .edu-bar-track span { display: block; height: 100%; }
-.edu-visual .edu-stacked { display: flex; }
 .edu-visual .edu-bar-city { background: var(--edu-object); }
 .edu-visual .edu-bar-rural { background: var(--edu-part); }
-.edu-visual .edu-history { margin: 20px 0; }
-.edu-visual details { margin-top: 14px; }
-.edu-visual summary { cursor: pointer; min-height: 44px; padding-block: 8px; }
 .edu-visual .edu-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 /* SVG text is sized in viewBox units; check the scaled CSS size in browser QA. */
 .edu-visual svg { display: block; width: 100%; height: auto; }
@@ -103,21 +77,32 @@
 .edu-visual .edu-cov-plot { max-width: 480px; margin-inline: auto; }
 .edu-visual .edu-cov-plot .tick-text { font-size: 18px; }
 .edu-visual .edu-principal-axis { stroke: var(--edu-part); stroke-width: 1.8; }
-.edu-visual .edu-unit-contour { stroke: var(--edu-axis); stroke-width: 1.6; stroke-dasharray: 5 3; }
-.edu-visual .edu-history svg { max-width: 480px; margin-inline: auto; }
 .edu-visual .edu-legend { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 8px; font-size: 14px; }
 .edu-visual .edu-legend > span::before { content: ''; display: inline-block; width: 22px; margin-right: 6px; border-top: 2px solid; vertical-align: middle; }
 .edu-visual .edu-legend .edu-key-object::before { border-color: var(--edu-object); }
 .edu-visual .edu-legend .edu-key-principal::before { border-color: var(--edu-part); }
-.edu-visual .edu-legend .edu-key-unit::before { border-color: var(--edu-axis); border-top-style: dashed; }
 .edu-visual .edu-legend .edu-key-box::before { border-color: var(--edu-axis); border-top-style: dotted; }
-@media (max-width: 380px) { .edu-visual .edu-markov-input { gap: 10px; } .edu-visual .edu-result .edu-math-matrix { font-size: 16px; } }
 @media print { .edu-visual .edu-controls { display: none; } .edu-visual { break-inside: avoid; } }
 
 .edu-visual .edu-coordinate-panel .edu-svg { max-width: 400px; margin-inline: auto; }
 
-.edu-visual .edu-output-label { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 16px; }
 
 .edu-visual .edu-panel-note { font-size: 14px; text-align: center; margin: 8px 0; }
 
 .edu-visual .edu-zero-axis { stroke: var(--edu-axis); stroke-width: 1; stroke-dasharray: 3 3; }
+
+/* Each Markov figure has one task: sources, evolution, or periodicity. */
+.edu-visual.edu-markov-sources svg { max-width: 430px; margin: 16px auto 0; }
+.edu-visual .edu-flow-label-bg { fill: var(--vp-c-bg); }
+.edu-visual .edu-flow-contribution { font-weight: 650; }
+.edu-visual.edu-markov-period svg { max-width: 480px; margin: 16px auto 0; }
+.edu-visual .edu-distribution { max-width: 540px; margin: 20px auto; }
+.edu-visual .edu-time { margin-bottom: 14px; font-weight: 600; }
+.edu-visual .edu-distribution-row { display: grid; grid-template-columns: 2em minmax(0,1fr) 5em; gap: 10px; align-items: center; margin: 14px 0; }
+.edu-visual .edu-probability-track { position: relative; height: 20px; background: var(--vp-c-bg-soft); }
+.edu-visual .edu-probability-track > :first-child { display: block; height: 100%; }
+.edu-visual .edu-stationary-marker { position: absolute; top: -4px; bottom: -4px; border-left: 2px dashed var(--edu-ink); }
+.edu-visual .edu-probability-value { text-align: right; }
+.edu-visual .edu-distribution-scale { display: flex; justify-content: space-between; margin-left: calc(2em + 10px); margin-right: calc(5em + 10px); color: var(--edu-muted); font-size: 13px; }
+.edu-visual .edu-evolution-controls { justify-content: center; }
+@media (max-width: 380px) { .edu-visual .edu-evolution-controls { gap: 6px; } .edu-visual .edu-evolution-controls button { font-size: 14px; padding-inline: 8px; } }
