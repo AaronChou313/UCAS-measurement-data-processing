@@ -2,6 +2,8 @@
 
 日期：2026-10-15。依据 `planning/visualization-audit.md`，按用户指定顺序实施。本文保留首次本地试点验收记录；当时尚未推送或部署。用户确认后的发布状态以 Git 提交及 GitHub Pages 部署记录为准。
 
+> **当前认知负荷重构见 [第 8 节](#cognitive-distill)**。第 1—7 节为此前试点和工程打磨记录；旧三阶段面板、数值表、12 项测试和旧预览端口均为历史状态，不能当作本轮界面说明。
+
 ## 1. 实施结果与阅读入口
 
 | 试点 | 正文位置 / 新增锚点 | 实现与解决的困难 |
@@ -123,3 +125,152 @@ git diff --check
 4. 手机上的 SVG 标签、图例和表格是否舒适可读，分步展开是否过长？目前未做屏幕阅读器端到端人工听读，建议人工验收时补查。
 
 本批已交付人工验收；后续是否调整或扩大范围以用户反馈为准。本轮没有提前制作其他候选项。
+
+
+## 7. 第一阶段：质量打磨与工程规范化 {#phase1-polish}
+
+日期：2026-10-15。本轮只加工 V01、V18、V14，没有新建其他候选可视化。六章 Markdown、知识点范围、来源索引、作业及数据保持原状；未新增依赖，锁文件未变。按用户末尾“提交推送供检查”要求，成果进入审阅分支；不合并主分支、不发布线上。
+
+### 7.1 实际修复
+
+| 位置 | 原问题及改进 | 数学和教学边界 |
+|---|---|---|
+| 全部试点 | 元组式文本换成二维矩阵、真正的列向量；共享 MathMatrix，补充行列读法、根号上横线、分数及上下标 | 理论式使用等号，舍入数值及来源乘积用近似号；仅显示时舍入，不将字符串回填模型 |
+| V01 六幅 SVG | 图内长句移到 HTML，放大标签；区分棕色原点基向量和蓝色首尾构造；被动图原 y 标签移开 x′；SR/RS 首步用空心圆标出 | 保持相同比例，物理终点不动；说明一份 b₂ 长度为 √2，基系数不是物理长度。没有添加控件 |
+| V14 静态及交互 | 固定矩阵单元格宽度，负号不会推动布局；读数表改为量/公式与数值两列；图例放在 HTML；刻度移到边框，避免压住椭圆；滑块默认 margin 清零，修复手机 2 px 溢出 | 坐标 SD、主轴 SD、方向投影方差、95% 半轴分别标明单位和公式；u 箭头只表示方向，其长度任意；已知总体参数、非样本估计的 W06 边界保持 |
+| V18 分步 | 上方输入矩阵/当前列向量，阶段内四个来源乘积及下一分布，之后才是离散历史；动作名直接说明将做何种运算；合并重复当前概率条 | 来源条长仍编码 Pij·pk,j；阶段可逐步回退；更改条件清空进程，恢复默认同时恢复城市模型、0.8、k=0；单位矩阵不画共同平稳线且图注同步 |
+| 工程基础 | 提取小型矩阵、读数表、来源计算组件和纯几何/导航函数 | 领域模型仍各自独立，无大型框架。椭圆绘图明确限制 q=0.95；非法模型/分布/状态拒绝，不暗中裁剪或归一化 |
+
+### 7.2 数学与工程检查结果
+
+以下完整链已实际执行通过：
+
+```sh
+npm run test:visualizations
+npm run figures:check
+npm run docs:build
+npm run check:visualization-pages
+git diff --check
+```
+
+- **19 项测试通过，0 失败、0 跳过。** 在原有解析重构、旋转、概率守恒、全部 39 档 ρ、特征方程、概率积分等检查上，新增实际 SVG 坐标/标记、列方向非法矩阵、模型原型名称、全部导航阶段及反操作、显示负零、实际舍入 SVG 路径/主轴/外切框一致性和概率面板上下文检查。
+- 六幅生成 SVG 与生成器逐字节一致；check 只读，缺失时不会生成文件掩盖问题。
+- 单次生产构建验证 **21 个 HTML、1,784 个本地链接/资源、3,190 个 MathJax 公式**。构建保留原有大块体积提示，本轮未改变打包策略。
+- 页面专项解析实际 SSR 的矩阵单元格、列向量顺序、SVG 路径、四项乘积、奇偶反例和默认展开的回退；没有 JavaScript 时也有核心图形/数值/完整手算，没有不可用控件。此结论来自构建 HTML，而非关闭浏览器 JS 的模拟测试。
+- Pages 工作流依次执行数学 → SVG → 构建 → 页面检查；只构建一次。任何失败都会阻止上传与部署。PR 运行同一验证链，上传及部署仅允许 main 的非 PR 事件，部署任务具有最小所需权限。
+- 前端检测器一次扫描所改 Vue/CSS，返回空问题列表。该工具不能替代数学及真实浏览器检查。
+
+### 7.3 真实页面、操作与截图
+
+最终本地生产预览端口 **4184**：[V01 基](http://localhost:4184/UCAS-measurement-data-processing/notes/chapter-1.html#v01-basis)、[主动/被动](http://localhost:4184/UCAS-measurement-data-processing/notes/chapter-1.html#v01-rotation)、[顺序](http://localhost:4184/UCAS-measurement-data-processing/notes/chapter-1.html#v01-order)、[V18](http://localhost:4184/UCAS-measurement-data-processing/notes/chapter-5.html#v18-markov)、[V14 静态](http://localhost:4184/UCAS-measurement-data-processing/notes/chapter-4.html#v14-shape)、[V14 交互](http://localhost:4184/UCAS-measurement-data-processing/notes/chapter-4.html#v14-probability)。重启命令为 `npm run docs:preview -- --host 127.0.0.1 --port 4184`。
+
+使用实际 Chromium 内嵌浏览器检查，未用 DOM 修改替代控件操作。桌面 1440×1100、手机 390×844 的浅/深主题覆盖三个试点；补查 320×740 和中间宽度 1024×900。手机默认内容宽 327 px，320 视口下内容宽 272 px，组件 scrollWidth 均等于自身宽度；SVG 标签未超出视框。缩放后最小图内字号在 320 检查中为 13.6 px，390 为 16.35 px，中间双列图为约 14.53 px。长时刻表内部滚动，核心 V14 表不用横滚。
+
+实际操作包括 V14 Home/End 边界、负相关、零相关及恢复；V18 来源、合计、下一时刻、回退、空格键推进、交替两步 (1,0)→(0,1)→(1,0)、平稳初值、单位矩阵及恢复默认。验证了显示值与公式/图同步。矩阵语义可读出行列数及逐行值；没有进行真实屏幕阅读器听读。最终浏览器控制台检查无警告或错误。
+
+[浏览器尺寸记录](visualization-pilot/phase1-browser-checks.json) 保留实际观测，不将视口模拟称为物理手机测试。截图保留页面上下文；组件较长时单幅截图只展示当前可见部分。
+
+| 试点 | 桌面浅色 | 桌面深色 | 手机浅色 | 手机深色 / 补充 |
+|---|---|---|---|---|
+| V01 | [基与分量](visualization-pilot/phase1-screenshots/v01-desktop-light.jpg) | [主动/被动](visualization-pilot/phase1-screenshots/v01-desktop-dark.jpg) | [基与分量](visualization-pilot/phase1-screenshots/v01-mobile-light.jpg) | [320 宽顺序图](visualization-pilot/phase1-screenshots/v01-mobile-dark.jpg)、[1024 宽](visualization-pilot/phase1-screenshots/v01-tablet-light.jpg) |
+| V18 | [来源与求和](visualization-pilot/phase1-screenshots/v18-desktop-light.jpg) | [深色](visualization-pilot/phase1-screenshots/v18-desktop-dark.jpg) | [来源计算](visualization-pilot/phase1-screenshots/v18-mobile-light.jpg) | [交替模型](visualization-pilot/phase1-screenshots/v18-mobile-dark.jpg)、[320 宽](visualization-pilot/phase1-screenshots/v18-narrow-320.jpg) |
+| V14 | [静态](visualization-pilot/phase1-screenshots/v14-static-desktop-light.jpg)、[交互](visualization-pilot/phase1-screenshots/v14-desktop-light.jpg) | [交互](visualization-pilot/phase1-screenshots/v14-desktop-dark.jpg) | [交互](visualization-pilot/phase1-screenshots/v14-mobile-light.jpg) | [静态](visualization-pilot/phase1-screenshots/v14-static-mobile-dark.jpg)、[交互](visualization-pilot/phase1-screenshots/v14-mobile-dark.jpg)、[两列表](visualization-pilot/phase1-screenshots/v14-table-mobile-dark.jpg)、[320 宽](visualization-pilot/phase1-screenshots/v14-narrow-320.jpg) |
+
+### 7.4 第二遍批判性复查与人工问题
+
+第二遍自行复查从实际画面反查公式、模型与源代码，发现并修复了：V01 新旧坐标轴标签重叠；V14 曲线与刻度重叠、任意方向箭头可能被误认成标准差长度、概率半轴行错误复用“由 |ρ| 决定”提示、滑块超宽；V18 有限小数直接写等号、单位矩阵图注仍声称有虚线，以及非法模型名误访问对象原型的问题。源正文逐项范围与本轮差异核对，六章源文件未修改。
+
+没有新增装饰、连播、3D 或第二个相关参数。次要推导/长期表可折叠，但主要输入、当步四来源、下一分布与核心结论仍直接可读。数学测试、SSR 与真实页面分别验证不同层面，不互相替代。此轮复查为开发者的第二遍检查，未声称外部人员独立审阅。
+
+仍需人工验收：① V01 斜基构造能否独立读懂；② V18 三阶段节奏是否合适，能否解释唯一平稳不保证收敛；③ V14 能否在操作前预测变号/增大 |ρ| 的影响，并准确区分各类尺度。手机实际长文阅读舒适度、真实初学者试学、屏幕阅读器人工听读及 Safari/Firefox 尚未验证。打印分页未专门验收；构建的大块提示仍在。这些边界不影响当前数学测试与已检浏览器结果，但不能将它们宣称为全面教学效果证据。
+
+统一后续规范见 [visualization-design-guidelines.md](visualization-design-guidelines.md)，涵盖形式选择、符号/颜色/坐标、动态同步、回退、移动端及发布门禁；可用于后续 V02/V26，但本轮没有提前实现它们。
+
+远端核验：代码提交 `098a343` 的 [PR 验证运行](https://github.com/AaronChou313/UCAS-measurement-data-processing/actions/runs/38668649253) 已成功，四个门禁实际执行；Pages 制品上传与 deploy 明确为 skipped。截图复核时剔除了两幅处于视口布局切换瞬间的画面，重新等待可访问性快照稳定后保存，未修改数学或交互代码。审阅入口为 [草稿 PR #1](https://github.com/AaronChou313/UCAS-measurement-data-processing/pull/1)。
+
+
+<a id="cognitive-distill"></a>
+## 8. 认知负荷重构：让图形辅助正文
+
+日期：2026-10-15。基于审阅分支 `visualization-phase1-polish` 的 `b2c19c4` 继续迭代，仍更新 PR #1，不改 main、不合并、不部署。本轮只处理 V18、V14，V01 源组件和六幅资产未修改，无新增依赖。
+
+### 8.1 重读后的诊断与取舍
+
+完整重读了第五章 5.1.1—5.1.6、第四章 4.6.1—4.6.4，核对当前组件、审计、试点记录、规范与页面检查。决定依据是正文在当前位置已经承担了什么，以及读者还需在脑中想象什么。
+
+| 旧组件元素 | 教学价值与问题 | 本轮去向及降低负担的原因 |
+|---|---|---|
+| V18：P、当前列向量、阶段号、来源乘积表、结果向量、概率条、历史、模型和初值选择、完整默认手算、长期对照表 | 每项可解释数学，但初学者需同时跟踪“当前分布/目标分布/贡献/阶段/时间/模型”；矩阵与两目标计算已经在5.1.3正文完整展开，平稳和反例尚未学习便同时进入界面 | 按真正不同的学习目标回到三个小节；不是把旧面板整体折叠。计算、几何和时间不再争夺同一视图 |
+| V14：ρ、C、两特征值、方向角、内外轮廓、主轴、u、读数表、概率倍数、投影详情 | 同时改变/读取多个数学对象，需要先理解整套读图约定，才能观察相关性的影响；特征/方向/半轴证明正文已讲 | 交互只保留ρ、单一95%轮廓、固定坐标投影框、固定量及一句观察；不再要求先把特征值、投影和概率尺度联系成一整套计算工具 |
+| V14静态：C、主轴/外框/45°箭头、四行读数 | 主轴和坐标方向的差异需要图，任意45°投影是另一个问题；图后正文已有3.5m²计算 | 保留C、主轴、外框；去掉箭头和重复表。45°方向的定义、方差及与射线半径的区别均保留在正文 |
+
+没有为“所有信息仍可见”新建进阶抽屉。原版完整矩阵乘法、p₁/p₂数值、守恒证明、平稳方程/闭式、周期与单位矩阵、特征公式、方向方差、概率尺度和投影证明都已由正文覆盖；新增折叠会再次重复讲授。本轮不存在必须额外保留的独有推导。
+
+### 8.2 当前三个 V18 辅助图
+
+| 插入位置与入口 | 唯一主要任务 | 保留的信息与操作 | 交给正文的内容 |
+|---|---|---|---|
+| 5.1.3 数例后 `#v18-sources` | 下一城市概率为何汇总两个来源 | 两个当前概率、两条条件转移、两项联合贡献与加和；静态SVG、无控件。箭头统一宽度，不编码概率 | 完整P及两个到达状态计算、一般全概率公式和守恒 |
+| 5.1.4 收敛闭式后 `#v18-markov`（旧锚点保留） | 反复迁移后分布如何接近平稳值 | 固定5%/3%条件迁移率、初分布80%/20%、当前k、两个0—100%条、平稳虚线；下一步/前进10步/回到0，上限60 | 平稳方程、0.92衰减及极限证明 |
+| 5.1.5 周期反例后 `#v18-periodic` | 有唯一平稳分布仍可能交替 | 固定交替链及(1,0)初值；k=0—3的成对概率柱。静态、无模型开关 | 周期定义、从平稳初值不变、单位矩阵与充分条件 |
+
+选择独立的周期图，而非在演化图加模式开关：它属于学习完平稳后的反例，矩阵和初值条件不同。紧邻正文的一幅固定图能直接显示交替；读者无需先切换模式再重新识别输入与规则。此图只展示四步，永远交替的结论来自正文的矩阵/周期分析，不把有限图当证明。
+
+概率演化仍通过 `markovDistribution` 反复执行同一列随机矩阵；+10步只改变查看的k，绝不使用视觉插值。概率条是分布，不是迁移人数或个体轨迹。第60步城市约37.79%，没有伪造已经精确达到37.5%。
+
+### 8.3 当前 V14 分工与尺度
+
+- **4.6.2静态：** 只比较坐标方向与特征主轴，保留标准轮廓d_M²=1、C、主轴、坐标外切框；方向方差计算仍在图后。
+- **4.6.3交互：** ρ滑块及恢复按钮，图形先于附属计算出现；只画95%轮廓与固定外切框，去掉C、特征值、方向角、u、主轴、标准内轮廓、读数表、倍数列表和投影折叠。
+- **关键条件仍在图旁：** 已知二维正态、零均值、σx=2m/σy=1m、|ρ|≤0.95、内部概率95%；标准轮廓内部约39.35%而非68.27%；本图不是样本估计的置信椭圆。
+- 点线框是95%椭圆的坐标投影范围，半宽约√5.991σ，不把框半宽称为σ，也不把它标成另一个95%概率矩形。
+- 动态说明区分正/负/零相关；ρ=0时明确轴对齐但不是圆。|ρ|增大时主轴一长一短，坐标方差与概率固定；正文C(ρ)及半轴公式仍可核对。
+
+### 8.4 默认信息前后比较
+
+这里比较的是读者当前需要同时处理的对象，而不是将代码行数或高度当作学习效果指标。
+
+| 项目 | 之前 | 现在 | 为什么有望减少真实理解负担 |
+|---|---|---|---|
+| Markov首次界面 | 两个选择器、矩阵/列向量、三个阶段与时间、历史，随后还有贡献/结果与可选长期表 | 每个正文位置只有一个明确任务；演化图只显示当前概率条、k和三项时间操作 | 删除“先选模型、先看矩阵还是历史”的决策；操作只改变时间，不再混淆计算阶段与时刻 |
+| Markov来源 | 四项数字表，需要读者自行在脑中串联路径 | 两个来源汇入同一目标，先乘后加直接沿箭头阅读 | 把需要想象的信息结构外显；保留条件概率与联合贡献区别 |
+| V14交互 | 多个矩阵/尺度、两层轮廓、三种方向对象、一张表及详情 | 无矩阵/表/详情；滑块、一个轮廓与固定框 | 变化可直接看见，观察对象与用户问题一致；数值计算不再抢占主要视野 |
+| 详细推导入口 | 图内重新讲授一遍 | 相邻正文的原推导 | 读者需要严格解释时沿正文学习，不必先学习组件自己的信息架构 |
+
+这些是设计理由与开发者观察，尚不能证明学生理解更快。旧界面截图和新界面截图保留如下，便于人工判断。旧Markov截图为已展开来源/求和阶段，不把它冒充旧初始界面。
+
+| 对照 | 优化前（b2c19c4及其试点记录） | 优化后 |
+|---|---|---|
+| Markov计算与来源 | [旧矩阵、来源表、结果面板](visualization-pilot/phase1-screenshots/v18-desktop-light.jpg) | [新两路径静态图](visualization-pilot/distill-screenshots/v18-sources-desktop-light.jpg) |
+| Markov当前分布 | [旧手机来源计算](visualization-pilot/phase1-screenshots/v18-mobile-light.jpg) | [新桌面概率条](visualization-pilot/distill-screenshots/v18-evolution-desktop-light.jpg)、[新手机](visualization-pilot/distill-screenshots/v18-evolution-mobile-light.jpg) |
+| 周期反例 | 原先在模型选择、历史与长期表中 | [新静态四时刻](visualization-pilot/distill-screenshots/v18-period-desktop-light.jpg)、[手机](visualization-pilot/distill-screenshots/v18-period-mobile-dark.jpg) |
+| V14相关性 | [旧默认矩阵/特征值/图](visualization-pilot/phase1-screenshots/v14-desktop-light.jpg)、[旧手机读数表](visualization-pilot/phase1-screenshots/v14-table-mobile-dark.jpg) | [新桌面](visualization-pilot/distill-screenshots/v14-desktop-light.jpg)、[手机浅色](visualization-pilot/distill-screenshots/v14-mobile-light.jpg)、[手机深色](visualization-pilot/distill-screenshots/v14-mobile-dark.jpg) |
+| V14静态 | [旧主轴、45°方向及数值](visualization-pilot/phase1-screenshots/v14-static-desktop-light.jpg) | [新主轴/坐标方向对照](visualization-pilot/distill-screenshots/v14-static-desktop-light.jpg) |
+
+### 8.5 数学、内容与工程核对
+
+完整执行并通过：`npm run test:visualizations`、`npm run figures:check`、`npm run docs:build`、`npm run check:visualization-pages`、`git diff --check`。
+
+- **19项数学测试通过，0失败、0跳过。** 概率守恒、列矩阵方向、所有预设/初值0—60步闭式、唯一平稳但周期不收敛、平稳初值与单位矩阵、39档ρ正定/特征/投影/镜像、理论覆盖积分等约束全部保留。
+- 旧三阶段状态机及其专属测试退出；改为验证真正用于组件的整数时间函数，包括逐步、+10、临近60、重置、非法值及操作。没有删除仍有效的概率或矩阵约束。
+- 页面检查不再要求已删除的计算表和动态矩阵，转而解析实际SSR：两条路径的当前/条件/联合概率和结果；默认条长、固定平稳标记；周期图各柱的实际高度/y位置及初值；V14单轮廓路径与已知参数概率说明。
+- 无JS仍有来源图、周期图、初始概率条及第一/60步文字对照，V14仍有默认图及全部必要条件。只在挂载后显示可用控件，不靠占位说明取代核心知识。
+- 6幅V01生成SVG一致；V01源组件/资产、依赖锁文件及CI工作流未改。新运行时SVG由模型生成并在SSR检查，不需要新增图片依赖。
+- 构建仍验证21个HTML、1,784本地链接/资源及3,190个MathJax公式。保留原有块体积提示，无新增依赖。
+- 逐段审阅第四/五章差异：只调整图前图后指引、插入位置和组件标签。原定义、定理、适用条件、证明与数例均保留；另外逐字比较原有章节标题、显式锚点、全部行间公式，与b2c19c4一致。该检查与实际差异审阅结合，不以公式计数代替内容完整性判断。
+
+### 8.6 真实浏览器检查与局限
+
+本地最终生产预览端口4186：[来源](http://localhost:4186/UCAS-measurement-data-processing/notes/chapter-5.html#v18-sources)、[概率演化](http://localhost:4186/UCAS-measurement-data-processing/notes/chapter-5.html#v18-markov)、[周期图](http://localhost:4186/UCAS-measurement-data-processing/notes/chapter-5.html#v18-periodic)、[V14静态](http://localhost:4186/UCAS-measurement-data-processing/notes/chapter-4.html#v14-shape)、[V14交互](http://localhost:4186/UCAS-measurement-data-processing/notes/chapter-4.html#v14-probability)。重启：`npm run docs:preview -- --host 127.0.0.1 --port 4186`。
+
+- 实际Chromium桌面与手机浅/深主题、约320px窄屏均已查看。记录的是实测CSS视口，避免把浏览器缩放后的设置值当成真实尺寸。尺寸与信息记录见 [distill-browser-checks.json](visualization-pilot/distill-browser-checks.json)。旧V14高度在不同宽度测得，不据此宣称缩短百分比；DOM统计也不等于默认可见对象数。
+- 当前390×844实测组件宽约330px，320×740时272px，scrollWidth均未超过自身宽度；图内文本未超出viewBox。窄屏最小图内字号约13.6px。核心图形不需要横滚或缩放。
+- 实际操作了Markov空格键下一步、+10、多次到60、按钮禁用、重置；核对k=1的0.766/0.234及相应76.6%/23.4%柱长，k=11与60的结果。V14核对±0.95、ρ=0及恢复0.50，方向说明与实际模型同步。
+- 没有浏览器警告/错误；静态回退结论来自构建HTML检查，没有声称做过浏览器禁用JS测试。语义与键盘检查不能替代屏幕阅读器听读。
+- 一次前端检测扫描返回空问题列表；只作辅助，不替代真实页面和数学检查。
+
+仍需人工试学：能否不读长说明区分0.95与0.760的意义；能否直接说出条长接近平稳值但居民仍可迁移；能否用周期图解释“唯一平稳”与“任意初值收敛”的区别；能否在拖动ρ之前预测倾斜/细长变化，同时知道95%尺度与固定边缘标准差不是同一个概念。
+
+新局限：演化图只支持向前及重置，不再逐阶段回退，也不供任意初分布/模型数值探索，没有历史图和逐项求和工具；这些不是本轮主要学习任务，具体数学例仍由正文提供。V14不再同步读出所有主轴/投影数值，需查正文公式。图形和条件简洁了，不代表已经实证降低了学生学习时间。真实学生、物理手机、屏幕阅读器、Safari/Firefox与打印分页尚未验收。
+
+[统一规范](visualization-design-guidelines.md)已按本轮实际取舍重写，新增六项原则，并修正早期要求每个默认界面都承载完整计算过程的倾向。

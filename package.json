@@ -12,7 +12,7 @@
     "docs:build": "npm run docs:prepare && vitepress build && node scripts/check-site.mjs",
     "docs:preview": "vitepress preview",
     "check:sources": "python3 scripts/check_sources.py",
-    "test:visualizations": "node --test tests/visualizations.test.mjs",
+    "test:visualizations": "node --test tests/visualizations.test.mjs tests/visualization-svg.test.mjs",
     "figures:check": "node scripts/build-teaching-figures.mjs --check",
     "check:visualization-pages": "node scripts/check-visualization-pages.mjs"
   },

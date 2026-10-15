@@ -1,22 +1,21 @@
 <script setup>
 import CovariancePlot from './CovariancePlot.vue'
+import MathMatrix from './MathMatrix.vue'
 import { covarianceEllipse } from './math.mjs'
-const m=covarianceEllipse(.5)
+const m = covarianceEllipse(.5)
 </script>
 
 <template>
-  <figure id="v14-shape" class="edu-visual" data-visualization="V14-static">
-    <strong class="edu-title">同一个 C，三种不同的尺度读法</strong>
-    <p>已知均值为零，C = ((4, 1), (1, 1)) m²；即 σ<sub>x</sub> = 2 m、σ<sub>y</sub> = 1 m、ρ = 0.5。这里没有抽样，也没有估计参数。</p>
-    <CovariancePlot />
-    <figcaption>等比例坐标。灰色点线外切矩形的横、纵半宽为 2 m、1 m；它们是椭圆的坐标投影半宽，并非主轴长度。棕色 u 只标方向，箭头长度不编码方差。</figcaption>
-    <table tabindex="0"><caption>先看对象，再看单位（数值四舍五入）</caption><thead><tr><th scope="col">所量的对象</th><th scope="col">本例数值</th><th scope="col">应怎样读</th></tr></thead><tbody>
-      <tr><th scope="row">坐标标准差 σ<sub>x</sub>、σ<sub>y</sub></th><td>2 m；1 m</td><td>x、y 两轴的边缘散布</td></tr>
-      <tr><th scope="row">主轴标准差 √λ₁、√λ₂</th><td>{{ m.principalSD[0].toFixed(3) }} m；{{ m.principalSD[1].toFixed(3) }} m</td><td>最大、最小投影标准差</td></tr>
-      <tr><th scope="row">45° 方向投影方差 uᵀCu</th><td>3.500 m²</td><td>u = (1, 1)ᵀ / √2 是单位向量</td></tr>
-      <tr><th scope="row">该方向投影标准差</th><td>{{ m.directionSD.toFixed(3) }} m</td><td>先把随机向量投影，再求标准差</td></tr>
-    </tbody></table>
-    <p class="edu-observe">主轴倾角约 16.85°，并不沿 x 轴或 45° 方向。uᵀCu 是方差，开平方才是长度；这条投影标准差也不是沿 u 射线走到椭圆边界的距离。</p>
-    <p class="edu-note">本图先只解释 d<sub>M</sub><sup>2</sup> = 1 的几何。它没有一维“±1σ”的 68.27% 联合覆盖率；下一节再确定二维概率尺度。</p>
+  <figure id="v14-shape" class="edu-visual edu-covariance" data-visualization="V14-static">
+    <strong class="edu-title">同一个 C，分清坐标方向与主轴方向</strong>
+    <p>总体均值为零、协方差已知。比较点线框半宽与蓝色主半轴；它们沿不同方向衡量散布。</p>
+    <div class="edu-math-line edu-cov-summary">
+      <span class="edu-math">C = <MathMatrix :rows="m.covariance" :cell-chars="6" label="已知总体协方差矩阵" /> m²</span>
+      <span>ρ = 0.5；<span class="edu-math">σ<sub>x</sub> = 2 m，σ<sub>y</sub> = 1 m</span></span>
+    </div>
+    <CovariancePlot :model="m" id-prefix="cov-shape" />
+    <div class="edu-legend"><span class="edu-key-object">轮廓：<span class="edu-math">d<sub>M</sub><sup>2</sup> = 1</span></span><span class="edu-key-principal">蓝线：主轴标准差</span><span class="edu-key-box">点线框：坐标投影范围</span></div>
+    <figcaption>两坐标等比例，内部直虚线是零坐标参考。矩形横、纵半宽是 2 m、1 m；蓝色主半轴约 2.074 m、0.835 m。方向方差与 45° 投影的计算见图后正文。</figcaption>
+    <p class="edu-note">本图只解释标准轮廓 d<sub>M</sub><sup>2</sup> = 1 的形状，不将它解释为一维“±1σ”的 68.27% 区域。</p>
   </figure>
 </template>
