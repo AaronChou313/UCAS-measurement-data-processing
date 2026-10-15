@@ -1,0 +1,1049 @@
+[
+  {
+    "chapter": 1,
+    "label": "narrow-light",
+    "bad": [],
+    "dark": false,
+    "figures": [
+      {
+        "id": "v01-basis",
+        "overflow": false,
+        "width": 272
+      },
+      {
+        "id": "v01-rotation",
+        "overflow": false,
+        "width": 272
+      },
+      {
+        "id": "v01-order",
+        "overflow": false,
+        "width": 272
+      }
+    ],
+    "overlap": [],
+    "pageOverflow": false,
+    "viewport": [
+      320,
+      740
+    ]
+  },
+  {
+    "chapter": 2,
+    "label": "narrow-light",
+    "bad": [],
+    "dark": false,
+    "figures": [
+      {
+        "id": "v03-probability",
+        "overflow": false,
+        "width": 288
+      },
+      {
+        "id": "v07-newton",
+        "overflow": false,
+        "width": 288
+      },
+      {
+        "id": "v04-sampling",
+        "overflow": false,
+        "width": 288
+      },
+      {
+        "id": "v04-coverage",
+        "overflow": false,
+        "width": 288
+      },
+      {
+        "id": "v06-box",
+        "overflow": false,
+        "width": 288
+      },
+      {
+        "id": "v06-kde",
+        "overflow": false,
+        "width": 288
+      },
+      {
+        "id": "v06-qq",
+        "overflow": false,
+        "width": 288
+      },
+      {
+        "id": "v02-spaces",
+        "overflow": false,
+        "width": 288
+      },
+      {
+        "id": "v08-bayes",
+        "overflow": false,
+        "width": 288
+      }
+    ],
+    "overlap": [],
+    "pageOverflow": false,
+    "viewport": [
+      320,
+      740
+    ]
+  },
+  {
+    "chapter": 3,
+    "label": "narrow-light",
+    "bad": [],
+    "dark": false,
+    "figures": [
+      {
+        "id": "v09-bands",
+        "overflow": false,
+        "width": 288
+      },
+      {
+        "id": "v10-fits",
+        "overflow": false,
+        "width": 288
+      },
+      {
+        "id": "v11-structure",
+        "overflow": false,
+        "width": 288
+      },
+      {
+        "id": "v12-square",
+        "overflow": false,
+        "width": 288
+      },
+      {
+        "id": "v12-phase",
+        "overflow": false,
+        "width": 288
+      },
+      {
+        "id": "v12-box",
+        "overflow": false,
+        "width": 288
+      },
+      {
+        "id": "v13-alias",
+        "overflow": false,
+        "width": 288
+      },
+      {
+        "id": "v13-length",
+        "overflow": false,
+        "width": 288
+      },
+      {
+        "id": "v13-window",
+        "overflow": false,
+        "width": 288
+      }
+    ],
+    "overlap": [],
+    "pageOverflow": false,
+    "viewport": [
+      320,
+      740
+    ]
+  },
+  {
+    "chapter": 4,
+    "label": "narrow-light",
+    "bad": [],
+    "dark": false,
+    "figures": [
+      {
+        "id": "v15-affine",
+        "overflow": false,
+        "width": 288
+      },
+      {
+        "id": "v15-local",
+        "overflow": false,
+        "width": 288
+      },
+      {
+        "id": "v16-realizations",
+        "overflow": false,
+        "width": 288
+      },
+      {
+        "id": "v16-rw",
+        "overflow": false,
+        "width": 288
+      },
+      {
+        "id": "v16-models",
+        "overflow": false,
+        "width": 288
+      },
+      {
+        "id": "v02-rank",
+        "overflow": false,
+        "width": 288
+      },
+      {
+        "id": "v14-shape",
+        "overflow": false,
+        "width": 272
+      },
+      {
+        "id": "v14-probability",
+        "overflow": false,
+        "width": 272
+      },
+      {
+        "id": "v17-mechanisms",
+        "overflow": false,
+        "width": 288
+      }
+    ],
+    "overlap": [],
+    "pageOverflow": false,
+    "viewport": [
+      320,
+      740
+    ]
+  },
+  {
+    "chapter": 5,
+    "label": "narrow-light",
+    "bad": [],
+    "dark": false,
+    "figures": [
+      {
+        "id": "v18-sources",
+        "overflow": false,
+        "width": 272
+      },
+      {
+        "id": "v18-markov",
+        "overflow": false,
+        "width": 272
+      },
+      {
+        "id": "v18-periodic",
+        "overflow": false,
+        "width": 272
+      },
+      {
+        "id": "v19-grid",
+        "overflow": false,
+        "width": 288
+      },
+      {
+        "id": "v19-ball",
+        "overflow": false,
+        "width": 288
+      },
+      {
+        "id": "v19-shell",
+        "overflow": false,
+        "width": 288
+      },
+      {
+        "id": "v19-distance",
+        "overflow": false,
+        "width": 288
+      },
+      {
+        "id": "v20-folds",
+        "overflow": false,
+        "width": 288
+      },
+      {
+        "id": "v22-geometry",
+        "overflow": false,
+        "width": 288
+      },
+      {
+        "id": "v22-shrink",
+        "overflow": false,
+        "width": 288
+      },
+      {
+        "id": "v22-threshold",
+        "overflow": false,
+        "width": 288
+      }
+    ],
+    "overlap": [],
+    "pageOverflow": false,
+    "viewport": [
+      320,
+      740
+    ]
+  },
+  {
+    "chapter": 6,
+    "label": "narrow-light",
+    "bad": [],
+    "dark": false,
+    "figures": [
+      {
+        "id": "v23-svd",
+        "overflow": false,
+        "width": 288
+      },
+      {
+        "id": "v23-rank",
+        "overflow": false,
+        "width": 288
+      },
+      {
+        "id": "v24-pca",
+        "overflow": false,
+        "width": 288
+      },
+      {
+        "id": "v25-wave",
+        "overflow": false,
+        "width": 288
+      },
+      {
+        "id": "v27-dependence",
+        "overflow": false,
+        "width": 288
+      },
+      {
+        "id": "v31-likelihood",
+        "overflow": false,
+        "width": 288
+      },
+      {
+        "id": "v26-kalman",
+        "overflow": false,
+        "width": 272
+      },
+      {
+        "id": "v28-branches",
+        "overflow": false,
+        "width": 288
+      },
+      {
+        "id": "v29-windows",
+        "overflow": false,
+        "width": 288
+      },
+      {
+        "id": "v29-gradients",
+        "overflow": false,
+        "width": 288
+      },
+      {
+        "id": "v30-axis",
+        "overflow": false,
+        "width": 288
+      },
+      {
+        "id": "v30-index",
+        "overflow": false,
+        "width": 288
+      }
+    ],
+    "overlap": [],
+    "pageOverflow": false,
+    "viewport": [
+      320,
+      740
+    ]
+  },
+  {
+    "chapter": 1,
+    "label": "tablet-light",
+    "bad": [],
+    "dark": false,
+    "figures": [
+      {
+        "id": "v01-basis",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v01-rotation",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v01-order",
+        "overflow": false,
+        "width": 688
+      }
+    ],
+    "overlap": [],
+    "pageOverflow": false,
+    "viewport": [
+      768,
+      1024
+    ]
+  },
+  {
+    "chapter": 2,
+    "label": "tablet-light",
+    "bad": [],
+    "dark": false,
+    "figures": [
+      {
+        "id": "v03-probability",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v07-newton",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v04-sampling",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v04-coverage",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v06-box",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v06-kde",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v06-qq",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v02-spaces",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v08-bayes",
+        "overflow": false,
+        "width": 688
+      }
+    ],
+    "overlap": [],
+    "pageOverflow": false,
+    "viewport": [
+      768,
+      1024
+    ]
+  },
+  {
+    "chapter": 3,
+    "label": "tablet-light",
+    "bad": [],
+    "dark": false,
+    "figures": [
+      {
+        "id": "v09-bands",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v10-fits",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v11-structure",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v12-square",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v12-phase",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v12-box",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v13-alias",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v13-length",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v13-window",
+        "overflow": false,
+        "width": 688
+      }
+    ],
+    "overlap": [],
+    "pageOverflow": false,
+    "viewport": [
+      768,
+      1024
+    ]
+  },
+  {
+    "chapter": 4,
+    "label": "tablet-light",
+    "bad": [],
+    "dark": false,
+    "figures": [
+      {
+        "id": "v15-affine",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v15-local",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v16-realizations",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v16-rw",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v16-models",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v02-rank",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v14-shape",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v14-probability",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v17-mechanisms",
+        "overflow": false,
+        "width": 688
+      }
+    ],
+    "overlap": [],
+    "pageOverflow": false,
+    "viewport": [
+      768,
+      1024
+    ]
+  },
+  {
+    "chapter": 5,
+    "label": "tablet-light",
+    "bad": [],
+    "dark": false,
+    "figures": [
+      {
+        "id": "v18-sources",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v18-markov",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v18-periodic",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v19-grid",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v19-ball",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v19-shell",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v19-distance",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v20-folds",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v22-geometry",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v22-shrink",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v22-threshold",
+        "overflow": false,
+        "width": 688
+      }
+    ],
+    "overlap": [],
+    "pageOverflow": false,
+    "viewport": [
+      768,
+      1024
+    ]
+  },
+  {
+    "chapter": 6,
+    "label": "tablet-light",
+    "bad": [],
+    "dark": false,
+    "figures": [
+      {
+        "id": "v23-svd",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v23-rank",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v24-pca",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v25-wave",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v27-dependence",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v31-likelihood",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v26-kalman",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v28-branches",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v29-windows",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v29-gradients",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v30-axis",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v30-index",
+        "overflow": false,
+        "width": 688
+      }
+    ],
+    "overlap": [],
+    "pageOverflow": false,
+    "viewport": [
+      768,
+      1024
+    ]
+  },
+  {
+    "chapter": 1,
+    "label": "desktop-light-final",
+    "bad": [],
+    "dark": false,
+    "figures": [
+      {
+        "id": "v01-basis",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v01-rotation",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v01-order",
+        "overflow": false,
+        "width": 688
+      }
+    ],
+    "overlap": [],
+    "pageOverflow": false,
+    "viewport": [
+      1440,
+      1000
+    ]
+  },
+  {
+    "chapter": 2,
+    "label": "desktop-light-final",
+    "bad": [],
+    "dark": false,
+    "figures": [
+      {
+        "id": "v03-probability",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v07-newton",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v04-sampling",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v04-coverage",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v06-box",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v06-kde",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v06-qq",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v02-spaces",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v08-bayes",
+        "overflow": false,
+        "width": 688
+      }
+    ],
+    "overlap": [],
+    "pageOverflow": false,
+    "viewport": [
+      1440,
+      1000
+    ]
+  },
+  {
+    "chapter": 3,
+    "label": "desktop-light-final",
+    "bad": [],
+    "dark": false,
+    "figures": [
+      {
+        "id": "v09-bands",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v10-fits",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v11-structure",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v12-square",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v12-phase",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v12-box",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v13-alias",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v13-length",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v13-window",
+        "overflow": false,
+        "width": 688
+      }
+    ],
+    "overlap": [],
+    "pageOverflow": false,
+    "viewport": [
+      1440,
+      1000
+    ]
+  },
+  {
+    "chapter": 4,
+    "label": "desktop-light-final",
+    "bad": [],
+    "dark": false,
+    "figures": [
+      {
+        "id": "v15-affine",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v15-local",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v16-realizations",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v16-rw",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v16-models",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v02-rank",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v14-shape",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v14-probability",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v17-mechanisms",
+        "overflow": false,
+        "width": 688
+      }
+    ],
+    "overlap": [],
+    "pageOverflow": false,
+    "viewport": [
+      1440,
+      1000
+    ]
+  },
+  {
+    "chapter": 5,
+    "label": "desktop-light-final",
+    "bad": [],
+    "dark": false,
+    "figures": [
+      {
+        "id": "v18-sources",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v18-markov",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v18-periodic",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v19-grid",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v19-ball",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v19-shell",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v19-distance",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v20-folds",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v22-geometry",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v22-shrink",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v22-threshold",
+        "overflow": false,
+        "width": 688
+      }
+    ],
+    "overlap": [],
+    "pageOverflow": false,
+    "viewport": [
+      1440,
+      1000
+    ]
+  },
+  {
+    "chapter": 6,
+    "label": "desktop-light-final",
+    "bad": [],
+    "dark": false,
+    "figures": [
+      {
+        "id": "v23-svd",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v23-rank",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v24-pca",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v25-wave",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v27-dependence",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v31-likelihood",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v26-kalman",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v28-branches",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v29-windows",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v29-gradients",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v30-axis",
+        "overflow": false,
+        "width": 688
+      },
+      {
+        "id": "v30-index",
+        "overflow": false,
+        "width": 688
+      }
+    ],
+    "overlap": [],
+    "pageOverflow": false,
+    "viewport": [
+      1440,
+      1000
+    ]
+  }
+]
