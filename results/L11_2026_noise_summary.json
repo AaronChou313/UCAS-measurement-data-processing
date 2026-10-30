@@ -1,0 +1,88 @@
+{
+  "seed": 20261030,
+  "n": 1095,
+  "dt_year": 0.0027397260273972603,
+  "truth_beta": [
+    3.4,
+    5.7
+  ],
+  "model": "finite Gaussian circulant; unit diagonal shape; f0=1/N cycles/sample; no realization normalization",
+  "cases": {
+    "white": {
+      "generating_kappa": 0,
+      "generating_sigma": 0.5,
+      "empirical_noise_std": 0.4968259413105665,
+      "fits": {
+        "white_assumed": {
+          "beta": [
+            3.370216885347818,
+            5.713649968207012
+          ],
+          "sigma_mle": 0.496685287532898,
+          "se_conditional": [
+            0.029999004128895997,
+            0.01733180466034694
+          ]
+        },
+        "flicker_assumed": {
+          "beta": [
+            3.309346172465162,
+            5.7542675371323675
+          ],
+          "sigma_mle": 0.9603494487201004,
+          "se_conditional": [
+            0.32228461828980143,
+            0.1357783101648531
+          ]
+        }
+      },
+      "joint_mle": {
+        "kappa": 0.021123102677304613,
+        "sigma": 0.496686668145983,
+        "beta": [
+          3.3699771314393145,
+          5.7138099502483355
+        ],
+        "optimizer_success": true
+      }
+    },
+    "flicker": {
+      "generating_kappa": -1,
+      "generating_sigma": 0.7,
+      "empirical_noise_std": 0.7216664907042376,
+      "fits": {
+        "white_assumed": {
+          "beta": [
+            3.3614168021808863,
+            5.752427350031963
+          ],
+          "sigma_mle": 0.7202368049823141,
+          "se_conditional": [
+            0.043501161457326645,
+            0.025132622057622456
+          ]
+        },
+        "flicker_assumed": {
+          "beta": [
+            3.4559850009126443,
+            5.689324255814245
+          ],
+          "sigma_mle": 0.705896012583108,
+          "se_conditional": [
+            0.23689233879483998,
+            0.09980259567845805
+          ]
+        }
+      },
+      "joint_mle": {
+        "kappa": -1.0301691907316974,
+        "sigma": 0.7349215915605419,
+        "beta": [
+          3.451938418818622,
+          5.692024443134754
+        ],
+        "optimizer_success": true
+      }
+    }
+  }
+}

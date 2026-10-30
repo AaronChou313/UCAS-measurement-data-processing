@@ -30,7 +30,7 @@ for (const [source, route] of pages) {
   fs.writeFileSync(dest, markdown);
 }
 for (const dir of ['results', 'source_pages']) fs.cpSync(path.join(root, dir), path.join(output, 'public', dir), { recursive: true, filter: file => !file.endsWith('.DS_Store') });
-for (const file of ['data', 'course_work.py', 'source_models.py', 'mnist_optional.py', 'requirements.txt', 'requirements-optional.txt', '系统学习笔记']) {
+for (const file of ['data', 'course_work.py', 'source_models.py', 'homework_2026.py', 'mnist_optional.py', 'requirements.txt', 'requirements-optional.txt', '系统学习笔记']) {
   fs.cpSync(path.join(root, file), path.join(output, 'public/downloads', file), { recursive: true, filter: file => !file.endsWith('.DS_Store') });
 }
 const releaseCommit = process.env.GITHUB_SHA || execFileSync('git', ['rev-parse', 'HEAD'], {cwd:root, encoding:'utf8'}).trim();

@@ -2,7 +2,17 @@
 import fs from "node:fs";
 import { execFileSync } from "node:child_process";
 import assert from "node:assert/strict";
+import { createHash } from "node:crypto";
 const base = "f0659dd";
+const reviewed = JSON.parse(fs.readFileSync("planning/course-update-2026-10-30/integrity-revisions.json", "utf8"));
+assert.equal(reviewed.baseline, base);
+const digest = s => createHash("sha256").update(s).digest("hex");
+for (const change of reviewed.revisions) {
+  assert.equal(digest(change.before), change.before_sha256);
+  assert.equal(digest(change.after), change.after_sha256);
+  assert.ok(execFileSync("git", ["show", base + ":" + change.file], {encoding:"utf8"}).includes(change.before));
+  assert.ok(fs.readFileSync(change.file,"utf8").includes(change.after), "Reviewed source metadata revision missing");
+}
 const files = fs
   .readdirSync("系统学习笔记")
   .filter((f) => /^0[1-6]_.*\.md$/.test(f));
@@ -37,6 +47,7 @@ for (const file of files) {
       paragraphs++;
       continue;
     }
+    if (reviewed.revisions.some(r => r.file === filename && r.before === para && after.includes(r.after))) continue;
     const revisedSOI =
       file.startsWith("02_") &&
       (para.startsWith("SOI 示例：按指定基准月份") ||
@@ -61,23 +72,29 @@ const baselineChecklist = execFileSync(
   ["show", base + ":全课程知识点清单.md"],
   { encoding: "utf8" },
 );
-assert.equal(
-  fs.readFileSync("全课程知识点清单.md", "utf8"),
-  baselineChecklist,
-  "Knowledge checklist changed",
-);
+const currentChecklist = fs.readFileSync("全课程知识点清单.md", "utf8");
+assert.equal(digest(currentChecklist), reviewed.checklist_sha256, "Checklist changed outside the reviewed 2026 update");
+// Every original knowledge entry is retained verbatim; only source/version
+// metadata changes and the 20 explicitly reviewed additions are permitted.
+for (const entry of baselineChecklist.split("\n").filter(s => s.includes('<a id="K'))) {
+  assert.ok(currentChecklist.includes(entry), "Original knowledge entry removed or changed: " + entry);
+}
 const entries = [
   ...baselineChecklist.matchAll(/<a id="(K\d+-\d+)"><\/a>/g),
 ].map((m) => m[1]);
 assert.equal(entries.length, 300);
 assert.equal(new Set(entries).size, 300);
+const currentEntries = [...currentChecklist.matchAll(/<a id="(K\d+-\d+)"><\/a>/g)].map(m=>m[1]);
+assert.equal(currentEntries.length, reviewed.checklist_count);
+assert.equal(new Set(currentEntries).size, reviewed.checklist_count);
+assert.ok(entries.every(id=>currentEntries.includes(id)), "Original K identifier removed");
 const tsv = fs
   .readFileSync("系统学习笔记/知识点覆盖索引.tsv", "utf8")
   .trim()
   .split("\n")
   .slice(1)
   .map((row) => row.split("\t")[0]);
-assert.deepEqual(new Set(tsv), new Set(entries));
+assert.deepEqual(new Set(tsv), new Set(currentEntries));
 console.log(
-  `Preserved six-chapter heading order, explicit anchors, ${paragraphs} original blocks, ${formulaCount} original formulas and 300 checklist entries; only two declared SOI context blocks revised.`,
+  `Preserved six-chapter headings/anchors, ${paragraphs} original blocks, ${formulaCount} original formulas and all 300 original knowledge entries; ${currentEntries.length} reviewed current entries. Only two SOI corrections and three reviewed source/version paragraphs revised.`,
 );

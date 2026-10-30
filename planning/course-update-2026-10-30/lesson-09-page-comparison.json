@@ -1,0 +1,1087 @@
+{
+  "file": "26PPT/09 chapter5 样本偏差正则化马尔科夫链202610.pdf",
+  "sha256": "73410ec0a5c95a72d13db00f7d7398e992a7d4cb82e3e79769656374662a65f0",
+  "method": "NFKC/空白/页脚清理后的最近旧页文本相似度，仅供路由，重复模板可误配；正文差异判断另见报告",
+  "pages": [
+    {
+      "page": 1,
+      "nearest_2025_page": 1,
+      "text_similarity": 1.0,
+      "text_chars": 66,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s1"
+    },
+    {
+      "page": 2,
+      "nearest_2025_page": 2,
+      "text_similarity": 1.0,
+      "text_chars": 18,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s1"
+    },
+    {
+      "page": 3,
+      "nearest_2025_page": 3,
+      "text_similarity": 1.0,
+      "text_chars": 36,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s1"
+    },
+    {
+      "page": 4,
+      "nearest_2025_page": 4,
+      "text_similarity": 1.0,
+      "text_chars": 312,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s1"
+    },
+    {
+      "page": 5,
+      "nearest_2025_page": 5,
+      "text_similarity": 1.0,
+      "text_chars": 334,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s1"
+    },
+    {
+      "page": 6,
+      "nearest_2025_page": 6,
+      "text_similarity": 1.0,
+      "text_chars": 169,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s1"
+    },
+    {
+      "page": 7,
+      "nearest_2025_page": 7,
+      "text_similarity": 1.0,
+      "text_chars": 204,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s1"
+    },
+    {
+      "page": 8,
+      "nearest_2025_page": 8,
+      "text_similarity": 1.0,
+      "text_chars": 129,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s1"
+    },
+    {
+      "page": 9,
+      "nearest_2025_page": 9,
+      "text_similarity": 1.0,
+      "text_chars": 273,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s1"
+    },
+    {
+      "page": 10,
+      "nearest_2025_page": 10,
+      "text_similarity": 0.9944,
+      "text_chars": 178,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s1"
+    },
+    {
+      "page": 11,
+      "nearest_2025_page": 2,
+      "text_similarity": 1.0,
+      "text_chars": 18,
+      "review": "文本比对＋原页图复核",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s1"
+    },
+    {
+      "page": 12,
+      "nearest_2025_page": 2,
+      "text_similarity": 1.0,
+      "text_chars": 18,
+      "review": "文本比对＋原页图复核",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s1"
+    },
+    {
+      "page": 13,
+      "nearest_2025_page": 6,
+      "text_similarity": 0.1652,
+      "text_chars": 291,
+      "review": "文本比对＋原页图复核",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s1"
+    },
+    {
+      "page": 14,
+      "nearest_2025_page": 6,
+      "text_similarity": 0.1244,
+      "text_chars": 619,
+      "review": "文本比对＋原页图复核",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s1"
+    },
+    {
+      "page": 15,
+      "nearest_2025_page": 13,
+      "text_similarity": 0.9895,
+      "text_chars": 191,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s1"
+    },
+    {
+      "page": 16,
+      "nearest_2025_page": 14,
+      "text_similarity": 0.9767,
+      "text_chars": 43,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s1"
+    },
+    {
+      "page": 17,
+      "nearest_2025_page": 15,
+      "text_similarity": 1.0,
+      "text_chars": 140,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s1"
+    },
+    {
+      "page": 18,
+      "nearest_2025_page": 16,
+      "text_similarity": 1.0,
+      "text_chars": 287,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s1"
+    },
+    {
+      "page": 19,
+      "nearest_2025_page": 17,
+      "text_similarity": 1.0,
+      "text_chars": 44,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s2"
+    },
+    {
+      "page": 20,
+      "nearest_2025_page": 18,
+      "text_similarity": 1.0,
+      "text_chars": 32,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s2"
+    },
+    {
+      "page": 21,
+      "nearest_2025_page": 19,
+      "text_similarity": 1.0,
+      "text_chars": 285,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s2"
+    },
+    {
+      "page": 22,
+      "nearest_2025_page": 20,
+      "text_similarity": 0.9953,
+      "text_chars": 214,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s2"
+    },
+    {
+      "page": 23,
+      "nearest_2025_page": 21,
+      "text_similarity": 1.0,
+      "text_chars": 224,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s2"
+    },
+    {
+      "page": 24,
+      "nearest_2025_page": 22,
+      "text_similarity": 1.0,
+      "text_chars": 220,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s2"
+    },
+    {
+      "page": 25,
+      "nearest_2025_page": 23,
+      "text_similarity": 1.0,
+      "text_chars": 272,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s2"
+    },
+    {
+      "page": 26,
+      "nearest_2025_page": 18,
+      "text_similarity": 0.1688,
+      "text_chars": 122,
+      "review": "文本比对＋原页图复核",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s2"
+    },
+    {
+      "page": 27,
+      "nearest_2025_page": 24,
+      "text_similarity": 1.0,
+      "text_chars": 44,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s2"
+    },
+    {
+      "page": 28,
+      "nearest_2025_page": 25,
+      "text_similarity": 1.0,
+      "text_chars": 141,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s2"
+    },
+    {
+      "page": 29,
+      "nearest_2025_page": 26,
+      "text_similarity": 1.0,
+      "text_chars": 115,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s2"
+    },
+    {
+      "page": 30,
+      "nearest_2025_page": 27,
+      "text_similarity": 1.0,
+      "text_chars": 55,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s2"
+    },
+    {
+      "page": 31,
+      "nearest_2025_page": 28,
+      "text_similarity": 1.0,
+      "text_chars": 113,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s2"
+    },
+    {
+      "page": 32,
+      "nearest_2025_page": 29,
+      "text_similarity": 1.0,
+      "text_chars": 272,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s2"
+    },
+    {
+      "page": 33,
+      "nearest_2025_page": 30,
+      "text_similarity": 1.0,
+      "text_chars": 117,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s2"
+    },
+    {
+      "page": 34,
+      "nearest_2025_page": 31,
+      "text_similarity": 0.9979,
+      "text_chars": 234,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s2"
+    },
+    {
+      "page": 35,
+      "nearest_2025_page": 32,
+      "text_similarity": 1.0,
+      "text_chars": 275,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s2"
+    },
+    {
+      "page": 36,
+      "nearest_2025_page": 33,
+      "text_similarity": 1.0,
+      "text_chars": 152,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s2"
+    },
+    {
+      "page": 37,
+      "nearest_2025_page": 34,
+      "text_similarity": 1.0,
+      "text_chars": 168,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s2"
+    },
+    {
+      "page": 38,
+      "nearest_2025_page": 35,
+      "text_similarity": 1.0,
+      "text_chars": 194,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s2"
+    },
+    {
+      "page": 39,
+      "nearest_2025_page": 36,
+      "text_similarity": 1.0,
+      "text_chars": 354,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s2"
+    },
+    {
+      "page": 40,
+      "nearest_2025_page": 37,
+      "text_similarity": 1.0,
+      "text_chars": 289,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s2"
+    },
+    {
+      "page": 41,
+      "nearest_2025_page": 38,
+      "text_similarity": 1.0,
+      "text_chars": 245,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s2"
+    },
+    {
+      "page": 42,
+      "nearest_2025_page": 39,
+      "text_similarity": 1.0,
+      "text_chars": 35,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s2"
+    },
+    {
+      "page": 43,
+      "nearest_2025_page": 40,
+      "text_similarity": 1.0,
+      "text_chars": 90,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s2"
+    },
+    {
+      "page": 44,
+      "nearest_2025_page": 41,
+      "text_similarity": 1.0,
+      "text_chars": 174,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s2"
+    },
+    {
+      "page": 45,
+      "nearest_2025_page": 42,
+      "text_similarity": 1.0,
+      "text_chars": 132,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s3"
+    },
+    {
+      "page": 46,
+      "nearest_2025_page": 43,
+      "text_similarity": 1.0,
+      "text_chars": 253,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s3"
+    },
+    {
+      "page": 47,
+      "nearest_2025_page": 44,
+      "text_similarity": 1.0,
+      "text_chars": 74,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s3"
+    },
+    {
+      "page": 48,
+      "nearest_2025_page": 45,
+      "text_similarity": 0.9961,
+      "text_chars": 258,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s3"
+    },
+    {
+      "page": 49,
+      "nearest_2025_page": 46,
+      "text_similarity": 1.0,
+      "text_chars": 180,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s3"
+    },
+    {
+      "page": 50,
+      "nearest_2025_page": 47,
+      "text_similarity": 1.0,
+      "text_chars": 206,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s3"
+    },
+    {
+      "page": 51,
+      "nearest_2025_page": 48,
+      "text_similarity": 1.0,
+      "text_chars": 61,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s3"
+    },
+    {
+      "page": 52,
+      "nearest_2025_page": 49,
+      "text_similarity": 1.0,
+      "text_chars": 189,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s3"
+    },
+    {
+      "page": 53,
+      "nearest_2025_page": 50,
+      "text_similarity": 1.0,
+      "text_chars": 99,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s3"
+    },
+    {
+      "page": 54,
+      "nearest_2025_page": 51,
+      "text_similarity": 1.0,
+      "text_chars": 185,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s3"
+    },
+    {
+      "page": 55,
+      "nearest_2025_page": 52,
+      "text_similarity": 1.0,
+      "text_chars": 135,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s3"
+    },
+    {
+      "page": 56,
+      "nearest_2025_page": 53,
+      "text_similarity": 1.0,
+      "text_chars": 176,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s3"
+    },
+    {
+      "page": 57,
+      "nearest_2025_page": 54,
+      "text_similarity": 0.9785,
+      "text_chars": 186,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s3"
+    },
+    {
+      "page": 58,
+      "nearest_2025_page": 55,
+      "text_similarity": 1.0,
+      "text_chars": 256,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s3"
+    },
+    {
+      "page": 59,
+      "nearest_2025_page": 56,
+      "text_similarity": 1.0,
+      "text_chars": 285,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s3"
+    },
+    {
+      "page": 60,
+      "nearest_2025_page": 57,
+      "text_similarity": 1.0,
+      "text_chars": 7,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s3"
+    },
+    {
+      "page": 61,
+      "nearest_2025_page": 58,
+      "text_similarity": 1.0,
+      "text_chars": 314,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s3"
+    },
+    {
+      "page": 62,
+      "nearest_2025_page": 59,
+      "text_similarity": 1.0,
+      "text_chars": 220,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s3"
+    },
+    {
+      "page": 63,
+      "nearest_2025_page": 60,
+      "text_similarity": 1.0,
+      "text_chars": 194,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s3"
+    },
+    {
+      "page": 64,
+      "nearest_2025_page": 61,
+      "text_similarity": 1.0,
+      "text_chars": 217,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s3"
+    },
+    {
+      "page": 65,
+      "nearest_2025_page": 62,
+      "text_similarity": 1.0,
+      "text_chars": 231,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s3"
+    },
+    {
+      "page": 66,
+      "nearest_2025_page": 63,
+      "text_similarity": 1.0,
+      "text_chars": 73,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s3"
+    },
+    {
+      "page": 67,
+      "nearest_2025_page": 64,
+      "text_similarity": 1.0,
+      "text_chars": 18,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s3"
+    },
+    {
+      "page": 68,
+      "nearest_2025_page": 65,
+      "text_similarity": 1.0,
+      "text_chars": 11,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s3"
+    },
+    {
+      "page": 69,
+      "nearest_2025_page": 66,
+      "text_similarity": 1.0,
+      "text_chars": 18,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s4"
+    },
+    {
+      "page": 70,
+      "nearest_2025_page": 67,
+      "text_similarity": 0.6047,
+      "text_chars": 43,
+      "review": "文本比对＋原页图复核",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s4"
+    },
+    {
+      "page": 71,
+      "nearest_2025_page": 68,
+      "text_similarity": 1.0,
+      "text_chars": 267,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s4"
+    },
+    {
+      "page": 72,
+      "nearest_2025_page": 69,
+      "text_similarity": 1.0,
+      "text_chars": 256,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s4"
+    },
+    {
+      "page": 73,
+      "nearest_2025_page": 70,
+      "text_similarity": 1.0,
+      "text_chars": 191,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s4"
+    },
+    {
+      "page": 74,
+      "nearest_2025_page": 71,
+      "text_similarity": 1.0,
+      "text_chars": 101,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s4"
+    },
+    {
+      "page": 75,
+      "nearest_2025_page": 72,
+      "text_similarity": 1.0,
+      "text_chars": 285,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s4"
+    },
+    {
+      "page": 76,
+      "nearest_2025_page": 73,
+      "text_similarity": 1.0,
+      "text_chars": 107,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s4"
+    },
+    {
+      "page": 77,
+      "nearest_2025_page": 74,
+      "text_similarity": 0.993,
+      "text_chars": 285,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s4"
+    },
+    {
+      "page": 78,
+      "nearest_2025_page": 75,
+      "text_similarity": 0.9921,
+      "text_chars": 253,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s4"
+    },
+    {
+      "page": 79,
+      "nearest_2025_page": 76,
+      "text_similarity": 1.0,
+      "text_chars": 111,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s4"
+    },
+    {
+      "page": 80,
+      "nearest_2025_page": 77,
+      "text_similarity": 1.0,
+      "text_chars": 237,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s4"
+    },
+    {
+      "page": 81,
+      "nearest_2025_page": 78,
+      "text_similarity": 1.0,
+      "text_chars": 26,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s4"
+    },
+    {
+      "page": 82,
+      "nearest_2025_page": 79,
+      "text_similarity": 1.0,
+      "text_chars": 189,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s4"
+    },
+    {
+      "page": 83,
+      "nearest_2025_page": 80,
+      "text_similarity": 1.0,
+      "text_chars": 14,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s4"
+    },
+    {
+      "page": 84,
+      "nearest_2025_page": 81,
+      "text_similarity": 0.9847,
+      "text_chars": 261,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s4"
+    },
+    {
+      "page": 85,
+      "nearest_2025_page": 82,
+      "text_similarity": 1.0,
+      "text_chars": 306,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s4"
+    },
+    {
+      "page": 86,
+      "nearest_2025_page": 83,
+      "text_similarity": 0.9782,
+      "text_chars": 229,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s4"
+    },
+    {
+      "page": 87,
+      "nearest_2025_page": 84,
+      "text_similarity": 1.0,
+      "text_chars": 96,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s4"
+    },
+    {
+      "page": 88,
+      "nearest_2025_page": 85,
+      "text_similarity": 0.8992,
+      "text_chars": 129,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s4"
+    },
+    {
+      "page": 89,
+      "nearest_2025_page": 86,
+      "text_similarity": 0.9777,
+      "text_chars": 224,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s4"
+    },
+    {
+      "page": 90,
+      "nearest_2025_page": 87,
+      "text_similarity": 0.9775,
+      "text_chars": 222,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s4"
+    },
+    {
+      "page": 91,
+      "nearest_2025_page": 88,
+      "text_similarity": 1.0,
+      "text_chars": 128,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s5"
+    },
+    {
+      "page": 92,
+      "nearest_2025_page": 89,
+      "text_similarity": 1.0,
+      "text_chars": 203,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s5"
+    },
+    {
+      "page": 93,
+      "nearest_2025_page": 90,
+      "text_similarity": 0.9939,
+      "text_chars": 164,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s5"
+    },
+    {
+      "page": 94,
+      "nearest_2025_page": 91,
+      "text_similarity": 1.0,
+      "text_chars": 63,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s5"
+    },
+    {
+      "page": 95,
+      "nearest_2025_page": 76,
+      "text_similarity": 0.1935,
+      "text_chars": 137,
+      "review": "文本比对＋原页图复核",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s5"
+    },
+    {
+      "page": 96,
+      "nearest_2025_page": 92,
+      "text_similarity": 1.0,
+      "text_chars": 79,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s5"
+    },
+    {
+      "page": 97,
+      "nearest_2025_page": 93,
+      "text_similarity": 1.0,
+      "text_chars": 154,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s5"
+    },
+    {
+      "page": 98,
+      "nearest_2025_page": 94,
+      "text_similarity": 1.0,
+      "text_chars": 98,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s5"
+    },
+    {
+      "page": 99,
+      "nearest_2025_page": 95,
+      "text_similarity": 1.0,
+      "text_chars": 319,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s5"
+    },
+    {
+      "page": 100,
+      "nearest_2025_page": 96,
+      "text_similarity": 1.0,
+      "text_chars": 37,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s5"
+    },
+    {
+      "page": 101,
+      "nearest_2025_page": 97,
+      "text_similarity": 1.0,
+      "text_chars": 165,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s5"
+    },
+    {
+      "page": 102,
+      "nearest_2025_page": 98,
+      "text_similarity": 1.0,
+      "text_chars": 61,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s5"
+    },
+    {
+      "page": 103,
+      "nearest_2025_page": 99,
+      "text_similarity": 1.0,
+      "text_chars": 86,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s5"
+    },
+    {
+      "page": 104,
+      "nearest_2025_page": 100,
+      "text_similarity": 0.9948,
+      "text_chars": 193,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s5"
+    },
+    {
+      "page": 105,
+      "nearest_2025_page": 101,
+      "text_similarity": 1.0,
+      "text_chars": 270,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s5"
+    },
+    {
+      "page": 106,
+      "nearest_2025_page": 102,
+      "text_similarity": 1.0,
+      "text_chars": 165,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s5"
+    },
+    {
+      "page": 107,
+      "nearest_2025_page": 103,
+      "text_similarity": 0.9378,
+      "text_chars": 209,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s5"
+    },
+    {
+      "page": 108,
+      "nearest_2025_page": 104,
+      "text_similarity": 1.0,
+      "text_chars": 144,
+      "review": "文本比对＋原页图复核",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s6"
+    },
+    {
+      "page": 109,
+      "nearest_2025_page": 105,
+      "text_similarity": 1.0,
+      "text_chars": 3,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s6"
+    },
+    {
+      "page": 110,
+      "nearest_2025_page": 66,
+      "text_similarity": 0.5641,
+      "text_chars": 21,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s5"
+    },
+    {
+      "page": 111,
+      "nearest_2025_page": 78,
+      "text_similarity": 0.4898,
+      "text_chars": 23,
+      "review": "文本比对＋原页图复核",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s5"
+    },
+    {
+      "page": 112,
+      "nearest_2025_page": 80,
+      "text_similarity": 0.7273,
+      "text_chars": 8,
+      "review": "文本比对＋原页图复核",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s5"
+    },
+    {
+      "page": 113,
+      "nearest_2025_page": 80,
+      "text_similarity": 0.7273,
+      "text_chars": 8,
+      "review": "文本比对＋原页图复核",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s5"
+    },
+    {
+      "page": 114,
+      "nearest_2025_page": 80,
+      "text_similarity": 0.7273,
+      "text_chars": 8,
+      "review": "文本比对＋原页图复核",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s5"
+    },
+    {
+      "page": 115,
+      "nearest_2025_page": 80,
+      "text_similarity": 0.4,
+      "text_chars": 26,
+      "review": "文本比对＋原页图复核",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s5"
+    },
+    {
+      "page": 116,
+      "nearest_2025_page": 66,
+      "text_similarity": 0.1864,
+      "text_chars": 100,
+      "review": "文本比对＋原页图复核",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s5"
+    },
+    {
+      "page": 117,
+      "nearest_2025_page": 91,
+      "text_similarity": 0.1532,
+      "text_chars": 185,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s5"
+    },
+    {
+      "page": 118,
+      "nearest_2025_page": 17,
+      "text_similarity": 0.1165,
+      "text_chars": 162,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s5"
+    },
+    {
+      "page": 119,
+      "nearest_2025_page": 96,
+      "text_similarity": 0.3467,
+      "text_chars": 38,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s5"
+    },
+    {
+      "page": 120,
+      "nearest_2025_page": 56,
+      "text_similarity": 0.1069,
+      "text_chars": 370,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s5"
+    },
+    {
+      "page": 121,
+      "nearest_2025_page": 96,
+      "text_similarity": 0.2857,
+      "text_chars": 47,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s5"
+    },
+    {
+      "page": 122,
+      "nearest_2025_page": 98,
+      "text_similarity": 0.1287,
+      "text_chars": 141,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s5"
+    },
+    {
+      "page": 123,
+      "nearest_2025_page": 70,
+      "text_similarity": 0.1703,
+      "text_chars": 126,
+      "review": "文本比对＋原页图复核",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s5"
+    },
+    {
+      "page": 124,
+      "nearest_2025_page": 72,
+      "text_similarity": 0.1379,
+      "text_chars": 208,
+      "review": "文本比对＋原页图复核",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s5"
+    },
+    {
+      "page": 125,
+      "nearest_2025_page": 66,
+      "text_similarity": 0.3,
+      "text_chars": 42,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s5"
+    },
+    {
+      "page": 126,
+      "nearest_2025_page": 66,
+      "text_similarity": 0.3,
+      "text_chars": 42,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s5"
+    },
+    {
+      "page": 127,
+      "nearest_2025_page": 56,
+      "text_similarity": 0.104,
+      "text_chars": 388,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s5"
+    },
+    {
+      "page": 128,
+      "nearest_2025_page": 96,
+      "text_similarity": 0.1818,
+      "text_chars": 106,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s5"
+    },
+    {
+      "page": 129,
+      "nearest_2025_page": 46,
+      "text_similarity": 0.108,
+      "text_chars": 172,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s5"
+    },
+    {
+      "page": 130,
+      "nearest_2025_page": 96,
+      "text_similarity": 0.1583,
+      "text_chars": 102,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s5"
+    },
+    {
+      "page": 131,
+      "nearest_2025_page": 96,
+      "text_similarity": 0.136,
+      "text_chars": 213,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s5"
+    },
+    {
+      "page": 132,
+      "nearest_2025_page": 66,
+      "text_similarity": 0.45,
+      "text_chars": 22,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s5"
+    },
+    {
+      "page": 133,
+      "nearest_2025_page": 70,
+      "text_similarity": 0.1995,
+      "text_chars": 180,
+      "review": "文本比对＋原页图复核",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s5"
+    },
+    {
+      "page": 134,
+      "nearest_2025_page": 91,
+      "text_similarity": 0.169,
+      "text_chars": 150,
+      "review": "文本比对＋原页图复核",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s5"
+    },
+    {
+      "page": 135,
+      "nearest_2025_page": 94,
+      "text_similarity": 0.2609,
+      "text_chars": 17,
+      "review": "文本比对＋原页图复核",
+      "target": "05_第五章_样本偏差过拟合与正则化.md#c5-s5"
+    }
+  ]
+}

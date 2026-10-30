@@ -64,5 +64,19 @@
     "source": "5-notes/data/L12_temperature10.txt",
     "bytes": 240,
     "sha256": "98dc7d412003ab2e54a6bb1eae52b18332d315ad41efd91ea778364635a9b7e7"
+  },
+  {
+    "file": "L11_2026_trends.csv",
+    "source": "homework_2026.py (2026-10-30 generated; not supplied observations)",
+    "seed": 20261030,
+    "bytes": 79704,
+    "sha256": "6f04ad3638675bc59262f49df935fae7b5185a2242d4318f45a69536660fdae9"
+  },
+  {
+    "file": "L14_2026_polygon17_initial.csv",
+    "source": "homework_2026.py (2026-10-30 generated; not supplied observations)",
+    "seed": 2026,
+    "bytes": 639,
+    "sha256": "b5891cbb55719405a8325709382baad5215dba1a861476d42462c73e73ee1d9a"
   }
 ]
