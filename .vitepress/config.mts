@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 import taskLists from 'markdown-it-task-lists'
 
 // Mark Python and course data as downloads, rather than document routes.
-process.env.VITE_EXTRA_EXTENSIONS = 'py,dat'
+process.env.VITE_EXTRA_EXTENSIONS = 'py,dat,npz'
 const base = '/UCAS-measurement-data-processing/'
 
 export default defineConfig({
@@ -12,7 +12,7 @@ export default defineConfig({
   base,
   srcDir: '.site',
   srcExclude: ['public/**'],
-  vite: { define: { 'import.meta.env.VITE_EXTRA_EXTENSIONS': JSON.stringify('py,dat') } },
+  vite: { define: { 'import.meta.env.VITE_EXTRA_EXTENSIONS': JSON.stringify('py,dat,npz') } },
   cleanUrls: false,
   markdown: {
     math: true,
@@ -83,6 +83,6 @@ export default defineConfig({
     lightModeSwitchTitle: '切换浅色模式',
     darkModeSwitchTitle: '切换深色模式',
     returnToTopLabel: '返回顶部',
-    footer: { message: '课程学习整理 · 当前主线：2026 第 01—08 课 + 2025 第 09—14 课' }
+    footer: { message: '课程学习整理 · 2026 第01—14课已核对' }
   }
 })

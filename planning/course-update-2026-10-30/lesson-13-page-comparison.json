@@ -1,0 +1,1359 @@
+{
+  "file": "26PPT/13 神经网络-3h 20261028.pdf",
+  "sha256": "fcb1f5bcb2e3cd329d34d3274347e88862d0e58dfa371e884ba2a3530b56bff5",
+  "method": "NFKC/空白/页脚清理后的最近旧页文本相似度，仅供路由，重复模板可误配；正文差异判断另见报告",
+  "pages": [
+    {
+      "page": 1,
+      "nearest_2025_page": 1,
+      "text_similarity": 1.0,
+      "text_chars": 15,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 2,
+      "nearest_2025_page": 2,
+      "text_similarity": 0.8273,
+      "text_chars": 292,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 3,
+      "nearest_2025_page": 3,
+      "text_similarity": 1.0,
+      "text_chars": 203,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 4,
+      "nearest_2025_page": 4,
+      "text_similarity": 1.0,
+      "text_chars": 205,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 5,
+      "nearest_2025_page": 5,
+      "text_similarity": 1.0,
+      "text_chars": 145,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 6,
+      "nearest_2025_page": 6,
+      "text_similarity": 1.0,
+      "text_chars": 32,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 7,
+      "nearest_2025_page": 7,
+      "text_similarity": 1.0,
+      "text_chars": 19,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 8,
+      "nearest_2025_page": 8,
+      "text_similarity": 1.0,
+      "text_chars": 168,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 9,
+      "nearest_2025_page": 9,
+      "text_similarity": 1.0,
+      "text_chars": 106,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 10,
+      "nearest_2025_page": 10,
+      "text_similarity": 1.0,
+      "text_chars": 23,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 11,
+      "nearest_2025_page": 6,
+      "text_similarity": 0.1241,
+      "text_chars": 258,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 12,
+      "nearest_2025_page": 11,
+      "text_similarity": 1.0,
+      "text_chars": 54,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 13,
+      "nearest_2025_page": 12,
+      "text_similarity": 1.0,
+      "text_chars": 14,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 14,
+      "nearest_2025_page": 13,
+      "text_similarity": 1.0,
+      "text_chars": 231,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 15,
+      "nearest_2025_page": 14,
+      "text_similarity": 1.0,
+      "text_chars": 306,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 16,
+      "nearest_2025_page": 15,
+      "text_similarity": 1.0,
+      "text_chars": 125,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 17,
+      "nearest_2025_page": 16,
+      "text_similarity": 1.0,
+      "text_chars": 148,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 18,
+      "nearest_2025_page": 17,
+      "text_similarity": 1.0,
+      "text_chars": 139,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 19,
+      "nearest_2025_page": 18,
+      "text_similarity": 1.0,
+      "text_chars": 480,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 20,
+      "nearest_2025_page": 19,
+      "text_similarity": 1.0,
+      "text_chars": 150,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 21,
+      "nearest_2025_page": 20,
+      "text_similarity": 1.0,
+      "text_chars": 19,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 22,
+      "nearest_2025_page": 21,
+      "text_similarity": 1.0,
+      "text_chars": 123,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 23,
+      "nearest_2025_page": 22,
+      "text_similarity": 1.0,
+      "text_chars": 178,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 24,
+      "nearest_2025_page": 23,
+      "text_similarity": 1.0,
+      "text_chars": 223,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 25,
+      "nearest_2025_page": 24,
+      "text_similarity": 1.0,
+      "text_chars": 304,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 26,
+      "nearest_2025_page": 25,
+      "text_similarity": 1.0,
+      "text_chars": 382,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 27,
+      "nearest_2025_page": 26,
+      "text_similarity": 1.0,
+      "text_chars": 243,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 28,
+      "nearest_2025_page": 27,
+      "text_similarity": 1.0,
+      "text_chars": 212,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 29,
+      "nearest_2025_page": 28,
+      "text_similarity": 1.0,
+      "text_chars": 87,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 30,
+      "nearest_2025_page": 29,
+      "text_similarity": 1.0,
+      "text_chars": 35,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 31,
+      "nearest_2025_page": 30,
+      "text_similarity": 1.0,
+      "text_chars": 205,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 32,
+      "nearest_2025_page": 31,
+      "text_similarity": 1.0,
+      "text_chars": 372,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 33,
+      "nearest_2025_page": 32,
+      "text_similarity": 1.0,
+      "text_chars": 225,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 34,
+      "nearest_2025_page": 33,
+      "text_similarity": 1.0,
+      "text_chars": 257,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 35,
+      "nearest_2025_page": 34,
+      "text_similarity": 1.0,
+      "text_chars": 274,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 36,
+      "nearest_2025_page": 35,
+      "text_similarity": 1.0,
+      "text_chars": 147,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 37,
+      "nearest_2025_page": 36,
+      "text_similarity": 1.0,
+      "text_chars": 282,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 38,
+      "nearest_2025_page": 37,
+      "text_similarity": 1.0,
+      "text_chars": 225,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 39,
+      "nearest_2025_page": 38,
+      "text_similarity": 1.0,
+      "text_chars": 454,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 40,
+      "nearest_2025_page": 39,
+      "text_similarity": 1.0,
+      "text_chars": 352,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 41,
+      "nearest_2025_page": 40,
+      "text_similarity": 1.0,
+      "text_chars": 177,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 42,
+      "nearest_2025_page": 41,
+      "text_similarity": 1.0,
+      "text_chars": 99,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 43,
+      "nearest_2025_page": 42,
+      "text_similarity": 1.0,
+      "text_chars": 227,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 44,
+      "nearest_2025_page": 43,
+      "text_similarity": 1.0,
+      "text_chars": 558,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 45,
+      "nearest_2025_page": 44,
+      "text_similarity": 1.0,
+      "text_chars": 337,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 46,
+      "nearest_2025_page": 45,
+      "text_similarity": 1.0,
+      "text_chars": 562,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 47,
+      "nearest_2025_page": 46,
+      "text_similarity": 1.0,
+      "text_chars": 471,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 48,
+      "nearest_2025_page": 47,
+      "text_similarity": 1.0,
+      "text_chars": 352,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 49,
+      "nearest_2025_page": 48,
+      "text_similarity": 1.0,
+      "text_chars": 188,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 50,
+      "nearest_2025_page": 49,
+      "text_similarity": 1.0,
+      "text_chars": 312,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 51,
+      "nearest_2025_page": 50,
+      "text_similarity": 1.0,
+      "text_chars": 32,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 52,
+      "nearest_2025_page": 51,
+      "text_similarity": 1.0,
+      "text_chars": 168,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 53,
+      "nearest_2025_page": 52,
+      "text_similarity": 1.0,
+      "text_chars": 154,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 54,
+      "nearest_2025_page": 53,
+      "text_similarity": 1.0,
+      "text_chars": 57,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 55,
+      "nearest_2025_page": 54,
+      "text_similarity": 1.0,
+      "text_chars": 220,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 56,
+      "nearest_2025_page": 55,
+      "text_similarity": 1.0,
+      "text_chars": 159,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 57,
+      "nearest_2025_page": 56,
+      "text_similarity": 1.0,
+      "text_chars": 366,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 58,
+      "nearest_2025_page": 57,
+      "text_similarity": 1.0,
+      "text_chars": 321,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 59,
+      "nearest_2025_page": 58,
+      "text_similarity": 1.0,
+      "text_chars": 150,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 60,
+      "nearest_2025_page": 59,
+      "text_similarity": 1.0,
+      "text_chars": 419,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 61,
+      "nearest_2025_page": 60,
+      "text_similarity": 1.0,
+      "text_chars": 210,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 62,
+      "nearest_2025_page": 61,
+      "text_similarity": 1.0,
+      "text_chars": 368,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 63,
+      "nearest_2025_page": 62,
+      "text_similarity": 1.0,
+      "text_chars": 155,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 64,
+      "nearest_2025_page": 63,
+      "text_similarity": 1.0,
+      "text_chars": 282,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 65,
+      "nearest_2025_page": 64,
+      "text_similarity": 1.0,
+      "text_chars": 177,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 66,
+      "nearest_2025_page": 65,
+      "text_similarity": 1.0,
+      "text_chars": 282,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 67,
+      "nearest_2025_page": 66,
+      "text_similarity": 1.0,
+      "text_chars": 264,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 68,
+      "nearest_2025_page": 67,
+      "text_similarity": 1.0,
+      "text_chars": 130,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 69,
+      "nearest_2025_page": 68,
+      "text_similarity": 1.0,
+      "text_chars": 125,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 70,
+      "nearest_2025_page": 69,
+      "text_similarity": 1.0,
+      "text_chars": 147,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 71,
+      "nearest_2025_page": 70,
+      "text_similarity": 1.0,
+      "text_chars": 162,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 72,
+      "nearest_2025_page": 71,
+      "text_similarity": 1.0,
+      "text_chars": 314,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 73,
+      "nearest_2025_page": 72,
+      "text_similarity": 1.0,
+      "text_chars": 132,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 74,
+      "nearest_2025_page": 73,
+      "text_similarity": 1.0,
+      "text_chars": 367,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 75,
+      "nearest_2025_page": 74,
+      "text_similarity": 1.0,
+      "text_chars": 396,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 76,
+      "nearest_2025_page": 75,
+      "text_similarity": 1.0,
+      "text_chars": 244,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 77,
+      "nearest_2025_page": 76,
+      "text_similarity": 1.0,
+      "text_chars": 677,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 78,
+      "nearest_2025_page": 77,
+      "text_similarity": 1.0,
+      "text_chars": 645,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 79,
+      "nearest_2025_page": 78,
+      "text_similarity": 1.0,
+      "text_chars": 374,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 80,
+      "nearest_2025_page": 79,
+      "text_similarity": 1.0,
+      "text_chars": 609,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 81,
+      "nearest_2025_page": 80,
+      "text_similarity": 1.0,
+      "text_chars": 99,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 82,
+      "nearest_2025_page": 81,
+      "text_similarity": 1.0,
+      "text_chars": 136,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 83,
+      "nearest_2025_page": 82,
+      "text_similarity": 1.0,
+      "text_chars": 179,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s8"
+    },
+    {
+      "page": 84,
+      "nearest_2025_page": 83,
+      "text_similarity": 0.8571,
+      "text_chars": 24,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s9"
+    },
+    {
+      "page": 85,
+      "nearest_2025_page": 84,
+      "text_similarity": 0.8953,
+      "text_chars": 190,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s9"
+    },
+    {
+      "page": 86,
+      "nearest_2025_page": 85,
+      "text_similarity": 1.0,
+      "text_chars": 22,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s9"
+    },
+    {
+      "page": 87,
+      "nearest_2025_page": 86,
+      "text_similarity": 1.0,
+      "text_chars": 108,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s9"
+    },
+    {
+      "page": 88,
+      "nearest_2025_page": 87,
+      "text_similarity": 1.0,
+      "text_chars": 123,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s9"
+    },
+    {
+      "page": 89,
+      "nearest_2025_page": 88,
+      "text_similarity": 1.0,
+      "text_chars": 24,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s9"
+    },
+    {
+      "page": 90,
+      "nearest_2025_page": 89,
+      "text_similarity": 1.0,
+      "text_chars": 157,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s9"
+    },
+    {
+      "page": 91,
+      "nearest_2025_page": 90,
+      "text_similarity": 1.0,
+      "text_chars": 56,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s9"
+    },
+    {
+      "page": 92,
+      "nearest_2025_page": 91,
+      "text_similarity": 1.0,
+      "text_chars": 106,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s9"
+    },
+    {
+      "page": 93,
+      "nearest_2025_page": 92,
+      "text_similarity": 1.0,
+      "text_chars": 254,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s9"
+    },
+    {
+      "page": 94,
+      "nearest_2025_page": 93,
+      "text_similarity": 1.0,
+      "text_chars": 627,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s9"
+    },
+    {
+      "page": 95,
+      "nearest_2025_page": 94,
+      "text_similarity": 1.0,
+      "text_chars": 7,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s9"
+    },
+    {
+      "page": 96,
+      "nearest_2025_page": 95,
+      "text_similarity": 1.0,
+      "text_chars": 90,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s9"
+    },
+    {
+      "page": 97,
+      "nearest_2025_page": 96,
+      "text_similarity": 1.0,
+      "text_chars": 180,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s9"
+    },
+    {
+      "page": 98,
+      "nearest_2025_page": 97,
+      "text_similarity": 1.0,
+      "text_chars": 273,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s9"
+    },
+    {
+      "page": 99,
+      "nearest_2025_page": 98,
+      "text_similarity": 1.0,
+      "text_chars": 77,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s9"
+    },
+    {
+      "page": 100,
+      "nearest_2025_page": 99,
+      "text_similarity": 1.0,
+      "text_chars": 284,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s9"
+    },
+    {
+      "page": 101,
+      "nearest_2025_page": 100,
+      "text_similarity": 1.0,
+      "text_chars": 142,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s9"
+    },
+    {
+      "page": 102,
+      "nearest_2025_page": 101,
+      "text_similarity": 1.0,
+      "text_chars": 226,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s9"
+    },
+    {
+      "page": 103,
+      "nearest_2025_page": 102,
+      "text_similarity": 1.0,
+      "text_chars": 19,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s9"
+    },
+    {
+      "page": 104,
+      "nearest_2025_page": 103,
+      "text_similarity": 1.0,
+      "text_chars": 541,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s9"
+    },
+    {
+      "page": 105,
+      "nearest_2025_page": 104,
+      "text_similarity": 1.0,
+      "text_chars": 38,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s9"
+    },
+    {
+      "page": 106,
+      "nearest_2025_page": 105,
+      "text_similarity": 1.0,
+      "text_chars": 62,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s9"
+    },
+    {
+      "page": 107,
+      "nearest_2025_page": 106,
+      "text_similarity": 1.0,
+      "text_chars": 110,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s9"
+    },
+    {
+      "page": 108,
+      "nearest_2025_page": 107,
+      "text_similarity": 1.0,
+      "text_chars": 171,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s9"
+    },
+    {
+      "page": 109,
+      "nearest_2025_page": 108,
+      "text_similarity": 1.0,
+      "text_chars": 401,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s9"
+    },
+    {
+      "page": 110,
+      "nearest_2025_page": 109,
+      "text_similarity": 1.0,
+      "text_chars": 149,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s9"
+    },
+    {
+      "page": 111,
+      "nearest_2025_page": 110,
+      "text_similarity": 1.0,
+      "text_chars": 287,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s9"
+    },
+    {
+      "page": 112,
+      "nearest_2025_page": 111,
+      "text_similarity": 1.0,
+      "text_chars": 207,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s9"
+    },
+    {
+      "page": 113,
+      "nearest_2025_page": 112,
+      "text_similarity": 1.0,
+      "text_chars": 214,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s9"
+    },
+    {
+      "page": 114,
+      "nearest_2025_page": 113,
+      "text_similarity": 1.0,
+      "text_chars": 345,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s9"
+    },
+    {
+      "page": 115,
+      "nearest_2025_page": 114,
+      "text_similarity": 1.0,
+      "text_chars": 226,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s9"
+    },
+    {
+      "page": 116,
+      "nearest_2025_page": 115,
+      "text_similarity": 1.0,
+      "text_chars": 630,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s9"
+    },
+    {
+      "page": 117,
+      "nearest_2025_page": 116,
+      "text_similarity": 1.0,
+      "text_chars": 130,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s9"
+    },
+    {
+      "page": 118,
+      "nearest_2025_page": 117,
+      "text_similarity": 1.0,
+      "text_chars": 47,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s10"
+    },
+    {
+      "page": 119,
+      "nearest_2025_page": 118,
+      "text_similarity": 1.0,
+      "text_chars": 142,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s10"
+    },
+    {
+      "page": 120,
+      "nearest_2025_page": 119,
+      "text_similarity": 1.0,
+      "text_chars": 11,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s10"
+    },
+    {
+      "page": 121,
+      "nearest_2025_page": 120,
+      "text_similarity": 1.0,
+      "text_chars": 263,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s10"
+    },
+    {
+      "page": 122,
+      "nearest_2025_page": 121,
+      "text_similarity": 1.0,
+      "text_chars": 32,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s10"
+    },
+    {
+      "page": 123,
+      "nearest_2025_page": 122,
+      "text_similarity": 1.0,
+      "text_chars": 88,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s10"
+    },
+    {
+      "page": 124,
+      "nearest_2025_page": 123,
+      "text_similarity": 1.0,
+      "text_chars": 140,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s10"
+    },
+    {
+      "page": 125,
+      "nearest_2025_page": 124,
+      "text_similarity": 1.0,
+      "text_chars": 145,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s10"
+    },
+    {
+      "page": 126,
+      "nearest_2025_page": 125,
+      "text_similarity": 1.0,
+      "text_chars": 74,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s10"
+    },
+    {
+      "page": 127,
+      "nearest_2025_page": 126,
+      "text_similarity": 1.0,
+      "text_chars": 69,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s10"
+    },
+    {
+      "page": 128,
+      "nearest_2025_page": 127,
+      "text_similarity": 1.0,
+      "text_chars": 137,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s10"
+    },
+    {
+      "page": 129,
+      "nearest_2025_page": 128,
+      "text_similarity": 1.0,
+      "text_chars": 21,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s10"
+    },
+    {
+      "page": 130,
+      "nearest_2025_page": 129,
+      "text_similarity": 1.0,
+      "text_chars": 58,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s10"
+    },
+    {
+      "page": 131,
+      "nearest_2025_page": 130,
+      "text_similarity": 1.0,
+      "text_chars": 82,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s10"
+    },
+    {
+      "page": 132,
+      "nearest_2025_page": 131,
+      "text_similarity": 1.0,
+      "text_chars": 305,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s10"
+    },
+    {
+      "page": 133,
+      "nearest_2025_page": 132,
+      "text_similarity": 1.0,
+      "text_chars": 250,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s10"
+    },
+    {
+      "page": 134,
+      "nearest_2025_page": 133,
+      "text_similarity": 1.0,
+      "text_chars": 74,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s10"
+    },
+    {
+      "page": 135,
+      "nearest_2025_page": 134,
+      "text_similarity": 1.0,
+      "text_chars": 600,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s10"
+    },
+    {
+      "page": 136,
+      "nearest_2025_page": 135,
+      "text_similarity": 1.0,
+      "text_chars": 343,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s10"
+    },
+    {
+      "page": 137,
+      "nearest_2025_page": 136,
+      "text_similarity": 1.0,
+      "text_chars": 527,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s10"
+    },
+    {
+      "page": 138,
+      "nearest_2025_page": 137,
+      "text_similarity": 1.0,
+      "text_chars": 67,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s10"
+    },
+    {
+      "page": 139,
+      "nearest_2025_page": 138,
+      "text_similarity": 1.0,
+      "text_chars": 335,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s10"
+    },
+    {
+      "page": 140,
+      "nearest_2025_page": 139,
+      "text_similarity": 1.0,
+      "text_chars": 119,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s10"
+    },
+    {
+      "page": 141,
+      "nearest_2025_page": 140,
+      "text_similarity": 1.0,
+      "text_chars": 40,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s10"
+    },
+    {
+      "page": 142,
+      "nearest_2025_page": 141,
+      "text_similarity": 1.0,
+      "text_chars": 486,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s10"
+    },
+    {
+      "page": 143,
+      "nearest_2025_page": 142,
+      "text_similarity": 1.0,
+      "text_chars": 84,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s10"
+    },
+    {
+      "page": 144,
+      "nearest_2025_page": 143,
+      "text_similarity": 1.0,
+      "text_chars": 80,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s10"
+    },
+    {
+      "page": 145,
+      "nearest_2025_page": 144,
+      "text_similarity": 1.0,
+      "text_chars": 107,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s10"
+    },
+    {
+      "page": 146,
+      "nearest_2025_page": 145,
+      "text_similarity": 1.0,
+      "text_chars": 70,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s10"
+    },
+    {
+      "page": 147,
+      "nearest_2025_page": 146,
+      "text_similarity": 1.0,
+      "text_chars": 152,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s10"
+    },
+    {
+      "page": 148,
+      "nearest_2025_page": 147,
+      "text_similarity": 1.0,
+      "text_chars": 85,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s10"
+    },
+    {
+      "page": 149,
+      "nearest_2025_page": 148,
+      "text_similarity": 1.0,
+      "text_chars": 15,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s10"
+    },
+    {
+      "page": 150,
+      "nearest_2025_page": 149,
+      "text_similarity": 1.0,
+      "text_chars": 171,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s10"
+    },
+    {
+      "page": 151,
+      "nearest_2025_page": 150,
+      "text_similarity": 1.0,
+      "text_chars": 108,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s10"
+    },
+    {
+      "page": 152,
+      "nearest_2025_page": 151,
+      "text_similarity": 1.0,
+      "text_chars": 105,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s10"
+    },
+    {
+      "page": 153,
+      "nearest_2025_page": 152,
+      "text_similarity": 1.0,
+      "text_chars": 196,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s10"
+    },
+    {
+      "page": 154,
+      "nearest_2025_page": 153,
+      "text_similarity": 1.0,
+      "text_chars": 67,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s10"
+    },
+    {
+      "page": 155,
+      "nearest_2025_page": 154,
+      "text_similarity": 1.0,
+      "text_chars": 50,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s10"
+    },
+    {
+      "page": 156,
+      "nearest_2025_page": 155,
+      "text_similarity": 1.0,
+      "text_chars": 28,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s10"
+    },
+    {
+      "page": 157,
+      "nearest_2025_page": 156,
+      "text_similarity": 1.0,
+      "text_chars": 180,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s10"
+    },
+    {
+      "page": 158,
+      "nearest_2025_page": 157,
+      "text_similarity": 1.0,
+      "text_chars": 44,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s10"
+    },
+    {
+      "page": 159,
+      "nearest_2025_page": 7,
+      "text_similarity": 0.3077,
+      "text_chars": 7,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s10"
+    },
+    {
+      "page": 160,
+      "nearest_2025_page": 9,
+      "text_similarity": 0.1189,
+      "text_chars": 281,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s10"
+    },
+    {
+      "page": 161,
+      "nearest_2025_page": 8,
+      "text_similarity": 0.1804,
+      "text_chars": 220,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s10"
+    },
+    {
+      "page": 162,
+      "nearest_2025_page": 158,
+      "text_similarity": 0.9864,
+      "text_chars": 405,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s10"
+    },
+    {
+      "page": 163,
+      "nearest_2025_page": 3,
+      "text_similarity": 0.1282,
+      "text_chars": 546,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s10"
+    },
+    {
+      "page": 164,
+      "nearest_2025_page": 159,
+      "text_similarity": 1.0,
+      "text_chars": 117,
+      "review": "文本比对＋原页图复核",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s12"
+    },
+    {
+      "page": 165,
+      "nearest_2025_page": 160,
+      "text_similarity": 1.0,
+      "text_chars": 234,
+      "review": "文本比对＋原页图复核",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s12"
+    },
+    {
+      "page": 166,
+      "nearest_2025_page": 161,
+      "text_similarity": 1.0,
+      "text_chars": 3,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s12"
+    },
+    {
+      "page": 167,
+      "nearest_2025_page": 62,
+      "text_similarity": 0.1789,
+      "text_chars": 91,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s9"
+    },
+    {
+      "page": 168,
+      "nearest_2025_page": 63,
+      "text_similarity": 0.1143,
+      "text_chars": 103,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s9"
+    },
+    {
+      "page": 169,
+      "nearest_2025_page": 109,
+      "text_similarity": 0.1255,
+      "text_chars": 122,
+      "review": "逐页文本比对/页段定位；不等于原图逐字校对",
+      "target": "06_第六章_时空分析状态估计与神经网络.md#c6-s9"
+    }
+  ]
+}

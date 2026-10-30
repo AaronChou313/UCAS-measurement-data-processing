@@ -4,175 +4,223 @@
     "lesson": 1,
     "file": "25PPT/01 chapter1 测量数据处理意义历史和线性变换3h-20250924.pdf",
     "pages": 93,
-    "primary": false,
-    "sha256": "61bc9fa72718b1695663ce2ef65073ab23996849de9ffe17523a721a3c505ca8"
+    "sha256": "61bc9fa72718b1695663ce2ef65073ab23996849de9ffe17523a721a3c505ca8",
+    "primary": false
   },
   {
     "year": "25PPT",
     "lesson": 2,
     "file": "25PPT/02 chapter2 参数估计3h-20250926.pdf",
     "pages": 84,
-    "primary": false,
-    "sha256": "ebfc66704108c591d2f30b9598f886e7829779a49314709d476ecb76f6f62ae3"
+    "sha256": "ebfc66704108c591d2f30b9598f886e7829779a49314709d476ecb76f6f62ae3",
+    "primary": false
   },
   {
     "year": "25PPT",
     "lesson": 3,
     "file": "25PPT/03 chapter2 数据统计特征和最小二乘估计3h-20251010.pdf",
     "pages": 98,
-    "primary": false,
-    "sha256": "55a2d65813d82cb24ad74970e52001c1274a77f38bb665d619d0063a29f4c7bc"
+    "sha256": "55a2d65813d82cb24ad74970e52001c1274a77f38bb665d619d0063a29f4c7bc",
+    "primary": false
   },
   {
     "year": "25PPT",
     "lesson": 4,
     "file": "25PPT/04 chapter2 最小二乘估计和Bayes定理3h-20251011.pdf",
     "pages": 93,
-    "primary": false,
-    "sha256": "8bedca63a71167ff6ae34cc008d47cb7275f5d3b2c7d6bda8ca651175af7e329"
+    "sha256": "8bedca63a71167ff6ae34cc008d47cb7275f5d3b2c7d6bda8ca651175af7e329",
+    "primary": false
   },
   {
     "year": "25PPT",
     "lesson": 5,
     "file": "25PPT/05 chapter3 01一元线性回归与多元线性回归3h-20251015.pdf",
     "pages": 96,
-    "primary": false,
-    "sha256": "ec1201ca6f7cdcb4e09d057be72ee2e95907474480310f0f76efa7197a6fff96"
+    "sha256": "ec1201ca6f7cdcb4e09d057be72ee2e95907474480310f0f76efa7197a6fff96",
+    "primary": false
   },
   {
     "year": "25PPT",
     "lesson": 6,
     "file": "25PPT/06 chapter3 相关分析和Fourier变换3h-20251017.pdf",
     "pages": 132,
-    "primary": false,
-    "sha256": "1dd6370dd72a669c8ad5657135e77e82e16b56557d9e5bb1d65d135ec11354ee"
+    "sha256": "1dd6370dd72a669c8ad5657135e77e82e16b56557d9e5bb1d65d135ec11354ee",
+    "primary": false
   },
   {
     "year": "25PPT",
     "lesson": 7,
     "file": "25PPT/07 chapter4 01误差理论3h-20251022.pdf",
     "pages": 115,
-    "primary": false,
-    "sha256": "68195c72ce69b4a5f640fdd9cdbd794ae609a69aacf2e4c5b31eb4e7e0a17ba9"
+    "sha256": "68195c72ce69b4a5f640fdd9cdbd794ae609a69aacf2e4c5b31eb4e7e0a17ba9",
+    "primary": false
   },
   {
     "year": "25PPT",
     "lesson": 8,
     "file": "25PPT/08 chapter4 02误差椭圆3h-20251024.pdf",
     "pages": 115,
-    "primary": false,
-    "sha256": "5da44187cec8630cc76b8090b0bd02cc4f751408f9bbca530ae0948b103d37dd"
+    "sha256": "5da44187cec8630cc76b8090b0bd02cc4f751408f9bbca530ae0948b103d37dd",
+    "primary": false
   },
   {
     "year": "25PPT",
     "lesson": 9,
     "file": "25PPT/09 chapter5 样本偏差正则化马尔科夫链20251029.pdf",
     "pages": 105,
-    "primary": true,
-    "sha256": "ca63270af4d4633418281c2620f721e496174098a023a01d51b3abbe1aae263e"
+    "sha256": "ca63270af4d4633418281c2620f721e496174098a023a01d51b3abbe1aae263e",
+    "primary": false
   },
   {
     "year": "25PPT",
     "lesson": 10,
     "file": "25PPT/10+chapter6+SVD+EOF3h-20251031.pdf",
     "pages": 131,
-    "primary": true,
-    "sha256": "ec994b5ff97e8278923f8eb0d6f319ceb62b0230759a518f02514680091473cf"
+    "sha256": "ec994b5ff97e8278923f8eb0d6f319ceb62b0230759a518f02514680091473cf",
+    "primary": false
   },
   {
     "year": "25PPT",
     "lesson": 11,
     "file": "25PPT/11 chapter6 ICA 信息熵 MLELS有色噪声计算机实践 20251105.pdf",
     "pages": 105,
-    "primary": true,
-    "sha256": "73f92d461588d637a09d754e86b33ce3cb0156486732902aedefd4aadde97120"
+    "sha256": "73f92d461588d637a09d754e86b33ce3cb0156486732902aedefd4aadde97120",
+    "primary": false
   },
   {
     "year": "25PPT",
     "lesson": 12,
     "file": "25PPT/12 kalman.pdf",
     "pages": 145,
-    "primary": true,
-    "sha256": "0b4087f929a3e8d32017d785d138ba07efd01d845a3d37e002bb0be857ca55b3"
+    "sha256": "0b4087f929a3e8d32017d785d138ba07efd01d845a3d37e002bb0be857ca55b3",
+    "primary": false
   },
   {
     "year": "25PPT",
     "lesson": 13,
     "file": "25PPT/13 神经网络-3h 20251112.pdf",
     "pages": 161,
-    "primary": true,
-    "sha256": "c8e2853d645a2239594374a7dd0b8db06cbe474948adc491d1c0b0755660e2e4"
+    "sha256": "c8e2853d645a2239594374a7dd0b8db06cbe474948adc491d1c0b0755660e2e4",
+    "primary": false
   },
   {
     "year": "25PPT",
     "lesson": 14,
     "file": "25PPT/14 数据处理与python实践（PCAICA线性回归，正则化）-1h-20251114.pdf",
     "pages": 69,
-    "primary": true,
-    "sha256": "e1562da444deb791ba13ae2b6989f629c2613cfa8f53d21ecbb053879f6864e4"
+    "sha256": "e1562da444deb791ba13ae2b6989f629c2613cfa8f53d21ecbb053879f6864e4",
+    "primary": false
   },
   {
     "year": "26PPT",
     "lesson": 1,
     "file": "26PPT/01 chapter1 测量数据处理意义历史和线性变换3h-20260909.pdf",
     "pages": 93,
-    "primary": true,
-    "sha256": "44d026fde479c6f955be05338544d8f02173c7c0c7e0f63101e70f6564f73648"
+    "sha256": "44d026fde479c6f955be05338544d8f02173c7c0c7e0f63101e70f6564f73648",
+    "primary": true
   },
   {
     "year": "26PPT",
     "lesson": 2,
     "file": "26PPT/02 chapter2 参数估计3h-20260911.pdf",
     "pages": 86,
-    "primary": true,
-    "sha256": "cc1141a9ef5cbd8fd5f290b350d7a50837210569f10f4295f9cdcbe09c47c1ae"
+    "sha256": "cc1141a9ef5cbd8fd5f290b350d7a50837210569f10f4295f9cdcbe09c47c1ae",
+    "primary": true
   },
   {
     "year": "26PPT",
     "lesson": 3,
     "file": "26PPT/03 chapter2 数据统计特征和最小二乘估计3h-20260916.pdf",
     "pages": 104,
-    "primary": true,
-    "sha256": "30d9f367709cd88ddc820dde523c2dfd1ae52c9b0af5f7724b361ebc51b8db6e"
+    "sha256": "30d9f367709cd88ddc820dde523c2dfd1ae52c9b0af5f7724b361ebc51b8db6e",
+    "primary": true
   },
   {
     "year": "26PPT",
     "lesson": 4,
     "file": "26PPT/04 chapter2 最小二乘估计和Bayes定理3h-20260918.pdf",
     "pages": 118,
-    "primary": true,
-    "sha256": "cfc3b4efd76cbc5eeabf759bb3f276983e648295a274a55125a9400cca2a9c50"
+    "sha256": "cfc3b4efd76cbc5eeabf759bb3f276983e648295a274a55125a9400cca2a9c50",
+    "primary": true
   },
   {
     "year": "26PPT",
     "lesson": 5,
     "file": "26PPT/05 chapter3 01一元线性回归与多元线性回归3h-20260923.pdf",
     "pages": 105,
-    "primary": true,
-    "sha256": "22521a47ac5b1d47d84ac6a855229aefdaae71864d661ac507127021c3db4794"
+    "sha256": "22521a47ac5b1d47d84ac6a855229aefdaae71864d661ac507127021c3db4794",
+    "primary": true
   },
   {
     "year": "26PPT",
     "lesson": 6,
     "file": "26PPT/06 chapter3 相关分析和Fourier变换3h-20260930.pdf",
     "pages": 140,
-    "primary": true,
-    "sha256": "28951287877f0f6b0e2417b5d54887ef2ad649206b2953510400200a51443039"
+    "sha256": "28951287877f0f6b0e2417b5d54887ef2ad649206b2953510400200a51443039",
+    "primary": true
   },
   {
     "year": "26PPT",
     "lesson": 7,
     "file": "26PPT/07 chapter4 01误差理论3h-20261009.pdf",
     "pages": 128,
-    "primary": true,
-    "sha256": "f0b913c8ba740b02d4a8a33a82ad301c576c95b62767eef24e4fec212c722731"
+    "sha256": "f0b913c8ba740b02d4a8a33a82ad301c576c95b62767eef24e4fec212c722731",
+    "primary": true
   },
   {
     "year": "26PPT",
     "lesson": 8,
     "file": "26PPT/08 chapter4 02误差椭圆3h-20261010.pdf",
     "pages": 123,
-    "primary": true,
-    "sha256": "15e93c75b0595dd926fa6c09ee60072bf9fd6c22a36492b70af4156475a53986"
+    "sha256": "15e93c75b0595dd926fa6c09ee60072bf9fd6c22a36492b70af4156475a53986",
+    "primary": true
+  },
+  {
+    "year": "26PPT",
+    "lesson": 9,
+    "file": "26PPT/09 chapter5 样本偏差正则化马尔科夫链202610.pdf",
+    "pages": 135,
+    "sha256": "73410ec0a5c95a72d13db00f7d7398e992a7d4cb82e3e79769656374662a65f0",
+    "primary": true
+  },
+  {
+    "year": "26PPT",
+    "lesson": 10,
+    "file": "26PPT/10 chapter6 SVD+EOF20261023.pdf",
+    "pages": 137,
+    "sha256": "c9f94fb49b0a69d8dfcc2fba4cba7ae8b1bf1e69a4d45ebbe76bd6b0480ac68d",
+    "primary": true
+  },
+  {
+    "year": "26PPT",
+    "lesson": 11,
+    "file": "26PPT/11 chapter6 ICA 信息熵 MLELS有色噪.pdf",
+    "pages": 107,
+    "sha256": "b377ed52f30a45fa3edb1b3170bbeb4c4417725831c5e50f2fa304dcdbe385ab",
+    "primary": true
+  },
+  {
+    "year": "26PPT",
+    "lesson": 12,
+    "file": "26PPT/12 卡尔曼滤波Kalman 3h-20261021.pdf",
+    "pages": 153,
+    "sha256": "4b87bf771cd814b772670c151299c61364e337934459fcbae18bf2f98f0d08aa",
+    "primary": true
+  },
+  {
+    "year": "26PPT",
+    "lesson": 13,
+    "file": "26PPT/13 神经网络-3h 20261028.pdf",
+    "pages": 169,
+    "sha256": "fcb1f5bcb2e3cd329d34d3274347e88862d0e58dfa371e884ba2a3530b56bff5",
+    "primary": true
+  },
+  {
+    "year": "26PPT",
+    "lesson": 14,
+    "file": "26PPT/14 数据处理与python实践（PCAICA线性回归，.pdf",
+    "pages": 88,
+    "sha256": "03b537b389088b6bb9a23d416b65d247aaac4800ba2903a96a25a77a75219dd1",
+    "primary": true
   }
 ]

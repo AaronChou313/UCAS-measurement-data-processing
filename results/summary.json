@@ -362,24 +362,114 @@
       0.12758800190638228,
       0.07811610964617564
     ],
-    "noise_white_beta": [
-      3.4133981157448137,
-      5.699870927036468
-    ],
-    "noise_white_se_naive": [
-      0.042245612592977835,
-      6.686913348648041e-05
-    ],
-    "noise_colored_beta": [
-      3.5527656907385423,
-      5.6996161417074145
-    ],
-    "noise_colored_se_assumed_model": [
-      0.23491369011928628,
-      0.00027114792388052976
-    ],
-    "noise_grid_kappa": -0.9897435897435898,
-    "noise_grid_sigma_scale": 0.7923076923076924
+    "noise_2025_reference": {
+      "noise_white_beta": [
+        3.4133981157448137,
+        5.699870927036468
+      ],
+      "noise_white_se_naive": [
+        0.042245612592977835,
+        6.686913348648041e-05
+      ],
+      "noise_colored_beta": [
+        3.5527656907385423,
+        5.6996161417074145
+      ],
+      "noise_colored_se_assumed_model": [
+        0.23491369011928628,
+        0.00027114792388052976
+      ],
+      "noise_grid_kappa": -0.9897435897435898,
+      "noise_grid_sigma_scale": 0.7923076923076924
+    },
+    "noise_2026": {
+      "seed": 20261030,
+      "n": 1095,
+      "dt_year": 0.0027397260273972603,
+      "truth_beta": [
+        3.4,
+        5.7
+      ],
+      "model": "finite Gaussian circulant; unit diagonal shape; f0=1/N cycles/sample; no realization normalization",
+      "cases": {
+        "white": {
+          "generating_kappa": 0,
+          "generating_sigma": 0.5,
+          "empirical_noise_std": 0.4968259413105665,
+          "fits": {
+            "white_assumed": {
+              "beta": [
+                3.370216885347818,
+                5.713649968207012
+              ],
+              "sigma_mle": 0.496685287532898,
+              "se_conditional": [
+                0.029999004128895997,
+                0.01733180466034694
+              ]
+            },
+            "flicker_assumed": {
+              "beta": [
+                3.309346172465162,
+                5.7542675371323675
+              ],
+              "sigma_mle": 0.9603494487201004,
+              "se_conditional": [
+                0.32228461828980143,
+                0.1357783101648531
+              ]
+            }
+          },
+          "joint_mle": {
+            "kappa": 0.021123102677304613,
+            "sigma": 0.496686668145983,
+            "beta": [
+              3.3699771314393145,
+              5.7138099502483355
+            ],
+            "optimizer_success": true
+          }
+        },
+        "flicker": {
+          "generating_kappa": -1,
+          "generating_sigma": 0.7,
+          "empirical_noise_std": 0.7216664907042376,
+          "fits": {
+            "white_assumed": {
+              "beta": [
+                3.3614168021808863,
+                5.752427350031963
+              ],
+              "sigma_mle": 0.7202368049823141,
+              "se_conditional": [
+                0.043501161457326645,
+                0.025132622057622456
+              ]
+            },
+            "flicker_assumed": {
+              "beta": [
+                3.4559850009126443,
+                5.689324255814245
+              ],
+              "sigma_mle": 0.705896012583108,
+              "se_conditional": [
+                0.23689233879483998,
+                0.09980259567845805
+              ]
+            }
+          },
+          "joint_mle": {
+            "kappa": -1.0301691907316974,
+            "sigma": 0.7349215915605419,
+            "beta": [
+              3.451938418818622,
+              5.692024443134754
+            ],
+            "optimizer_success": true
+          }
+        }
+      }
+    }
   },
   "L12": {
     "estimates": [
@@ -460,6 +550,381 @@
       0.9246162071742683,
       0.05301556785053506
     ],
-    "pca_rank1_mse": 0.08553854253383855
+    "pca_rank1_mse": 0.08553854253383855,
+    "polygon_2026": {
+      "seed": 2026,
+      "rng": "RandomState",
+      "vertices": 17,
+      "steps": 45,
+      "initial_area": 2.168898867801047,
+      "perimeter": 17.33579395992445,
+      "regular_17gon_max_area": 23.642531996029803,
+      "cases": [
+        {
+          "alpha": 0.1,
+          "lambda": 0.2,
+          "gif": "L14_polygon_a0.1_lambda0.2.gif",
+          "trajectory": "L14_polygon_a0.1_lambda0.2.npz",
+          "final_area": 22.24770763076433,
+          "area_fraction": 0.941003596167293,
+          "max_perimeter_error": 7.105427357601002e-15,
+          "min_area_increment": 0.046379480728820255,
+          "all_frames_simple": true,
+          "raw_self_intersection_steps": [],
+          "backtracked_steps": [],
+          "accepted_step_sizes": [
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1
+          ]
+        },
+        {
+          "alpha": 0.1,
+          "lambda": 0.5,
+          "gif": "L14_polygon_a0.1_lambda0.5.gif",
+          "trajectory": "L14_polygon_a0.1_lambda0.5.npz",
+          "final_area": 23.420370674402534,
+          "area_fraction": 0.9906033194048516,
+          "max_perimeter_error": 7.105427357601002e-15,
+          "min_area_increment": 0.029044608195782473,
+          "all_frames_simple": true,
+          "raw_self_intersection_steps": [],
+          "backtracked_steps": [],
+          "accepted_step_sizes": [
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1
+          ]
+        },
+        {
+          "alpha": 0.1,
+          "lambda": 0.9,
+          "gif": "L14_polygon_a0.1_lambda0.9.gif",
+          "trajectory": "L14_polygon_a0.1_lambda0.9.npz",
+          "final_area": 23.563491573407532,
+          "area_fraction": 0.9966568545773548,
+          "max_perimeter_error": 7.105427357601002e-15,
+          "min_area_increment": 0.012747461238976854,
+          "all_frames_simple": true,
+          "raw_self_intersection_steps": [],
+          "backtracked_steps": [],
+          "accepted_step_sizes": [
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1
+          ]
+        },
+        {
+          "alpha": 0.2,
+          "lambda": 0.2,
+          "gif": "L14_polygon_a0.2_lambda0.2.gif",
+          "trajectory": "L14_polygon_a0.2_lambda0.2.npz",
+          "final_area": 21.54418587499555,
+          "area_fraction": 0.9112469797487587,
+          "max_perimeter_error": 3.552713678800501e-15,
+          "min_area_increment": -1.597544259077793,
+          "all_frames_simple": true,
+          "raw_self_intersection_steps": [
+            10
+          ],
+          "backtracked_steps": [
+            10
+          ],
+          "accepted_step_sizes": [
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.1,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2
+          ]
+        },
+        {
+          "alpha": 0.2,
+          "lambda": 0.5,
+          "gif": "L14_polygon_a0.2_lambda0.5.gif",
+          "trajectory": "L14_polygon_a0.2_lambda0.5.npz",
+          "final_area": 23.148103378130152,
+          "area_fraction": 0.9790873237273116,
+          "max_perimeter_error": 7.105427357601002e-15,
+          "min_area_increment": 0.003400808907283448,
+          "all_frames_simple": true,
+          "raw_self_intersection_steps": [],
+          "backtracked_steps": [],
+          "accepted_step_sizes": [
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2
+          ]
+        },
+        {
+          "alpha": 0.2,
+          "lambda": 0.9,
+          "gif": "L14_polygon_a0.2_lambda0.9.gif",
+          "trajectory": "L14_polygon_a0.2_lambda0.9.npz",
+          "final_area": 23.471802558133206,
+          "area_fraction": 0.9927787160053219,
+          "max_perimeter_error": 7.105427357601002e-15,
+          "min_area_increment": 0.0005887650797404831,
+          "all_frames_simple": true,
+          "raw_self_intersection_steps": [],
+          "backtracked_steps": [],
+          "accepted_step_sizes": [
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2
+          ]
+        }
+      ]
+    }
   }
 }

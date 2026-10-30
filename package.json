@@ -16,7 +16,8 @@
     "figures:check": "node scripts/build-teaching-figures.mjs --check && node scripts/build-course-figures.mjs --check",
     "check:visualization-pages": "node scripts/check-visualization-pages.mjs",
     "figures:generate": "node scripts/build-teaching-figures.mjs && node scripts/build-course-figures.mjs",
-    "check:course-integrity": "node scripts/check-course-integrity.mjs"
+    "check:course-integrity": "node scripts/check-course-integrity.mjs",
+    "test:homework": "python3 -m unittest discover -s tests -p \"test_*.py\""
   },
   "devDependencies": {
     "vitepress": "1.6.4",

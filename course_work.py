@@ -492,51 +492,11 @@ def lesson11() -> None:
         axs[1,j].scatter(loc[good,0],loc[good,1],c=independent[:,j],s=2,cmap="coolwarm")
         axs[1,j].set_title(f"ICA spatial source {j+1}")
     save("L11_sst_eof_ica.png")
-    # Spectral approximation to a correlated-noise likelihood: f^-1 model.
-    n=365*3;t=np.arange(n,dtype=float)
-    freqs=np.fft.rfftfreq(n)
-    base=np.maximum(freqs,1/n)
-    mult=np.ones(len(freqs));mult[1:]=2  # odd n: all nonzero bins have conjugates
-    def shape(kappa: float) -> np.ndarray:
-        raw=base**kappa
-        return raw/(np.sum(mult*raw)/n)
-    def synth(kappa: float,sigma: float) -> np.ndarray:
-        w=np.fft.rfft(RNG.normal(size=n))*np.sqrt(shape(kappa))
-        z=np.fft.irfft(w,n);return sigma*z/z.std()
-    y=3.4+5.7*t+synth(-1,.7)
-    X=np.column_stack([np.ones(n),t])
-    bw,cw,_,_=ols(X,y)
-    # Generalized least squares in a Fourier-diagonal covariance approximation.
-    def profile(kappa: float) -> tuple[np.ndarray,float,float]:
-        spectrum=shape(kappa)
-        weights=mult/spectrum
-        Fx=np.fft.rfft(X,axis=0);Fy=np.fft.rfft(y)
-        lhs=np.real(Fx.conj().T@(weights[:,None]*Fx))/n
-        rhs=np.real(Fx.conj().T@(weights*Fy))/n
-        beta=np.linalg.solve(lhs,rhs)
-        r=y-X@beta;Fr=np.fft.rfft(r)
-        quad=np.sum(weights*np.abs(Fr)**2)/n
-        return beta,quad,float(np.sum(mult*np.log(spectrum)))
-    bcol,quad,_=profile(-1)
-    Fx=np.fft.rfft(X,axis=0)
-    info=np.real(Fx.conj().T@((mult/shape(-1))[:,None]*Fx))/n
-    colored_se=np.sqrt(np.diag(.7**2*np.linalg.inv(info)))
-    ks=np.linspace(-1.6,-.2,40);sigmas=np.linspace(.3,1.1,40)
-    grid=np.empty((len(sigmas),len(ks)))
-    for j,k in enumerate(ks):
-        _,q,logdet=profile(k)
-        for i,ss in enumerate(sigmas):
-            grid[i,j]=.5*(n*np.log(ss*ss)+logdet+q/(ss*ss))
-    # Only relative contours are meaningful under this Whittle-style approximation.
-    plt.figure(figsize=(8,5));plt.contourf(ks,sigmas,grid-grid.min(),levels=20)
-    plt.colorbar(label="relative spectral objective")
-    plt.xlabel("kappa");plt.ylabel("sigma scale");save("L11_noise_likelihood_contour.png")
-    j,i=np.unravel_index(grid.argmin(),grid.shape)
-    SUMMARY["L11"]={"sst_locations":len(loc),"sst_ocean_complete":len(M),"sst_times":len(times),
-                    "sst_explained_first3":frac[:3].tolist(),"noise_white_beta":bw.tolist(),
-                    "noise_white_se_naive":np.sqrt(np.diag(cw)).tolist(),"noise_colored_beta":bcol.tolist(),
-                    "noise_colored_se_assumed_model":colored_se.tolist(),
-                    "noise_grid_kappa":ks[i],"noise_grid_sigma_scale":sigmas[j]}
+    from homework_2026 import refresh_lesson11
+    noise = refresh_lesson11()
+    SUMMARY["L11"] = {"sst_locations": len(loc), "sst_ocean_complete": len(M),
+                      "sst_times": len(times), "sst_explained_first3": frac[:3].tolist(),
+                      "noise_2026": noise}
 
 
 def lesson12() -> None:
@@ -628,13 +588,15 @@ def pca_function(X: np.ndarray,ncomponents: int,n_restore: int|None=None):
 
 
 def lesson14() -> None:
+    from homework_2026 import refresh_lesson14
     x=np.linspace(-1,1,80)[:,None];y=1.2+2.4*x[:,0]+RNG.normal(0,.2,len(x))
     coef,ci=gradient_regression(x,y,np.zeros(2),10000,1e-9,rmmean=1,normal=1,
                                 learning_rate=.3,precision95=1,mc_reps=200)
     eig,vec,pc,frac,restored=pca_function(read_iris(),2,1)
     SUMMARY["L14"]={"gradient_regression_coefficients":coef.tolist(),
                     "gradient_regression_ci95":ci.tolist(),"pca_eigenvalues_first2":eig.tolist(),
-                    "pca_explained_first2":frac.tolist(),"pca_rank1_mse":float(np.mean((read_iris()-restored)**2))}
+                    "pca_explained_first2":frac.tolist(),"pca_rank1_mse":float(np.mean((read_iris()-restored)**2)),
+                    "polygon_2026":refresh_lesson14()}
 
 
 def refresh_source_figures() -> None:
@@ -682,8 +644,22 @@ def main() -> None:
     parser=argparse.ArgumentParser()
     parser.add_argument("--full-mc",action="store_true",help="200 outer Monte Carlo repeats for every n=2..500")
     parser.add_argument("--refresh-2026",action="store_true",help="refresh only 2026 lesson 6-7 additions, preserving existing results")
+    parser.add_argument("--refresh-2026-late",action="store_true",help="only refresh completed 2026 L11 noise and new L14 polygon task")
     parser.add_argument("--refresh-source-figures",action="store_true",help="repair audited KDE, outlier and cross-spectrum figures only")
     args=parser.parse_args()
+    if args.refresh_2026_late:
+        from homework_2026 import refresh_lesson11, refresh_lesson14
+        path = OUT/"summary.json"
+        if path.exists():
+            SUMMARY.update(json.loads(path.read_text()))
+        old = SUMMARY.setdefault("L11", {})
+        archived = {k: old.pop(k) for k in list(old) if k.startswith("noise_") and k not in {"noise_2025_reference", "noise_2026"}}
+        if archived:
+            old["noise_2025_reference"] = archived
+        old["noise_2026"] = refresh_lesson11()
+        SUMMARY.setdefault("L14", {})["polygon_2026"] = refresh_lesson14()
+        path.write_text(json.dumps(SUMMARY, ensure_ascii=False, indent=2, default=json_default)+"\n")
+        return
     if args.refresh_source_figures:
         refresh_source_figures()
         return

@@ -24,6 +24,14 @@ jobs:
       - run: npm ci
       - name: Check visualization mathematics
         run: npm run test:visualizations
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+          cache: pip
+      - name: Install existing homework dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Check updated homework models and delivered trajectories
+        run: npm run test:homework
       - name: Check course content preservation
         run: npm run check:course-integrity
       - name: Verify generated SVGs
